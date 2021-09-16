@@ -9,25 +9,29 @@ using Entities.Dto;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfSaleDal : EfEntityRepositoryBase<Sale, MainContext>, ISaleDal
+    public class EfInstalmentDal : EfEntityRepositoryBase<Instalment, MainContext>, IInstalmentDal
     {
-        public List<SaleDto> GetAllDetails(Expression<Func<SaleDto, bool>> filter = null)
+        public List<InstalmentDto> GetAllDetails(Expression<Func<InstalmentDto, bool>> filter = null)
         {
             using (MainContext context = new MainContext())
             {
-                var result = from s in context.Sales
+                var result = from i in context.Instalments
+                             join s in context.Sales
+                             on i.SaleID equals s.ID
                              join c in context.Customers
                              on s.CustomerID equals c.ID
-                             select new SaleDto
+                             select new InstalmentDto
                              {
                                  ID = s.ID,
                                  CustomerName = c.Name,
                                  CustomerPhoneNumber = c.PhoneNumber,
                                  Product = s.Product,
-                                 Price = s.Price,
-                                 PaymentType = s.PaymentType,
                                  SaleDate = s.SaleDate,
-                                 RemainderPrice = s.RemainderPrice
+                                 InstalmentNo = i.InstalmentNo,
+                                 PaidPrice = i.PaidPrice,
+                                 PaidDate = i.PaidDate,
+                                 PayablePrice = i.PayablePrice,
+                                 PaymentDate = i.PaymentDate
                              };
                 return filter == null ? // if filter is null
                     result.ToList() : // true : return
@@ -35,23 +39,27 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public SaleDto GetDetails(Expression<Func<SaleDto, bool>> filter)
+        public InstalmentDto GetDetails(Expression<Func<InstalmentDto, bool>> filter)
         {
             using (MainContext context = new MainContext())
             {
-                var result = from s in context.Sales
+                var result = from i in context.Instalments
+                             join s in context.Sales
+                             on i.SaleID equals s.ID
                              join c in context.Customers
                              on s.CustomerID equals c.ID
-                             select new SaleDto
+                             select new InstalmentDto
                              {
                                  ID = s.ID,
                                  CustomerName = c.Name,
                                  CustomerPhoneNumber = c.PhoneNumber,
                                  Product = s.Product,
-                                 Price = s.Price,
-                                 PaymentType = s.PaymentType,
                                  SaleDate = s.SaleDate,
-                                 RemainderPrice = s.RemainderPrice
+                                 InstalmentNo = i.InstalmentNo,
+                                 PaidPrice = i.PaidPrice,
+                                 PaidDate = i.PaidDate,
+                                 PayablePrice = i.PayablePrice,
+                                 PaymentDate = i.PaymentDate
                              };
                 return result.Where(filter).FirstOrDefault();
             }

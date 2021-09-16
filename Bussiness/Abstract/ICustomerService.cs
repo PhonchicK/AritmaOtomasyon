@@ -7,7 +7,7 @@ namespace Bussiness.Abstract
     {
         Customer GetByID(int id);
         List<Customer> GetAll();
-        void Add(Customer customer);
+        int Add(Customer customer);
         void Delete(Customer customer);
         void Update(Customer customer);
     }

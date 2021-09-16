@@ -21,6 +21,7 @@ namespace DataAccess.Concrete.EntityFramework
                 ConnectionString = new SQLiteConnectionStringBuilder() { DataSource = "Main.db", ForeignKeys = true }.ConnectionString
             }, true)
         {
+            this.Database.CreateIfNotExists();
         }
         /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -30,5 +31,7 @@ namespace DataAccess.Concrete.EntityFramework
 
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Sale> Sales { get; set; }
+        public DbSet<Instalment> Instalments { get; set; }
+        public DbSet<Maintenance> Maintenances { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Bussiness.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.Dto;
 using System.Collections.Generic;
 
 namespace Bussiness.Concrete
@@ -12,9 +13,9 @@ namespace Bussiness.Concrete
         {
             saleDal = _saleDal;
         }
-        public void Add(Sale sale)
+        public int Add(Sale sale)
         {
-            saleDal.Add(sale);
+            return saleDal.Add(sale).ID;
         }
 
         public void Delete(Sale sale)
@@ -27,9 +28,19 @@ namespace Bussiness.Concrete
             return saleDal.GetAll();
         }
 
+        public List<SaleDto> GetAllDetails()
+        {
+            return saleDal.GetAllDetails();
+        }
+
         public Sale GetByID(int id)
         {
             return saleDal.Get(s => s.ID == id);
+        }
+
+        public SaleDto GetDetailsByID(int id)
+        {
+            return saleDal.GetDetails(s => s.ID == id);
         }
 
         public void Update(Sale sale)

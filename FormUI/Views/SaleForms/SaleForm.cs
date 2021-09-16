@@ -22,7 +22,7 @@ namespace FormUI.Views.SaleForms
         {
             InitializeComponent();
             saleService = InstanceFactory.GetInstance<ISaleService>();
-            gridControl.DataSource = saleService.GetAll();
+            gridControl.DataSource = saleService.GetAllDetails();
             //bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
         }
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
@@ -32,6 +32,14 @@ namespace FormUI.Views.SaleForms
         private void SaleForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void bbiNew_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if(new AddSaleForm().ShowDialog() == DialogResult.OK)
+            {
+                gridControl.DataSource = saleService.GetAllDetails();
+            }
         }
     }
 }

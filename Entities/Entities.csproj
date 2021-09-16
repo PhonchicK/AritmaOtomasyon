@@ -84,6 +84,9 @@
     <Compile Include="Concrete\Instalment.cs" />
     <Compile Include="Concrete\Maintenance.cs" />
     <Compile Include="Concrete\Sale.cs" />
+    <Compile Include="Dto\InstalmentDto.cs" />
+    <Compile Include="Dto\MaintenanceDto.cs" />
+    <Compile Include="Dto\SaleDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -96,9 +99,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dto\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

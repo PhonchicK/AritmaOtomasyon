@@ -92,6 +92,9 @@
     <Reference Include="DevExpress.XtraNavBar.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v21.1.Core, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.1.Core.Desktop, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -144,6 +147,30 @@
     <Compile Include="Views\CustomerForms\EditCustomerForm.Designer.cs">
       <DependentUpon>EditCustomerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\CustomerForms\SelectCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerForms\SelectCustomerForm.Designer.cs">
+      <DependentUpon>SelectCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InstalmentForms\InstalmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InstalmentForms\InstalmentForm.Designer.cs">
+      <DependentUpon>InstalmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InstalmentForms\PayInstalment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InstalmentForms\PayInstalment.Designer.cs">
+      <DependentUpon>PayInstalment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SaleForms\AddSaleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SaleForms\AddSaleForm.Designer.cs">
+      <DependentUpon>AddSaleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SaleForms\SaleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +198,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerForms\EditCustomerForm.resx">
       <DependentUpon>EditCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerForms\SelectCustomerForm.resx">
+      <DependentUpon>SelectCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InstalmentForms\InstalmentForm.resx">
+      <DependentUpon>InstalmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InstalmentForms\PayInstalment.resx">
+      <DependentUpon>PayInstalment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SaleForms\AddSaleForm.resx">
+      <DependentUpon>AddSaleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SaleForms\SaleForm.resx">
       <DependentUpon>SaleForm.cs</DependentUpon>
@@ -210,6 +249,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\MaintenanceForms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

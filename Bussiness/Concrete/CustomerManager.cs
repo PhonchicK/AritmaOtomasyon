@@ -12,9 +12,9 @@ namespace Bussiness.Concrete
         {
             customerDal = _customerDal;
         }
-        public void Add(Customer customer)
+        public int Add(Customer customer)
         {
-            customerDal.Add(customer);
+            return customerDal.Add(customer).ID;
         }
 
         public void Delete(Customer customer)

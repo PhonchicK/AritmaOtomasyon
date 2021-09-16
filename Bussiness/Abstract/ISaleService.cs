@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using Entities.Dto;
 using System.Collections.Generic;
 
 namespace Bussiness.Abstract
@@ -6,8 +7,10 @@ namespace Bussiness.Abstract
     public interface ISaleService
     {
         Sale GetByID(int id);
+        SaleDto GetDetailsByID(int id);
         List<Sale> GetAll();
-        void Add(Sale sale);
+        List<SaleDto> GetAllDetails();
+        int Add(Sale sale);
         void Update(Sale sale);
         void Delete(Sale sale);
     }

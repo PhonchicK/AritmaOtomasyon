@@ -20,8 +20,8 @@ namespace Entities.Concrete
         [Column(Name = "PaidPrice", DbType = "INTEGER")]
         public int PaidPrice { get; set; }//Ödenen Tutar
         [Column(Name = "PaymentDate", DbType = "TIMESTAMP")]
-        public DateTime PaymentDate { get; set; }
+        public DateTime PaymentDate { get; set; }//Ödenecek Gün
         [Column(Name = "PaidDate", DbType = "TIMESTAMP")]
-        public DateTime PaidDate { get; set; }
+        public DateTime PaidDate { get; set; }//Ödenen Gün
     }
 }

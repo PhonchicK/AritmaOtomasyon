@@ -1,4 +1,7 @@
-﻿using FormUI.Views.CustomerForms;
+﻿using Business.DependencyResolvers.Ninject;
+using Bussiness.Abstract;
+using FormUI.Views.CustomerForms;
+using FormUI.Views.InstalmentForms;
 using FormUI.Views.SaleForms;
 using MetroFramework.Forms;
 using System;
@@ -22,7 +25,6 @@ namespace FormUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -33,6 +35,16 @@ namespace FormUI
         private void metroButton2_Click(object sender, EventArgs e)
         {
             new SaleForm().Show();
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            new InstalmentForm().Show();
+        }
+
+        private void metroButton5_Click(object sender, EventArgs e)
+        {
+            new PayInstalment(2).Show();
         }
     }
 }
