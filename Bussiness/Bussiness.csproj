@@ -65,10 +65,12 @@
     <Compile Include="Abstract\ICustomerService.cs" />
     <Compile Include="Abstract\IInstalmentService.cs" />
     <Compile Include="Abstract\IMaintenanceService.cs" />
+    <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Abstract\ISaleService.cs" />
     <Compile Include="Concrete\CustomerManager.cs" />
     <Compile Include="Concrete\InstalmentManager.cs" />
     <Compile Include="Concrete\MaintenanceManager.cs" />
+    <Compile Include="Concrete\ProductManager.cs" />
     <Compile Include="Concrete\SaleManager.cs" />
     <Compile Include="DependencyResolvers\Ninject\BusinessModule.cs" />
     <Compile Include="DependencyResolvers\Ninject\InstanceFactory.cs" />

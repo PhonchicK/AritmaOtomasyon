@@ -60,9 +60,43 @@ namespace FormUI.Views.InstalmentForms
 
             labelLastDelayInstalment.Text = ((int)(DateTime.Now - saleInstalments[firstPayInstalmentIndex].PaymentDate).TotalDays).ToString();
 
-            labelPayablePrice.Text = (saleInstalments[payInstalmentIndex].PayablePrice - saleInstalments[payInstalmentIndex].PaidPrice).ToString();
+            labelPayablePrice.Text = ((saleInstalments[payInstalmentIndex].PayablePrice - saleInstalments[payInstalmentIndex].PaidPrice) + 
+                (saleInstalments[payInstalmentIndex - 1].PayablePrice - saleInstalments[payInstalmentIndex - 1].PaidPrice)).ToString();
 
-            labelPaymentDate.Text = saleInstalments[payInstalmentIndex].PaymentDate.ToString();
+            labelPaymentDate.Text = saleInstalments[payInstalmentIndex].PaymentDate.Date.ToString();
+
+            datePaidDate.DateTime = DateTime.Now;
+        }
+
+        private void navButton1_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
+        {
+            int paymentPrice = Convert.ToInt32(textEditPrice.Text);
+
+            int remainingPrice = (saleInstalments[payInstalmentIndex].PaidPrice + paymentPrice) - saleInstalments[payInstalmentIndex].PayablePrice;//Artacak tutar hesabı
+            saleInstalments[payInstalmentIndex].PaidPrice += paymentPrice - remainingPrice;
+            saleInstalments[payInstalmentIndex].PaidDate = datePaidDate.DateTime;
+            
+            instalmentService.Update(saleInstalments[payInstalmentIndex]);
+
+            paymentPrice = remainingPrice;
+            if (remainingPrice > 0)//Tutar artmış ise
+            {
+                for (int i = saleInstalments.Length - 1; i > 0; i--)//Son taksitten başla 
+                {
+                    if (paymentPrice < 1)
+                        return;
+
+                    remainingPrice = ((saleInstalments[i].PaidPrice + paymentPrice) < saleInstalments[i].PayablePrice) ? 0 : //Artan ücret - ye düşmemesi için
+                        (saleInstalments[i].PaidPrice + paymentPrice) - saleInstalments[i].PayablePrice;
+
+                    saleInstalments[i].PaidPrice += paymentPrice - remainingPrice;
+                    saleInstalments[i].PaidDate = datePaidDate.DateTime;
+
+                    instalmentService.Update(saleInstalments[i]);
+
+                    paymentPrice = remainingPrice;
+                }
+            }
         }
     }
 }

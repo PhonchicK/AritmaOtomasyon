@@ -21,7 +21,6 @@ namespace Bussiness.Concrete
         {
             return instalmentDal.Add(instalment).ID;
         }
-
         public void Delete(Instalment instalment)
         {
             instalmentDal.Delete(instalment);

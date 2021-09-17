@@ -22,13 +22,15 @@ namespace DataAccess.Concrete.EntityFramework
                              on m.SaleID equals s.ID
                              join c in context.Customers
                              on s.CustomerID equals c.ID
+                             join p in context.Products
+                             on s.ProductID equals p.ID
                              select new MaintenanceDto
                              {
                                  ID = m.ID,
                                  CustomerName = c.Name,
                                  CustomerPhoneNumber = c.PhoneNumber,
                                  CustomerAddress = c.Address,
-                                 Product = s.Product,
+                                 Product = p.Name,
                                  StartDate = m.StartDate,
                                  MaintenanceInterval = m.MaintenanceInterval,
                                  LastMaintenance = m.LastMaintenance
@@ -48,13 +50,15 @@ namespace DataAccess.Concrete.EntityFramework
                              on m.SaleID equals s.ID
                              join c in context.Customers
                              on s.CustomerID equals c.ID
+                             join p in context.Products
+                             on s.ProductID equals p.ID
                              select new MaintenanceDto
                              {
                                  ID = m.ID,
                                  CustomerName = c.Name,
                                  CustomerPhoneNumber = c.PhoneNumber,
                                  CustomerAddress = c.Address,
-                                 Product = s.Product,
+                                 Product = p.Name,
                                  StartDate = m.StartDate,
                                  MaintenanceInterval = m.MaintenanceInterval,
                                  LastMaintenance = m.LastMaintenance

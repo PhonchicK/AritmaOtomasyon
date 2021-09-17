@@ -13,8 +13,8 @@ namespace Entities.Concrete
         public int ID { get; set; }
         [Column(Name = "CustomerID", DbType = "INTEGER")]
         public int CustomerID { get; set; }
-        [Column(Name = "Product", DbType = "VARCHAR")]
-        public string Product { get; set; }
+        [Column(Name = "ProductID", DbType = "VARCHAR")]
+        public int ProductID { get; set; }
         [Column(Name = "SaleDate", DbType = "TIMESTAMP")]
         public DateTime SaleDate { get; set; }
         [Column(Name = "PaymentType", DbType = "VARCHAR")]
@@ -23,9 +23,11 @@ namespace Entities.Concrete
         public int Price { get; set; }
         [Column(Name = "RemainderPrice", DbType = "INTEGER")]
         public int RemainderPrice { get; set; }//Kalan Tutar
-        /*[Column(Name = "MaintenanceInterval", DbType = "INTEGER")]
-        public int MaintenanceInterval { get; set; }//Kaç ayda bir bakım yapılacak
-        [Column(Name = "LastMaintenance", DbType = "TIMESTAMP")]
-        public DateTime LastMaintenance { get; set; }*///son bakım tarihi
+        [Column(Name = "ReferanceCustomerID", DbType = "INTEGER")]
+        public int? ReferanceCustomerID { get; set; }//Referans olan Müşterinin IDs si
+        [Column(Name = "Assembler", DbType = "VARCHAR")]
+        public string Assembler { get; set; }//Montaj yapan kişi
+        [Column(Name = "Comment", DbType = "VARCHAR")]
+        public string Comment { get; set; }
     }
 }

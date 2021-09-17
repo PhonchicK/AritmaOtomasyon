@@ -23,7 +23,7 @@ namespace FormUI.Views.InstalmentForms
         {
             InitializeComponent();
             instalmentService = InstanceFactory.GetInstance<IInstalmentService>();
-            gridControl.DataSource = instalmentService.GetAll();
+            gridControl.DataSource = instalmentService.GetAllDetails();
             //bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
         }
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
@@ -33,7 +33,7 @@ namespace FormUI.Views.InstalmentForms
 
         private void CustomerForm_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void bbiNew_ItemClick(object sender, ItemClickEventArgs e)
@@ -47,6 +47,11 @@ namespace FormUI.Views.InstalmentForms
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
             gridControl.DataSource = instalmentService.GetAll();
+        }
+
+        private void bbiDelete_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            MessageBox.Show(gridView.ActiveFilterString);
         }
     }
 }

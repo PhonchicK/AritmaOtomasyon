@@ -1,5 +1,6 @@
 ﻿using Business.DependencyResolvers.Ninject;
 using Bussiness.Abstract;
+using Entities.Concrete;
 using FormUI.Views.CustomerForms;
 using FormUI.Views.InstalmentForms;
 using FormUI.Views.SaleForms;
@@ -44,7 +45,7 @@ namespace FormUI
 
         private void metroButton5_Click(object sender, EventArgs e)
         {
-            new PayInstalment(2).Show();
+            
         }
     }
 }

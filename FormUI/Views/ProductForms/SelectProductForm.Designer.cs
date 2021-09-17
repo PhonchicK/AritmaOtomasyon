@@ -1,7 +1,10 @@
 ﻿
-namespace FormUI.Views.CustomerForms
+using System;
+using System.Windows.Forms;
+
+namespace FormUI.Views.ProductForms
 {
-    partial class SelectCustomerForm
+    partial class SelectProductForm
     {
         /// <summary>
         /// Required designer variable.
@@ -21,7 +24,7 @@ namespace FormUI.Views.CustomerForms
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify

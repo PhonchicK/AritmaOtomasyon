@@ -41,5 +41,10 @@ namespace FormUI.Views.SaleForms
                 gridControl.DataSource = saleService.GetAllDetails();
             }
         }
+
+        private void ribbonControl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -21,6 +21,9 @@ namespace Business.DependencyResolvers.Ninject
 
             Bind<IInstalmentDal>().To<EfInstalmentDal>().InSingletonScope();
             Bind<IInstalmentService>().To<InstalmentManager>().InSingletonScope();
+
+            Bind<IProductDal>().To<EfProductDal>().InSingletonScope();
+            Bind<IProductService>().To<ProductManager>().InSingletonScope();
         }
     }
 }

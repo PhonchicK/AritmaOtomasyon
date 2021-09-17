@@ -196,10 +196,12 @@
     <Compile Include="Abstract\ICustomerDal.cs" />
     <Compile Include="Abstract\IInstalmentDal.cs" />
     <Compile Include="Abstract\IMaintenanceDal.cs" />
+    <Compile Include="Abstract\IProductDal.cs" />
     <Compile Include="Abstract\ISaleDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCustomerDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfInstalmentDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfMaintenanceDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfProductDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfSaleDal.cs" />
     <Compile Include="Concrete\EntityFramework\MainContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

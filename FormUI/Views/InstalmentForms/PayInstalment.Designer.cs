@@ -32,32 +32,32 @@ namespace FormUI.Views.InstalmentForms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PayInstalment));
             this.tileNavPane1 = new DevExpress.XtraBars.Navigation.TileNavPane();
             this.navButton1 = new DevExpress.XtraBars.Navigation.NavButton();
+            this.navButton3 = new DevExpress.XtraBars.Navigation.NavButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelCustomerID = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.textCustomerPhone = new DevExpress.XtraEditors.TextEdit();
             this.textCustomerName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelCustomerID = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.labelRemainderPrice = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelRemainderMonths = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelPayableInstalmentsCount = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.labelPayablePrice = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelLastDelayInstalment = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.labelPayableInstalmentsCount = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelRemainderMonths = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelRemainderPrice = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelPayablePrice = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.textEditPrice = new DevExpress.XtraEditors.TextEdit();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.datePaidDate = new DevExpress.XtraEditors.DateEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelPaymentDate = new DevExpress.XtraEditors.LabelControl();
-            this.datePaidDate = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.navButton3 = new DevExpress.XtraBars.Navigation.NavButton();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -96,6 +96,14 @@ namespace FormUI.Views.InstalmentForms
             this.navButton1.Caption = "Öde";
             this.navButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton1.ImageOptions.Image")));
             this.navButton1.Name = "navButton1";
+            this.navButton1.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButton1_ElementClick);
+            // 
+            // navButton3
+            // 
+            this.navButton3.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Left;
+            this.navButton3.Caption = "İptal";
+            this.navButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton3.ImageOptions.Image")));
+            this.navButton3.Name = "navButton3";
             // 
             // groupControl1
             // 
@@ -112,6 +120,26 @@ namespace FormUI.Views.InstalmentForms
             this.groupControl1.Size = new System.Drawing.Size(246, 179);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Müşteri";
+            // 
+            // labelCustomerID
+            // 
+            this.labelCustomerID.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelCustomerID.Appearance.Options.UseFont = true;
+            this.labelCustomerID.Location = new System.Drawing.Point(101, 38);
+            this.labelCustomerID.Name = "labelCustomerID";
+            this.labelCustomerID.Size = new System.Drawing.Size(9, 19);
+            this.labelCustomerID.TabIndex = 17;
+            this.labelCustomerID.Text = "0";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(67, 38);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(28, 19);
+            this.labelControl1.TabIndex = 11;
+            this.labelControl1.Text = "İD :";
             // 
             // textCustomerPhone
             // 
@@ -149,26 +177,6 @@ namespace FormUI.Views.InstalmentForms
             this.labelControl2.TabIndex = 13;
             this.labelControl2.Text = "Adı :";
             // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(67, 38);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(28, 19);
-            this.labelControl1.TabIndex = 11;
-            this.labelControl1.Text = "İD :";
-            // 
-            // labelCustomerID
-            // 
-            this.labelCustomerID.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelCustomerID.Appearance.Options.UseFont = true;
-            this.labelCustomerID.Location = new System.Drawing.Point(101, 38);
-            this.labelCustomerID.Name = "labelCustomerID";
-            this.labelCustomerID.Size = new System.Drawing.Size(9, 19);
-            this.labelCustomerID.TabIndex = 17;
-            this.labelCustomerID.Text = "0";
-            // 
             // groupControl2
             // 
             this.groupControl2.AppearanceCaption.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
@@ -187,45 +195,25 @@ namespace FormUI.Views.InstalmentForms
             this.groupControl2.TabIndex = 18;
             this.groupControl2.Text = "Taksit Bilgileri";
             // 
-            // labelRemainderPrice
+            // labelLastDelayInstalment
             // 
-            this.labelRemainderPrice.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelRemainderPrice.Appearance.Options.UseFont = true;
-            this.labelRemainderPrice.Location = new System.Drawing.Point(172, 27);
-            this.labelRemainderPrice.Name = "labelRemainderPrice";
-            this.labelRemainderPrice.Size = new System.Drawing.Size(9, 19);
-            this.labelRemainderPrice.TabIndex = 17;
-            this.labelRemainderPrice.Text = "0";
+            this.labelLastDelayInstalment.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelLastDelayInstalment.Appearance.Options.UseFont = true;
+            this.labelLastDelayInstalment.Location = new System.Drawing.Point(172, 141);
+            this.labelLastDelayInstalment.Name = "labelLastDelayInstalment";
+            this.labelLastDelayInstalment.Size = new System.Drawing.Size(9, 19);
+            this.labelLastDelayInstalment.TabIndex = 23;
+            this.labelLastDelayInstalment.Text = "0";
             // 
-            // labelControl6
+            // labelControl14
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(5, 26);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(144, 19);
-            this.labelControl6.TabIndex = 11;
-            this.labelControl6.Text = "Kalan Toplam Borç :";
-            // 
-            // labelRemainderMonths
-            // 
-            this.labelRemainderMonths.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelRemainderMonths.Appearance.Options.UseFont = true;
-            this.labelRemainderMonths.Location = new System.Drawing.Point(172, 65);
-            this.labelRemainderMonths.Name = "labelRemainderMonths";
-            this.labelRemainderMonths.Size = new System.Drawing.Size(9, 19);
-            this.labelRemainderMonths.TabIndex = 19;
-            this.labelRemainderMonths.Text = "0";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(5, 64);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(73, 19);
-            this.labelControl8.TabIndex = 18;
-            this.labelControl8.Text = "Kalan Ay :";
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl14.Appearance.Options.UseFont = true;
+            this.labelControl14.Location = new System.Drawing.Point(5, 140);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(161, 19);
+            this.labelControl14.TabIndex = 22;
+            this.labelControl14.Text = "Son Taksit Gecikmesi :";
             // 
             // labelPayableInstalmentsCount
             // 
@@ -247,6 +235,46 @@ namespace FormUI.Views.InstalmentForms
             this.labelControl10.TabIndex = 20;
             this.labelControl10.Text = "Ödenmemiş Taksitler :";
             // 
+            // labelRemainderMonths
+            // 
+            this.labelRemainderMonths.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelRemainderMonths.Appearance.Options.UseFont = true;
+            this.labelRemainderMonths.Location = new System.Drawing.Point(172, 65);
+            this.labelRemainderMonths.Name = "labelRemainderMonths";
+            this.labelRemainderMonths.Size = new System.Drawing.Size(9, 19);
+            this.labelRemainderMonths.TabIndex = 19;
+            this.labelRemainderMonths.Text = "0";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(5, 64);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(73, 19);
+            this.labelControl8.TabIndex = 18;
+            this.labelControl8.Text = "Kalan Ay :";
+            // 
+            // labelRemainderPrice
+            // 
+            this.labelRemainderPrice.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelRemainderPrice.Appearance.Options.UseFont = true;
+            this.labelRemainderPrice.Location = new System.Drawing.Point(172, 27);
+            this.labelRemainderPrice.Name = "labelRemainderPrice";
+            this.labelRemainderPrice.Size = new System.Drawing.Size(9, 19);
+            this.labelRemainderPrice.TabIndex = 17;
+            this.labelRemainderPrice.Text = "0";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(5, 26);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(144, 19);
+            this.labelControl6.TabIndex = 11;
+            this.labelControl6.Text = "Kalan Toplam Borç :";
+            // 
             // labelPayablePrice
             // 
             this.labelPayablePrice.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -266,26 +294,6 @@ namespace FormUI.Views.InstalmentForms
             this.labelControl12.Size = new System.Drawing.Size(123, 19);
             this.labelControl12.TabIndex = 22;
             this.labelControl12.Text = "Ödenecek Tutar :";
-            // 
-            // labelLastDelayInstalment
-            // 
-            this.labelLastDelayInstalment.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelLastDelayInstalment.Appearance.Options.UseFont = true;
-            this.labelLastDelayInstalment.Location = new System.Drawing.Point(172, 141);
-            this.labelLastDelayInstalment.Name = "labelLastDelayInstalment";
-            this.labelLastDelayInstalment.Size = new System.Drawing.Size(9, 19);
-            this.labelLastDelayInstalment.TabIndex = 23;
-            this.labelLastDelayInstalment.Text = "0";
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(5, 140);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(161, 19);
-            this.labelControl14.TabIndex = 22;
-            this.labelControl14.Text = "Son Taksit Gecikmesi :";
             // 
             // textEditPrice
             // 
@@ -328,6 +336,30 @@ namespace FormUI.Views.InstalmentForms
             this.groupControl3.TabIndex = 18;
             this.groupControl3.Text = "Ödeme";
             // 
+            // labelControl18
+            // 
+            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl18.Appearance.Options.UseFont = true;
+            this.labelControl18.Location = new System.Drawing.Point(252, 70);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(103, 19);
+            this.labelControl18.TabIndex = 30;
+            this.labelControl18.Text = "ÖdenenTarih :";
+            // 
+            // datePaidDate
+            // 
+            this.datePaidDate.EditValue = null;
+            this.datePaidDate.Location = new System.Drawing.Point(380, 67);
+            this.datePaidDate.Name = "datePaidDate";
+            this.datePaidDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.datePaidDate.Properties.Appearance.Options.UseFont = true;
+            this.datePaidDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.datePaidDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.datePaidDate.Size = new System.Drawing.Size(178, 26);
+            this.datePaidDate.TabIndex = 29;
+            // 
             // labelControl16
             // 
             this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -347,37 +379,6 @@ namespace FormUI.Views.InstalmentForms
             this.labelPaymentDate.Size = new System.Drawing.Size(9, 19);
             this.labelPaymentDate.TabIndex = 28;
             this.labelPaymentDate.Text = "0";
-            // 
-            // datePaidDate
-            // 
-            this.datePaidDate.EditValue = null;
-            this.datePaidDate.Location = new System.Drawing.Point(380, 67);
-            this.datePaidDate.Name = "datePaidDate";
-            this.datePaidDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.datePaidDate.Properties.Appearance.Options.UseFont = true;
-            this.datePaidDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.datePaidDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.datePaidDate.Size = new System.Drawing.Size(178, 26);
-            this.datePaidDate.TabIndex = 29;
-            // 
-            // labelControl18
-            // 
-            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl18.Appearance.Options.UseFont = true;
-            this.labelControl18.Location = new System.Drawing.Point(252, 70);
-            this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(103, 19);
-            this.labelControl18.TabIndex = 30;
-            this.labelControl18.Text = "ÖdenenTarih :";
-            // 
-            // navButton3
-            // 
-            this.navButton3.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Left;
-            this.navButton3.Caption = "İptal";
-            this.navButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton3.ImageOptions.Image")));
-            this.navButton3.Name = "navButton3";
             // 
             // PayInstalment
             // 

@@ -20,12 +20,14 @@ namespace DataAccess.Concrete.EntityFramework
                              on i.SaleID equals s.ID
                              join c in context.Customers
                              on s.CustomerID equals c.ID
+                             join p in context.Products
+                             on s.ProductID equals p.ID
                              select new InstalmentDto
                              {
-                                 ID = s.ID,
+                                 ID = i.ID,
                                  CustomerName = c.Name,
                                  CustomerPhoneNumber = c.PhoneNumber,
-                                 Product = s.Product,
+                                 Product = p.Name,
                                  SaleDate = s.SaleDate,
                                  InstalmentNo = i.InstalmentNo,
                                  PaidPrice = i.PaidPrice,
@@ -48,12 +50,14 @@ namespace DataAccess.Concrete.EntityFramework
                              on i.SaleID equals s.ID
                              join c in context.Customers
                              on s.CustomerID equals c.ID
+                             join p in context.Products
+                             on s.ProductID equals p.ID
                              select new InstalmentDto
                              {
                                  ID = s.ID,
                                  CustomerName = c.Name,
                                  CustomerPhoneNumber = c.PhoneNumber,
-                                 Product = s.Product,
+                                 Product = p.Name,
                                  SaleDate = s.SaleDate,
                                  InstalmentNo = i.InstalmentNo,
                                  PaidPrice = i.PaidPrice,

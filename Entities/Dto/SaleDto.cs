@@ -13,7 +13,7 @@ namespace Entities.Dto
         [Display(Name = "Müşteri Telefon")]
         public string CustomerPhoneNumber { get; set; }
         [Display(Name = "Ürün")]
-        public string Product { get; set; }
+        public string ProductName { get; set; }
         [Display(Name = "Satış Tarihi")]
         public DateTime SaleDate { get; set; }
         [Display(Name = "Ödeme Türü")]
@@ -22,5 +22,11 @@ namespace Entities.Dto
         public int Price { get; set; }
         [Display(Name = "Kalan Tutar")]
         public int RemainderPrice { get; set; }
+        [Display(Name = "Referans Adı")]
+        public string ReferanceCustomerName { get; set; }
+        [Display(Name = "Montajcı")]
+        public string Assembler { get; set; }
+        [Display(Name = "Açıklama")]
+        public string Comment { get; set; }
     }
 }

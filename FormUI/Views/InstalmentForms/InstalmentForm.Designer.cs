@@ -29,6 +29,7 @@ namespace FormUI.Views.InstalmentForms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -42,13 +43,26 @@ namespace FormUI.Views.InstalmentForms
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.ınstalmentDtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCustomerName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCustomerPhoneNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProduct = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSaleDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInstalmentNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPayablePrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPaidPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPaymentDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPaidDate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ınstalmentDtoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl
             // 
+            this.gridControl.DataSource = this.ınstalmentDtoBindingSource;
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl.Location = new System.Drawing.Point(0, 158);
             this.gridControl.MainView = this.gridView;
@@ -62,6 +76,17 @@ namespace FormUI.Views.InstalmentForms
             // gridView
             // 
             this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID,
+            this.colCustomerName,
+            this.colCustomerPhoneNumber,
+            this.colProduct,
+            this.colSaleDate,
+            this.colInstalmentNo,
+            this.colPayablePrice,
+            this.colPaidPrice,
+            this.colPaymentDate,
+            this.colPaidDate});
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.Editable = false;
@@ -125,6 +150,7 @@ namespace FormUI.Views.InstalmentForms
             this.bbiDelete.Id = 18;
             this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiDelete.Name = "bbiDelete";
+            this.bbiDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDelete_ItemClick);
             // 
             // bbiRefresh
             // 
@@ -170,7 +196,81 @@ namespace FormUI.Views.InstalmentForms
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
             this.ribbonStatusBar.Size = new System.Drawing.Size(790, 24);
             // 
-            // CustomerForm
+            // ınstalmentDtoBindingSource
+            // 
+            this.ınstalmentDtoBindingSource.DataSource = typeof(Entities.Dto.InstalmentDto);
+            // 
+            // colID
+            // 
+            this.colID.FieldName = "ID";
+            this.colID.Name = "colID";
+            this.colID.Visible = true;
+            this.colID.VisibleIndex = 0;
+            // 
+            // colCustomerName
+            // 
+            this.colCustomerName.FieldName = "CustomerName";
+            this.colCustomerName.Name = "colCustomerName";
+            this.colCustomerName.Visible = true;
+            this.colCustomerName.VisibleIndex = 1;
+            // 
+            // colCustomerPhoneNumber
+            // 
+            this.colCustomerPhoneNumber.FieldName = "CustomerPhoneNumber";
+            this.colCustomerPhoneNumber.Name = "colCustomerPhoneNumber";
+            this.colCustomerPhoneNumber.Visible = true;
+            this.colCustomerPhoneNumber.VisibleIndex = 2;
+            // 
+            // colProduct
+            // 
+            this.colProduct.FieldName = "Product";
+            this.colProduct.Name = "colProduct";
+            this.colProduct.Visible = true;
+            this.colProduct.VisibleIndex = 3;
+            // 
+            // colSaleDate
+            // 
+            this.colSaleDate.FieldName = "SaleDate";
+            this.colSaleDate.Name = "colSaleDate";
+            this.colSaleDate.Visible = true;
+            this.colSaleDate.VisibleIndex = 4;
+            // 
+            // colInstalmentNo
+            // 
+            this.colInstalmentNo.FieldName = "InstalmentNo";
+            this.colInstalmentNo.Name = "colInstalmentNo";
+            this.colInstalmentNo.Visible = true;
+            this.colInstalmentNo.VisibleIndex = 5;
+            // 
+            // colPayablePrice
+            // 
+            this.colPayablePrice.FieldName = "PayablePrice";
+            this.colPayablePrice.Name = "colPayablePrice";
+            this.colPayablePrice.Visible = true;
+            this.colPayablePrice.VisibleIndex = 6;
+            // 
+            // colPaidPrice
+            // 
+            this.colPaidPrice.FieldName = "PaidPrice";
+            this.colPaidPrice.Name = "colPaidPrice";
+            this.colPaidPrice.Visible = true;
+            this.colPaidPrice.VisibleIndex = 7;
+            // 
+            // colPaymentDate
+            // 
+            this.colPaymentDate.FieldName = "PaymentDate";
+            this.colPaymentDate.Name = "colPaymentDate";
+            this.colPaymentDate.Visible = true;
+            this.colPaymentDate.VisibleIndex = 8;
+            // 
+            // colPaidDate
+            // 
+            this.colPaidDate.FieldName = "PaidDate";
+            this.colPaidDate.Name = "colPaidDate";
+            this.colPaidDate.Visible = true;
+            this.colPaidDate.VisibleIndex = 9;
+            // 
+            // InstalmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,13 +278,14 @@ namespace FormUI.Views.InstalmentForms
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.gridControl);
             this.Controls.Add(this.ribbonControl);
-            this.Name = "CustomerForm";
+            this.Name = "InstalmentForm";
             this.Ribbon = this.ribbonControl;
             this.StatusBar = this.ribbonStatusBar;
             this.Load += new System.EventHandler(this.CustomerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ınstalmentDtoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +305,16 @@ namespace FormUI.Views.InstalmentForms
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
+        private System.Windows.Forms.BindingSource ınstalmentDtoBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colID;
+        private DevExpress.XtraGrid.Columns.GridColumn colCustomerName;
+        private DevExpress.XtraGrid.Columns.GridColumn colCustomerPhoneNumber;
+        private DevExpress.XtraGrid.Columns.GridColumn colProduct;
+        private DevExpress.XtraGrid.Columns.GridColumn colSaleDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colInstalmentNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colPayablePrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colPaidPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colPaymentDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colPaidDate;
     }
 }
