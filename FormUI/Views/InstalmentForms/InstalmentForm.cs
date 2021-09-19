@@ -46,12 +46,36 @@ namespace FormUI.Views.InstalmentForms
 
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            gridControl.DataSource = instalmentService.GetAll();
+            gridControl.DataSource = barToggleSwitchItem1.Checked ? instalmentService.GetAllDetails() : instalmentService.GetNotPaidDetails();
         }
 
         private void bbiDelete_ItemClick(object sender, ItemClickEventArgs e)
         {
             MessageBox.Show(gridView.ActiveFilterString);
+        }
+
+
+        private void GridView_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        {
+            int paid = Convert.ToInt32(gridView.GetRowCellValue(e.RowHandle, "PaidPrice"));
+            int payable = Convert.ToInt32(gridView.GetRowCellValue(e.RowHandle, "PayablePrice"));
+
+            if (paid == payable)
+            {
+                e.Appearance.BackColor = Color.LightGreen;
+            }
+            else
+            {
+                e.Appearance.BackColor = Color.IndianRed;
+            }
+
+            //Override any other formatting  
+            e.HighPriority = true;
+        }
+
+        private void barToggleSwitchItem1_CheckedChanged(object sender, ItemClickEventArgs e)
+        {
+            gridControl.DataSource = barToggleSwitchItem1.Checked ? instalmentService.GetAllDetails() : instalmentService.GetNotPaidDetails();
         }
     }
 }

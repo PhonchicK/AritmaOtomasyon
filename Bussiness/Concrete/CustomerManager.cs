@@ -1,6 +1,7 @@
 ﻿using Bussiness.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.Dto;
 using System.Collections.Generic;
 
 namespace Bussiness.Concrete
@@ -27,9 +28,19 @@ namespace Bussiness.Concrete
             return customerDal.GetAll();
         }
 
+        public List<CustomerDto> GetAllDetails()
+        {
+            return customerDal.GetAllDetails();
+        }
+
         public Customer GetByID(int id)
         {
             return customerDal.Get(c => c.ID == id);
+        }
+
+        public CustomerDto GetDetails(int id)
+        {
+            return customerDal.GetDetails(c => c.ID == id);
         }
 
         public void Update(Customer customer)

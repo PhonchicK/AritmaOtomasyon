@@ -23,8 +23,6 @@ namespace Entities.Concrete
         public int Price { get; set; }
         [Column(Name = "RemainderPrice", DbType = "INTEGER")]
         public int RemainderPrice { get; set; }//Kalan Tutar
-        [Column(Name = "ReferanceCustomerID", DbType = "INTEGER")]
-        public int? ReferanceCustomerID { get; set; }//Referans olan Müşterinin IDs si
         [Column(Name = "Assembler", DbType = "VARCHAR")]
         public string Assembler { get; set; }//Montaj yapan kişi
         [Column(Name = "Comment", DbType = "VARCHAR")]

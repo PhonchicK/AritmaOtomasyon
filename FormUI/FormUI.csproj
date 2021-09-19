@@ -165,17 +165,35 @@
     <Compile Include="Views\InstalmentForms\PayInstalment.Designer.cs">
       <DependentUpon>PayInstalment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProductForms\NewProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProductForms\NewProductForm.Designer.cs">
+      <DependentUpon>NewProductForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProductForms\SelectProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\ProductForms\SelectProductForm.Designer.cs">
       <DependentUpon>SelectProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProductForms\ProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProductForms\ProductForm.Designer.cs">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SaleForms\AddSaleForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\SaleForms\AddSaleForm.Designer.cs">
       <DependentUpon>AddSaleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SaleForms\NewSaleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SaleForms\NewSaleForm.Designer.cs">
+      <DependentUpon>NewSaleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SaleForms\SaleForm.cs">
       <SubType>Form</SubType>
@@ -214,11 +232,20 @@
     <EmbeddedResource Include="Views\InstalmentForms\PayInstalment.resx">
       <DependentUpon>PayInstalment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductForms\NewProductForm.resx">
+      <DependentUpon>NewProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductForms\ProductForm.resx">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductForms\SelectProductForm.resx">
       <DependentUpon>SelectProductForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SaleForms\AddSaleForm.resx">
       <DependentUpon>AddSaleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SaleForms\NewSaleForm.resx">
+      <DependentUpon>NewSaleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SaleForms\SaleForm.resx">
       <DependentUpon>SaleForm.cs</DependentUpon>

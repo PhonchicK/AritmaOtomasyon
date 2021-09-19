@@ -23,7 +23,7 @@ namespace FormUI.Views.CustomerForms
         {
             InitializeComponent();
             customerService = InstanceFactory.GetInstance<ICustomerService>();
-            gridControl.DataSource = customerService.GetAll();
+            gridControl.DataSource = customerService.GetAllDetails();
             //bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
         }
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
@@ -40,13 +40,13 @@ namespace FormUI.Views.CustomerForms
         {
             if(new AddCustomerForm().ShowDialog() == DialogResult.OK)
             {
-                gridControl.DataSource = customerService.GetAll();
+                gridControl.DataSource = customerService.GetAllDetails();
             }
         }
 
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            gridControl.DataSource = customerService.GetAll();
+            gridControl.DataSource = customerService.GetAllDetails();
         }
     }
 }

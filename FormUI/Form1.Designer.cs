@@ -34,6 +34,7 @@ namespace FormUI
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
+            this.metroButton6 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroButton1
@@ -77,7 +78,7 @@ namespace FormUI
             // 
             // metroButton5
             // 
-            this.metroButton5.Location = new System.Drawing.Point(325, 276);
+            this.metroButton5.Location = new System.Drawing.Point(609, 279);
             this.metroButton5.Name = "metroButton5";
             this.metroButton5.Size = new System.Drawing.Size(199, 173);
             this.metroButton5.TabIndex = 4;
@@ -85,11 +86,22 @@ namespace FormUI
             this.metroButton5.UseSelectable = true;
             this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
             // 
+            // metroButton6
+            // 
+            this.metroButton6.Location = new System.Drawing.Point(23, 242);
+            this.metroButton6.Name = "metroButton6";
+            this.metroButton6.Size = new System.Drawing.Size(199, 173);
+            this.metroButton6.TabIndex = 5;
+            this.metroButton6.Text = "Ürünler";
+            this.metroButton6.UseSelectable = true;
+            this.metroButton6.Click += new System.EventHandler(this.metroButton6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(865, 503);
+            this.Controls.Add(this.metroButton6);
             this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.metroButton3);
@@ -110,6 +122,7 @@ namespace FormUI
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton4;
         private MetroFramework.Controls.MetroButton metroButton5;
+        private MetroFramework.Controls.MetroButton metroButton6;
     }
 }
 

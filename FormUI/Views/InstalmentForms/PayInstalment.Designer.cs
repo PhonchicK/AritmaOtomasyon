@@ -104,6 +104,7 @@ namespace FormUI.Views.InstalmentForms
             this.navButton3.Caption = "İptal";
             this.navButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton3.ImageOptions.Image")));
             this.navButton3.Name = "navButton3";
+            this.navButton3.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButton3_ElementClick);
             // 
             // groupControl1
             // 

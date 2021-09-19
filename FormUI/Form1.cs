@@ -3,6 +3,7 @@ using Bussiness.Abstract;
 using Entities.Concrete;
 using FormUI.Views.CustomerForms;
 using FormUI.Views.InstalmentForms;
+using FormUI.Views.ProductForms;
 using FormUI.Views.SaleForms;
 using MetroFramework.Forms;
 using System;
@@ -45,7 +46,12 @@ namespace FormUI
 
         private void metroButton5_Click(object sender, EventArgs e)
         {
-            
+            new PayInstalment(1).Show();
+        }
+
+        private void metroButton6_Click(object sender, EventArgs e)
+        {
+            new ProductForm().Show();
         }
     }
 }

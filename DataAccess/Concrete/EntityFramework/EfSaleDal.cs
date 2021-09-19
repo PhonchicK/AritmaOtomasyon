@@ -20,8 +20,8 @@ namespace DataAccess.Concrete.EntityFramework
                              on s.CustomerID equals c.ID
                              join p in context.Products
                              on s.ProductID equals p.ID
-                             join cR in context.Customers
-                             on s.ReferanceCustomerID equals cR.ID into crName from refCustomer in crName.DefaultIfEmpty()
+                             /*join cR in context.Customers
+                             on s.ReferanceCustomerID equals cR.ID into crName from refCustomer in crName.DefaultIfEmpty()*/
                              select new SaleDto
                              {
                                  ID = s.ID,
@@ -32,7 +32,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  PaymentType = s.PaymentType,
                                  SaleDate = s.SaleDate,
                                  RemainderPrice = s.RemainderPrice,
-                                 ReferanceCustomerName = refCustomer.Name,
+                                 //ReferanceCustomerName = refCustomer.Name,
                                  Assembler = s.Assembler,
                                  Comment = s.Comment
                              };
@@ -51,9 +51,9 @@ namespace DataAccess.Concrete.EntityFramework
                              on s.CustomerID equals c.ID
                              join p in context.Products
                              on s.ProductID equals p.ID
-                             join cR in context.Customers
+                             /*join cR in context.Customers
                              on s.ReferanceCustomerID equals cR.ID into crName
-                             from refCustomer in crName.DefaultIfEmpty()
+                             from refCustomer in crName.DefaultIfEmpty()*/
                              select new SaleDto
                              {
                                  ID = s.ID,
@@ -64,7 +64,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  PaymentType = s.PaymentType,
                                  SaleDate = s.SaleDate,
                                  RemainderPrice = s.RemainderPrice,
-                                 ReferanceCustomerName = refCustomer.Name,
+                                 //ReferanceCustomerName = refCustomer.Name,
                                  Assembler = s.Assembler,
                                  Comment = s.Comment
                              };

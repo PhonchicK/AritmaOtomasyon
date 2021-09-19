@@ -12,6 +12,7 @@ namespace Bussiness.Abstract
     {
         List<Instalment> GetAll();
         List<InstalmentDto> GetAllDetails();
+        List<InstalmentDto> GetNotPaidDetails();
         List<Instalment> GetSaleInstalments(int saleID);
         Instalment GetByID(int id);
         InstalmentDto GetDetailsByID(int id);

@@ -62,6 +62,7 @@ namespace FormUI.Views.CustomerForms
             this.ClientSize = new System.Drawing.Size(798, 599);
             this.Controls.Add(this.gridControl);
             this.Name = "SelectCustomerForm";
+            this.Load += new System.EventHandler(this.SelectCustomerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             this.ResumeLayout(false);

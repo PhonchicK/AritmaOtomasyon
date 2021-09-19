@@ -20,7 +20,7 @@ namespace FormUI.Views.InstalmentForms
         ICustomerService customerService;
 
         private Instalment[] saleInstalments;
-        private int payInstalmentIndex = 0;
+        private int payInstalmentIndex;
         public PayInstalment(int saleID)
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace FormUI.Views.InstalmentForms
         {
             for (int i = 0; i < saleInstalments.Length; i++)
             {
-                if (saleInstalments[i].PaidPrice < saleInstalments[i].PayablePrice)//Ödenecek taksiti bulmak için kontrol
+                if (saleInstalments[i].PaidPrice < saleInstalments[i].PayablePrice && saleInstalments[i].PaymentDate.Month >= DateTime.Now.Month)//Ödenecek taksiti bulmak için kontrol
                 {
                     payInstalmentIndex = i;
                     break;
@@ -44,6 +44,8 @@ namespace FormUI.Views.InstalmentForms
             int totalRemainderPrice = 0;
             int totalRemainderMonths = 0;
             int notPaidMonths = 0;
+            int totalNotPaid = 0;
+
             foreach (var item in saleInstalments)
             {
                 totalRemainderPrice += item.PayablePrice - item.PaidPrice;//Toplam kalan borç hesabı
@@ -51,6 +53,7 @@ namespace FormUI.Views.InstalmentForms
                 totalRemainderMonths += (item.PaidPrice < item.PayablePrice) ? 1 : 0;//Toplam kalan ay hesabı
 
                 notPaidMonths += ((item.PaidPrice < item.PayablePrice) && (item.PaymentDate < DateTime.Now)) ? 1 : 0;
+                totalNotPaid += ((item.PaidPrice < item.PayablePrice) && (item.PaymentDate < DateTime.Now)) ? item.PayablePrice - item.PaidPrice : 0;
             }
             labelRemainderPrice.Text = totalRemainderPrice.ToString();
             labelRemainderMonths.Text = totalRemainderMonths.ToString();
@@ -60,8 +63,7 @@ namespace FormUI.Views.InstalmentForms
 
             labelLastDelayInstalment.Text = ((int)(DateTime.Now - saleInstalments[firstPayInstalmentIndex].PaymentDate).TotalDays).ToString();
 
-            labelPayablePrice.Text = ((saleInstalments[payInstalmentIndex].PayablePrice - saleInstalments[payInstalmentIndex].PaidPrice) + 
-                (saleInstalments[payInstalmentIndex - 1].PayablePrice - saleInstalments[payInstalmentIndex - 1].PaidPrice)).ToString();
+            labelPayablePrice.Text = ((saleInstalments[payInstalmentIndex].PayablePrice - saleInstalments[payInstalmentIndex].PaidPrice) + totalNotPaid).ToString();
 
             labelPaymentDate.Text = saleInstalments[payInstalmentIndex].PaymentDate.Date.ToString();
 
@@ -71,20 +73,35 @@ namespace FormUI.Views.InstalmentForms
         private void navButton1_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
         {
             int paymentPrice = Convert.ToInt32(textEditPrice.Text);
+            int remainingPrice = 0;
+            for (int i = 0; i <= payInstalmentIndex +1; i++)
+            {
+                remainingPrice = (saleInstalments[i].PaidPrice + paymentPrice) - saleInstalments[i].PayablePrice;//Artacak tutar hesabı
+                saleInstalments[i].PaidPrice += paymentPrice - remainingPrice;
+                saleInstalments[i].PaidDate = datePaidDate.DateTime;
 
-            int remainingPrice = (saleInstalments[payInstalmentIndex].PaidPrice + paymentPrice) - saleInstalments[payInstalmentIndex].PayablePrice;//Artacak tutar hesabı
-            saleInstalments[payInstalmentIndex].PaidPrice += paymentPrice - remainingPrice;
-            saleInstalments[payInstalmentIndex].PaidDate = datePaidDate.DateTime;
-            
-            instalmentService.Update(saleInstalments[payInstalmentIndex]);
+                instalmentService.Update(saleInstalments[i]);
 
-            paymentPrice = remainingPrice;
-            if (remainingPrice > 0)//Tutar artmış ise
+                paymentPrice = remainingPrice;
+            }
+
+            /*if (remainingPrice > 0)
+            {
+                remainingPrice = ((saleInstalments[payInstalmentIndex].PaidPrice + paymentPrice) < saleInstalments[payInstalmentIndex].PayablePrice) ? 0 : //Artan ücret - ye düşmemesi için
+                         (saleInstalments[payInstalmentIndex].PaidPrice + paymentPrice) - saleInstalments[payInstalmentIndex].PayablePrice;//Artacak tutar hesabı
+                saleInstalments[payInstalmentIndex].PaidPrice += paymentPrice - remainingPrice;
+                saleInstalments[payInstalmentIndex].PaidDate = datePaidDate.DateTime;
+
+                instalmentService.Update(saleInstalments[payInstalmentIndex]);
+
+                paymentPrice = remainingPrice;
+            }*/
+            if (paymentPrice > 0)//Tutar artmış ise
             {
                 for (int i = saleInstalments.Length - 1; i > 0; i--)//Son taksitten başla 
                 {
                     if (paymentPrice < 1)
-                        return;
+                        break;
 
                     remainingPrice = ((saleInstalments[i].PaidPrice + paymentPrice) < saleInstalments[i].PayablePrice) ? 0 : //Artan ücret - ye düşmemesi için
                         (saleInstalments[i].PaidPrice + paymentPrice) - saleInstalments[i].PayablePrice;
@@ -97,6 +114,12 @@ namespace FormUI.Views.InstalmentForms
                     paymentPrice = remainingPrice;
                 }
             }
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void navButton3_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

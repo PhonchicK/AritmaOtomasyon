@@ -66,6 +66,7 @@ namespace FormUI.Views.SaleForms
             this.comboBoxPaymentType = new System.Windows.Forms.ComboBox();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.GroupInstalment = new DevExpress.XtraEditors.GroupControl();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ColumnInstalmentNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnInstalmentPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,28 +75,17 @@ namespace FormUI.Views.SaleForms
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.textRefID = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.textRefPhoneNumber = new DevExpress.XtraEditors.TextEdit();
-            this.textRefName = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.textProductName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.textProductID = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.textAssembler = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -122,21 +112,13 @@ namespace FormUI.Views.SaleForms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditInstalmentStart.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditInstalmentStart.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
-            this.xtraTabControl1.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
-            this.xtraTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textRefID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textRefPhoneNumber.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textRefName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textProductName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textProductID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
+            this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textAssembler.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tileNavPane1
@@ -154,7 +136,7 @@ namespace FormUI.Views.SaleForms
             this.tileNavPane1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tileNavPane1.Location = new System.Drawing.Point(0, 0);
             this.tileNavPane1.Name = "tileNavPane1";
-            this.tileNavPane1.Size = new System.Drawing.Size(1086, 48);
+            this.tileNavPane1.Size = new System.Drawing.Size(809, 48);
             this.tileNavPane1.TabIndex = 0;
             // 
             // navButton1
@@ -182,7 +164,7 @@ namespace FormUI.Views.SaleForms
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(261, 337);
             this.groupControl1.TabIndex = 1;
-            this.groupControl1.Text = "Müşteri";
+            this.groupControl1.Text = "Müşteri*";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // tabControlCustomer
@@ -367,7 +349,7 @@ namespace FormUI.Views.SaleForms
             this.MaintenanceGroup.Controls.Add(this.labelControl10);
             this.MaintenanceGroup.Controls.Add(this.labelControl9);
             this.MaintenanceGroup.Controls.Add(this.comboBoxMaintenanceInterval);
-            this.MaintenanceGroup.Location = new System.Drawing.Point(817, 77);
+            this.MaintenanceGroup.Location = new System.Drawing.Point(543, 104);
             this.MaintenanceGroup.Name = "MaintenanceGroup";
             this.MaintenanceGroup.Size = new System.Drawing.Size(261, 151);
             this.MaintenanceGroup.TabIndex = 3;
@@ -432,14 +414,15 @@ namespace FormUI.Views.SaleForms
             this.groupControl3.Controls.Add(this.labelControl13);
             this.groupControl3.Controls.Add(this.labelControl11);
             this.groupControl3.Controls.Add(this.comboBoxPaymentType);
-            this.groupControl3.Location = new System.Drawing.Point(280, 234);
+            this.groupControl3.Location = new System.Drawing.Point(277, 54);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(261, 166);
             this.groupControl3.TabIndex = 22;
-            this.groupControl3.Text = "Ödeme";
+            this.groupControl3.Text = "Ödeme*";
             // 
             // textPaidPrice
             // 
+            this.textPaidPrice.EditValue = "0";
             this.textPaidPrice.Location = new System.Drawing.Point(5, 134);
             this.textPaidPrice.Name = "textPaidPrice";
             this.textPaidPrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -507,7 +490,7 @@ namespace FormUI.Views.SaleForms
             // checkEdit1
             // 
             this.checkEdit1.EditValue = true;
-            this.checkEdit1.Location = new System.Drawing.Point(882, 51);
+            this.checkEdit1.Location = new System.Drawing.Point(608, 78);
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.checkEdit1.Properties.Appearance.Options.UseFont = true;
@@ -527,11 +510,22 @@ namespace FormUI.Views.SaleForms
             this.GroupInstalment.Controls.Add(this.labelControl14);
             this.GroupInstalment.Controls.Add(this.labelControl16);
             this.GroupInstalment.Controls.Add(this.comboBox1);
-            this.GroupInstalment.Location = new System.Drawing.Point(547, 54);
+            this.GroupInstalment.Location = new System.Drawing.Point(276, 226);
             this.GroupInstalment.Name = "GroupInstalment";
             this.GroupInstalment.Size = new System.Drawing.Size(261, 379);
             this.GroupInstalment.TabIndex = 26;
             this.GroupInstalment.Text = "Taksit";
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.simpleButton5.Appearance.Options.UseFont = true;
+            this.simpleButton5.Location = new System.Drawing.Point(136, 337);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(114, 23);
+            this.simpleButton5.TabIndex = 28;
+            this.simpleButton5.Text = "Temizle";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // dataGridView1
             // 
@@ -559,7 +553,7 @@ namespace FormUI.Views.SaleForms
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Location = new System.Drawing.Point(10, 337);
             this.simpleButton2.Name = "simpleButton2";
@@ -619,152 +613,6 @@ namespace FormUI.Views.SaleForms
             this.comboBox1.Size = new System.Drawing.Size(179, 27);
             this.comboBox1.TabIndex = 22;
             // 
-            // groupControl2
-            // 
-            this.groupControl2.AppearanceCaption.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
-            this.groupControl2.AppearanceCaption.Options.UseBorderColor = true;
-            this.groupControl2.Controls.Add(this.xtraTabControl1);
-            this.groupControl2.Location = new System.Drawing.Point(817, 234);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(261, 213);
-            this.groupControl2.TabIndex = 3;
-            this.groupControl2.Text = "Referans Müşteri";
-            // 
-            // xtraTabControl1
-            // 
-            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(2, 23);
-            this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(257, 188);
-            this.xtraTabControl1.TabIndex = 2;
-            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1,
-            this.xtraTabPage2});
-            // 
-            // xtraTabPage1
-            // 
-            this.xtraTabPage1.Controls.Add(this.textEdit5);
-            this.xtraTabPage1.Controls.Add(this.textEdit6);
-            this.xtraTabPage1.Controls.Add(this.labelControl15);
-            this.xtraTabPage1.Controls.Add(this.labelControl17);
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(255, 163);
-            this.xtraTabPage1.Text = "Yeni";
-            // 
-            // textEdit5
-            // 
-            this.textEdit5.Location = new System.Drawing.Point(8, 88);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textEdit5.Properties.Appearance.Options.UseFont = true;
-            this.textEdit5.Size = new System.Drawing.Size(238, 26);
-            this.textEdit5.TabIndex = 13;
-            // 
-            // textEdit6
-            // 
-            this.textEdit6.Location = new System.Drawing.Point(8, 22);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textEdit6.Properties.Appearance.Options.UseFont = true;
-            this.textEdit6.Size = new System.Drawing.Size(238, 26);
-            this.textEdit6.TabIndex = 12;
-            // 
-            // labelControl15
-            // 
-            this.labelControl15.Location = new System.Drawing.Point(11, 69);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(90, 13);
-            this.labelControl15.TabIndex = 11;
-            this.labelControl15.Text = "Telefon Numarası :";
-            // 
-            // labelControl17
-            // 
-            this.labelControl17.Location = new System.Drawing.Point(11, 3);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(22, 13);
-            this.labelControl17.TabIndex = 10;
-            this.labelControl17.Text = "Adı :";
-            // 
-            // xtraTabPage2
-            // 
-            this.xtraTabPage2.Controls.Add(this.textRefID);
-            this.xtraTabPage2.Controls.Add(this.simpleButton3);
-            this.xtraTabPage2.Controls.Add(this.textRefPhoneNumber);
-            this.xtraTabPage2.Controls.Add(this.textRefName);
-            this.xtraTabPage2.Controls.Add(this.labelControl19);
-            this.xtraTabPage2.Controls.Add(this.labelControl20);
-            this.xtraTabPage2.Controls.Add(this.labelControl21);
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(255, 163);
-            this.xtraTabPage2.Text = "Varolan";
-            // 
-            // textRefID
-            // 
-            this.textRefID.Location = new System.Drawing.Point(10, 32);
-            this.textRefID.Name = "textRefID";
-            this.textRefID.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textRefID.Properties.Appearance.Options.UseFont = true;
-            this.textRefID.Properties.ReadOnly = true;
-            this.textRefID.Size = new System.Drawing.Size(164, 26);
-            this.textRefID.TabIndex = 8;
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.simpleButton3.Location = new System.Drawing.Point(180, 32);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(71, 26);
-            this.simpleButton3.TabIndex = 9;
-            this.simpleButton3.Text = "Seç";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
-            // 
-            // textRefPhoneNumber
-            // 
-            this.textRefPhoneNumber.Location = new System.Drawing.Point(11, 133);
-            this.textRefPhoneNumber.Name = "textRefPhoneNumber";
-            this.textRefPhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textRefPhoneNumber.Properties.Appearance.Options.UseFont = true;
-            this.textRefPhoneNumber.Properties.ReadOnly = true;
-            this.textRefPhoneNumber.Size = new System.Drawing.Size(238, 26);
-            this.textRefPhoneNumber.TabIndex = 7;
-            // 
-            // textRefName
-            // 
-            this.textRefName.Location = new System.Drawing.Point(11, 84);
-            this.textRefName.Name = "textRefName";
-            this.textRefName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textRefName.Properties.Appearance.Options.UseFont = true;
-            this.textRefName.Properties.ReadOnly = true;
-            this.textRefName.Size = new System.Drawing.Size(238, 26);
-            this.textRefName.TabIndex = 6;
-            // 
-            // labelControl19
-            // 
-            this.labelControl19.Location = new System.Drawing.Point(14, 114);
-            this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(90, 13);
-            this.labelControl19.TabIndex = 5;
-            this.labelControl19.Text = "Telefon Numarası :";
-            // 
-            // labelControl20
-            // 
-            this.labelControl20.Location = new System.Drawing.Point(14, 65);
-            this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(22, 13);
-            this.labelControl20.TabIndex = 4;
-            this.labelControl20.Text = "Adı :";
-            // 
-            // labelControl21
-            // 
-            this.labelControl21.Location = new System.Drawing.Point(14, 14);
-            this.labelControl21.Name = "labelControl21";
-            this.labelControl21.Size = new System.Drawing.Size(11, 13);
-            this.labelControl21.TabIndex = 1;
-            this.labelControl21.Text = "İD";
-            // 
             // groupControl4
             // 
             this.groupControl4.AppearanceCaption.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
@@ -774,11 +622,11 @@ namespace FormUI.Views.SaleForms
             this.groupControl4.Controls.Add(this.textProductID);
             this.groupControl4.Controls.Add(this.simpleButton4);
             this.groupControl4.Controls.Add(this.labelControl8);
-            this.groupControl4.Location = new System.Drawing.Point(280, 54);
+            this.groupControl4.Location = new System.Drawing.Point(12, 397);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(261, 166);
             this.groupControl4.TabIndex = 26;
-            this.groupControl4.Text = "Ürün";
+            this.groupControl4.Text = "Ürün*";
             // 
             // textProductName
             // 
@@ -828,24 +676,61 @@ namespace FormUI.Views.SaleForms
             this.labelControl8.TabIndex = 11;
             this.labelControl8.Text = "İD";
             // 
-            // simpleButton5
+            // groupControl5
             // 
-            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.Location = new System.Drawing.Point(136, 337);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(114, 23);
-            this.simpleButton5.TabIndex = 28;
-            this.simpleButton5.Text = "Temizle";
-            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
+            this.groupControl5.AppearanceCaption.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
+            this.groupControl5.AppearanceCaption.Options.UseBorderColor = true;
+            this.groupControl5.Controls.Add(this.textBox2);
+            this.groupControl5.Controls.Add(this.labelControl23);
+            this.groupControl5.Controls.Add(this.textAssembler);
+            this.groupControl5.Controls.Add(this.labelControl22);
+            this.groupControl5.Location = new System.Drawing.Point(543, 318);
+            this.groupControl5.Name = "groupControl5";
+            this.groupControl5.Size = new System.Drawing.Size(261, 245);
+            this.groupControl5.TabIndex = 27;
+            this.groupControl5.Text = "Diğer";
+            // 
+            // textAssembler
+            // 
+            this.textAssembler.Location = new System.Drawing.Point(7, 44);
+            this.textAssembler.Name = "textAssembler";
+            this.textAssembler.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.textAssembler.Properties.Appearance.Options.UseFont = true;
+            this.textAssembler.Size = new System.Drawing.Size(238, 26);
+            this.textAssembler.TabIndex = 17;
+            // 
+            // labelControl22
+            // 
+            this.labelControl22.Location = new System.Drawing.Point(10, 25);
+            this.labelControl22.Name = "labelControl22";
+            this.labelControl22.Size = new System.Drawing.Size(75, 13);
+            this.labelControl22.TabIndex = 16;
+            this.labelControl22.Text = "Monyaj Yapan :";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.textBox2.Location = new System.Drawing.Point(7, 91);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(238, 141);
+            this.textBox2.TabIndex = 17;
+            // 
+            // labelControl23
+            // 
+            this.labelControl23.Location = new System.Drawing.Point(10, 72);
+            this.labelControl23.Name = "labelControl23";
+            this.labelControl23.Size = new System.Drawing.Size(48, 13);
+            this.labelControl23.TabIndex = 16;
+            this.labelControl23.Text = "Açıklama :";
             // 
             // AddSaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 455);
+            this.ClientSize = new System.Drawing.Size(809, 627);
+            this.Controls.Add(this.groupControl5);
             this.Controls.Add(this.groupControl4);
-            this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.GroupInstalment);
             this.Controls.Add(this.checkEdit1);
             this.Controls.Add(this.groupControl3);
@@ -886,24 +771,15 @@ namespace FormUI.Views.SaleForms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditInstalmentStart.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditInstalmentStart.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
-            this.xtraTabControl1.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
-            this.xtraTabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
-            this.xtraTabPage2.ResumeLayout(false);
-            this.xtraTabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textRefID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textRefPhoneNumber.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textRefName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             this.groupControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textProductName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textProductID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
+            this.groupControl5.ResumeLayout(false);
+            this.groupControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textAssembler.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -950,21 +826,6 @@ namespace FormUI.Views.SaleForms
         private DevExpress.XtraEditors.DateEdit dateEditInstalmentStart;
         private DevExpress.XtraBars.Navigation.NavButton navButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
-        private DevExpress.XtraEditors.LabelControl labelControl15;
-        private DevExpress.XtraEditors.LabelControl labelControl17;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
-        private DevExpress.XtraEditors.TextEdit textRefID;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.TextEdit textRefPhoneNumber;
-        private DevExpress.XtraEditors.TextEdit textRefName;
-        private DevExpress.XtraEditors.LabelControl labelControl19;
-        private DevExpress.XtraEditors.LabelControl labelControl20;
-        private DevExpress.XtraEditors.LabelControl labelControl21;
         private DevExpress.XtraEditors.GroupControl groupControl4;
         private DevExpress.XtraEditors.TextEdit textProductName;
         private DevExpress.XtraEditors.LabelControl labelControl18;
@@ -976,5 +837,10 @@ namespace FormUI.Views.SaleForms
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnInstalmentNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnInstalmentPrice;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.GroupControl groupControl5;
+        private System.Windows.Forms.TextBox textBox2;
+        private DevExpress.XtraEditors.LabelControl labelControl23;
+        private DevExpress.XtraEditors.TextEdit textAssembler;
+        private DevExpress.XtraEditors.LabelControl labelControl22;
     }
 }
