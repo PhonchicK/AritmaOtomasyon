@@ -9,9 +9,13 @@ namespace Bussiness.Concrete
     public class SaleManager : ISaleService
     {
         ISaleDal saleDal;
-        public SaleManager(ISaleDal _saleDal)
+        IInstalmentDal instalmentDal;
+        IMaintenanceBaseDal maintenanceBaseDal;
+        public SaleManager(ISaleDal _saleDal, IInstalmentDal _instalmentDal, IMaintenanceBaseDal _maintenanceBaseDal)
         {
             saleDal = _saleDal;
+            instalmentDal = _instalmentDal;
+            maintenanceBaseDal = _maintenanceBaseDal;
         }
         public int Add(Sale sale)
         {
@@ -20,6 +24,19 @@ namespace Bussiness.Concrete
 
         public void Delete(Sale sale)
         {
+            var instalments = instalmentDal.GetAll(i => i.SaleID == sale.ID);
+            if(instalments.Count > 0)
+            {
+                foreach(var item in instalments)
+                {
+                    instalmentDal.Delete(item);
+                }
+            }
+
+            var maintenance = maintenanceBaseDal.Get(m => m.SaleID == sale.ID);
+            if (maintenance != null)
+                maintenanceBaseDal.Delete(maintenance);
+
             saleDal.Delete(sale);
         }
 

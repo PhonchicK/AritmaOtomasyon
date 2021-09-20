@@ -4,6 +4,7 @@ using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using Entities.Concrete;
+using Entities.Dto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +34,7 @@ namespace FormUI.Views.CustomerForms
             if(((GridView)gridControl.MainView).SelectedRowsCount > 0)
             {
                 int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
-                SelectedCustomerID = ((Customer)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                SelectedCustomerID = ((CustomerDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
                 this.DialogResult = DialogResult.OK;
             }
         }

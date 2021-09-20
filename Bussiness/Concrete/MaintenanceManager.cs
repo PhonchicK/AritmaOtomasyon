@@ -1,7 +1,6 @@
 ﻿using Bussiness.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
-using Entities.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +12,12 @@ namespace Bussiness.Concrete
     public class MaintenanceManager : IMaintenanceService
     {
         IMaintenanceDal maintenanceDal;
+
         public MaintenanceManager(IMaintenanceDal _maintenanceDal)
         {
-            maintenanceDal = _maintenanceDal;
+            this.maintenanceDal = _maintenanceDal;
         }
+
         public int Add(Maintenance maintenance)
         {
             return maintenanceDal.Add(maintenance).ID;
@@ -32,19 +33,14 @@ namespace Bussiness.Concrete
             return maintenanceDal.GetAll();
         }
 
-        public List<MaintenanceDto> GetAllDetails()
-        {
-            return maintenanceDal.GetAllDetails();
-        }
-
         public Maintenance GetByID(int id)
         {
             return maintenanceDal.Get(m => m.ID == id);
         }
 
-        public MaintenanceDto GetDetailsByID(int id)
+        public List<Maintenance> GetByBaseID(int maintenanceBaseID)
         {
-            return maintenanceDal.GetDetails(m => m.ID == id);
+            return maintenanceDal.GetAll(m => m.MaintenanceBaseID == maintenanceBaseID);
         }
 
         public void Update(Maintenance maintenance)

@@ -32,7 +32,8 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Sale> Sales { get; set; }
         public DbSet<Instalment> Instalments { get; set; }
-        public DbSet<Maintenance> Maintenances { get; set; }
+        public DbSet<MaintenanceBase> MaintenanceBases { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Maintenance> Maintenances { get; set; }
     }
 }

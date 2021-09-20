@@ -19,6 +19,9 @@ namespace Business.DependencyResolvers.Ninject
             Bind<IMaintenanceDal>().To<EfMaintenanceDal>().InSingletonScope();
             Bind<IMaintenanceService>().To<MaintenanceManager>().InSingletonScope();
 
+            Bind<IMaintenanceBaseDal>().To<EfMaintenanceBaseDal>().InSingletonScope();
+            Bind<IMaintenanceBaseService>().To<MaintenanceBaseManager>().InSingletonScope();
+
             Bind<IInstalmentDal>().To<EfInstalmentDal>().InSingletonScope();
             Bind<IInstalmentService>().To<InstalmentManager>().InSingletonScope();
 

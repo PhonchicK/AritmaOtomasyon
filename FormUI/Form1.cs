@@ -46,7 +46,7 @@ namespace FormUI
 
         private void metroButton5_Click(object sender, EventArgs e)
         {
-            new PayInstalment(1).Show();
+            new NewSaleForm().ShowDialog();
         }
 
         private void metroButton6_Click(object sender, EventArgs e)

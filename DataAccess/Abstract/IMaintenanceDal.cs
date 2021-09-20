@@ -1,15 +1,12 @@
-﻿using Entities.Concrete;
-using Entities.Dto;
-using Core.DataAccess;
-using System.Collections.Generic;
-using System.Linq.Expressions;
+﻿using Core.DataAccess;
+using Entities.Concrete;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface IMaintenanceDal : IEntityRepository<Maintenance>
-    {
-        MaintenanceDto GetDetails(Expression<Func<MaintenanceDto, bool>> filter);
-        List<MaintenanceDto> GetAllDetails(Expression<Func<MaintenanceDto, bool>> filter = null);
-    }
+    public interface IMaintenanceDal : IEntityRepository<Maintenance> { }
 }
