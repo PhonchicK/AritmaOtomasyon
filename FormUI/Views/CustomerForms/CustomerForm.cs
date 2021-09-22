@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using Entities.Concrete;
 using Bussiness.Abstract;
 using Business.DependencyResolvers.Ninject;
+using DevExpress.XtraGrid.Views.Grid;
+using Entities.Dto;
 
 namespace FormUI.Views.CustomerForms
 {
@@ -47,6 +49,21 @@ namespace FormUI.Views.CustomerForms
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
             gridControl.DataSource = customerService.GetAllDetails();
+        }
+        EditCustomerForm editCustomerForm;
+        private void bbiEdit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            int selectedCustomerID;
+            if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
+                selectedCustomerID = ((CustomerDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                editCustomerForm = new EditCustomerForm(selectedCustomerID);
+                if(editCustomerForm.ShowDialog() == DialogResult.OK)
+                {
+                    gridControl.DataSource = customerService.GetAllDetails();
+                }
+            }
         }
     }
 }

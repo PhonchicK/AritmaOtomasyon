@@ -151,17 +151,17 @@
     <Compile Include="Views\CustomerForms\CustomerForm.Designer.cs">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\CustomerForms\EditCustomerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\CustomerForms\EditCustomerForm.Designer.cs">
-      <DependentUpon>EditCustomerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\CustomerForms\SelectCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\CustomerForms\SelectCustomerForm.Designer.cs">
       <DependentUpon>SelectCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerForms\EditCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerForms\EditCustomerForm.Designer.cs">
+      <DependentUpon>EditCustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\InstalmentForms\InstalmentForm.cs">
       <SubType>Form</SubType>
