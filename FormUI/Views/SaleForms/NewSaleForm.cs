@@ -24,7 +24,7 @@ namespace FormUI.Views.SaleForms
         ICustomerService customerService;
         IInstalmentService instalmentService;
         ISaleService saleService;
-        IMaintenanceBaseService maintenanceService;
+        IMaintenanceBaseService maintenanceBaseService;
         IProductService productService;
 
         private void LoadServices()
@@ -32,7 +32,7 @@ namespace FormUI.Views.SaleForms
             customerService = InstanceFactory.GetInstance<ICustomerService>();
             instalmentService = InstanceFactory.GetInstance<IInstalmentService>();
             saleService = InstanceFactory.GetInstance<ISaleService>();
-            maintenanceService = InstanceFactory.GetInstance<IMaintenanceBaseService>();
+            maintenanceBaseService = InstanceFactory.GetInstance<IMaintenanceBaseService>();
             productService = InstanceFactory.GetInstance<IProductService>();
         }
         #endregion
@@ -338,7 +338,7 @@ namespace FormUI.Views.SaleForms
             });
 
             if (toggleMaintenanceState.IsOn)
-                maintenanceService.Add(new Maintenance()
+                maintenanceBaseService.Add(new MaintenanceBase()
                 {
                     SaleID = saleID,
                     MaintenanceInterval = Convert.ToInt32(comboBoxMaintenanceInterval.Text),

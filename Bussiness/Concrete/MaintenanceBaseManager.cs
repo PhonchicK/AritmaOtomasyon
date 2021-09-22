@@ -35,11 +35,17 @@ namespace Bussiness.Concrete
         public List<MaintenanceDto> GetAllDetails()
         {
             return maintenanceBaseDal.GetAllDetails();
+            //return items.Select(m => new MaintenanceDto());
         }
 
         public MaintenanceBase GetByID(int id)
         {
             return maintenanceBaseDal.Get(m => m.ID == id);
+        }
+
+        public List<MaintenanceDto> GetClosesDetails()
+        {
+            return maintenanceBaseDal.GetAllDetails(m => m.DistanceOfNextMaintenance < 32 && m.DistanceOfNextMaintenance > -32);
         }
 
         public MaintenanceDto GetDetailsByID(int id)

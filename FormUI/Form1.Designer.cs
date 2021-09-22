@@ -78,7 +78,7 @@ namespace FormUI
             // 
             // metroButton5
             // 
-            this.metroButton5.Location = new System.Drawing.Point(609, 279);
+            this.metroButton5.Location = new System.Drawing.Point(638, 242);
             this.metroButton5.Name = "metroButton5";
             this.metroButton5.Size = new System.Drawing.Size(199, 173);
             this.metroButton5.TabIndex = 4;

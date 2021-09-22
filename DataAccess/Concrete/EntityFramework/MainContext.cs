@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using System;
 using System.Data.Entity;
 using System.Data.Entity.Core.EntityClient;
 using System.Data.Entity.Infrastructure;
@@ -28,7 +29,6 @@ namespace DataAccess.Concrete.EntityFramework
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             base.OnModelCreating(modelBuilder);
         }*/
-
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Sale> Sales { get; set; }
         public DbSet<Instalment> Instalments { get; set; }
