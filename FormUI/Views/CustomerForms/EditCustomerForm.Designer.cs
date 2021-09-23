@@ -29,6 +29,7 @@ namespace FormUI.Views.CustomerForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditCustomerForm));
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSaveAndClose = new DevExpress.XtraBars.BarButtonItem();
@@ -39,34 +40,40 @@ namespace FormUI.Views.CustomerForms
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.textCustomerName = new DevExpress.XtraEditors.TextEdit();
+            this.textCustomerAddress = new System.Windows.Forms.TextBox();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.textCustomerPhoneNumber = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.textCustomerAddress = new System.Windows.Forms.TextBox();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.textReferanceName = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.textReferanceID = new DevExpress.XtraEditors.TextEdit();
+            this.textCustomerName = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.buttonSelectReferance = new DevExpress.XtraEditors.SimpleButton();
+            this.textReferanceID = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.textReferanceName = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.listBoxReferancedCustomers = new DevExpress.XtraEditors.ListBoxControl();
             this.listBoxSaledProducts = new DevExpress.XtraEditors.ListBoxControl();
+            this.tileNavPane1 = new DevExpress.XtraBars.Navigation.TileNavPane();
+            this.navButton2 = new DevExpress.XtraBars.Navigation.NavButton();
+            this.navButton3 = new DevExpress.XtraBars.Navigation.NavButton();
+            this.navButton4 = new DevExpress.XtraBars.Navigation.NavButton();
+            this.navButton5 = new DevExpress.XtraBars.Navigation.NavButton();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textCustomerPhoneNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textCustomerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textCustomerName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textCustomerPhoneNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textReferanceID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textReferanceID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxReferancedCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxSaledProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainRibbonControl
@@ -169,42 +176,24 @@ namespace FormUI.Views.CustomerForms
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "Müşteri";
             // 
-            // groupControl2
+            // textCustomerAddress
             // 
-            this.groupControl2.Appearance.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
-            this.groupControl2.Appearance.Options.UseBorderColor = true;
-            this.groupControl2.Controls.Add(this.buttonSelectReferance);
-            this.groupControl2.Controls.Add(this.textReferanceID);
-            this.groupControl2.Controls.Add(this.labelControl7);
-            this.groupControl2.Controls.Add(this.labelControl6);
-            this.groupControl2.Controls.Add(this.textEdit3);
-            this.groupControl2.Controls.Add(this.textReferanceName);
-            this.groupControl2.Controls.Add(this.labelControl5);
-            this.groupControl2.Location = new System.Drawing.Point(417, 164);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(353, 239);
-            this.groupControl2.TabIndex = 3;
-            this.groupControl2.Text = "Referans";
+            this.textCustomerAddress.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.textCustomerAddress.Location = new System.Drawing.Point(5, 130);
+            this.textCustomerAddress.Multiline = true;
+            this.textCustomerAddress.Name = "textCustomerAddress";
+            this.textCustomerAddress.Size = new System.Drawing.Size(343, 104);
+            this.textCustomerAddress.TabIndex = 5;
             // 
-            // labelControl1
+            // labelControl3
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(5, 28);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(27, 16);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Adı :";
-            // 
-            // textCustomerName
-            // 
-            this.textCustomerName.Location = new System.Drawing.Point(38, 23);
-            this.textCustomerName.MenuManager = this.mainRibbonControl;
-            this.textCustomerName.Name = "textCustomerName";
-            this.textCustomerName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textCustomerName.Properties.Appearance.Options.UseFont = true;
-            this.textCustomerName.Size = new System.Drawing.Size(310, 26);
-            this.textCustomerName.TabIndex = 1;
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(5, 108);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(42, 16);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "Adres :";
             // 
             // textCustomerPhoneNumber
             // 
@@ -226,76 +215,50 @@ namespace FormUI.Views.CustomerForms
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Telefon Numarası :";
             // 
-            // labelControl3
+            // textCustomerName
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(5, 108);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(42, 16);
-            this.labelControl3.TabIndex = 4;
-            this.labelControl3.Text = "Adres :";
+            this.textCustomerName.Location = new System.Drawing.Point(38, 23);
+            this.textCustomerName.MenuManager = this.mainRibbonControl;
+            this.textCustomerName.Name = "textCustomerName";
+            this.textCustomerName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.textCustomerName.Properties.Appearance.Options.UseFont = true;
+            this.textCustomerName.Size = new System.Drawing.Size(310, 26);
+            this.textCustomerName.TabIndex = 1;
             // 
-            // textCustomerAddress
+            // labelControl1
             // 
-            this.textCustomerAddress.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textCustomerAddress.Location = new System.Drawing.Point(5, 130);
-            this.textCustomerAddress.Multiline = true;
-            this.textCustomerAddress.Name = "textCustomerAddress";
-            this.textCustomerAddress.Size = new System.Drawing.Size(343, 104);
-            this.textCustomerAddress.TabIndex = 5;
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(5, 28);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(27, 16);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Adı :";
             // 
-            // textEdit3
+            // groupControl2
             // 
-            this.textEdit3.Location = new System.Drawing.Point(5, 161);
-            this.textEdit3.MenuManager = this.mainRibbonControl;
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textEdit3.Properties.Appearance.Options.UseFont = true;
-            this.textEdit3.Properties.ReadOnly = true;
-            this.textEdit3.Size = new System.Drawing.Size(338, 26);
-            this.textEdit3.TabIndex = 9;
+            this.groupControl2.Appearance.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
+            this.groupControl2.Appearance.Options.UseBorderColor = true;
+            this.groupControl2.Controls.Add(this.buttonSelectReferance);
+            this.groupControl2.Controls.Add(this.textReferanceID);
+            this.groupControl2.Controls.Add(this.labelControl7);
+            this.groupControl2.Controls.Add(this.labelControl6);
+            this.groupControl2.Controls.Add(this.textEdit3);
+            this.groupControl2.Controls.Add(this.textReferanceName);
+            this.groupControl2.Controls.Add(this.labelControl5);
+            this.groupControl2.Location = new System.Drawing.Point(417, 164);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(353, 239);
+            this.groupControl2.TabIndex = 3;
+            this.groupControl2.Text = "Referans";
             // 
-            // labelControl5
+            // buttonSelectReferance
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(5, 136);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(110, 16);
-            this.labelControl5.TabIndex = 8;
-            this.labelControl5.Text = "Telefon Numarası :";
-            // 
-            // textReferanceName
-            // 
-            this.textReferanceName.Location = new System.Drawing.Point(5, 98);
-            this.textReferanceName.MenuManager = this.mainRibbonControl;
-            this.textReferanceName.Name = "textReferanceName";
-            this.textReferanceName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textReferanceName.Properties.Appearance.Options.UseFont = true;
-            this.textReferanceName.Properties.ReadOnly = true;
-            this.textReferanceName.Size = new System.Drawing.Size(338, 26);
-            this.textReferanceName.TabIndex = 7;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(5, 76);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(27, 16);
-            this.labelControl6.TabIndex = 6;
-            this.labelControl6.Text = "Adı :";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(5, 38);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(25, 16);
-            this.labelControl7.TabIndex = 12;
-            this.labelControl7.Text = "İD : ";
+            this.buttonSelectReferance.Location = new System.Drawing.Point(128, 34);
+            this.buttonSelectReferance.Name = "buttonSelectReferance";
+            this.buttonSelectReferance.Size = new System.Drawing.Size(30, 23);
+            this.buttonSelectReferance.TabIndex = 14;
+            this.buttonSelectReferance.Text = "Seç";
             // 
             // textReferanceID
             // 
@@ -308,13 +271,57 @@ namespace FormUI.Views.CustomerForms
             this.textReferanceID.Size = new System.Drawing.Size(87, 26);
             this.textReferanceID.TabIndex = 13;
             // 
-            // buttonSelectReferance
+            // labelControl7
             // 
-            this.buttonSelectReferance.Location = new System.Drawing.Point(128, 34);
-            this.buttonSelectReferance.Name = "buttonSelectReferance";
-            this.buttonSelectReferance.Size = new System.Drawing.Size(30, 23);
-            this.buttonSelectReferance.TabIndex = 14;
-            this.buttonSelectReferance.Text = "Seç";
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(5, 38);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(25, 16);
+            this.labelControl7.TabIndex = 12;
+            this.labelControl7.Text = "İD : ";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(5, 76);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(27, 16);
+            this.labelControl6.TabIndex = 6;
+            this.labelControl6.Text = "Adı :";
+            // 
+            // textEdit3
+            // 
+            this.textEdit3.Location = new System.Drawing.Point(5, 161);
+            this.textEdit3.MenuManager = this.mainRibbonControl;
+            this.textEdit3.Name = "textEdit3";
+            this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.textEdit3.Properties.Appearance.Options.UseFont = true;
+            this.textEdit3.Properties.ReadOnly = true;
+            this.textEdit3.Size = new System.Drawing.Size(338, 26);
+            this.textEdit3.TabIndex = 9;
+            // 
+            // textReferanceName
+            // 
+            this.textReferanceName.Location = new System.Drawing.Point(5, 98);
+            this.textReferanceName.MenuManager = this.mainRibbonControl;
+            this.textReferanceName.Name = "textReferanceName";
+            this.textReferanceName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.textReferanceName.Properties.Appearance.Options.UseFont = true;
+            this.textReferanceName.Properties.ReadOnly = true;
+            this.textReferanceName.Size = new System.Drawing.Size(338, 26);
+            this.textReferanceName.TabIndex = 7;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(5, 136);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(110, 16);
+            this.labelControl5.TabIndex = 8;
+            this.labelControl5.Text = "Telefon Numarası :";
             // 
             // listBoxReferancedCustomers
             // 
@@ -330,12 +337,63 @@ namespace FormUI.Views.CustomerForms
             this.listBoxSaledProducts.Size = new System.Drawing.Size(353, 96);
             this.listBoxSaledProducts.TabIndex = 5;
             // 
+            // tileNavPane1
+            // 
+            this.tileNavPane1.Buttons.Add(this.navButton2);
+            this.tileNavPane1.Buttons.Add(this.navButton3);
+            this.tileNavPane1.Buttons.Add(this.navButton4);
+            this.tileNavPane1.Buttons.Add(this.navButton5);
+            this.tileNavPane1.Cursor = System.Windows.Forms.Cursors.Default;
+            // 
+            // tileNavCategory1
+            // 
+            this.tileNavPane1.DefaultCategory.Name = "tileNavCategory1";
+            // 
+            // 
+            // 
+            this.tileNavPane1.DefaultCategory.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            this.tileNavPane1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tileNavPane1.Location = new System.Drawing.Point(0, 546);
+            this.tileNavPane1.Name = "tileNavPane1";
+            this.tileNavPane1.Size = new System.Drawing.Size(798, 53);
+            this.tileNavPane1.TabIndex = 7;
+            this.tileNavPane1.Text = "tileNavPane1";
+            // 
+            // navButton2
+            // 
+            this.navButton2.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Left;
+            this.navButton2.Caption = "Satışlar";
+            this.navButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton2.ImageOptions.Image")));
+            this.navButton2.Name = "navButton2";
+            // 
+            // navButton3
+            // 
+            this.navButton3.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Left;
+            this.navButton3.Caption = "Bakımlar";
+            this.navButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton3.ImageOptions.Image")));
+            this.navButton3.Name = "navButton3";
+            // 
+            // navButton4
+            // 
+            this.navButton4.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Left;
+            this.navButton4.Caption = "Yapılan Bakımlar";
+            this.navButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton4.ImageOptions.Image")));
+            this.navButton4.Name = "navButton4";
+            // 
+            // navButton5
+            // 
+            this.navButton5.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Left;
+            this.navButton5.Caption = "Taksitler";
+            this.navButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton5.ImageOptions.Image")));
+            this.navButton5.Name = "navButton5";
+            // 
             // EditCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(798, 599);
+            this.Controls.Add(this.tileNavPane1);
             this.Controls.Add(this.listBoxSaledProducts);
             this.Controls.Add(this.listBoxReferancedCustomers);
             this.Controls.Add(this.groupControl2);
@@ -347,16 +405,17 @@ namespace FormUI.Views.CustomerForms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textCustomerPhoneNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textCustomerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textCustomerName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textCustomerPhoneNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textReferanceID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textReferanceID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxReferancedCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxSaledProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,5 +448,10 @@ namespace FormUI.Views.CustomerForms
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.ListBoxControl listBoxReferancedCustomers;
         private DevExpress.XtraEditors.ListBoxControl listBoxSaledProducts;
+        private DevExpress.XtraBars.Navigation.TileNavPane tileNavPane1;
+        private DevExpress.XtraBars.Navigation.NavButton navButton2;
+        private DevExpress.XtraBars.Navigation.NavButton navButton3;
+        private DevExpress.XtraBars.Navigation.NavButton navButton4;
+        private DevExpress.XtraBars.Navigation.NavButton navButton5;
     }
 }
