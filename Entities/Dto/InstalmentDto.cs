@@ -8,10 +8,14 @@ namespace Entities.Dto
     {
         [Display(Name = "$")]
         public int ID { get; set; }
+        [Display(AutoGenerateField = false)]
+        public int CustomerID { get; set; }
         [Display(Name = "Müşteri Adı")]
         public string CustomerName { get; set; }
         [Display(Name = "Müşteri Numarası")]
         public string CustomerPhoneNumber { get; set; }
+        [Display(AutoGenerateField = false)]
+        public int SaleID { get; set; }
         [Display(Name = "Ürün")]
         public string Product { get; set; }
         [Display(Name = "Satış Tarihi")]

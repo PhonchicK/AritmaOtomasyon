@@ -48,6 +48,11 @@ namespace Bussiness.Concrete
             return maintenanceBaseDal.GetAllDetails(m => m.DistanceOfNextMaintenance < 32 && m.DistanceOfNextMaintenance > -32);
         }
 
+        public List<MaintenanceDto> GetCustomerDetails(int customerID)
+        {
+            return maintenanceBaseDal.GetAllDetails(m => m.CustomerID == customerID);
+        }
+
         public MaintenanceDto GetDetailsByID(int id)
         {
             return maintenanceBaseDal.GetDetails(m => m.ID == id);

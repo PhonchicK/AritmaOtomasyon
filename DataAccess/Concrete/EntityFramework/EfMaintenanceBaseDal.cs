@@ -32,16 +32,18 @@ namespace DataAccess.Concrete.EntityFramework
                              select new MaintenanceDto
                              {
                                  ID = mB.ID,
+                                 CustomerID = s.CustomerID,
                                  CustomerName = c.Name,
                                  CustomerPhoneNumber = c.PhoneNumber,
                                  CustomerAddress = c.Address,
+                                 SaleID = s.ID,
                                  Product = p.Name,
                                  MaintenanceInterval = mB.MaintenanceInterval,
                                  LastMaintenance = LastMaintenance.Date,
                                  SaleDate = s.SaleDate
                              };
 
-                result = result.ToList().Select(m => new MaintenanceDto(m.ID, m.CustomerName, m.CustomerPhoneNumber, m.CustomerAddress, m.Product, m.MaintenanceInterval, m.LastMaintenance, m.SaleDate)).AsQueryable();
+                result = result.ToList().Select(m => new MaintenanceDto(m.ID,m.CustomerID, m.CustomerName, m.CustomerPhoneNumber, m.CustomerAddress,m.SaleID, m.Product, m.MaintenanceInterval, m.LastMaintenance, m.SaleDate)).AsQueryable();
 
                 return filter == null ? // if filter is null
                     result.ToList() : // true : return

@@ -39,6 +39,7 @@ namespace FormUI.Views.CustomerForms
             this.bbiClose = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.textCustomerAddress = new System.Windows.Forms.TextBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -55,12 +56,12 @@ namespace FormUI.Views.CustomerForms
             this.textReferanceName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.listBoxReferancedCustomers = new DevExpress.XtraEditors.ListBoxControl();
-            this.listBoxSaledProducts = new DevExpress.XtraEditors.ListBoxControl();
             this.tileNavPane1 = new DevExpress.XtraBars.Navigation.TileNavPane();
             this.navButton2 = new DevExpress.XtraBars.Navigation.NavButton();
             this.navButton3 = new DevExpress.XtraBars.Navigation.NavButton();
             this.navButton4 = new DevExpress.XtraBars.Navigation.NavButton();
             this.navButton5 = new DevExpress.XtraBars.Navigation.NavButton();
+            this.listBoxSaledProducts = new DevExpress.XtraEditors.ListBoxControl();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -72,8 +73,8 @@ namespace FormUI.Views.CustomerForms
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxReferancedCustomers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxSaledProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxSaledProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // mainRibbonControl
@@ -143,7 +144,8 @@ namespace FormUI.Views.CustomerForms
             // mainRibbonPage
             // 
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.mainRibbonPageGroup});
+            this.mainRibbonPageGroup,
+            this.ribbonPageGroup1});
             this.mainRibbonPage.MergeOrder = 0;
             this.mainRibbonPage.Name = "mainRibbonPage";
             this.mainRibbonPage.Text = "Home";
@@ -159,6 +161,11 @@ namespace FormUI.Views.CustomerForms
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiClose);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
             this.mainRibbonPageGroup.Text = "İşlemler";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Hızlı Menü";
             // 
             // groupControl1
             // 
@@ -237,6 +244,7 @@ namespace FormUI.Views.CustomerForms
             // 
             // groupControl2
             // 
+            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl2.Appearance.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
             this.groupControl2.Appearance.Options.UseBorderColor = true;
             this.groupControl2.Controls.Add(this.buttonSelectReferance);
@@ -330,13 +338,6 @@ namespace FormUI.Views.CustomerForms
             this.listBoxReferancedCustomers.Size = new System.Drawing.Size(353, 96);
             this.listBoxReferancedCustomers.TabIndex = 4;
             // 
-            // listBoxSaledProducts
-            // 
-            this.listBoxSaledProducts.Location = new System.Drawing.Point(417, 428);
-            this.listBoxSaledProducts.Name = "listBoxSaledProducts";
-            this.listBoxSaledProducts.Size = new System.Drawing.Size(353, 96);
-            this.listBoxSaledProducts.TabIndex = 5;
-            // 
             // tileNavPane1
             // 
             this.tileNavPane1.Buttons.Add(this.navButton2);
@@ -365,6 +366,7 @@ namespace FormUI.Views.CustomerForms
             this.navButton2.Caption = "Satışlar";
             this.navButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton2.ImageOptions.Image")));
             this.navButton2.Name = "navButton2";
+            this.navButton2.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButton2_ElementClick);
             // 
             // navButton3
             // 
@@ -372,6 +374,7 @@ namespace FormUI.Views.CustomerForms
             this.navButton3.Caption = "Bakımlar";
             this.navButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton3.ImageOptions.Image")));
             this.navButton3.Name = "navButton3";
+            this.navButton3.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButton3_ElementClick);
             // 
             // navButton4
             // 
@@ -386,6 +389,14 @@ namespace FormUI.Views.CustomerForms
             this.navButton5.Caption = "Taksitler";
             this.navButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton5.ImageOptions.Image")));
             this.navButton5.Name = "navButton5";
+            this.navButton5.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButton5_ElementClick);
+            // 
+            // listBoxSaledProducts
+            // 
+            this.listBoxSaledProducts.Location = new System.Drawing.Point(417, 428);
+            this.listBoxSaledProducts.Name = "listBoxSaledProducts";
+            this.listBoxSaledProducts.Size = new System.Drawing.Size(353, 96);
+            this.listBoxSaledProducts.TabIndex = 5;
             // 
             // EditCustomerForm
             // 
@@ -414,8 +425,8 @@ namespace FormUI.Views.CustomerForms
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxReferancedCustomers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxSaledProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxSaledProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -447,11 +458,12 @@ namespace FormUI.Views.CustomerForms
         private DevExpress.XtraEditors.TextEdit textReferanceName;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.ListBoxControl listBoxReferancedCustomers;
-        private DevExpress.XtraEditors.ListBoxControl listBoxSaledProducts;
         private DevExpress.XtraBars.Navigation.TileNavPane tileNavPane1;
         private DevExpress.XtraBars.Navigation.NavButton navButton2;
         private DevExpress.XtraBars.Navigation.NavButton navButton3;
         private DevExpress.XtraBars.Navigation.NavButton navButton4;
         private DevExpress.XtraBars.Navigation.NavButton navButton5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraEditors.ListBoxControl listBoxSaledProducts;
     }
 }

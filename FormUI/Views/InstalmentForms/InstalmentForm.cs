@@ -23,7 +23,17 @@ namespace FormUI.Views.InstalmentForms
         {
             InitializeComponent();
             instalmentService = InstanceFactory.GetInstance<IInstalmentService>();
+            gridView.RowStyle += GridView_RowStyle;
             gridControl.DataSource = instalmentService.GetAllDetails();
+            //bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
+        }
+        public InstalmentForm(int customerID)
+        {
+            InitializeComponent();
+            instalmentService = InstanceFactory.GetInstance<IInstalmentService>();
+            var items = instalmentService.GetCustomerInstalments(customerID);
+            gridView.RowStyle += GridView_RowStyle;
+            gridControl.DataSource = items;
             //bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
         }
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
@@ -33,7 +43,7 @@ namespace FormUI.Views.InstalmentForms
 
         private void CustomerForm_Load(object sender, EventArgs e)
         {
-            
+            gridView.ActiveFilter.NonColumnFilter = "[PaidPrice] < [PayablePrice]";
         }
 
         private void bbiNew_ItemClick(object sender, ItemClickEventArgs e)
@@ -48,12 +58,6 @@ namespace FormUI.Views.InstalmentForms
         {
             gridControl.DataSource = barToggleSwitchItem1.Checked ? instalmentService.GetAllDetails() : instalmentService.GetNotPaidDetails();
         }
-
-        private void bbiDelete_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            MessageBox.Show(gridView.ActiveFilterString);
-        }
-
 
         private void GridView_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
         {
@@ -75,7 +79,7 @@ namespace FormUI.Views.InstalmentForms
 
         private void barToggleSwitchItem1_CheckedChanged(object sender, ItemClickEventArgs e)
         {
-            gridControl.DataSource = barToggleSwitchItem1.Checked ? instalmentService.GetAllDetails() : instalmentService.GetNotPaidDetails();
+            gridView.ActiveFilter.NonColumnFilter = barToggleSwitchItem1.Checked ? null : "[PaidPrice] < [PayablePrice]";
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Bussiness.Abstract
         List<MaintenanceBase> GetAll();
         List<MaintenanceDto> GetAllDetails();
         List<MaintenanceDto> GetClosesDetails();
+        List<MaintenanceDto> GetCustomerDetails(int customerID);
         MaintenanceBase GetByID(int id);
         MaintenanceDto GetDetailsByID(int id);
         int Add(MaintenanceBase maintenance);

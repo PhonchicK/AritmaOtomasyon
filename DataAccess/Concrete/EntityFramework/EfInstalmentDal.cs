@@ -16,25 +16,27 @@ namespace DataAccess.Concrete.EntityFramework
             using (MainContext context = new MainContext())
             {
                 var result = from i in context.Instalments
-                             join s in context.Sales
-                             on i.SaleID equals s.ID
-                             join c in context.Customers
-                             on s.CustomerID equals c.ID
-                             join p in context.Products
-                             on s.ProductID equals p.ID
-                             select new InstalmentDto
-                             {
-                                 ID = i.ID,
-                                 CustomerName = c.Name,
-                                 CustomerPhoneNumber = c.PhoneNumber,
-                                 Product = p.Name,
-                                 SaleDate = s.SaleDate,
-                                 InstalmentNo = i.InstalmentNo,
-                                 PaidPrice = i.PaidPrice,
-                                 PaidDate = i.PaidDate,
-                                 PayablePrice = i.PayablePrice,
-                                 PaymentDate = i.PaymentDate
-                             };
+                join s in context.Sales
+                on i.SaleID equals s.ID
+                join c in context.Customers
+                on s.CustomerID equals c.ID
+                join p in context.Products
+                on s.ProductID equals p.ID
+                select new InstalmentDto
+                {
+                    ID = i.ID,
+                    CustomerID = c.ID,
+                    CustomerName = c.Name,
+                    CustomerPhoneNumber = c.PhoneNumber,
+                    SaleID = s.ID,
+                    Product = p.Name,
+                    SaleDate = s.SaleDate,
+                    InstalmentNo = i.InstalmentNo,
+                    PaidPrice = i.PaidPrice,
+                    PaidDate = i.PaidDate,
+                    PayablePrice = i.PayablePrice,
+                    PaymentDate = i.PaymentDate
+                };
                 return filter == null ? // if filter is null
                     result.ToList() : // true : return
                     result.Where(filter).ToList();// false : use filter and return

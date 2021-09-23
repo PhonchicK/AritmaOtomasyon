@@ -41,6 +41,11 @@ namespace Bussiness.Concrete
             return instalmentDal.Get(i => i.ID == id);
         }
 
+        public List<InstalmentDto> GetCustomerInstalments(int customerID)
+        {
+            return instalmentDal.GetAllDetails(i => i.CustomerID == customerID);
+        }
+
         public InstalmentDto GetDetailsByID(int id)
         {
             return instalmentDal.GetDetails(i => i.ID == id);
