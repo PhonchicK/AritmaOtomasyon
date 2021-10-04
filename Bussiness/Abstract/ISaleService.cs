@@ -10,6 +10,7 @@ namespace Bussiness.Abstract
         SaleDto GetDetailsByID(int id);
         List<Sale> GetAll();
         List<SaleDto> GetAllDetails();
+        List<SaleDto> GetCustomerDetails(int customerID);
         int Add(Sale sale);
         void Update(Sale sale);
         void Delete(Sale sale);

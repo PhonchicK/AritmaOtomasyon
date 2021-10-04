@@ -175,6 +175,12 @@
     <Compile Include="Views\InstalmentForms\PayInstalment.Designer.cs">
       <DependentUpon>PayInstalment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\InstalmentForms\EditInstalmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InstalmentForms\EditInstalmentForm.Designer.cs">
+      <DependentUpon>EditInstalmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MaintenanceForms\CloseMaintenances.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,18 @@
     </Compile>
     <Compile Include="Views\MaintenanceForms\MaintenancesForm.Designer.cs">
       <DependentUpon>MaintenancesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MaintenanceForms\DoneMaintenancesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MaintenanceForms\DoneMaintenancesForm.Designer.cs">
+      <DependentUpon>DoneMaintenancesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MaintenanceForms\NewMaintenanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MaintenanceForms\NewMaintenanceForm.Designer.cs">
+      <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ProductForms\NewProductForm.cs">
       <SubType>Form</SubType>
@@ -217,6 +235,12 @@
     <Compile Include="Views\SaleForms\SaleForm.Designer.cs">
       <DependentUpon>SaleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SaleForms\EditSaleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SaleForms\EditSaleForm.Designer.cs">
+      <DependentUpon>EditSaleForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +266,9 @@
     <EmbeddedResource Include="Views\CustomerForms\SelectCustomerForm.resx">
       <DependentUpon>SelectCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\InstalmentForms\EditInstalmentForm.resx">
+      <DependentUpon>EditInstalmentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\InstalmentForms\InstalmentForm.resx">
       <DependentUpon>InstalmentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,8 +278,14 @@
     <EmbeddedResource Include="Views\MaintenanceForms\CloseMaintenances.resx">
       <DependentUpon>CloseMaintenances.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\MaintenanceForms\DoneMaintenancesForm.resx">
+      <DependentUpon>DoneMaintenancesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MaintenanceForms\MaintenancesForm.resx">
       <DependentUpon>MaintenancesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MaintenanceForms\NewMaintenanceForm.resx">
+      <DependentUpon>NewMaintenanceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductForms\NewProductForm.resx">
       <DependentUpon>NewProductForm.cs</DependentUpon>
@@ -262,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductForms\SelectProductForm.resx">
       <DependentUpon>SelectProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SaleForms\EditSaleForm.resx">
+      <DependentUpon>EditSaleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SaleForms\NewSaleForm.resx">
       <DependentUpon>NewSaleForm.cs</DependentUpon>

@@ -12,6 +12,7 @@ namespace Bussiness.Abstract
     {
         List<Maintenance> GetAll();
         List<Maintenance> GetByBaseID(int maintenanceBaseID);
+        List<Maintenance> GetByCustomerID(int customerID);
         Maintenance GetByID(int id);
         int Add(Maintenance maintenance);
         void Update(Maintenance maintenance);

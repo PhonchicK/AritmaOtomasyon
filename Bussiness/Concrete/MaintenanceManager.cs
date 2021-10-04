@@ -12,10 +12,14 @@ namespace Bussiness.Concrete
     public class MaintenanceManager : IMaintenanceService
     {
         IMaintenanceDal maintenanceDal;
+        IMaintenanceBaseDal maintenanceBaseDal;
+        ISaleDal saleDal;
 
-        public MaintenanceManager(IMaintenanceDal _maintenanceDal)
+        public MaintenanceManager(IMaintenanceDal _maintenanceDal, IMaintenanceBaseDal _maintenanceBaseDal, ISaleDal _saleDal)
         {
             this.maintenanceDal = _maintenanceDal;
+            this.maintenanceBaseDal = _maintenanceBaseDal;
+            this.saleDal = _saleDal;
         }
 
         public int Add(Maintenance maintenance)
@@ -46,6 +50,25 @@ namespace Bussiness.Concrete
         public void Update(Maintenance maintenance)
         {
             maintenanceDal.Update(maintenance);
+        }
+
+        public List<Maintenance> GetByCustomerID(int customerID)
+        {
+            List<Maintenance> results = new List<Maintenance>();
+            var sales = saleDal.GetAll(s => s.CustomerID == customerID);
+            List<int> baseIDs = new List<int>();
+            foreach(var item in sales)
+            {
+                var obj = maintenanceBaseDal.Get(mB => mB.SaleID == item.ID);
+                if (obj == null)
+                    continue;
+                baseIDs.Add(obj.ID);
+            }
+            foreach(var item in baseIDs)
+            {
+                results.AddRange(maintenanceDal.GetAll(m => m.MaintenanceBaseID == item));
+            }
+            return results;
         }
     }
 }

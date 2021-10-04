@@ -194,7 +194,7 @@ namespace FormUI.Views.InstalmentForms
             this.barButtonItem1,
             this.barToggleSwitchItem1});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 22;
+            this.ribbonControl.MaxItemId = 24;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -232,6 +232,12 @@ namespace FormUI.Views.InstalmentForms
             this.bbiEdit.Id = 17;
             this.bbiEdit.ImageOptions.ImageUri.Uri = "Edit";
             this.bbiEdit.Name = "bbiEdit";
+            this.bbiEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiEdit_ItemClick);
+            // 
+            // bbiDelete
+            // 
+            this.bbiDelete.Id = 22;
+            this.bbiDelete.Name = "bbiDelete";
             // 
             // bbiRefresh
             // 

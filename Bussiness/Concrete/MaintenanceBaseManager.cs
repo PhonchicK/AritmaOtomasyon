@@ -58,6 +58,11 @@ namespace Bussiness.Concrete
             return maintenanceBaseDal.GetDetails(m => m.ID == id);
         }
 
+        public List<MaintenanceDto> GetSaleDetails(int saleID)
+        {
+            return maintenanceBaseDal.GetAllDetails(mB => mB.SaleID == saleID);
+        }
+
         public void Update(MaintenanceBase maintenanceBase)
         {
             maintenanceBaseDal.Update(maintenanceBase);

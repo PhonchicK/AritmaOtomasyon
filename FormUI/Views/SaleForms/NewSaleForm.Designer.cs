@@ -182,7 +182,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageCustomer.Controls.Add(this.buttonCustomerNext);
             this.tabPageCustomer.Controls.Add(this.tabControlCustomer);
             this.tabPageCustomer.Name = "tabPageCustomer";
-            this.tabPageCustomer.Size = new System.Drawing.Size(431, 521);
+            this.tabPageCustomer.Size = new System.Drawing.Size(431, 498);
             this.tabPageCustomer.Text = "Customer";
             // 
             // buttonCustomerCancel
@@ -787,7 +787,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageInstalment.Controls.Add(this.labelControl16);
             this.tabPageInstalment.Controls.Add(this.comboBoxInstalmentCount);
             this.tabPageInstalment.Name = "tabPageInstalment";
-            this.tabPageInstalment.Size = new System.Drawing.Size(431, 498);
+            this.tabPageInstalment.Size = new System.Drawing.Size(431, 521);
             this.tabPageInstalment.Text = "Instalment";
             // 
             // labelTotalPrice

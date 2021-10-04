@@ -1,7 +1,7 @@
 ﻿
-namespace FormUI.Views.CustomerForms
+namespace FormUI.Views.MaintenanceForms
 {
-    partial class CustomerForm
+    partial class DoneMaintenancesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -21,7 +21,7 @@ namespace FormUI.Views.CustomerForms
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -32,7 +32,6 @@ namespace FormUI.Views.CustomerForms
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
             this.bbiNew = new DevExpress.XtraBars.BarButtonItem();
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
@@ -40,7 +39,6 @@ namespace FormUI.Views.CustomerForms
             this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
@@ -54,11 +52,10 @@ namespace FormUI.Views.CustomerForms
             this.gridControl.MainView = this.gridView;
             this.gridControl.MenuManager = this.ribbonControl;
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(790, 441);
+            this.gridControl.Size = new System.Drawing.Size(798, 441);
             this.gridControl.TabIndex = 2;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
-            this.gridControl.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gridControl_MouseDoubleClick);
             // 
             // gridView
             // 
@@ -73,13 +70,12 @@ namespace FormUI.Views.CustomerForms
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
-            this.ribbonControl.SearchEditItem,
-            this.bbiPrintPreview,
             this.bsiRecordsCount,
             this.bbiNew,
             this.bbiEdit,
             this.bbiDelete,
-            this.bbiRefresh});
+            this.bbiRefresh,
+            this.ribbonControl.SearchEditItem});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.MaxItemId = 20;
             this.ribbonControl.Name = "ribbonControl";
@@ -87,17 +83,9 @@ namespace FormUI.Views.CustomerForms
             this.ribbonPage1});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(790, 158);
+            this.ribbonControl.Size = new System.Drawing.Size(798, 158);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
-            // 
-            // bbiPrintPreview
-            // 
-            this.bbiPrintPreview.Caption = "Print Preview";
-            this.bbiPrintPreview.Id = 14;
-            this.bbiPrintPreview.ImageOptions.ImageUri.Uri = "Preview";
-            this.bbiPrintPreview.Name = "bbiPrintPreview";
-            this.bbiPrintPreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPrintPreview_ItemClick);
             // 
             // bsiRecordsCount
             // 
@@ -107,41 +95,36 @@ namespace FormUI.Views.CustomerForms
             // 
             // bbiNew
             // 
-            this.bbiNew.Caption = "Yeni";
+            this.bbiNew.Caption = "New";
             this.bbiNew.Id = 16;
             this.bbiNew.ImageOptions.ImageUri.Uri = "New";
             this.bbiNew.Name = "bbiNew";
-            this.bbiNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiNew_ItemClick);
             // 
             // bbiEdit
             // 
-            this.bbiEdit.Caption = "Düzenle";
+            this.bbiEdit.Caption = "Edit";
             this.bbiEdit.Id = 17;
             this.bbiEdit.ImageOptions.ImageUri.Uri = "Edit";
             this.bbiEdit.Name = "bbiEdit";
-            this.bbiEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiEdit_ItemClick);
             // 
             // bbiDelete
             // 
-            this.bbiDelete.Caption = "Sil";
+            this.bbiDelete.Caption = "Delete";
             this.bbiDelete.Id = 18;
             this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiDelete.Name = "bbiDelete";
-            this.bbiDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDelete_ItemClick);
             // 
             // bbiRefresh
             // 
-            this.bbiRefresh.Caption = "Yenile";
+            this.bbiRefresh.Caption = "Refresh";
             this.bbiRefresh.Id = 19;
             this.bbiRefresh.ImageOptions.ImageUri.Uri = "Refresh";
             this.bbiRefresh.Name = "bbiRefresh";
-            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
             // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup1});
             this.ribbonPage1.MergeOrder = 0;
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Home";
@@ -157,34 +140,25 @@ namespace FormUI.Views.CustomerForms
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "İşlemler";
             // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.AllowTextClipping = false;
-            this.ribbonPageGroup2.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup2.ItemLinks.Add(this.bbiPrintPreview);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Print and Export";
-            // 
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 575);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(790, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(798, 24);
             // 
-            // CustomerForm
+            // DoneMaintenancesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(790, 599);
+            this.ClientSize = new System.Drawing.Size(798, 599);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.gridControl);
             this.Controls.Add(this.ribbonControl);
-            this.Name = "CustomerForm";
+            this.Name = "DoneMaintenancesForm";
             this.Ribbon = this.ribbonControl;
             this.StatusBar = this.ribbonStatusBar;
-            this.Load += new System.EventHandler(this.CustomerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
@@ -194,13 +168,12 @@ namespace FormUI.Views.CustomerForms
         }
 
         #endregion
+
         private DevExpress.XtraGrid.GridControl gridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.BarButtonItem bbiPrintPreview;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
         private DevExpress.XtraBars.BarButtonItem bbiNew;

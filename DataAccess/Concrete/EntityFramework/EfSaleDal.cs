@@ -25,6 +25,7 @@ namespace DataAccess.Concrete.EntityFramework
                              select new SaleDto
                              {
                                  ID = s.ID,
+                                 CustomerID = c.ID,
                                  CustomerName = c.Name,
                                  CustomerPhoneNumber = c.PhoneNumber,
                                  ProductName = p.Name,

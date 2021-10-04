@@ -29,19 +29,19 @@ namespace FormUI.Views.MaintenanceForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenancesForm));
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
-            this.bbiNew = new DevExpress.XtraBars.BarButtonItem();
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
             this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
@@ -72,15 +72,15 @@ namespace FormUI.Views.MaintenanceForms
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
+            this.ribbonControl.SearchEditItem,
             this.bbiPrintPreview,
             this.bsiRecordsCount,
-            this.bbiNew,
             this.bbiEdit,
             this.bbiDelete,
             this.bbiRefresh,
-            this.ribbonControl.SearchEditItem});
+            this.barButtonItem1});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 20;
+            this.ribbonControl.MaxItemId = 22;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -104,30 +104,23 @@ namespace FormUI.Views.MaintenanceForms
             this.bsiRecordsCount.Id = 15;
             this.bsiRecordsCount.Name = "bsiRecordsCount";
             // 
-            // bbiNew
-            // 
-            this.bbiNew.Caption = "New";
-            this.bbiNew.Id = 16;
-            this.bbiNew.ImageOptions.ImageUri.Uri = "New";
-            this.bbiNew.Name = "bbiNew";
-            // 
             // bbiEdit
             // 
-            this.bbiEdit.Caption = "Edit";
+            this.bbiEdit.Caption = "Düzenle";
             this.bbiEdit.Id = 17;
             this.bbiEdit.ImageOptions.ImageUri.Uri = "Edit";
             this.bbiEdit.Name = "bbiEdit";
             // 
             // bbiDelete
             // 
-            this.bbiDelete.Caption = "Delete";
+            this.bbiDelete.Caption = "Sil";
             this.bbiDelete.Id = 18;
             this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiDelete.Name = "bbiDelete";
             // 
             // bbiRefresh
             // 
-            this.bbiRefresh.Caption = "Refresh";
+            this.bbiRefresh.Caption = "Yenile";
             this.bbiRefresh.Id = 19;
             this.bbiRefresh.ImageOptions.ImageUri.Uri = "Refresh";
             this.bbiRefresh.Name = "bbiRefresh";
@@ -135,8 +128,7 @@ namespace FormUI.Views.MaintenanceForms
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup1});
             this.ribbonPage1.MergeOrder = 0;
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Home";
@@ -145,20 +137,12 @@ namespace FormUI.Views.MaintenanceForms
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
             this.ribbonPageGroup1.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiNew);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiDelete);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiRefresh);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "Tasks";
-            // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.AllowTextClipping = false;
-            this.ribbonPageGroup2.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup2.ItemLinks.Add(this.bbiPrintPreview);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Print and Export";
+            this.ribbonPageGroup1.Text = "İşlemler";
             // 
             // ribbonStatusBar
             // 
@@ -167,6 +151,15 @@ namespace FormUI.Views.MaintenanceForms
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
             this.ribbonStatusBar.Size = new System.Drawing.Size(798, 24);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Bakım Ekle";
+            this.barButtonItem1.Id = 21;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // MaintenancesForm
             // 
@@ -196,12 +189,11 @@ namespace FormUI.Views.MaintenanceForms
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem bbiPrintPreview;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
-        private DevExpress.XtraBars.BarButtonItem bbiNew;
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

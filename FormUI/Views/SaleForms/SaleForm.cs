@@ -28,6 +28,14 @@ namespace FormUI.Views.SaleForms
             gridControl.DataSource = saleService.GetAllDetails();
             //bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
         }
+        public SaleForm(int customerID)
+        {
+            InitializeComponent();
+            saleService = InstanceFactory.GetInstance<ISaleService>();
+            gridControl.DataSource = saleService.GetCustomerDetails(customerID);
+            //bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
+        }
+
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
         {
             gridControl.ShowRibbonPrintPreview();

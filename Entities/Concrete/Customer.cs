@@ -16,7 +16,7 @@ namespace Entities.Concrete
         public string PhoneNumber { get; set; }
         [Column(Name = "Address", DbType = "VARCHAR")]
         public string Address { get; set; }
-        [Column(Name = "ReferanceCustomerID", DbType = "INTEGER")]
+        [Column(Name = "ReferanceCustomerID", DbType = "INTEGER",CanBeNull = true)]
         public int? ReferanceCustomerID { get; set; }//Referans olan Müşterinin IDs si
     }
 }

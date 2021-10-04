@@ -48,11 +48,12 @@ namespace FormUI.Views.CustomerForms
             this.textCustomerName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.buttonSelectReferance = new DevExpress.XtraEditors.SimpleButton();
             this.textReferanceID = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.textReferancePhoneNumber = new DevExpress.XtraEditors.TextEdit();
             this.textReferanceName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.listBoxReferancedCustomers = new DevExpress.XtraEditors.ListBoxControl();
@@ -70,7 +71,7 @@ namespace FormUI.Views.CustomerForms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textReferancePhoneNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxReferancedCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).BeginInit();
@@ -105,6 +106,7 @@ namespace FormUI.Views.CustomerForms
             this.bbiSave.Id = 2;
             this.bbiSave.ImageOptions.ImageUri.Uri = "Save";
             this.bbiSave.Name = "bbiSave";
+            this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
             // 
             // bbiSaveAndClose
             // 
@@ -112,6 +114,7 @@ namespace FormUI.Views.CustomerForms
             this.bbiSaveAndClose.Id = 3;
             this.bbiSaveAndClose.ImageOptions.ImageUri.Uri = "SaveAndClose";
             this.bbiSaveAndClose.Name = "bbiSaveAndClose";
+            this.bbiSaveAndClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSaveAndClose_ItemClick);
             // 
             // bbiSaveAndNew
             // 
@@ -126,6 +129,7 @@ namespace FormUI.Views.CustomerForms
             this.bbiReset.Id = 5;
             this.bbiReset.ImageOptions.ImageUri.Uri = "Reset";
             this.bbiReset.Name = "bbiReset";
+            this.bbiReset.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiReset_ItemClick);
             // 
             // bbiDelete
             // 
@@ -133,6 +137,7 @@ namespace FormUI.Views.CustomerForms
             this.bbiDelete.Id = 6;
             this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiDelete.Name = "bbiDelete";
+            this.bbiDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDelete_ItemClick);
             // 
             // bbiClose
             // 
@@ -140,6 +145,7 @@ namespace FormUI.Views.CustomerForms
             this.bbiClose.Id = 7;
             this.bbiClose.ImageOptions.ImageUri.Uri = "Close";
             this.bbiClose.Name = "bbiClose";
+            this.bbiClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiClose_ItemClick);
             // 
             // mainRibbonPage
             // 
@@ -224,12 +230,12 @@ namespace FormUI.Views.CustomerForms
             // 
             // textCustomerName
             // 
-            this.textCustomerName.Location = new System.Drawing.Point(38, 23);
+            this.textCustomerName.Location = new System.Drawing.Point(46, 23);
             this.textCustomerName.MenuManager = this.mainRibbonControl;
             this.textCustomerName.Name = "textCustomerName";
             this.textCustomerName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textCustomerName.Properties.Appearance.Options.UseFont = true;
-            this.textCustomerName.Size = new System.Drawing.Size(310, 26);
+            this.textCustomerName.Size = new System.Drawing.Size(302, 26);
             this.textCustomerName.TabIndex = 1;
             // 
             // labelControl1
@@ -238,20 +244,21 @@ namespace FormUI.Views.CustomerForms
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(5, 28);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(27, 16);
+            this.labelControl1.Size = new System.Drawing.Size(35, 16);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Adı :";
+            this.labelControl1.Text = "Adı* :";
             // 
             // groupControl2
             // 
             this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl2.Appearance.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
             this.groupControl2.Appearance.Options.UseBorderColor = true;
+            this.groupControl2.Controls.Add(this.simpleButton1);
             this.groupControl2.Controls.Add(this.buttonSelectReferance);
             this.groupControl2.Controls.Add(this.textReferanceID);
             this.groupControl2.Controls.Add(this.labelControl7);
             this.groupControl2.Controls.Add(this.labelControl6);
-            this.groupControl2.Controls.Add(this.textEdit3);
+            this.groupControl2.Controls.Add(this.textReferancePhoneNumber);
             this.groupControl2.Controls.Add(this.textReferanceName);
             this.groupControl2.Controls.Add(this.labelControl5);
             this.groupControl2.Location = new System.Drawing.Point(417, 164);
@@ -260,6 +267,14 @@ namespace FormUI.Views.CustomerForms
             this.groupControl2.TabIndex = 3;
             this.groupControl2.Text = "Referans";
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(164, 34);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(30, 23);
+            this.simpleButton1.TabIndex = 15;
+            this.simpleButton1.Text = "Sil";
+            // 
             // buttonSelectReferance
             // 
             this.buttonSelectReferance.Location = new System.Drawing.Point(128, 34);
@@ -267,6 +282,7 @@ namespace FormUI.Views.CustomerForms
             this.buttonSelectReferance.Size = new System.Drawing.Size(30, 23);
             this.buttonSelectReferance.TabIndex = 14;
             this.buttonSelectReferance.Text = "Seç";
+            this.buttonSelectReferance.Click += new System.EventHandler(this.buttonSelectReferance_Click);
             // 
             // textReferanceID
             // 
@@ -278,6 +294,7 @@ namespace FormUI.Views.CustomerForms
             this.textReferanceID.Properties.ReadOnly = true;
             this.textReferanceID.Size = new System.Drawing.Size(87, 26);
             this.textReferanceID.TabIndex = 13;
+            this.textReferanceID.EditValueChanged += new System.EventHandler(this.textReferanceID_EditValueChanged);
             // 
             // labelControl7
             // 
@@ -299,16 +316,16 @@ namespace FormUI.Views.CustomerForms
             this.labelControl6.TabIndex = 6;
             this.labelControl6.Text = "Adı :";
             // 
-            // textEdit3
+            // textReferancePhoneNumber
             // 
-            this.textEdit3.Location = new System.Drawing.Point(5, 161);
-            this.textEdit3.MenuManager = this.mainRibbonControl;
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textEdit3.Properties.Appearance.Options.UseFont = true;
-            this.textEdit3.Properties.ReadOnly = true;
-            this.textEdit3.Size = new System.Drawing.Size(338, 26);
-            this.textEdit3.TabIndex = 9;
+            this.textReferancePhoneNumber.Location = new System.Drawing.Point(5, 161);
+            this.textReferancePhoneNumber.MenuManager = this.mainRibbonControl;
+            this.textReferancePhoneNumber.Name = "textReferancePhoneNumber";
+            this.textReferancePhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.textReferancePhoneNumber.Properties.Appearance.Options.UseFont = true;
+            this.textReferancePhoneNumber.Properties.ReadOnly = true;
+            this.textReferancePhoneNumber.Size = new System.Drawing.Size(338, 26);
+            this.textReferancePhoneNumber.TabIndex = 9;
             // 
             // textReferanceName
             // 
@@ -382,6 +399,7 @@ namespace FormUI.Views.CustomerForms
             this.navButton4.Caption = "Yapılan Bakımlar";
             this.navButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton4.ImageOptions.Image")));
             this.navButton4.Name = "navButton4";
+            this.navButton4.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButton4_ElementClick);
             // 
             // navButton5
             // 
@@ -412,6 +430,7 @@ namespace FormUI.Views.CustomerForms
             this.Controls.Add(this.mainRibbonControl);
             this.Name = "EditCustomerForm";
             this.Ribbon = this.mainRibbonControl;
+            this.Load += new System.EventHandler(this.EditCustomerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -422,7 +441,7 @@ namespace FormUI.Views.CustomerForms
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textReferancePhoneNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxReferancedCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).EndInit();
@@ -454,7 +473,7 @@ namespace FormUI.Views.CustomerForms
         private DevExpress.XtraEditors.TextEdit textReferanceID;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit textReferancePhoneNumber;
         private DevExpress.XtraEditors.TextEdit textReferanceName;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.ListBoxControl listBoxReferancedCustomers;
@@ -465,5 +484,6 @@ namespace FormUI.Views.CustomerForms
         private DevExpress.XtraBars.Navigation.NavButton navButton5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraEditors.ListBoxControl listBoxSaledProducts;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

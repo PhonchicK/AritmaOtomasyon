@@ -55,6 +55,11 @@ namespace Bussiness.Concrete
             return saleDal.Get(s => s.ID == id);
         }
 
+        public List<SaleDto> GetCustomerDetails(int customerID)
+        {
+            return saleDal.GetAllDetails(s => s.CustomerID == customerID);
+        }
+
         public SaleDto GetDetailsByID(int id)
         {
             return saleDal.GetDetails(s => s.ID == id);

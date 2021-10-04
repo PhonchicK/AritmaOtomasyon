@@ -56,7 +56,7 @@ namespace FormUI.Views.InstalmentForms
 
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            gridControl.DataSource = barToggleSwitchItem1.Checked ? instalmentService.GetAllDetails() : instalmentService.GetNotPaidDetails();
+            gridControl.DataSource = instalmentService.GetAllDetails();
         }
 
         private void GridView_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
@@ -80,6 +80,11 @@ namespace FormUI.Views.InstalmentForms
         private void barToggleSwitchItem1_CheckedChanged(object sender, ItemClickEventArgs e)
         {
             gridView.ActiveFilter.NonColumnFilter = barToggleSwitchItem1.Checked ? null : "[PaidPrice] < [PayablePrice]";
+        }
+
+        private void bbiEdit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

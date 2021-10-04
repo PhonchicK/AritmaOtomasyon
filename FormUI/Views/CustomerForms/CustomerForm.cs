@@ -65,5 +65,36 @@ namespace FormUI.Views.CustomerForms
                 }
             }
         }
+
+        private void gridControl_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int selectedCustomerID;
+            if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
+                selectedCustomerID = ((CustomerDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                editCustomerForm = new EditCustomerForm(selectedCustomerID);
+                if (editCustomerForm.ShowDialog() == DialogResult.OK)
+                {
+                    gridControl.DataSource = customerService.GetAllDetails();
+                }
+            }
+        }
+
+        private void bbiDelete_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            int selectedCustomerID;
+            if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
+                selectedCustomerID = ((CustomerDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                if (MessageBox.Show(selectedCustomerID.ToString() +
+                    " ID li müşteriyi silmek istiyor musunuz ? \n Not : Satış silinirse kayıtlı satış,bakım ve taksit kayıtlarıda silinecektir.", "Uyarı",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    customerService.Delete(new Customer() { ID = selectedCustomerID });
+                }
+            }
+        }
     }
 }

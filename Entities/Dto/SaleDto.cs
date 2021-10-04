@@ -24,8 +24,6 @@ namespace Entities.Dto
         public int Price { get; set; }
         [Display(Name = "Kalan Tutar")]
         public int RemainderPrice { get; set; }
-        [Display(Name = "Referans Adı")]
-        public string ReferanceCustomerName { get; set; }
         [Display(Name = "Montajcı")]
         public string Assembler { get; set; }
         [Display(Name = "Açıklama")]

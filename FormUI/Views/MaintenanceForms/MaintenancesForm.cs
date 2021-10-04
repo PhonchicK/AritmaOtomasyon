@@ -24,16 +24,32 @@ namespace FormUI.Views.MaintenanceForms
             InitializeComponent();
             maintenanceBaseService = InstanceFactory.GetInstance<IMaintenanceBaseService>();
             gridControl.DataSource = maintenanceBaseService.GetAllDetails();
+            barButtonItem1.Enabled = false;
         }
-        public MaintenancesForm(int customerID)
+        public MaintenancesForm(string val, int ID)
         {
             InitializeComponent();
             maintenanceBaseService = InstanceFactory.GetInstance<IMaintenanceBaseService>();
-            gridControl.DataSource = maintenanceBaseService.GetCustomerDetails(customerID);
+            switch(val)
+            {
+                case "sale":
+                    gridControl.DataSource = maintenanceBaseService.GetSaleDetails(ID);
+                    break;
+                case "customer":
+                    gridControl.DataSource = maintenanceBaseService.GetCustomerDetails(ID);
+                    break;
+
+            }
+            
         }
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
         {
             gridControl.ShowRibbonPrintPreview();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }
