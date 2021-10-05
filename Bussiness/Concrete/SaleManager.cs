@@ -11,11 +11,13 @@ namespace Bussiness.Concrete
         ISaleDal saleDal;
         IInstalmentDal instalmentDal;
         IMaintenanceBaseDal maintenanceBaseDal;
-        public SaleManager(ISaleDal _saleDal, IInstalmentDal _instalmentDal, IMaintenanceBaseDal _maintenanceBaseDal)
+        IMaintenanceDal maintenanceDal;
+        public SaleManager(ISaleDal _saleDal, IInstalmentDal _instalmentDal, IMaintenanceBaseDal _maintenanceBaseDal, IMaintenanceDal _maintenanceDal)
         {
             saleDal = _saleDal;
             instalmentDal = _instalmentDal;
             maintenanceBaseDal = _maintenanceBaseDal;
+            maintenanceDal = _maintenanceDal;
         }
         public int Add(Sale sale)
         {
@@ -33,9 +35,15 @@ namespace Bussiness.Concrete
                 }
             }
 
-            var maintenance = maintenanceBaseDal.Get(m => m.SaleID == sale.ID);
-            if (maintenance != null)
-                maintenanceBaseDal.Delete(maintenance);
+            var maintenanceBase = maintenanceBaseDal.Get(m => m.SaleID == sale.ID);
+            if (maintenanceBase != null)
+                maintenanceBaseDal.Delete(maintenanceBase);
+
+            foreach (var item in maintenanceDal.GetAll(m => m.MaintenanceBaseID == maintenanceBase.ID))
+            {
+                if (item != null)
+                    maintenanceDal.Delete(item);
+            }
 
             saleDal.Delete(sale);
         }
@@ -58,6 +66,11 @@ namespace Bussiness.Concrete
         public List<SaleDto> GetCustomerDetails(int customerID)
         {
             return saleDal.GetAllDetails(s => s.CustomerID == customerID);
+        }
+
+        public List<Sale> GetCustomerSales(int customerID)
+        {
+            return saleDal.GetAll(s => s.CustomerID == customerID);
         }
 
         public SaleDto GetDetailsByID(int id)

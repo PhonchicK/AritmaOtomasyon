@@ -13,9 +13,11 @@ namespace Bussiness.Concrete
     public class MaintenanceBaseManager : IMaintenanceBaseService
     {
         IMaintenanceBaseDal maintenanceBaseDal;
-        public MaintenanceBaseManager(IMaintenanceBaseDal _maintenanceBaseDal)
+        IMaintenanceDal maintenanceDal;
+        public MaintenanceBaseManager(IMaintenanceBaseDal _maintenanceBaseDal, IMaintenanceDal _maintenanceDal)
         {
             maintenanceBaseDal = _maintenanceBaseDal;
+            maintenanceDal = _maintenanceDal;
         }
         public int Add(MaintenanceBase maintenanceBase)
         {
@@ -24,6 +26,11 @@ namespace Bussiness.Concrete
 
         public void Delete(MaintenanceBase maintenanceBase)
         {
+            foreach (var item in maintenanceDal.GetAll(m => m.MaintenanceBaseID == maintenanceBase.ID))
+            {
+                if (item != null)
+                    maintenanceDal.Delete(item);
+            }
             maintenanceBaseDal.Delete(maintenanceBase);
         }
 

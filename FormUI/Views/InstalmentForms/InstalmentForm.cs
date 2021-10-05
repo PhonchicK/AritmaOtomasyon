@@ -27,13 +27,20 @@ namespace FormUI.Views.InstalmentForms
             gridControl.DataSource = instalmentService.GetAllDetails();
             //bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
         }
-        public InstalmentForm(int customerID)
+        public InstalmentForm(string val, int ID)
         {
             InitializeComponent();
             instalmentService = InstanceFactory.GetInstance<IInstalmentService>();
-            var items = instalmentService.GetCustomerInstalments(customerID);
+            switch(val)
+            {
+                case "customer":
+                    gridControl.DataSource = instalmentService.GetCustomerInstalments(ID);
+                    break;
+                case "sale":
+                    gridControl.DataSource = instalmentService.GetSaleInstalmentsDetails(ID);
+                    break;
+            }
             gridView.RowStyle += GridView_RowStyle;
-            gridControl.DataSource = items;
             //bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
         }
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
@@ -44,19 +51,6 @@ namespace FormUI.Views.InstalmentForms
         private void CustomerForm_Load(object sender, EventArgs e)
         {
             gridView.ActiveFilter.NonColumnFilter = "[PaidPrice] < [PayablePrice]";
-        }
-
-        private void bbiNew_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            /*if(new AddCustomerForm().ShowDialog() == DialogResult.OK)
-            {
-                gridControl.DataSource = customerService.GetAll();
-            }*/
-        }
-
-        private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            gridControl.DataSource = instalmentService.GetAllDetails();
         }
 
         private void GridView_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)

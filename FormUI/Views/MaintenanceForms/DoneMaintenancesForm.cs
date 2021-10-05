@@ -24,11 +24,19 @@ namespace FormUI.Views.MaintenanceForms
             maintenanceService = InstanceFactory.GetInstance<IMaintenanceService>();
             gridControl.DataSource = maintenanceService.GetAll();
         }
-        public DoneMaintenancesForm(int customerID)
+        public DoneMaintenancesForm(string val, int ID)
         {
             InitializeComponent();
             maintenanceService = InstanceFactory.GetInstance<IMaintenanceService>();
-            gridControl.DataSource = maintenanceService.GetByCustomerID(customerID);
+            switch(val)
+            {
+                case "customer":
+                    gridControl.DataSource = maintenanceService.GetByCustomerID(ID);
+                    break;
+                case "sale":
+                    gridControl.DataSource = maintenanceService.GetBySaleID(ID);
+                    break;
+            }
         }
     }
 }

@@ -2,6 +2,8 @@
 using Bussiness.Abstract;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
+using Entities.Dto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,7 +42,6 @@ namespace FormUI.Views.MaintenanceForms
                     break;
 
             }
-            
         }
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -50,6 +51,18 @@ namespace FormUI.Views.MaintenanceForms
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
 
+        }
+        EditMaintenanceForm editMaintenanceForm;
+        private void bbiEdit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            int selectedMaintenanceID;
+            if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
+                selectedMaintenanceID = ((MaintenanceDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                editMaintenanceForm = new EditMaintenanceForm(selectedMaintenanceID);
+                editMaintenanceForm.ShowDialog();
+            }
         }
     }
 }

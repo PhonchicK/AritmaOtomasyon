@@ -9,6 +9,7 @@ namespace Bussiness.Abstract
         Sale GetByID(int id);
         SaleDto GetDetailsByID(int id);
         List<Sale> GetAll();
+        List<Sale> GetCustomerSales(int customerID);
         List<SaleDto> GetAllDetails();
         List<SaleDto> GetCustomerDetails(int customerID);
         int Add(Sale sale);

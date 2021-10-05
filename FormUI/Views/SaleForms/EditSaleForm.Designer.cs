@@ -47,16 +47,16 @@ namespace FormUI.Views.SaleForms
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.textComment = new System.Windows.Forms.RichTextBox();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
+            this.textAssembler = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.buttonSelectProduct = new DevExpress.XtraEditors.SimpleButton();
             this.labelProductID = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.textProductName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.textAssembler = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.textComment = new System.Windows.Forms.RichTextBox();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.tileNavPane1 = new DevExpress.XtraBars.Navigation.TileNavPane();
             this.navButton3 = new DevExpress.XtraBars.Navigation.NavButton();
@@ -69,9 +69,9 @@ namespace FormUI.Views.SaleForms
             ((System.ComponentModel.ISupportInitialize)(this.textCustomerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textProductName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textAssembler.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textAssembler.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textProductName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).BeginInit();
             this.SuspendLayout();
@@ -103,6 +103,7 @@ namespace FormUI.Views.SaleForms
             this.bbiSave.Id = 2;
             this.bbiSave.ImageOptions.ImageUri.Uri = "Save";
             this.bbiSave.Name = "bbiSave";
+            this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
             // 
             // bbiSaveAndClose
             // 
@@ -110,6 +111,7 @@ namespace FormUI.Views.SaleForms
             this.bbiSaveAndClose.Id = 3;
             this.bbiSaveAndClose.ImageOptions.ImageUri.Uri = "SaveAndClose";
             this.bbiSaveAndClose.Name = "bbiSaveAndClose";
+            this.bbiSaveAndClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSaveAndClose_ItemClick);
             // 
             // bbiReset
             // 
@@ -117,6 +119,7 @@ namespace FormUI.Views.SaleForms
             this.bbiReset.Id = 5;
             this.bbiReset.ImageOptions.ImageUri.Uri = "Reset";
             this.bbiReset.Name = "bbiReset";
+            this.bbiReset.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiReset_ItemClick);
             // 
             // bbiDelete
             // 
@@ -124,6 +127,7 @@ namespace FormUI.Views.SaleForms
             this.bbiDelete.Id = 6;
             this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiDelete.Name = "bbiDelete";
+            this.bbiDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDelete_ItemClick);
             // 
             // bbiClose
             // 
@@ -131,6 +135,7 @@ namespace FormUI.Views.SaleForms
             this.bbiClose.Id = 7;
             this.bbiClose.ImageOptions.ImageUri.Uri = "Close";
             this.bbiClose.Name = "bbiClose";
+            this.bbiClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiClose_ItemClick);
             // 
             // mainRibbonPage
             // 
@@ -255,6 +260,50 @@ namespace FormUI.Views.SaleForms
             this.groupControl2.TabIndex = 19;
             this.groupControl2.Text = "Ürün";
             // 
+            // textComment
+            // 
+            this.textComment.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.textComment.Location = new System.Drawing.Point(286, 99);
+            this.textComment.Name = "textComment";
+            this.textComment.Size = new System.Drawing.Size(380, 84);
+            this.textComment.TabIndex = 23;
+            this.textComment.Text = "";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(286, 79);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(48, 13);
+            this.labelControl8.TabIndex = 22;
+            this.labelControl8.Text = "Açıklama :";
+            // 
+            // separatorControl1
+            // 
+            this.separatorControl1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.separatorControl1.LineOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.separatorControl1.Location = new System.Drawing.Point(247, 26);
+            this.separatorControl1.Name = "separatorControl1";
+            this.separatorControl1.Size = new System.Drawing.Size(19, 157);
+            this.separatorControl1.TabIndex = 21;
+            // 
+            // textAssembler
+            // 
+            this.textAssembler.Location = new System.Drawing.Point(283, 47);
+            this.textAssembler.Name = "textAssembler";
+            this.textAssembler.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.textAssembler.Properties.Appearance.Options.UseFont = true;
+            this.textAssembler.Properties.ReadOnly = true;
+            this.textAssembler.Size = new System.Drawing.Size(383, 26);
+            this.textAssembler.TabIndex = 20;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(286, 28);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(73, 13);
+            this.labelControl6.TabIndex = 19;
+            this.labelControl6.Text = "Montaj Yapan :";
+            // 
             // buttonSelectProduct
             // 
             this.buttonSelectProduct.Location = new System.Drawing.Point(67, 35);
@@ -303,50 +352,6 @@ namespace FormUI.Views.SaleForms
             this.labelControl7.TabIndex = 13;
             this.labelControl7.Text = "Adı :";
             // 
-            // textAssembler
-            // 
-            this.textAssembler.Location = new System.Drawing.Point(283, 47);
-            this.textAssembler.Name = "textAssembler";
-            this.textAssembler.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textAssembler.Properties.Appearance.Options.UseFont = true;
-            this.textAssembler.Properties.ReadOnly = true;
-            this.textAssembler.Size = new System.Drawing.Size(383, 26);
-            this.textAssembler.TabIndex = 20;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(286, 28);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(73, 13);
-            this.labelControl6.TabIndex = 19;
-            this.labelControl6.Text = "Montaj Yapan :";
-            // 
-            // separatorControl1
-            // 
-            this.separatorControl1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.separatorControl1.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl1.Location = new System.Drawing.Point(247, 26);
-            this.separatorControl1.Name = "separatorControl1";
-            this.separatorControl1.Size = new System.Drawing.Size(19, 157);
-            this.separatorControl1.TabIndex = 21;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(286, 79);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(48, 13);
-            this.labelControl8.TabIndex = 22;
-            this.labelControl8.Text = "Açıklama :";
-            // 
-            // textComment
-            // 
-            this.textComment.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.textComment.Location = new System.Drawing.Point(286, 99);
-            this.textComment.Name = "textComment";
-            this.textComment.Size = new System.Drawing.Size(380, 84);
-            this.textComment.TabIndex = 23;
-            this.textComment.Text = "";
-            // 
             // groupControl3
             // 
             this.groupControl3.AppearanceCaption.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
@@ -392,6 +397,7 @@ namespace FormUI.Views.SaleForms
             this.navButton4.Caption = "Yapılan Bakımlar";
             this.navButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton4.ImageOptions.Image")));
             this.navButton4.Name = "navButton4";
+            this.navButton4.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButton4_ElementClick);
             // 
             // navButton5
             // 
@@ -399,6 +405,7 @@ namespace FormUI.Views.SaleForms
             this.navButton5.Caption = "Taksitler";
             this.navButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton5.ImageOptions.Image")));
             this.navButton5.Name = "navButton5";
+            this.navButton5.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButton5_ElementClick);
             // 
             // EditSaleForm
             // 
@@ -423,9 +430,9 @@ namespace FormUI.Views.SaleForms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textProductName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textAssembler.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textAssembler.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textProductName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).EndInit();
             this.ResumeLayout(false);

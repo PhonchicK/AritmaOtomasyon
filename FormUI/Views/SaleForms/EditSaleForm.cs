@@ -5,6 +5,7 @@ using DevExpress.XtraLayout;
 using DevExpress.XtraLayout.Helpers;
 using Entities.Concrete;
 using FormUI.Views.CustomerForms;
+using FormUI.Views.InstalmentForms;
 using FormUI.Views.MaintenanceForms;
 using FormUI.Views.ProductForms;
 using System;
@@ -105,6 +106,70 @@ namespace FormUI.Views.SaleForms
                 return;
             }
             new MaintenancesForm("sale", selectedSale.ID).ShowDialog();
+        }
+
+        private void navButton4_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
+        {
+            if (maintenanceService.GetBySaleID(selectedSale.ID).Count < 1)
+            {
+                MessageBox.Show("Satışa ait yapılan bakım kaydı bulunamadı.");
+                return;
+            }
+            new DoneMaintenancesForm("sale", selectedSale.ID).ShowDialog();
+        }
+
+        private void navButton5_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
+        {
+            if (instalmentService.GetSaleInstalmentsDetails(selectedSale.ID).Count < 1)
+            {
+                MessageBox.Show("Satışa ait taksit kaydı bulunamadı.");
+                return;
+            }
+            new InstalmentForm("sale", selectedSale.ID).ShowDialog();
+        }
+
+        private void bbiClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void bbiDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageBox.Show("Seçili satışı silmek istediğinize emin misiniz ? ", "Uyarı!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                saleService.Delete(selectedSale);
+                this.DialogResult = DialogResult.OK;
+            }
+        }
+
+        private void bbiReset_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            labelCustomerID.Text = selectedSale.CustomerID.ToString();
+            labelProductID.Text = selectedSale.ProductID.ToString();
+
+            textAssembler.Text = selectedSale.Assembler;
+            textComment.Text = selectedSale.Comment;
+        }
+
+        private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            selectedSale.CustomerID = int.Parse(labelCustomerID.Text);
+            selectedSale.ProductID = int.Parse(labelProductID.Text);
+            selectedSale.Assembler = textAssembler.Text;
+            selectedSale.Comment = textComment.Text;
+
+            saleService.Update(selectedSale);
+        }
+
+        private void bbiSaveAndClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            selectedSale.CustomerID = int.Parse(labelCustomerID.Text);
+            selectedSale.ProductID = int.Parse(labelProductID.Text);
+            selectedSale.Assembler = textAssembler.Text;
+            selectedSale.Comment = textComment.Text;
+
+            saleService.Update(selectedSale);
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

@@ -46,10 +46,8 @@ namespace FormUI.Views.InstalmentForms
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
-            this.bbiNew = new DevExpress.XtraBars.BarButtonItem();
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barToggleSwitchItem1 = new DevExpress.XtraBars.BarToggleSwitchItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -187,10 +185,8 @@ namespace FormUI.Views.InstalmentForms
             this.ribbonControl.SearchEditItem,
             this.bbiPrintPreview,
             this.bsiRecordsCount,
-            this.bbiNew,
             this.bbiEdit,
             this.bbiDelete,
-            this.bbiRefresh,
             this.barButtonItem1,
             this.barToggleSwitchItem1});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
@@ -218,14 +214,6 @@ namespace FormUI.Views.InstalmentForms
             this.bsiRecordsCount.Id = 15;
             this.bsiRecordsCount.Name = "bsiRecordsCount";
             // 
-            // bbiNew
-            // 
-            this.bbiNew.Caption = "Yeni";
-            this.bbiNew.Id = 16;
-            this.bbiNew.ImageOptions.ImageUri.Uri = "New";
-            this.bbiNew.Name = "bbiNew";
-            this.bbiNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiNew_ItemClick);
-            // 
             // bbiEdit
             // 
             this.bbiEdit.Caption = "Düzenle";
@@ -238,14 +226,6 @@ namespace FormUI.Views.InstalmentForms
             // 
             this.bbiDelete.Id = 22;
             this.bbiDelete.Name = "bbiDelete";
-            // 
-            // bbiRefresh
-            // 
-            this.bbiRefresh.Caption = "Yenile";
-            this.bbiRefresh.Id = 19;
-            this.bbiRefresh.ImageOptions.ImageUri.Uri = "Refresh";
-            this.bbiRefresh.Name = "bbiRefresh";
-            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
             // 
             // barButtonItem1
             // 
@@ -274,7 +254,6 @@ namespace FormUI.Views.InstalmentForms
             this.ribbonPageGroup1.AllowTextClipping = false;
             this.ribbonPageGroup1.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiEdit);
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiRefresh);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "İşlemler";
             // 
@@ -331,10 +310,8 @@ namespace FormUI.Views.InstalmentForms
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
-        private DevExpress.XtraBars.BarButtonItem bbiNew;
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
-        private DevExpress.XtraBars.BarButtonItem bbiRefresh;
         private System.Windows.Forms.BindingSource ınstalmentDtoBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn colCustomerName;

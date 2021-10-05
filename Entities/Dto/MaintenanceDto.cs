@@ -10,7 +10,7 @@ namespace Entities.Dto
         [Display(Name = "$")]
         public int ID { get; set; }
 
-        public MaintenanceDto(int id, int customerID, string customerName, string customerPhoneNumber, string customerAddress,int saleID, string product, int maintenanceInterval, DateTime? lastMaintenance,DateTime saleDate)
+        public MaintenanceDto(int id, int customerID, string customerName, string customerPhoneNumber, string customerAddress,int saleID,int productID, string product, DateTime startDate, int maintenanceInterval, DateTime? lastMaintenance,DateTime saleDate)
         {
             ID = id;
             CustomerID = customerID;
@@ -18,7 +18,9 @@ namespace Entities.Dto
             CustomerPhoneNumber = customerPhoneNumber;
             CustomerAddress = customerAddress;
             SaleID = saleID;
+            ProductID = productID;
             Product = product;
+            StartDate = startDate;
             MaintenanceInterval = maintenanceInterval;
             LastMaintenance = lastMaintenance;
             SaleDate = saleDate;
@@ -44,8 +46,12 @@ namespace Entities.Dto
         public string CustomerAddress { get; set; }
         [Display(AutoGenerateField = false)]
         public int SaleID { get; set; }
+        [Display(AutoGenerateField = false)]
+        public int ProductID { get; set; }
         [Display(Name = "Ürün")]
         public string Product { get; set; }
+        [Display(AutoGenerateField = false)]
+        public DateTime StartDate { get; set; }
         [Display(Name = "Sonraki Bakım")]
         public int? DistanceOfNextMaintenance { get; set; }
         [Display(Name = "Sonraki Bakım Tarihi")]

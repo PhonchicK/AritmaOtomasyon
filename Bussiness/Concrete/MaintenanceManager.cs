@@ -57,16 +57,27 @@ namespace Bussiness.Concrete
             List<Maintenance> results = new List<Maintenance>();
             var sales = saleDal.GetAll(s => s.CustomerID == customerID);
             List<int> baseIDs = new List<int>();
-            foreach(var item in sales)
+            foreach (var item in sales)
             {
                 var obj = maintenanceBaseDal.Get(mB => mB.SaleID == item.ID);
                 if (obj == null)
                     continue;
                 baseIDs.Add(obj.ID);
             }
-            foreach(var item in baseIDs)
+            foreach (var item in baseIDs)
             {
                 results.AddRange(maintenanceDal.GetAll(m => m.MaintenanceBaseID == item));
+            }
+            return results;
+        }
+
+        public List<Maintenance> GetBySaleID(int saleID)
+        {
+            List<Maintenance> results = new List<Maintenance>();
+
+            foreach (var item in maintenanceBaseDal.GetAll(mB => mB.SaleID == saleID))
+            {
+                results.AddRange(maintenanceDal.GetAll(m => m.MaintenanceBaseID == item.ID));
             }
             return results;
         }

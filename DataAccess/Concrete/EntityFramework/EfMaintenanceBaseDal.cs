@@ -37,13 +37,15 @@ namespace DataAccess.Concrete.EntityFramework
                                  CustomerPhoneNumber = c.PhoneNumber,
                                  CustomerAddress = c.Address,
                                  SaleID = s.ID,
+                                 ProductID = s.ProductID,
                                  Product = p.Name,
+                                 StartDate = mB.StartDate,
                                  MaintenanceInterval = mB.MaintenanceInterval,
                                  LastMaintenance = LastMaintenance.Date,
                                  SaleDate = s.SaleDate
                              };
 
-                result = result.ToList().Select(m => new MaintenanceDto(m.ID,m.CustomerID, m.CustomerName, m.CustomerPhoneNumber, m.CustomerAddress,m.SaleID, m.Product, m.MaintenanceInterval, m.LastMaintenance, m.SaleDate)).AsQueryable();
+                result = result.ToList().Select(m => new MaintenanceDto(m.ID,m.CustomerID, m.CustomerName, m.CustomerPhoneNumber, m.CustomerAddress,m.SaleID, m.ProductID, m.Product, m.StartDate, m.MaintenanceInterval, m.LastMaintenance, m.SaleDate)).AsQueryable();
 
                 return filter == null ? // if filter is null
                     result.ToList() : // true : return
@@ -68,15 +70,21 @@ namespace DataAccess.Concrete.EntityFramework
                              select new MaintenanceDto
                              {
                                  ID = mB.ID,
+                                 CustomerID = s.CustomerID,
                                  CustomerName = c.Name,
                                  CustomerPhoneNumber = c.PhoneNumber,
                                  CustomerAddress = c.Address,
+                                 SaleID = s.ID,
+                                 ProductID = s.ProductID,
                                  Product = p.Name,
+                                 StartDate = mB.StartDate,
                                  MaintenanceInterval = mB.MaintenanceInterval,
-                                 LastMaintenance = LastMaintenance.Date
-                                 /*NextMaintenance = LastMaintenance.Date.AddMonths(mB.MaintenanceInterval),
-                                 DistanceOfNextMaintenance = (int)(DateTime.Now.Date - LastMaintenance.Date.AddMonths(mB.MaintenanceInterval)).TotalDays*/
+                                 LastMaintenance = LastMaintenance.Date,
+                                 SaleDate = s.SaleDate
                              };
+
+                result = result.ToList().Select(m => new MaintenanceDto(m.ID, m.CustomerID, m.CustomerName, m.CustomerPhoneNumber, m.CustomerAddress, m.SaleID, m.ProductID, m.Product, m.StartDate, m.MaintenanceInterval, m.LastMaintenance, m.SaleDate)).AsQueryable();
+
                 return result.Where(filter).FirstOrDefault();
             }
         }

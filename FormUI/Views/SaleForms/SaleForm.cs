@@ -73,5 +73,29 @@ namespace FormUI.Views.SaleForms
                 }
             }
         }
+        EditSaleForm editSaleForm;
+        private void gridControl_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int selectedSaleID;
+            if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
+                selectedSaleID = ((SaleDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                editSaleForm = new EditSaleForm(selectedSaleID);
+                editSaleForm.ShowDialog();
+            }
+        }
+
+        private void bbiEdit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            int selectedSaleID;
+            if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
+                selectedSaleID = ((SaleDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                editSaleForm = new EditSaleForm(selectedSaleID);
+                editSaleForm.ShowDialog();
+            }
+        }
     }
 }

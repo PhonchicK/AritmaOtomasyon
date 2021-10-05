@@ -56,7 +56,7 @@ namespace FormUI.Views.CustomerForms
                 MessageBox.Show("Müşteriye ait taksit kaydı bulunamadı.");
                 return;
             }
-            new InstalmentForm(selectedCustomer.ID).ShowDialog();
+            new InstalmentForm("customer", selectedCustomer.ID).ShowDialog();
         }
 
         private void navButton3_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
@@ -76,7 +76,7 @@ namespace FormUI.Views.CustomerForms
                 MessageBox.Show("Müşteriye ait bakım kaydı bulunamadı.");
                 return;
             }
-            new DoneMaintenancesForm(selectedCustomer.ID).ShowDialog();
+            new DoneMaintenancesForm("customer", selectedCustomer.ID).ShowDialog();
         }
 
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

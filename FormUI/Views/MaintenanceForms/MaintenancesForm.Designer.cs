@@ -37,11 +37,10 @@ namespace FormUI.Views.MaintenanceForms
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
@@ -77,7 +76,6 @@ namespace FormUI.Views.MaintenanceForms
             this.bsiRecordsCount,
             this.bbiEdit,
             this.bbiDelete,
-            this.bbiRefresh,
             this.barButtonItem1});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.MaxItemId = 22;
@@ -110,6 +108,7 @@ namespace FormUI.Views.MaintenanceForms
             this.bbiEdit.Id = 17;
             this.bbiEdit.ImageOptions.ImageUri.Uri = "Edit";
             this.bbiEdit.Name = "bbiEdit";
+            this.bbiEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiEdit_ItemClick);
             // 
             // bbiDelete
             // 
@@ -118,12 +117,14 @@ namespace FormUI.Views.MaintenanceForms
             this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiDelete.Name = "bbiDelete";
             // 
-            // bbiRefresh
+            // barButtonItem1
             // 
-            this.bbiRefresh.Caption = "Yenile";
-            this.bbiRefresh.Id = 19;
-            this.bbiRefresh.ImageOptions.ImageUri.Uri = "Refresh";
-            this.bbiRefresh.Name = "bbiRefresh";
+            this.barButtonItem1.Caption = "Bakım Ekle";
+            this.barButtonItem1.Id = 21;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -139,7 +140,6 @@ namespace FormUI.Views.MaintenanceForms
             this.ribbonPageGroup1.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiDelete);
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiRefresh);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "İşlemler";
@@ -151,15 +151,6 @@ namespace FormUI.Views.MaintenanceForms
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
             this.ribbonStatusBar.Size = new System.Drawing.Size(798, 24);
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Bakım Ekle";
-            this.barButtonItem1.Id = 21;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // MaintenancesForm
             // 
@@ -193,7 +184,6 @@ namespace FormUI.Views.MaintenanceForms
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
-        private DevExpress.XtraBars.BarButtonItem bbiRefresh;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }
