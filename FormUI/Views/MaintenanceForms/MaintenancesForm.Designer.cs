@@ -61,6 +61,7 @@ namespace FormUI.Views.MaintenanceForms
             // gridView
             // 
             this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.gridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.Editable = false;
@@ -119,7 +120,7 @@ namespace FormUI.Views.MaintenanceForms
             // 
             // barButtonItem1
             // 
-            this.barButtonItem1.Caption = "Bakım Ekle";
+            this.barButtonItem1.Caption = "Bakım Yap";
             this.barButtonItem1.Id = 21;
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));

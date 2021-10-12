@@ -29,6 +29,6 @@ namespace Entities.Dto
         [Display(Name = "Ödeme Tarihi")]
         public DateTime PaymentDate { get; set; }
         [Display(Name = "Ödenen Tarih")]
-        public DateTime PaidDate { get; set; }
+        public DateTime? PaidDate { get; set; }
     }
 }

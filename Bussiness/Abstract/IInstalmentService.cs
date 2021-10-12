@@ -16,6 +16,8 @@ namespace Bussiness.Abstract
         List<Instalment> GetSaleInstalments(int saleID);
         List<InstalmentDto> GetCustomerInstalments(int customerID);
         List<InstalmentDto> GetSaleInstalmentsDetails(int saleID);
+        List<InstalmentDto> GetThisMonthInstalments();
+        List<InstalmentDto> GetLateInstalments();
         Instalment GetByID(int id);
         InstalmentDto GetDetailsByID(int id);
         int Add(Instalment instalment);

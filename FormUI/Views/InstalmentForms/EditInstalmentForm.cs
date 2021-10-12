@@ -41,7 +41,7 @@ namespace FormUI.Views.InstalmentForms
             textInstalmentPayablePrice.Text = selectedInstalment.PayablePrice.ToString();
             dateInstalmentPaymentDate.DateTime = selectedInstalment.PaymentDate.Date;
             textPaidPrice.Text = selectedInstalment.PaidPrice.ToString();
-            datePaidDate.DateTime = selectedInstalment.PaidDate.Date;
+            datePaidDate.DateTime = selectedInstalment.PaidDate.Value.Date;
         }
 
         private void bbiClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -60,7 +60,7 @@ namespace FormUI.Views.InstalmentForms
                 textInstalmentPayablePrice.Text = selectedInstalment.PayablePrice.ToString();
                 dateInstalmentPaymentDate.DateTime = selectedInstalment.PaymentDate.Date;
                 textPaidPrice.Text = selectedInstalment.PaidPrice.ToString();
-                datePaidDate.DateTime = selectedInstalment.PaidDate.Date;
+                datePaidDate.DateTime = selectedInstalment.PaidDate.Value.Date;
             }
         }
 

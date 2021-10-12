@@ -51,6 +51,11 @@ namespace Bussiness.Concrete
             return instalmentDal.GetDetails(i => i.ID == id);
         }
 
+        public List<InstalmentDto> GetLateInstalments()
+        {
+            return instalmentDal.GetAllDetails(i => (i.PayablePrice != i.PaidPrice) && (i.PaymentDate < DateTime.Now));
+        }
+
         public List<InstalmentDto> GetNotPaidDetails()
         {
             return instalmentDal.GetAllDetails(i => i.PaidPrice < i.PayablePrice);
@@ -64,6 +69,11 @@ namespace Bussiness.Concrete
         public List<InstalmentDto> GetSaleInstalmentsDetails(int saleID)
         {
             return instalmentDal.GetAllDetails(i => i.SaleID == saleID);
+        }
+
+        public List<InstalmentDto> GetThisMonthInstalments()
+        {
+            return instalmentDal.GetAllDetails(i => ((i.PaymentDate.Month == DateTime.Now.Month) && (i.PaymentDate.Year == DateTime.Now.Year) && (i.PayablePrice != i.PaidPrice)));
         }
 
         public void Update(Instalment instalment)

@@ -28,7 +28,7 @@ namespace Entities.Dto
             if (LastMaintenance != null)
                 NextMaintenance = LastMaintenance.Value.Date.AddMonths(maintenanceInterval);
             else
-                NextMaintenance = SaleDate.Date.AddMonths(maintenanceInterval);
+                NextMaintenance = StartDate.Date.AddMonths(maintenanceInterval);
 
             DistanceOfNextMaintenance = ((int)(NextMaintenance - DateTime.Now).Value.TotalDays);
         }

@@ -292,7 +292,6 @@ namespace FormUI.Views.SaleForms
             this.textAssembler.Name = "textAssembler";
             this.textAssembler.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textAssembler.Properties.Appearance.Options.UseFont = true;
-            this.textAssembler.Properties.ReadOnly = true;
             this.textAssembler.Size = new System.Drawing.Size(383, 26);
             this.textAssembler.TabIndex = 20;
             // 

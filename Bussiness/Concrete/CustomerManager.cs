@@ -50,6 +50,11 @@ namespace Bussiness.Concrete
             return customerDal.GetDetails(c => c.ID == id);
         }
 
+        public List<Customer> GetReferancedCustomers(int customerID)
+        {
+            return customerDal.GetAll(c => c.ReferanceCustomerID == customerID);
+        }
+
         public void Update(Customer customer)
         {
             customerDal.Update(customer);

@@ -179,6 +179,19 @@ namespace FormUI.Views.SaleForms
         #endregion
 
         #region Maintenance
+        private void comboBoxMaintenanceInterval_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
         private void buttonMaintenanceSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(comboBoxMaintenanceInterval.Text))
@@ -263,56 +276,18 @@ namespace FormUI.Views.SaleForms
                 e.Handled = true;
             }
         }
+        private void dateEditInstalmentStart_EditValueChanged(object sender, EventArgs e)
+        {
+            if (comboBoxInstalmentCount.SelectedIndex != -1)
+            {
+                int price = Convert.ToInt32(textPaymentPrice.Text) - Convert.ToInt32(textPaymentPaidPrice.Text);
+                int instalmentCount = Convert.ToInt32(comboBoxInstalmentCount.Text);
+                LoadInstalments(price, instalmentCount);
+            }
+        }
         #endregion
 
         #region Details
-        #endregion
-
-        #region PageControls
-        private void CustomerNextPage()
-        {
-            mainTabControl.SelectedTabPage = tabPageProduct;
-        }
-        private void buttonMaintenanceSettings_Click(object sender, EventArgs e)
-        {
-            mainTabControl.SelectedTabPage = tabPageMaintenance;
-        }
-        private void ProductBackPage()
-        {
-            mainTabControl.SelectedTabPage = tabPageCustomer;
-        }
-        private void ProductNextPage()
-        {
-            mainTabControl.SelectedTabPage = tabPagePayment;
-        }
-        private void MaintenanceExitPage()
-        {
-            mainTabControl.SelectedTabPage = tabPageProduct;
-        }
-        private void PaymentInstalmentSettings()
-        {
-            mainTabControl.SelectedTabPage = tabPageInstalment;
-        }
-        private void PaymentBackPage()
-        {
-            mainTabControl.SelectedTabPage = tabPageProduct;
-        }
-        private void PaymentNextPage()
-        {
-            mainTabControl.SelectedTabPage = tabPageDetails;
-        }
-        private void InstalmentExitPage()
-        {
-            mainTabControl.SelectedTabPage = tabPagePayment;
-        }
-        #endregion
-
-        private void NewSaleForm_Load(object sender, EventArgs e)
-        {
-            dateEditInstalmentStart.DateTime = DateTime.Now.Date;
-            dateEditMaintenanceStart.DateTime = DateTime.Now.Date;
-        }
-
         private void buttonDetailsSell_Click(object sender, EventArgs e)
         {
             int customerID;
@@ -360,5 +335,85 @@ namespace FormUI.Views.SaleForms
             }
             this.DialogResult = DialogResult.OK;
         }
+        private void LoadDetails()
+        {
+            labelDetailsCustomerState.Text = tabControlCustomer.SelectedTabPage.Text;
+            if(tabControlCustomer.SelectedTabPage.Text == "Yeni")
+            {
+                labelDetailsCustomerName.Text = textNewCustomerName.Text;
+                labelDetailsCustomerPhoneNumber.Text = textNewCustomerPhoneNumber.Text;
+            }
+            else
+            {
+                labelDetailsCustomerName.Text = textExistsCustomerName.Text;
+                labelDetailsCustomerPhoneNumber.Text = textExistsCustomerPhoneNumber.Text;
+            }
+
+            labelDetailsProductName.Text = textProductName.Text;
+            labelDetailsPaymentType.Text = comboBoxPaymentType.Text;
+            labelDetailsPaymentPrice.Text = textPaymentPrice.Text;
+            labelDetailsPaymentPaidPrice.Text = textPaymentPaidPrice.Text;
+            if(comboBoxPaymentType.Text == "Taksit")
+            {
+                labelDetailsInstalmentCount.Text = comboBoxInstalmentCount.Text;
+            }
+        }
+        #endregion
+
+        #region PageControls
+        private void CustomerNextPage()
+        {
+            mainTabControl.SelectedTabPage = tabPageProduct;
+        }
+        private void buttonMaintenanceSettings_Click(object sender, EventArgs e)
+        {
+            mainTabControl.SelectedTabPage = tabPageMaintenance;
+        }
+        private void ProductBackPage()
+        {
+            mainTabControl.SelectedTabPage = tabPageCustomer;
+        }
+        private void ProductNextPage()
+        {
+            mainTabControl.SelectedTabPage = tabPagePayment;
+        }
+        private void MaintenanceExitPage()
+        {
+            mainTabControl.SelectedTabPage = tabPageProduct;
+        }
+        private void PaymentInstalmentSettings()
+        {
+            mainTabControl.SelectedTabPage = tabPageInstalment;
+        }
+        private void PaymentBackPage()
+        {
+            mainTabControl.SelectedTabPage = tabPageProduct;
+        }
+        private void PaymentNextPage()
+        {
+            mainTabControl.SelectedTabPage = tabPageDetails;
+        }
+        private void InstalmentExitPage()
+        {
+            mainTabControl.SelectedTabPage = tabPagePayment;
+        }
+        #endregion
+
+        private void NewSaleForm_Load(object sender, EventArgs e)
+        {
+            dateEditInstalmentStart.DateTime = DateTime.Now.Date;
+            dateEditMaintenanceStart.DateTime = DateTime.Now.Date;
+        }
+
+        private void mainTabControl_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            switch(e.Page.Text)
+            {
+                case "Details":
+                    LoadDetails();
+                    break;
+            }
+        }
+
     }
 }

@@ -29,6 +29,7 @@ namespace FormUI.Views.CustomerForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerForm));
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -37,11 +38,12 @@ namespace FormUI.Views.CustomerForms
             this.bbiNew = new DevExpress.XtraBars.BarButtonItem();
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
@@ -63,6 +65,7 @@ namespace FormUI.Views.CustomerForms
             // gridView
             // 
             this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.gridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.Editable = false;
@@ -79,9 +82,9 @@ namespace FormUI.Views.CustomerForms
             this.bbiNew,
             this.bbiEdit,
             this.bbiDelete,
-            this.bbiRefresh});
+            this.barButtonItem1});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 20;
+            this.ribbonControl.MaxItemId = 21;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -129,19 +132,12 @@ namespace FormUI.Views.CustomerForms
             this.bbiDelete.Name = "bbiDelete";
             this.bbiDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDelete_ItemClick);
             // 
-            // bbiRefresh
-            // 
-            this.bbiRefresh.Caption = "Yenile";
-            this.bbiRefresh.Id = 19;
-            this.bbiRefresh.ImageOptions.ImageUri.Uri = "Refresh";
-            this.bbiRefresh.Name = "bbiRefresh";
-            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
-            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup3});
             this.ribbonPage1.MergeOrder = 0;
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Home";
@@ -153,7 +149,6 @@ namespace FormUI.Views.CustomerForms
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiNew);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiDelete);
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiRefresh);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "İşlemler";
             // 
@@ -172,6 +167,21 @@ namespace FormUI.Views.CustomerForms
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
             this.ribbonStatusBar.Size = new System.Drawing.Size(790, 24);
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Hızlı Menü";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Taksit Öde";
+            this.barButtonItem1.Id = 20;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // CustomerForm
             // 
@@ -206,6 +216,7 @@ namespace FormUI.Views.CustomerForms
         private DevExpress.XtraBars.BarButtonItem bbiNew;
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
-        private DevExpress.XtraBars.BarButtonItem bbiRefresh;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }
 }

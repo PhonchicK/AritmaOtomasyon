@@ -48,9 +48,17 @@ namespace FormUI.Views.MaintenanceForms
             gridControl.ShowRibbonPrintPreview();
         }
 
+        NewMaintenanceForm newMaintenanceForm;
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            int selectedMaintenanceID;
+            if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
+                selectedMaintenanceID = ((MaintenanceDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                newMaintenanceForm = new NewMaintenanceForm(selectedMaintenanceID);
+                newMaintenanceForm.ShowDialog();
+            }
         }
         EditMaintenanceForm editMaintenanceForm;
         private void bbiEdit_ItemClick(object sender, ItemClickEventArgs e)

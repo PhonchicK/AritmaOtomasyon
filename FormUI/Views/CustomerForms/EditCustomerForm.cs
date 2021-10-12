@@ -143,6 +143,8 @@ namespace FormUI.Views.CustomerForms
             }
             else
                 textReferanceID.Text = null;
+            listBoxReferancedCustomers.DataSource = customerService.GetReferancedCustomers(selectedCustomer.ID);
+            listBoxReferancedCustomers.DisplayMember = "Name";
         }
 
         private void EditCustomerForm_Load(object sender, EventArgs e)
@@ -170,8 +172,18 @@ namespace FormUI.Views.CustomerForms
             selectCustomerForm = new SelectCustomerForm();
             if(selectCustomerForm.ShowDialog() == DialogResult.OK)
             {
+                if(selectCustomerForm.SelectedCustomerID == selectedCustomer.ID)
+                {
+                    MessageBox.Show("Aynı müşteriyi seçemezsin!");
+                    return;
+                }
                 textReferanceID.Text = selectCustomerForm.SelectedCustomerID.ToString();
             }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            textReferanceID.Text = null;
         }
     }
 }

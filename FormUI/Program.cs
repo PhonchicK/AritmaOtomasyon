@@ -19,7 +19,7 @@ namespace FormUI
                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("tr-TR");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainMenu());
         }
     }
 }

@@ -5,6 +5,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using Entities.Concrete;
 using Entities.Dto;
+using FormUI.Views.InstalmentForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -95,6 +96,32 @@ namespace FormUI.Views.SaleForms
                 selectedSaleID = ((SaleDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
                 editSaleForm = new EditSaleForm(selectedSaleID);
                 editSaleForm.ShowDialog();
+            }
+        }
+
+        private void gridView_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            SaleDto selectedSale;
+            if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
+                selectedSale = ((SaleDto)(((GridView)gridControl.MainView).GetRow(selRows[0])));
+                barButtonItem1.Enabled = selectedSale.PaymentType == "Taksit";
+            }
+        }
+        PayInstalment payInstalment;
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            int selectedSaleID;
+            if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
+                selectedSaleID = ((SaleDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                payInstalment = new PayInstalment(selectedSaleID);
+                if(payInstalment.ShowDialog() == DialogResult.Abort)
+                {
+                    MessageBox.Show("Tüm taksitler ödenmiş");
+                }
             }
         }
     }

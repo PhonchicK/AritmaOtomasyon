@@ -33,7 +33,7 @@ namespace FormUI.Views.CustomerForms
                     refCustomerID = customerService.Add(new Customer() { Name = textRefNewName.Text, PhoneNumber = textRefNewPhoneNumber.Text });
                     break;
                 case "Varolan":
-                    refCustomerID = Convert.ToInt32(textRefID);
+                    refCustomerID = Convert.ToInt32(textRefID.Text);
                     break;
             }
             customerService.Add(new Customer() { Name = TextName.Text, PhoneNumber = TextPhoneNumber.Text, Address = TextAddress.Text, ReferanceCustomerID = refCustomerID});

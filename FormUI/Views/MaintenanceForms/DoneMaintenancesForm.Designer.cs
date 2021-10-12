@@ -60,6 +60,7 @@ namespace FormUI.Views.MaintenanceForms
             // gridView
             // 
             this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.gridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.Editable = false;
@@ -70,12 +71,12 @@ namespace FormUI.Views.MaintenanceForms
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
+            this.ribbonControl.SearchEditItem,
             this.bsiRecordsCount,
             this.bbiNew,
             this.bbiEdit,
             this.bbiDelete,
-            this.bbiRefresh,
-            this.ribbonControl.SearchEditItem});
+            this.bbiRefresh});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.MaxItemId = 20;
             this.ribbonControl.Name = "ribbonControl";

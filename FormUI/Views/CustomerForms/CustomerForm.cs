@@ -15,6 +15,8 @@ using Bussiness.Abstract;
 using Business.DependencyResolvers.Ninject;
 using DevExpress.XtraGrid.Views.Grid;
 using Entities.Dto;
+using FormUI.Views.SaleForms;
+using FormUI.Views.InstalmentForms;
 
 namespace FormUI.Views.CustomerForms
 {
@@ -93,6 +95,26 @@ namespace FormUI.Views.CustomerForms
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     customerService.Delete(new Customer() { ID = selectedCustomerID });
+                }
+            }
+        }
+        SelectSaleForm selectSaleForm;
+        PayInstalment payInstalment;
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            int selectedCustomerID;
+            if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
+                selectedCustomerID = ((CustomerDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                selectSaleForm = new SelectSaleForm(selectedCustomerID);
+                if(selectSaleForm.ShowDialog() == DialogResult.OK)
+                {
+                    payInstalment = new PayInstalment(selectSaleForm.selectedSaleID);
+                    if(payInstalment.ShowDialog() == DialogResult.Abort)
+                    {
+                        MessageBox.Show("Tüm taksitler ödenmiş veya Müşteriye ait taksit kaydı bulunamadı.");
+                    }
                 }
             }
         }

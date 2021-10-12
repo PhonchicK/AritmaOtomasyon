@@ -92,6 +92,7 @@ namespace FormUI.Views.InstalmentForms
             this.colPaidPrice,
             this.colPaymentDate,
             this.colPaidDate});
+            this.gridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.Editable = false;

@@ -27,13 +27,15 @@ namespace FormUI.Views.MaintenanceForms
             maintenanceBaseService = InstanceFactory.GetInstance<IMaintenanceBaseService>();
             maintenanceService = InstanceFactory.GetInstance<IMaintenanceService>();
             saleService = InstanceFactory.GetInstance<ISaleService>();
+            customerService = InstanceFactory.GetInstance<ICustomerService>();
+
             MaintenanceBase selectedMaintenanceBase = maintenanceBaseService.GetByID(maintenanceBaseID);
             Maintenance lastMaintenance = maintenanceService.GetByID(selectedMaintenanceBase.LastMaintenanceID);
 
             textMaintenanceBaseDate.Text = selectedMaintenanceBase.StartDate.ToString();
             textMaintenanceBaseLastDate.Text = lastMaintenance != null ? lastMaintenance.Date.ToString() : null;
 
-            Customer customer = customerService.GetByID(saleService.GetByID(selectedMaintenanceBase.SaleID).ID);
+            Customer customer = customerService.GetByID(saleService.GetByID(selectedMaintenanceBase.SaleID).CustomerID);
             textCustomerName.Text = customer.Name;
             textCustomerPhoneNumber.Text = customer.PhoneNumber;
             textCustomerAddress.Text = customer.Address;

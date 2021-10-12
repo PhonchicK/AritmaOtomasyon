@@ -37,7 +37,6 @@ namespace FormUI.Views.ProductForms
             this.bbiNew = new DevExpress.XtraBars.BarButtonItem();
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -62,6 +61,7 @@ namespace FormUI.Views.ProductForms
             // gridView
             // 
             this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.gridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.Editable = false;
@@ -72,13 +72,12 @@ namespace FormUI.Views.ProductForms
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
+            this.ribbonControl.SearchEditItem,
             this.bbiPrintPreview,
             this.bsiRecordsCount,
             this.bbiNew,
             this.bbiEdit,
-            this.bbiDelete,
-            this.bbiRefresh,
-            this.ribbonControl.SearchEditItem});
+            this.bbiDelete});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.MaxItemId = 20;
             this.ribbonControl.Name = "ribbonControl";
@@ -118,6 +117,7 @@ namespace FormUI.Views.ProductForms
             this.bbiEdit.Id = 17;
             this.bbiEdit.ImageOptions.ImageUri.Uri = "Edit";
             this.bbiEdit.Name = "bbiEdit";
+            this.bbiEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiEdit_ItemClick);
             // 
             // bbiDelete
             // 
@@ -125,14 +125,7 @@ namespace FormUI.Views.ProductForms
             this.bbiDelete.Id = 18;
             this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiDelete.Name = "bbiDelete";
-            // 
-            // bbiRefresh
-            // 
-            this.bbiRefresh.Caption = "Refresh";
-            this.bbiRefresh.Id = 19;
-            this.bbiRefresh.ImageOptions.ImageUri.Uri = "Refresh";
-            this.bbiRefresh.Name = "bbiRefresh";
-            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
+            this.bbiDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDelete_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -150,7 +143,6 @@ namespace FormUI.Views.ProductForms
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiNew);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiDelete);
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiRefresh);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Tasks";
             // 
@@ -202,6 +194,5 @@ namespace FormUI.Views.ProductForms
         private DevExpress.XtraBars.BarButtonItem bbiNew;
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
-        private DevExpress.XtraBars.BarButtonItem bbiRefresh;
     }
 }

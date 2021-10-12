@@ -44,15 +44,15 @@ namespace FormUI.Views.MaintenanceForms
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.textProductName = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.textProductFeatures = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.textProductName = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.dateMaintenanceStartDate = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxMaintenanceInterval = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.dateMaintenanceStartDate = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -60,13 +60,13 @@ namespace FormUI.Views.MaintenanceForms
             ((System.ComponentModel.ISupportInitialize)(this.textCustomerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textProductName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textProductFeatures.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textProductName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxMaintenanceInterval.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateMaintenanceStartDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateMaintenanceStartDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxMaintenanceInterval.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // mainRibbonControl
@@ -97,6 +97,7 @@ namespace FormUI.Views.MaintenanceForms
             this.bbiSave.Id = 2;
             this.bbiSave.ImageOptions.ImageUri.Uri = "Save";
             this.bbiSave.Name = "bbiSave";
+            this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
             // 
             // bbiSaveAndClose
             // 
@@ -104,6 +105,7 @@ namespace FormUI.Views.MaintenanceForms
             this.bbiSaveAndClose.Id = 3;
             this.bbiSaveAndClose.ImageOptions.ImageUri.Uri = "SaveAndClose";
             this.bbiSaveAndClose.Name = "bbiSaveAndClose";
+            this.bbiSaveAndClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSaveAndClose_ItemClick);
             // 
             // bbiSaveAndNew
             // 
@@ -118,6 +120,7 @@ namespace FormUI.Views.MaintenanceForms
             this.bbiReset.Id = 5;
             this.bbiReset.ImageOptions.ImageUri.Uri = "Reset";
             this.bbiReset.Name = "bbiReset";
+            this.bbiReset.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiReset_ItemClick);
             // 
             // bbiDelete
             // 
@@ -125,6 +128,7 @@ namespace FormUI.Views.MaintenanceForms
             this.bbiDelete.Id = 6;
             this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiDelete.Name = "bbiDelete";
+            this.bbiDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDelete_ItemClick);
             // 
             // bbiClose
             // 
@@ -132,6 +136,7 @@ namespace FormUI.Views.MaintenanceForms
             this.bbiClose.Id = 7;
             this.bbiClose.ImageOptions.ImageUri.Uri = "Close";
             this.bbiClose.Name = "bbiClose";
+            this.bbiClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiClose_ItemClick);
             // 
             // mainRibbonPage
             // 
@@ -217,24 +222,6 @@ namespace FormUI.Views.MaintenanceForms
             this.groupControl2.TabIndex = 18;
             this.groupControl2.Text = "Ürün";
             // 
-            // textProductName
-            // 
-            this.textProductName.Location = new System.Drawing.Point(4, 50);
-            this.textProductName.Name = "textProductName";
-            this.textProductName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textProductName.Properties.Appearance.Options.UseFont = true;
-            this.textProductName.Properties.ReadOnly = true;
-            this.textProductName.Size = new System.Drawing.Size(308, 26);
-            this.textProductName.TabIndex = 15;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(7, 31);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(22, 13);
-            this.labelControl4.TabIndex = 13;
-            this.labelControl4.Text = "Adı :";
-            // 
             // textProductFeatures
             // 
             this.textProductFeatures.Location = new System.Drawing.Point(4, 104);
@@ -252,6 +239,24 @@ namespace FormUI.Views.MaintenanceForms
             this.labelControl1.Size = new System.Drawing.Size(37, 13);
             this.labelControl1.TabIndex = 16;
             this.labelControl1.Text = "Özellik :";
+            // 
+            // textProductName
+            // 
+            this.textProductName.Location = new System.Drawing.Point(4, 50);
+            this.textProductName.Name = "textProductName";
+            this.textProductName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.textProductName.Properties.Appearance.Options.UseFont = true;
+            this.textProductName.Properties.ReadOnly = true;
+            this.textProductName.Size = new System.Drawing.Size(308, 26);
+            this.textProductName.TabIndex = 15;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(7, 31);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(22, 13);
+            this.labelControl4.TabIndex = 13;
+            this.labelControl4.Text = "Adı :";
             // 
             // labelControl6
             // 
@@ -275,29 +280,6 @@ namespace FormUI.Views.MaintenanceForms
             this.groupControl3.TabIndex = 18;
             this.groupControl3.Text = "Bakım";
             // 
-            // dateMaintenanceStartDate
-            // 
-            this.dateMaintenanceStartDate.EditValue = null;
-            this.dateMaintenanceStartDate.Location = new System.Drawing.Point(5, 50);
-            this.dateMaintenanceStartDate.MenuManager = this.mainRibbonControl;
-            this.dateMaintenanceStartDate.Name = "dateMaintenanceStartDate";
-            this.dateMaintenanceStartDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.dateMaintenanceStartDate.Properties.Appearance.Options.UseFont = true;
-            this.dateMaintenanceStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateMaintenanceStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateMaintenanceStartDate.Size = new System.Drawing.Size(307, 26);
-            this.dateMaintenanceStartDate.TabIndex = 14;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(7, 80);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(66, 13);
-            this.labelControl5.TabIndex = 15;
-            this.labelControl5.Text = "Bakım Aralığı :";
-            // 
             // comboBoxMaintenanceInterval
             // 
             this.comboBoxMaintenanceInterval.EditValue = "1";
@@ -319,6 +301,30 @@ namespace FormUI.Views.MaintenanceForms
             "24"});
             this.comboBoxMaintenanceInterval.Size = new System.Drawing.Size(307, 26);
             this.comboBoxMaintenanceInterval.TabIndex = 16;
+            this.comboBoxMaintenanceInterval.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxMaintenanceInterval_KeyPress);
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(7, 80);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(66, 13);
+            this.labelControl5.TabIndex = 15;
+            this.labelControl5.Text = "Bakım Aralığı :";
+            // 
+            // dateMaintenanceStartDate
+            // 
+            this.dateMaintenanceStartDate.EditValue = null;
+            this.dateMaintenanceStartDate.Location = new System.Drawing.Point(5, 50);
+            this.dateMaintenanceStartDate.MenuManager = this.mainRibbonControl;
+            this.dateMaintenanceStartDate.Name = "dateMaintenanceStartDate";
+            this.dateMaintenanceStartDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.dateMaintenanceStartDate.Properties.Appearance.Options.UseFont = true;
+            this.dateMaintenanceStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateMaintenanceStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateMaintenanceStartDate.Size = new System.Drawing.Size(307, 26);
+            this.dateMaintenanceStartDate.TabIndex = 14;
             // 
             // EditMaintenanceForm
             // 
@@ -330,6 +336,7 @@ namespace FormUI.Views.MaintenanceForms
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.mainRibbonControl);
+            this.MaximizeBox = false;
             this.Name = "EditMaintenanceForm";
             this.Ribbon = this.mainRibbonControl;
             this.Load += new System.EventHandler(this.EditMaintenanceForm_Load);
@@ -342,14 +349,14 @@ namespace FormUI.Views.MaintenanceForms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textProductName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textProductFeatures.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textProductName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxMaintenanceInterval.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateMaintenanceStartDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateMaintenanceStartDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxMaintenanceInterval.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
