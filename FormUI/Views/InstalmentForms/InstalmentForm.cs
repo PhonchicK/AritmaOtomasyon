@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using Entities.Concrete;
 using Bussiness.Abstract;
 using Business.DependencyResolvers.Ninject;
+using DevExpress.XtraGrid.Views.Grid;
+using Entities.Dto;
 
 namespace FormUI.Views.InstalmentForms
 {
@@ -75,10 +77,17 @@ namespace FormUI.Views.InstalmentForms
         {
             gridView.ActiveFilter.NonColumnFilter = barToggleSwitchItem1.Checked ? null : "[PaidPrice] < [PayablePrice]";
         }
-
+        EditInstalmentForm editInstalmentForm;
         private void bbiEdit_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            int selectedInstalmentID;
+            if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
+                selectedInstalmentID = ((InstalmentDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                editInstalmentForm = new EditInstalmentForm(selectedInstalmentID);
+                editInstalmentForm.ShowDialog();
+            }
         }
     }
 }

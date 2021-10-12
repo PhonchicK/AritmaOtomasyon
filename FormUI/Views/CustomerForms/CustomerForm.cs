@@ -23,10 +23,12 @@ namespace FormUI.Views.CustomerForms
     public partial class CustomerForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         ICustomerService customerService;
+        IInstalmentService instalmentService;
         public CustomerForm()
         {
             InitializeComponent();
             customerService = InstanceFactory.GetInstance<ICustomerService>();
+            instalmentService = InstanceFactory.GetInstance<IInstalmentService>();
             gridControl.DataSource = customerService.GetAllDetails();
             //bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
         }
@@ -110,11 +112,25 @@ namespace FormUI.Views.CustomerForms
                 selectSaleForm = new SelectSaleForm(selectedCustomerID);
                 if(selectSaleForm.ShowDialog() == DialogResult.OK)
                 {
-                    payInstalment = new PayInstalment(selectSaleForm.selectedSaleID);
-                    if(payInstalment.ShowDialog() == DialogResult.Abort)
+                    var instalments = instalmentService.GetSaleInstalments(selectSaleForm.selectedSaleID);
+
+                    bool state = true;
+
+                    if (instalments.Count == 0)
+                        state = true;
+
+                    foreach (var item in instalments)
+                    {
+                        state = (state && (item.PayablePrice == item.PaidPrice));
+                    }
+                    if (state)
                     {
                         MessageBox.Show("Tüm taksitler ödenmiş veya Müşteriye ait taksit kaydı bulunamadı.");
+                        return;
                     }
+
+                    payInstalment = new PayInstalment(selectSaleForm.selectedSaleID);
+                    payInstalment.ShowDialog();
                 }
             }
         }

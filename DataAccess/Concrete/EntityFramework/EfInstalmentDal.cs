@@ -56,9 +56,11 @@ namespace DataAccess.Concrete.EntityFramework
                              on s.ProductID equals p.ID
                              select new InstalmentDto
                              {
-                                 ID = s.ID,
+                                 ID = i.ID,
+                                 CustomerID = c.ID,
                                  CustomerName = c.Name,
                                  CustomerPhoneNumber = c.PhoneNumber,
+                                 SaleID = s.ID,
                                  Product = p.Name,
                                  SaleDate = s.SaleDate,
                                  InstalmentNo = i.InstalmentNo,

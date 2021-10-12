@@ -22,10 +22,12 @@ namespace FormUI.Views.SaleForms
     public partial class SaleForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         ISaleService saleService;
+        IInstalmentService instalmentService;
         public SaleForm()
         {
             InitializeComponent();
             saleService = InstanceFactory.GetInstance<ISaleService>();
+            instalmentService = InstanceFactory.GetInstance<IInstalmentService>();
             gridControl.DataSource = saleService.GetAllDetails();
             //bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
         }
@@ -117,11 +119,24 @@ namespace FormUI.Views.SaleForms
             {
                 int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
                 selectedSaleID = ((SaleDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
-                payInstalment = new PayInstalment(selectedSaleID);
-                if(payInstalment.ShowDialog() == DialogResult.Abort)
+                
+                var instalments = instalmentService.GetSaleInstalments(selectedSaleID);
+
+                bool state = true;
+
+                foreach (var item in instalments)
                 {
-                    MessageBox.Show("Tüm taksitler ödenmiş");
+                    bool sstate = (state && (item.PayablePrice == item.PaidPrice));
+                    state = sstate;
                 }
+                if (state)
+                {
+                    MessageBox.Show("Tüm taksitler ödenmiş.");
+                    return;
+                }
+
+                payInstalment = new PayInstalment(selectedSaleID);
+                payInstalment.ShowDialog();
             }
         }
     }
