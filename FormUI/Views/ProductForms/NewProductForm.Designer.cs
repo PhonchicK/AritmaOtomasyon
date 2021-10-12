@@ -151,6 +151,7 @@ namespace FormUI.Views.ProductForms
             this.Controls.Add(this.textProductName);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.tileNavPane1);
+            this.MaximizeBox = false;
             this.Name = "NewProductForm";
             this.Text = "Ürün Ekle";
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).EndInit();

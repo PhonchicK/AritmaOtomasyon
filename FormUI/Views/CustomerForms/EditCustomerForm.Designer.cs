@@ -429,6 +429,7 @@ namespace FormUI.Views.CustomerForms
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.mainRibbonControl);
+            this.MaximizeBox = false;
             this.Name = "EditCustomerForm";
             this.Ribbon = this.mainRibbonControl;
             this.Load += new System.EventHandler(this.EditCustomerForm_Load);

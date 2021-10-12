@@ -203,6 +203,7 @@ namespace FormUI.Views.ProductForms
             this.Controls.Add(this.textProductName);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.mainRibbonControl);
+            this.MaximizeBox = false;
             this.Name = "EditProductForm";
             this.Ribbon = this.mainRibbonControl;
             this.Load += new System.EventHandler(this.EditProductForm_Load);

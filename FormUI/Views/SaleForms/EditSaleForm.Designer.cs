@@ -417,6 +417,7 @@ namespace FormUI.Views.SaleForms
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.mainRibbonControl);
+            this.MaximizeBox = false;
             this.Name = "EditSaleForm";
             this.Ribbon = this.mainRibbonControl;
             this.Load += new System.EventHandler(this.EditSaleForm_Load);

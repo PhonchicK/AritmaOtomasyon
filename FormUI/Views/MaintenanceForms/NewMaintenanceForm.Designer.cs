@@ -32,45 +32,45 @@ namespace FormUI.Views.MaintenanceForms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMaintenanceForm));
             this.tileNavPane1 = new DevExpress.XtraBars.Navigation.TileNavPane();
             this.navButton1 = new DevExpress.XtraBars.Navigation.NavButton();
+            this.navButton3 = new DevExpress.XtraBars.Navigation.NavButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.textCustomerName = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.textCustomerAddress = new System.Windows.Forms.TextBox();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textCustomerPhoneNumber = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.textCustomerAddress = new System.Windows.Forms.TextBox();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.textCustomerName = new DevExpress.XtraEditors.TextEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.textMaintenanceBaseLastDate = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.textMaintenanceBaseDate = new DevExpress.XtraEditors.TextEdit();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.textMaintenanceTakedPrice = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.dateMaintenanceDate = new DevExpress.XtraEditors.DateEdit();
-            this.textMaintenancePerson = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.textMaintenanceProcess = new System.Windows.Forms.TextBox();
             this.textMaintenanceNote = new System.Windows.Forms.TextBox();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.navButton3 = new DevExpress.XtraBars.Navigation.NavButton();
+            this.textMaintenanceProcess = new System.Windows.Forms.TextBox();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.textMaintenancePerson = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.dateMaintenanceDate = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.textMaintenanceTakedPrice = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textCustomerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCustomerPhoneNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textCustomerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textMaintenanceBaseLastDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textMaintenanceBaseDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textMaintenanceTakedPrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textMaintenancePerson.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateMaintenanceDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateMaintenanceDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textMaintenancePerson.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textMaintenanceTakedPrice.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tileNavPane1
@@ -99,6 +99,14 @@ namespace FormUI.Views.MaintenanceForms
             this.navButton1.Name = "navButton1";
             this.navButton1.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButton1_ElementClick);
             // 
+            // navButton3
+            // 
+            this.navButton3.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Left;
+            this.navButton3.Caption = "İptal";
+            this.navButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton3.ImageOptions.Image")));
+            this.navButton3.Name = "navButton3";
+            this.navButton3.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButton3_ElementClick);
+            // 
             // groupControl1
             // 
             this.groupControl1.Appearance.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
@@ -115,21 +123,22 @@ namespace FormUI.Views.MaintenanceForms
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Müşteri";
             // 
-            // textCustomerName
+            // textCustomerAddress
             // 
-            this.textCustomerName.Location = new System.Drawing.Point(5, 50);
-            this.textCustomerName.Name = "textCustomerName";
-            this.textCustomerName.Properties.ReadOnly = true;
-            this.textCustomerName.Size = new System.Drawing.Size(190, 20);
-            this.textCustomerName.TabIndex = 0;
+            this.textCustomerAddress.Location = new System.Drawing.Point(6, 138);
+            this.textCustomerAddress.Multiline = true;
+            this.textCustomerAddress.Name = "textCustomerAddress";
+            this.textCustomerAddress.ReadOnly = true;
+            this.textCustomerAddress.Size = new System.Drawing.Size(189, 69);
+            this.textCustomerAddress.TabIndex = 5;
             // 
-            // labelControl1
+            // labelControl3
             // 
-            this.labelControl1.Location = new System.Drawing.Point(6, 30);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(22, 13);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Adı :";
+            this.labelControl3.Location = new System.Drawing.Point(6, 119);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(35, 13);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "Adres :";
             // 
             // labelControl2
             // 
@@ -147,22 +156,21 @@ namespace FormUI.Views.MaintenanceForms
             this.textCustomerPhoneNumber.Size = new System.Drawing.Size(190, 20);
             this.textCustomerPhoneNumber.TabIndex = 2;
             // 
-            // labelControl3
+            // labelControl1
             // 
-            this.labelControl3.Location = new System.Drawing.Point(6, 119);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(35, 13);
-            this.labelControl3.TabIndex = 4;
-            this.labelControl3.Text = "Adres :";
+            this.labelControl1.Location = new System.Drawing.Point(6, 30);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(22, 13);
+            this.labelControl1.TabIndex = 1;
+            this.labelControl1.Text = "Adı :";
             // 
-            // textCustomerAddress
+            // textCustomerName
             // 
-            this.textCustomerAddress.Location = new System.Drawing.Point(6, 138);
-            this.textCustomerAddress.Multiline = true;
-            this.textCustomerAddress.Name = "textCustomerAddress";
-            this.textCustomerAddress.ReadOnly = true;
-            this.textCustomerAddress.Size = new System.Drawing.Size(189, 69);
-            this.textCustomerAddress.TabIndex = 5;
+            this.textCustomerName.Location = new System.Drawing.Point(5, 50);
+            this.textCustomerName.Name = "textCustomerName";
+            this.textCustomerName.Properties.ReadOnly = true;
+            this.textCustomerName.Size = new System.Drawing.Size(190, 20);
+            this.textCustomerName.TabIndex = 0;
             // 
             // groupControl2
             // 
@@ -230,52 +238,43 @@ namespace FormUI.Views.MaintenanceForms
             this.groupControl3.TabIndex = 7;
             this.groupControl3.Text = "Yapılan Bakım";
             // 
-            // labelControl4
+            // textMaintenanceNote
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(5, 35);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(90, 16);
-            this.labelControl4.TabIndex = 6;
-            this.labelControl4.Text = "Alınan Ücret* : ";
+            this.textMaintenanceNote.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.textMaintenanceNote.Location = new System.Drawing.Point(5, 308);
+            this.textMaintenanceNote.Multiline = true;
+            this.textMaintenanceNote.Name = "textMaintenanceNote";
+            this.textMaintenanceNote.Size = new System.Drawing.Size(511, 93);
+            this.textMaintenanceNote.TabIndex = 12;
             // 
-            // textMaintenanceTakedPrice
+            // labelControl10
             // 
-            this.textMaintenanceTakedPrice.EditValue = "0";
-            this.textMaintenanceTakedPrice.Location = new System.Drawing.Point(89, 29);
-            this.textMaintenanceTakedPrice.Name = "textMaintenanceTakedPrice";
-            this.textMaintenanceTakedPrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textMaintenanceTakedPrice.Properties.Appearance.Options.UseFont = true;
-            this.textMaintenanceTakedPrice.Properties.BeepOnError = false;
-            this.textMaintenanceTakedPrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textMaintenanceTakedPrice.Properties.MaskSettings.Set("mask", "c");
-            this.textMaintenanceTakedPrice.Size = new System.Drawing.Size(190, 26);
-            this.textMaintenanceTakedPrice.TabIndex = 6;
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Location = new System.Drawing.Point(5, 286);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(28, 16);
+            this.labelControl10.TabIndex = 13;
+            this.labelControl10.Text = "Not :";
             // 
-            // labelControl7
+            // textMaintenanceProcess
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(5, 73);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(47, 16);
-            this.labelControl7.TabIndex = 7;
-            this.labelControl7.Text = "Tarih* :";
+            this.textMaintenanceProcess.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.textMaintenanceProcess.Location = new System.Drawing.Point(5, 179);
+            this.textMaintenanceProcess.Multiline = true;
+            this.textMaintenanceProcess.Name = "textMaintenanceProcess";
+            this.textMaintenanceProcess.Size = new System.Drawing.Size(511, 93);
+            this.textMaintenanceProcess.TabIndex = 6;
             // 
-            // dateMaintenanceDate
+            // labelControl9
             // 
-            this.dateMaintenanceDate.EditValue = null;
-            this.dateMaintenanceDate.Location = new System.Drawing.Point(89, 67);
-            this.dateMaintenanceDate.Name = "dateMaintenanceDate";
-            this.dateMaintenanceDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.dateMaintenanceDate.Properties.Appearance.Options.UseFont = true;
-            this.dateMaintenanceDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateMaintenanceDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateMaintenanceDate.Size = new System.Drawing.Size(190, 26);
-            this.dateMaintenanceDate.TabIndex = 8;
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(5, 157);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(40, 16);
+            this.labelControl9.TabIndex = 11;
+            this.labelControl9.Text = "İşlem :";
             // 
             // textMaintenancePerson
             // 
@@ -296,51 +295,52 @@ namespace FormUI.Views.MaintenanceForms
             this.labelControl8.TabIndex = 10;
             this.labelControl8.Text = "Yapan Kişi :";
             // 
-            // labelControl9
+            // dateMaintenanceDate
             // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(5, 157);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(40, 16);
-            this.labelControl9.TabIndex = 11;
-            this.labelControl9.Text = "İşlem :";
+            this.dateMaintenanceDate.EditValue = null;
+            this.dateMaintenanceDate.Location = new System.Drawing.Point(89, 67);
+            this.dateMaintenanceDate.Name = "dateMaintenanceDate";
+            this.dateMaintenanceDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.dateMaintenanceDate.Properties.Appearance.Options.UseFont = true;
+            this.dateMaintenanceDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateMaintenanceDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateMaintenanceDate.Size = new System.Drawing.Size(190, 26);
+            this.dateMaintenanceDate.TabIndex = 8;
             // 
-            // textMaintenanceProcess
+            // labelControl7
             // 
-            this.textMaintenanceProcess.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textMaintenanceProcess.Location = new System.Drawing.Point(5, 179);
-            this.textMaintenanceProcess.Multiline = true;
-            this.textMaintenanceProcess.Name = "textMaintenanceProcess";
-            this.textMaintenanceProcess.Size = new System.Drawing.Size(511, 93);
-            this.textMaintenanceProcess.TabIndex = 6;
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(5, 73);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(47, 16);
+            this.labelControl7.TabIndex = 7;
+            this.labelControl7.Text = "Tarih* :";
             // 
-            // textMaintenanceNote
+            // textMaintenanceTakedPrice
             // 
-            this.textMaintenanceNote.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textMaintenanceNote.Location = new System.Drawing.Point(5, 308);
-            this.textMaintenanceNote.Multiline = true;
-            this.textMaintenanceNote.Name = "textMaintenanceNote";
-            this.textMaintenanceNote.Size = new System.Drawing.Size(511, 93);
-            this.textMaintenanceNote.TabIndex = 12;
+            this.textMaintenanceTakedPrice.EditValue = "0";
+            this.textMaintenanceTakedPrice.Location = new System.Drawing.Point(89, 29);
+            this.textMaintenanceTakedPrice.Name = "textMaintenanceTakedPrice";
+            this.textMaintenanceTakedPrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.textMaintenanceTakedPrice.Properties.Appearance.Options.UseFont = true;
+            this.textMaintenanceTakedPrice.Properties.BeepOnError = false;
+            this.textMaintenanceTakedPrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textMaintenanceTakedPrice.Properties.MaskSettings.Set("mask", "c");
+            this.textMaintenanceTakedPrice.Size = new System.Drawing.Size(190, 26);
+            this.textMaintenanceTakedPrice.TabIndex = 6;
             // 
-            // labelControl10
+            // labelControl4
             // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(5, 286);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(28, 16);
-            this.labelControl10.TabIndex = 13;
-            this.labelControl10.Text = "Not :";
-            // 
-            // navButton3
-            // 
-            this.navButton3.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Left;
-            this.navButton3.Caption = "İptal";
-            this.navButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton3.ImageOptions.Image")));
-            this.navButton3.Name = "navButton3";
-            this.navButton3.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButton3_ElementClick);
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(5, 35);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(90, 16);
+            this.labelControl4.TabIndex = 6;
+            this.labelControl4.Text = "Alınan Ücret* : ";
             // 
             // NewMaintenanceForm
             // 
@@ -351,6 +351,7 @@ namespace FormUI.Views.MaintenanceForms
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.tileNavPane1);
+            this.MaximizeBox = false;
             this.Name = "NewMaintenanceForm";
             this.Text = "NewMaintenanceForm";
             this.Load += new System.EventHandler(this.NewMaintenanceForm_Load);
@@ -358,8 +359,8 @@ namespace FormUI.Views.MaintenanceForms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textCustomerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCustomerPhoneNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textCustomerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
@@ -368,10 +369,10 @@ namespace FormUI.Views.MaintenanceForms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textMaintenanceTakedPrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textMaintenancePerson.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateMaintenanceDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateMaintenanceDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textMaintenancePerson.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textMaintenanceTakedPrice.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

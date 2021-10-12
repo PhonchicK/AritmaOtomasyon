@@ -417,7 +417,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageProduct.Controls.Add(this.buttonSelectProduct);
             this.tabPageProduct.Controls.Add(this.labelControl8);
             this.tabPageProduct.Name = "tabPageProduct";
-            this.tabPageProduct.Size = new System.Drawing.Size(431, 498);
+            this.tabPageProduct.Size = new System.Drawing.Size(431, 521);
             this.tabPageProduct.Text = "Product";
             // 
             // labelControl27
@@ -589,7 +589,7 @@ namespace FormUI.Views.SaleForms
             this.tabPagePayment.Controls.Add(this.labelControl11);
             this.tabPagePayment.Controls.Add(this.comboBoxPaymentType);
             this.tabPagePayment.Name = "tabPagePayment";
-            this.tabPagePayment.Size = new System.Drawing.Size(431, 498);
+            this.tabPagePayment.Size = new System.Drawing.Size(431, 521);
             this.tabPagePayment.Text = "Payment";
             // 
             // buttonPaymentInstalmentSettings
@@ -710,7 +710,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageMaintenance.Controls.Add(this.labelControl14);
             this.tabPageMaintenance.Controls.Add(this.comboBoxMaintenanceInterval);
             this.tabPageMaintenance.Name = "tabPageMaintenance";
-            this.tabPageMaintenance.Size = new System.Drawing.Size(431, 498);
+            this.tabPageMaintenance.Size = new System.Drawing.Size(431, 521);
             this.tabPageMaintenance.Text = "Maintenance";
             // 
             // buttonMaintenanceBack
@@ -800,7 +800,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageInstalment.Controls.Add(this.labelControl16);
             this.tabPageInstalment.Controls.Add(this.comboBoxInstalmentCount);
             this.tabPageInstalment.Name = "tabPageInstalment";
-            this.tabPageInstalment.Size = new System.Drawing.Size(431, 498);
+            this.tabPageInstalment.Size = new System.Drawing.Size(431, 521);
             this.tabPageInstalment.Text = "Instalment";
             // 
             // labelTotalPrice
@@ -940,7 +940,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageDetails.Controls.Add(this.groupControl2);
             this.tabPageDetails.Controls.Add(this.groupControl1);
             this.tabPageDetails.Name = "tabPageDetails";
-            this.tabPageDetails.Size = new System.Drawing.Size(431, 498);
+            this.tabPageDetails.Size = new System.Drawing.Size(431, 521);
             this.tabPageDetails.Text = "Details";
             // 
             // simpleButton1
@@ -1165,6 +1165,7 @@ namespace FormUI.Views.SaleForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(433, 523);
             this.Controls.Add(this.mainTabControl);
+            this.MaximizeBox = false;
             this.Name = "NewSaleForm";
             this.Text = "Satış Yap";
             this.Load += new System.EventHandler(this.NewSaleForm_Load);

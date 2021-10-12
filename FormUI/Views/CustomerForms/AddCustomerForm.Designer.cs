@@ -328,6 +328,7 @@ namespace FormUI.Views.CustomerForms
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.TextName);
             this.Controls.Add(this.tileNavPane1);
+            this.MaximizeBox = false;
             this.Name = "AddCustomerForm";
             this.Text = "AddCustomerForm";
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).EndInit();

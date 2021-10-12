@@ -87,7 +87,7 @@ namespace FormUI.Views.InstalmentForms
             this.tileNavPane1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tileNavPane1.Location = new System.Drawing.Point(0, 0);
             this.tileNavPane1.Name = "tileNavPane1";
-            this.tileNavPane1.Size = new System.Drawing.Size(833, 44);
+            this.tileNavPane1.Size = new System.Drawing.Size(599, 44);
             this.tileNavPane1.TabIndex = 0;
             // 
             // navButton1
@@ -116,7 +116,7 @@ namespace FormUI.Views.InstalmentForms
             this.groupControl1.Controls.Add(this.textCustomerName);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Location = new System.Drawing.Point(584, 57);
+            this.groupControl1.Location = new System.Drawing.Point(12, 177);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(246, 179);
             this.groupControl1.TabIndex = 1;
@@ -190,7 +190,7 @@ namespace FormUI.Views.InstalmentForms
             this.groupControl2.Controls.Add(this.labelControl8);
             this.groupControl2.Controls.Add(this.labelRemainderPrice);
             this.groupControl2.Controls.Add(this.labelControl6);
-            this.groupControl2.Location = new System.Drawing.Point(584, 259);
+            this.groupControl2.Location = new System.Drawing.Point(332, 177);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(246, 179);
             this.groupControl2.TabIndex = 18;
@@ -333,7 +333,7 @@ namespace FormUI.Views.InstalmentForms
             this.groupControl3.Controls.Add(this.labelPayablePrice);
             this.groupControl3.Location = new System.Drawing.Point(12, 57);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(566, 381);
+            this.groupControl3.Size = new System.Drawing.Size(566, 105);
             this.groupControl3.TabIndex = 18;
             this.groupControl3.Text = "Ödeme";
             // 
@@ -385,11 +385,12 @@ namespace FormUI.Views.InstalmentForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 450);
+            this.ClientSize = new System.Drawing.Size(599, 373);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.tileNavPane1);
+            this.MaximizeBox = false;
             this.Name = "PayInstalment";
             this.Text = "Taksit Ödeme";
             this.Load += new System.EventHandler(this.PayInstalment_Load);
