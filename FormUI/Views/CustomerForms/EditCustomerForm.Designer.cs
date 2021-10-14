@@ -48,6 +48,8 @@ namespace FormUI.Views.CustomerForms
             this.textCustomerName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.textReferancePrice = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.buttonSelectReferance = new DevExpress.XtraEditors.SimpleButton();
             this.textReferanceID = new DevExpress.XtraEditors.TextEdit();
@@ -62,7 +64,9 @@ namespace FormUI.Views.CustomerForms
             this.navButton3 = new DevExpress.XtraBars.Navigation.NavButton();
             this.navButton4 = new DevExpress.XtraBars.Navigation.NavButton();
             this.navButton5 = new DevExpress.XtraBars.Navigation.NavButton();
-            this.listBoxSaledProducts = new DevExpress.XtraEditors.ListBoxControl();
+            this.listBoxReferancePrices = new DevExpress.XtraEditors.ListBoxControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelTotalReferancePrice = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -70,12 +74,13 @@ namespace FormUI.Views.CustomerForms
             ((System.ComponentModel.ISupportInitialize)(this.textCustomerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textReferancePrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textReferancePhoneNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxReferancedCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxSaledProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxReferancePrices)).BeginInit();
             this.SuspendLayout();
             // 
             // mainRibbonControl
@@ -253,6 +258,8 @@ namespace FormUI.Views.CustomerForms
             this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl2.Appearance.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
             this.groupControl2.Appearance.Options.UseBorderColor = true;
+            this.groupControl2.Controls.Add(this.textReferancePrice);
+            this.groupControl2.Controls.Add(this.labelControl4);
             this.groupControl2.Controls.Add(this.simpleButton1);
             this.groupControl2.Controls.Add(this.buttonSelectReferance);
             this.groupControl2.Controls.Add(this.textReferanceID);
@@ -266,6 +273,31 @@ namespace FormUI.Views.CustomerForms
             this.groupControl2.Size = new System.Drawing.Size(353, 239);
             this.groupControl2.TabIndex = 3;
             this.groupControl2.Text = "Referans";
+            // 
+            // textReferancePrice
+            // 
+            this.textReferancePrice.Location = new System.Drawing.Point(83, 201);
+            this.textReferancePrice.MenuManager = this.mainRibbonControl;
+            this.textReferancePrice.Name = "textReferancePrice";
+            this.textReferancePrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.textReferancePrice.Properties.Appearance.Options.UseFont = true;
+            this.textReferancePrice.Properties.BeepOnError = false;
+            this.textReferancePrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textReferancePrice.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.textReferancePrice.Properties.MaskSettings.Set("mask", "c");
+            this.textReferancePrice.Properties.ReadOnly = true;
+            this.textReferancePrice.Size = new System.Drawing.Size(260, 26);
+            this.textReferancePrice.TabIndex = 17;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(5, 207);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(72, 16);
+            this.labelControl4.TabIndex = 16;
+            this.labelControl4.Text = "Prim Ücreti :";
             // 
             // simpleButton1
             // 
@@ -351,7 +383,7 @@ namespace FormUI.Views.CustomerForms
             // 
             // listBoxReferancedCustomers
             // 
-            this.listBoxReferancedCustomers.Location = new System.Drawing.Point(12, 428);
+            this.listBoxReferancedCustomers.Location = new System.Drawing.Point(12, 413);
             this.listBoxReferancedCustomers.Name = "listBoxReferancedCustomers";
             this.listBoxReferancedCustomers.Size = new System.Drawing.Size(353, 96);
             this.listBoxReferancedCustomers.TabIndex = 4;
@@ -410,12 +442,32 @@ namespace FormUI.Views.CustomerForms
             this.navButton5.Name = "navButton5";
             this.navButton5.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButton5_ElementClick);
             // 
-            // listBoxSaledProducts
+            // listBoxReferancePrices
             // 
-            this.listBoxSaledProducts.Location = new System.Drawing.Point(417, 428);
-            this.listBoxSaledProducts.Name = "listBoxSaledProducts";
-            this.listBoxSaledProducts.Size = new System.Drawing.Size(353, 96);
-            this.listBoxSaledProducts.TabIndex = 5;
+            this.listBoxReferancePrices.Location = new System.Drawing.Point(417, 413);
+            this.listBoxReferancePrices.Name = "listBoxReferancePrices";
+            this.listBoxReferancePrices.Size = new System.Drawing.Size(353, 96);
+            this.listBoxReferancePrices.TabIndex = 5;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(417, 515);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(212, 16);
+            this.labelControl8.TabIndex = 6;
+            this.labelControl8.Text = "Referanslardan Aldığı Toplam Ücret :";
+            // 
+            // labelTotalReferancePrice
+            // 
+            this.labelTotalReferancePrice.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelTotalReferancePrice.Appearance.Options.UseFont = true;
+            this.labelTotalReferancePrice.Location = new System.Drawing.Point(635, 515);
+            this.labelTotalReferancePrice.Name = "labelTotalReferancePrice";
+            this.labelTotalReferancePrice.Size = new System.Drawing.Size(7, 16);
+            this.labelTotalReferancePrice.TabIndex = 9;
+            this.labelTotalReferancePrice.Text = "0";
             // 
             // EditCustomerForm
             // 
@@ -423,8 +475,10 @@ namespace FormUI.Views.CustomerForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(798, 599);
+            this.Controls.Add(this.labelTotalReferancePrice);
+            this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.tileNavPane1);
-            this.Controls.Add(this.listBoxSaledProducts);
+            this.Controls.Add(this.listBoxReferancePrices);
             this.Controls.Add(this.listBoxReferancedCustomers);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
@@ -442,12 +496,13 @@ namespace FormUI.Views.CustomerForms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textReferancePrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textReferancePhoneNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxReferancedCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxSaledProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxReferancePrices)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,7 +540,11 @@ namespace FormUI.Views.CustomerForms
         private DevExpress.XtraBars.Navigation.NavButton navButton4;
         private DevExpress.XtraBars.Navigation.NavButton navButton5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraEditors.ListBoxControl listBoxSaledProducts;
+        private DevExpress.XtraEditors.ListBoxControl listBoxReferancePrices;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.TextEdit textReferancePrice;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.LabelControl labelTotalReferancePrice;
     }
 }

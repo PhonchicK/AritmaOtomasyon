@@ -35,6 +35,7 @@ namespace FormUI.Views.SaleForms
             this.buttonCustomerNext = new DevExpress.XtraEditors.SimpleButton();
             this.tabControlCustomer = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageNewCustomer = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.textNewCustomerAddress = new System.Windows.Forms.TextBox();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.textNewCustomerPhoneNumber = new DevExpress.XtraEditors.TextEdit();
@@ -97,6 +98,19 @@ namespace FormUI.Views.SaleForms
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxInstalmentCount = new System.Windows.Forms.ComboBox();
+            this.tabPageReferance = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
+            this.textReferancePrice = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl35 = new DevExpress.XtraEditors.LabelControl();
+            this.textReferancePhoneNumber = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl37 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl38 = new DevExpress.XtraEditors.LabelControl();
+            this.textReferanceName = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.textReferanceID = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl36 = new DevExpress.XtraEditors.LabelControl();
             this.tabPageDetails = new DevExpress.XtraTab.XtraTabPage();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
@@ -148,6 +162,11 @@ namespace FormUI.Views.SaleForms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditInstalmentStart.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditInstalmentStart.Properties)).BeginInit();
+            this.tabPageReferance.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textReferancePrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textReferancePhoneNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textReferanceName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textReferanceID.Properties)).BeginInit();
             this.tabPageDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
@@ -175,6 +194,7 @@ namespace FormUI.Views.SaleForms
             this.tabPagePayment,
             this.tabPageMaintenance,
             this.tabPageInstalment,
+            this.tabPageReferance,
             this.tabPageDetails});
             this.mainTabControl.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.mainTabControl_SelectedPageChanged);
             // 
@@ -184,7 +204,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageCustomer.Controls.Add(this.buttonCustomerNext);
             this.tabPageCustomer.Controls.Add(this.tabControlCustomer);
             this.tabPageCustomer.Name = "tabPageCustomer";
-            this.tabPageCustomer.Size = new System.Drawing.Size(431, 521);
+            this.tabPageCustomer.Size = new System.Drawing.Size(431, 498);
             this.tabPageCustomer.Text = "Customer";
             // 
             // buttonCustomerCancel
@@ -217,7 +237,7 @@ namespace FormUI.Views.SaleForms
             this.tabControlCustomer.Location = new System.Drawing.Point(0, 0);
             this.tabControlCustomer.Name = "tabControlCustomer";
             this.tabControlCustomer.SelectedTabPage = this.tabPageNewCustomer;
-            this.tabControlCustomer.Size = new System.Drawing.Size(431, 431);
+            this.tabControlCustomer.Size = new System.Drawing.Size(431, 430);
             this.tabControlCustomer.TabIndex = 3;
             this.tabControlCustomer.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageNewCustomer,
@@ -225,6 +245,7 @@ namespace FormUI.Views.SaleForms
             // 
             // tabPageNewCustomer
             // 
+            this.tabPageNewCustomer.Controls.Add(this.simpleButton2);
             this.tabPageNewCustomer.Controls.Add(this.textNewCustomerAddress);
             this.tabPageNewCustomer.Controls.Add(this.labelControl5);
             this.tabPageNewCustomer.Controls.Add(this.textNewCustomerPhoneNumber);
@@ -232,8 +253,20 @@ namespace FormUI.Views.SaleForms
             this.tabPageNewCustomer.Controls.Add(this.labelControl6);
             this.tabPageNewCustomer.Controls.Add(this.labelControl7);
             this.tabPageNewCustomer.Name = "tabPageNewCustomer";
-            this.tabPageNewCustomer.Size = new System.Drawing.Size(429, 406);
+            this.tabPageNewCustomer.Size = new System.Drawing.Size(429, 405);
             this.tabPageNewCustomer.Text = "Yeni";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.simpleButton2.Location = new System.Drawing.Point(168, 353);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(111, 26);
+            this.simpleButton2.TabIndex = 35;
+            this.simpleButton2.Text = "Referans Ayar";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // textNewCustomerAddress
             // 
@@ -241,7 +274,7 @@ namespace FormUI.Views.SaleForms
             this.textNewCustomerAddress.Location = new System.Drawing.Point(10, 163);
             this.textNewCustomerAddress.Multiline = true;
             this.textNewCustomerAddress.Name = "textNewCustomerAddress";
-            this.textNewCustomerAddress.Size = new System.Drawing.Size(409, 130);
+            this.textNewCustomerAddress.Size = new System.Drawing.Size(409, 163);
             this.textNewCustomerAddress.TabIndex = 15;
             // 
             // labelControl5
@@ -304,7 +337,7 @@ namespace FormUI.Views.SaleForms
             this.xtraTabPage1.Controls.Add(this.labelControl4);
             this.xtraTabPage1.Controls.Add(this.buttonSelectCustomer);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(429, 406);
+            this.xtraTabPage1.Size = new System.Drawing.Size(429, 405);
             this.xtraTabPage1.Text = "Varolan";
             // 
             // textExistsCustomerID
@@ -417,22 +450,22 @@ namespace FormUI.Views.SaleForms
             this.tabPageProduct.Controls.Add(this.buttonSelectProduct);
             this.tabPageProduct.Controls.Add(this.labelControl8);
             this.tabPageProduct.Name = "tabPageProduct";
-            this.tabPageProduct.Size = new System.Drawing.Size(431, 521);
+            this.tabPageProduct.Size = new System.Drawing.Size(431, 498);
             this.tabPageProduct.Text = "Product";
             // 
             // labelControl27
             // 
-            this.labelControl27.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl27.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Underline);
             this.labelControl27.Appearance.Options.UseFont = true;
-            this.labelControl27.Location = new System.Drawing.Point(179, 12);
+            this.labelControl27.Location = new System.Drawing.Point(183, 19);
             this.labelControl27.Name = "labelControl27";
-            this.labelControl27.Size = new System.Drawing.Size(35, 19);
-            this.labelControl27.TabIndex = 28;
+            this.labelControl27.Size = new System.Drawing.Size(51, 29);
+            this.labelControl27.TabIndex = 40;
             this.labelControl27.Text = "Ürün";
             // 
             // textProductAssembler
             // 
-            this.textProductAssembler.Location = new System.Drawing.Point(14, 245);
+            this.textProductAssembler.Location = new System.Drawing.Point(14, 283);
             this.textProductAssembler.Name = "textProductAssembler";
             this.textProductAssembler.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.textProductAssembler.Properties.Appearance.Options.UseFont = true;
@@ -442,17 +475,17 @@ namespace FormUI.Views.SaleForms
             // textProductComment
             // 
             this.textProductComment.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.textProductComment.Location = new System.Drawing.Point(14, 309);
+            this.textProductComment.Location = new System.Drawing.Point(14, 347);
             this.textProductComment.Multiline = true;
             this.textProductComment.Name = "textProductComment";
-            this.textProductComment.Size = new System.Drawing.Size(409, 109);
+            this.textProductComment.Size = new System.Drawing.Size(409, 87);
             this.textProductComment.TabIndex = 26;
             // 
             // labelControl25
             // 
             this.labelControl25.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.labelControl25.Appearance.Options.UseFont = true;
-            this.labelControl25.Location = new System.Drawing.Point(15, 284);
+            this.labelControl25.Location = new System.Drawing.Point(15, 322);
             this.labelControl25.Name = "labelControl25";
             this.labelControl25.Size = new System.Drawing.Size(80, 19);
             this.labelControl25.TabIndex = 25;
@@ -462,7 +495,7 @@ namespace FormUI.Views.SaleForms
             // 
             this.labelControl23.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.labelControl23.Appearance.Options.UseFont = true;
-            this.labelControl23.Location = new System.Drawing.Point(15, 220);
+            this.labelControl23.Location = new System.Drawing.Point(15, 258);
             this.labelControl23.Name = "labelControl23";
             this.labelControl23.Size = new System.Drawing.Size(108, 19);
             this.labelControl23.TabIndex = 23;
@@ -474,7 +507,7 @@ namespace FormUI.Views.SaleForms
             this.buttonMaintenanceSettings.Appearance.Options.UseFont = true;
             this.buttonMaintenanceSettings.Enabled = false;
             this.buttonMaintenanceSettings.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.buttonMaintenanceSettings.Location = new System.Drawing.Point(149, 184);
+            this.buttonMaintenanceSettings.Location = new System.Drawing.Point(149, 222);
             this.buttonMaintenanceSettings.Name = "buttonMaintenanceSettings";
             this.buttonMaintenanceSettings.Size = new System.Drawing.Size(103, 26);
             this.buttonMaintenanceSettings.TabIndex = 22;
@@ -485,7 +518,7 @@ namespace FormUI.Views.SaleForms
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(14, 157);
+            this.labelControl9.Location = new System.Drawing.Point(14, 195);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(97, 19);
             this.labelControl9.TabIndex = 21;
@@ -493,7 +526,7 @@ namespace FormUI.Views.SaleForms
             // 
             // toggleMaintenanceState
             // 
-            this.toggleMaintenanceState.Location = new System.Drawing.Point(11, 182);
+            this.toggleMaintenanceState.Location = new System.Drawing.Point(11, 220);
             this.toggleMaintenanceState.Name = "toggleMaintenanceState";
             this.toggleMaintenanceState.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.toggleMaintenanceState.Properties.Appearance.Options.UseFont = true;
@@ -527,7 +560,7 @@ namespace FormUI.Views.SaleForms
             // 
             // textProductName
             // 
-            this.textProductName.Location = new System.Drawing.Point(11, 121);
+            this.textProductName.Location = new System.Drawing.Point(11, 159);
             this.textProductName.Name = "textProductName";
             this.textProductName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.textProductName.Properties.Appearance.Options.UseFont = true;
@@ -539,7 +572,7 @@ namespace FormUI.Views.SaleForms
             // 
             this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.labelControl18.Appearance.Options.UseFont = true;
-            this.labelControl18.Location = new System.Drawing.Point(14, 96);
+            this.labelControl18.Location = new System.Drawing.Point(14, 134);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(35, 19);
             this.labelControl18.TabIndex = 13;
@@ -547,7 +580,7 @@ namespace FormUI.Views.SaleForms
             // 
             // textProductID
             // 
-            this.textProductID.Location = new System.Drawing.Point(11, 60);
+            this.textProductID.Location = new System.Drawing.Point(11, 98);
             this.textProductID.Name = "textProductID";
             this.textProductID.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.textProductID.Properties.Appearance.Options.UseFont = true;
@@ -560,7 +593,7 @@ namespace FormUI.Views.SaleForms
             this.buttonSelectProduct.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.buttonSelectProduct.Appearance.Options.UseFont = true;
             this.buttonSelectProduct.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.buttonSelectProduct.Location = new System.Drawing.Point(181, 62);
+            this.buttonSelectProduct.Location = new System.Drawing.Point(181, 100);
             this.buttonSelectProduct.Name = "buttonSelectProduct";
             this.buttonSelectProduct.Size = new System.Drawing.Size(71, 26);
             this.buttonSelectProduct.TabIndex = 17;
@@ -571,7 +604,7 @@ namespace FormUI.Views.SaleForms
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(14, 35);
+            this.labelControl8.Location = new System.Drawing.Point(14, 73);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(28, 19);
             this.labelControl8.TabIndex = 16;
@@ -589,7 +622,7 @@ namespace FormUI.Views.SaleForms
             this.tabPagePayment.Controls.Add(this.labelControl11);
             this.tabPagePayment.Controls.Add(this.comboBoxPaymentType);
             this.tabPagePayment.Name = "tabPagePayment";
-            this.tabPagePayment.Size = new System.Drawing.Size(431, 521);
+            this.tabPagePayment.Size = new System.Drawing.Size(431, 498);
             this.tabPagePayment.Text = "Payment";
             // 
             // buttonPaymentInstalmentSettings
@@ -710,7 +743,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageMaintenance.Controls.Add(this.labelControl14);
             this.tabPageMaintenance.Controls.Add(this.comboBoxMaintenanceInterval);
             this.tabPageMaintenance.Name = "tabPageMaintenance";
-            this.tabPageMaintenance.Size = new System.Drawing.Size(431, 521);
+            this.tabPageMaintenance.Size = new System.Drawing.Size(431, 498);
             this.tabPageMaintenance.Text = "Maintenance";
             // 
             // buttonMaintenanceBack
@@ -800,7 +833,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageInstalment.Controls.Add(this.labelControl16);
             this.tabPageInstalment.Controls.Add(this.comboBoxInstalmentCount);
             this.tabPageInstalment.Name = "tabPageInstalment";
-            this.tabPageInstalment.Size = new System.Drawing.Size(431, 521);
+            this.tabPageInstalment.Size = new System.Drawing.Size(431, 498);
             this.tabPageInstalment.Text = "Instalment";
             // 
             // labelTotalPrice
@@ -930,6 +963,153 @@ namespace FormUI.Views.SaleForms
             this.comboBoxInstalmentCount.Size = new System.Drawing.Size(409, 32);
             this.comboBoxInstalmentCount.TabIndex = 29;
             this.comboBoxInstalmentCount.SelectedIndexChanged += new System.EventHandler(this.comboBoxInstalmentCount_SelectedIndexChanged);
+            // 
+            // tabPageReferance
+            // 
+            this.tabPageReferance.Controls.Add(this.labelControl26);
+            this.tabPageReferance.Controls.Add(this.textReferancePrice);
+            this.tabPageReferance.Controls.Add(this.labelControl35);
+            this.tabPageReferance.Controls.Add(this.textReferancePhoneNumber);
+            this.tabPageReferance.Controls.Add(this.labelControl37);
+            this.tabPageReferance.Controls.Add(this.labelControl38);
+            this.tabPageReferance.Controls.Add(this.textReferanceName);
+            this.tabPageReferance.Controls.Add(this.simpleButton5);
+            this.tabPageReferance.Controls.Add(this.simpleButton4);
+            this.tabPageReferance.Controls.Add(this.simpleButton6);
+            this.tabPageReferance.Controls.Add(this.textReferanceID);
+            this.tabPageReferance.Controls.Add(this.labelControl36);
+            this.tabPageReferance.Name = "tabPageReferance";
+            this.tabPageReferance.Size = new System.Drawing.Size(431, 498);
+            this.tabPageReferance.Text = "Referance";
+            // 
+            // labelControl26
+            // 
+            this.labelControl26.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Underline);
+            this.labelControl26.Appearance.Options.UseFont = true;
+            this.labelControl26.Location = new System.Drawing.Point(157, 14);
+            this.labelControl26.Name = "labelControl26";
+            this.labelControl26.Size = new System.Drawing.Size(95, 29);
+            this.labelControl26.TabIndex = 39;
+            this.labelControl26.Text = "Referans";
+            // 
+            // textReferancePrice
+            // 
+            this.textReferancePrice.EditValue = "0";
+            this.textReferancePrice.Location = new System.Drawing.Point(121, 298);
+            this.textReferancePrice.Name = "textReferancePrice";
+            this.textReferancePrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.textReferancePrice.Properties.Appearance.Options.UseFont = true;
+            this.textReferancePrice.Properties.BeepOnError = false;
+            this.textReferancePrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textReferancePrice.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.textReferancePrice.Properties.MaskSettings.Set("mask", "c");
+            this.textReferancePrice.Properties.ReadOnly = true;
+            this.textReferancePrice.Size = new System.Drawing.Size(297, 30);
+            this.textReferancePrice.TabIndex = 17;
+            // 
+            // labelControl35
+            // 
+            this.labelControl35.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl35.Appearance.Options.UseFont = true;
+            this.labelControl35.Location = new System.Drawing.Point(11, 305);
+            this.labelControl35.Name = "labelControl35";
+            this.labelControl35.Size = new System.Drawing.Size(90, 19);
+            this.labelControl35.TabIndex = 16;
+            this.labelControl35.Text = "Prim Ücreti :";
+            // 
+            // textReferancePhoneNumber
+            // 
+            this.textReferancePhoneNumber.Location = new System.Drawing.Point(11, 217);
+            this.textReferancePhoneNumber.Name = "textReferancePhoneNumber";
+            this.textReferancePhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.textReferancePhoneNumber.Properties.Appearance.Options.UseFont = true;
+            this.textReferancePhoneNumber.Properties.ReadOnly = true;
+            this.textReferancePhoneNumber.Size = new System.Drawing.Size(407, 30);
+            this.textReferancePhoneNumber.TabIndex = 9;
+            // 
+            // labelControl37
+            // 
+            this.labelControl37.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl37.Appearance.Options.UseFont = true;
+            this.labelControl37.Location = new System.Drawing.Point(11, 131);
+            this.labelControl37.Name = "labelControl37";
+            this.labelControl37.Size = new System.Drawing.Size(35, 19);
+            this.labelControl37.TabIndex = 6;
+            this.labelControl37.Text = "Adı :";
+            // 
+            // labelControl38
+            // 
+            this.labelControl38.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl38.Appearance.Options.UseFont = true;
+            this.labelControl38.Location = new System.Drawing.Point(11, 192);
+            this.labelControl38.Name = "labelControl38";
+            this.labelControl38.Size = new System.Drawing.Size(136, 19);
+            this.labelControl38.TabIndex = 8;
+            this.labelControl38.Text = "Telefon Numarası :";
+            // 
+            // textReferanceName
+            // 
+            this.textReferanceName.Location = new System.Drawing.Point(11, 156);
+            this.textReferanceName.Name = "textReferanceName";
+            this.textReferanceName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.textReferanceName.Properties.Appearance.Options.UseFont = true;
+            this.textReferanceName.Properties.ReadOnly = true;
+            this.textReferanceName.Size = new System.Drawing.Size(407, 30);
+            this.textReferanceName.TabIndex = 7;
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.simpleButton5.Appearance.Options.UseFont = true;
+            this.simpleButton5.Location = new System.Drawing.Point(281, 74);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(30, 23);
+            this.simpleButton5.TabIndex = 15;
+            this.simpleButton5.Text = "Sil";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.Location = new System.Drawing.Point(329, 457);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(91, 30);
+            this.simpleButton4.TabIndex = 37;
+            this.simpleButton4.Text = "Kaydet";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            // 
+            // simpleButton6
+            // 
+            this.simpleButton6.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.simpleButton6.Appearance.Options.UseFont = true;
+            this.simpleButton6.Location = new System.Drawing.Point(245, 74);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(30, 23);
+            this.simpleButton6.TabIndex = 14;
+            this.simpleButton6.Text = "Seç";
+            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
+            // 
+            // textReferanceID
+            // 
+            this.textReferanceID.Location = new System.Drawing.Point(50, 71);
+            this.textReferanceID.Name = "textReferanceID";
+            this.textReferanceID.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.textReferanceID.Properties.Appearance.Options.UseFont = true;
+            this.textReferanceID.Properties.ReadOnly = true;
+            this.textReferanceID.Size = new System.Drawing.Size(172, 30);
+            this.textReferanceID.TabIndex = 13;
+            this.textReferanceID.EditValueChanged += new System.EventHandler(this.textReferanceID_EditValueChanged);
+            // 
+            // labelControl36
+            // 
+            this.labelControl36.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl36.Appearance.Options.UseFont = true;
+            this.labelControl36.Location = new System.Drawing.Point(11, 78);
+            this.labelControl36.Name = "labelControl36";
+            this.labelControl36.Size = new System.Drawing.Size(33, 19);
+            this.labelControl36.TabIndex = 12;
+            this.labelControl36.Text = "İD : ";
             // 
             // tabPageDetails
             // 
@@ -1202,6 +1382,12 @@ namespace FormUI.Views.SaleForms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditInstalmentStart.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditInstalmentStart.Properties)).EndInit();
+            this.tabPageReferance.ResumeLayout(false);
+            this.tabPageReferance.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textReferancePrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textReferancePhoneNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textReferanceName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textReferanceID.Properties)).EndInit();
             this.tabPageDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
@@ -1311,7 +1497,21 @@ namespace FormUI.Views.SaleForms
         private System.Windows.Forms.TextBox textProductComment;
         private DevExpress.XtraEditors.LabelControl labelControl25;
         private DevExpress.XtraEditors.LabelControl labelControl23;
-        private DevExpress.XtraEditors.LabelControl labelControl27;
         private DevExpress.XtraEditors.LabelControl labelControl20;
+        private DevExpress.XtraTab.XtraTabPage tabPageReferance;
+        private DevExpress.XtraEditors.LabelControl labelControl26;
+        private DevExpress.XtraEditors.TextEdit textReferancePrice;
+        private DevExpress.XtraEditors.LabelControl labelControl35;
+        private DevExpress.XtraEditors.TextEdit textReferancePhoneNumber;
+        private DevExpress.XtraEditors.LabelControl labelControl37;
+        private DevExpress.XtraEditors.LabelControl labelControl38;
+        private DevExpress.XtraEditors.TextEdit textReferanceName;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.TextEdit textReferanceID;
+        private DevExpress.XtraEditors.LabelControl labelControl36;
+        private DevExpress.XtraEditors.LabelControl labelControl27;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

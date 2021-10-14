@@ -20,5 +20,7 @@ namespace Entities.Dto
         public string Address { get; set; }
         [Display(Name = "Referans Adı")]
         public string ReferanceCustomerName { get; set; }
+        [Display(AutoGenerateField = false)]
+        public int? ReferancePrice { get; set; }
     }
 }

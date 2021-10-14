@@ -79,6 +79,16 @@ namespace FormUI.Views.SaleForms
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            CustomerReferancePage();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            ReferanceSavePage();
+        }
         #endregion
 
         #region Product
@@ -294,9 +304,26 @@ namespace FormUI.Views.SaleForms
             int saleID;
             int price = Convert.ToInt32(textPaymentPrice.Text);
             int paidPrice = Convert.ToInt32(textPaymentPaidPrice.Text);
+            int? referanceID = null;
+            int? referancePrice = null;
+
+            if (!string.IsNullOrWhiteSpace(textReferanceID.Text))
+            {
+                referanceID = int.Parse(textReferanceID.Text);
+                referancePrice = int.Parse(textReferancePrice.Text);
+            }
 
             if (tabControlCustomer.SelectedTabPage.Text == "Yeni")
-                customerID = customerService.Add(new Customer() { Name = textNewCustomerName.Text, PhoneNumber = textNewCustomerPhoneNumber.Text, Address = textNewCustomerAddress.Text });
+            {
+                customerID = customerService.Add(new Customer() 
+                { 
+                    Name = textNewCustomerName.Text, 
+                    PhoneNumber = textNewCustomerPhoneNumber.Text, 
+                    Address = textNewCustomerAddress.Text , 
+                    ReferanceCustomerID = referanceID,
+                    ReferancePrice = referancePrice
+                });
+            }
             else
                 customerID = Convert.ToInt32(textExistsCustomerID.Text);
 
@@ -365,6 +392,14 @@ namespace FormUI.Views.SaleForms
         {
             mainTabControl.SelectedTabPage = tabPageProduct;
         }
+        private void CustomerReferancePage()
+        {
+            mainTabControl.SelectedTabPage = tabPageReferance;
+        }
+        private void ReferanceSavePage()
+        {
+            mainTabControl.SelectedTabPage = tabPageCustomer;
+        }
         private void buttonMaintenanceSettings_Click(object sender, EventArgs e)
         {
             mainTabControl.SelectedTabPage = tabPageMaintenance;
@@ -415,5 +450,36 @@ namespace FormUI.Views.SaleForms
             }
         }
 
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+            selectCustomerForm = new SelectCustomerForm();
+            if (selectCustomerForm.ShowDialog() == DialogResult.OK)
+            {
+                textReferanceID.Text = selectCustomerForm.SelectedCustomerID.ToString();
+            }
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            textReferanceID.Text = null;
+        }
+
+        private void textReferanceID_EditValueChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textReferanceID.Text))
+            {
+                textReferanceName.Text = null;
+                textReferancePhoneNumber.Text = null;
+                textReferancePrice.ReadOnly = true;
+                textReferancePrice.Text = null;
+            }
+            else
+            {
+                Customer referance = customerService.GetByID(int.Parse(textReferanceID.Text));
+                textReferanceName.Text = referance.Name;
+                textReferancePhoneNumber.Text = referance.PhoneNumber;
+                textReferancePrice.ReadOnly = false;
+            }
+        }
     }
 }

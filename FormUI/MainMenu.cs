@@ -24,6 +24,7 @@ namespace FormUI
 {
     public partial class MainMenu : DevExpress.XtraEditors.XtraForm
     {
+        public static MainMenu instance;
         ICustomerService customerService;
         ISaleService saleService;
         IInstalmentService instalmentService;
@@ -32,6 +33,7 @@ namespace FormUI
         public MainMenu()
         {
             InitializeComponent();
+            instance = this;
             customerService = InstanceFactory.GetInstance<ICustomerService>();
             saleService = InstanceFactory.GetInstance<ISaleService>();
             instalmentService = InstanceFactory.GetInstance<IInstalmentService>();
@@ -70,6 +72,10 @@ namespace FormUI
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
+        {
+            LoadGrids();
+        }
+        public void LoadGrids()
         {
             gridControl1.DataSource = maintenanceBaseService.GetClosesDetails();
             gridControl2.DataSource = instalmentService.GetThisMonthInstalments();

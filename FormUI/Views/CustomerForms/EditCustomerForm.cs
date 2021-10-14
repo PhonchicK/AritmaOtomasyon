@@ -90,9 +90,15 @@ namespace FormUI.Views.CustomerForms
             selectedCustomer.PhoneNumber = textCustomerPhoneNumber.Text;
             selectedCustomer.Address = textCustomerAddress.Text;
             if (string.IsNullOrWhiteSpace(textReferanceID.Text))
+            {
                 selectedCustomer.ReferanceCustomerID = null;
+                selectedCustomer.ReferancePrice = null;
+            }
             else
+            {
                 selectedCustomer.ReferanceCustomerID = int.Parse(textReferanceID.Text);
+                selectedCustomer.ReferancePrice = int.Parse(textReferancePrice.Text);
+            }
             customerService.Update(selectedCustomer);
         }
 
@@ -121,9 +127,15 @@ namespace FormUI.Views.CustomerForms
             selectedCustomer.PhoneNumber = textCustomerPhoneNumber.Text;
             selectedCustomer.Address = textCustomerAddress.Text;
             if (string.IsNullOrWhiteSpace(textReferanceID.Text))
+            {
                 selectedCustomer.ReferanceCustomerID = null;
+                selectedCustomer.ReferancePrice = null;
+            }
             else
+            {
                 selectedCustomer.ReferanceCustomerID = int.Parse(textReferanceID.Text);
+                selectedCustomer.ReferancePrice = int.Parse(textReferancePrice.Text);
+            }
             customerService.Update(selectedCustomer);
             this.DialogResult = DialogResult.OK;
         }
@@ -145,6 +157,15 @@ namespace FormUI.Views.CustomerForms
                 textReferanceID.Text = null;
             listBoxReferancedCustomers.DataSource = customerService.GetReferancedCustomers(selectedCustomer.ID);
             listBoxReferancedCustomers.DisplayMember = "Name";
+
+            listBoxReferancePrices.Items.Clear();
+            int totalReferancePrice = 0;
+            foreach(var item in customerService.GetReferancedCustomers(selectedCustomer.ID))
+            {
+                listBoxReferancePrices.Items.Add(item.Name + "   /   " + item.ReferancePrice + "TL");
+                totalReferancePrice += item.ReferancePrice.Value;
+            }
+            labelTotalReferancePrice.Text = totalReferancePrice.ToString() + " TL";
         }
 
         private void EditCustomerForm_Load(object sender, EventArgs e)
@@ -158,12 +179,15 @@ namespace FormUI.Views.CustomerForms
             {
                 textReferanceName.Text = null;
                 textReferancePhoneNumber.Text = null;
+                textReferancePrice.ReadOnly = true;
+                textReferancePrice.Text = null;
             }
             else
             {
                 Customer referance = customerService.GetByID(int.Parse(textReferanceID.Text));
                 textReferanceName.Text = referance.Name;
                 textReferancePhoneNumber.Text = referance.PhoneNumber;
+                textReferancePrice.ReadOnly = false;
             }
         }
         SelectCustomerForm selectCustomerForm;
