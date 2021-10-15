@@ -112,8 +112,14 @@ namespace FormUI.Views.SaleForms
             this.textReferanceID = new DevExpress.XtraEditors.TextEdit();
             this.labelControl36 = new DevExpress.XtraEditors.LabelControl();
             this.tabPageDetails = new DevExpress.XtraTab.XtraTabPage();
+            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl40 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl39 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.labelDetailsPaymentPaidPrice = new DevExpress.XtraEditors.LabelControl();
@@ -168,6 +174,7 @@ namespace FormUI.Views.SaleForms
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceID.Properties)).BeginInit();
             this.tabPageDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -833,7 +840,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageInstalment.Controls.Add(this.labelControl16);
             this.tabPageInstalment.Controls.Add(this.comboBoxInstalmentCount);
             this.tabPageInstalment.Name = "tabPageInstalment";
-            this.tabPageInstalment.Size = new System.Drawing.Size(431, 498);
+            this.tabPageInstalment.Size = new System.Drawing.Size(431, 521);
             this.tabPageInstalment.Text = "Instalment";
             // 
             // labelTotalPrice
@@ -1113,6 +1120,7 @@ namespace FormUI.Views.SaleForms
             // 
             // tabPageDetails
             // 
+            this.tabPageDetails.Controls.Add(this.groupControl5);
             this.tabPageDetails.Controls.Add(this.simpleButton1);
             this.tabPageDetails.Controls.Add(this.groupControl4);
             this.tabPageDetails.Controls.Add(this.groupControl3);
@@ -1120,8 +1128,18 @@ namespace FormUI.Views.SaleForms
             this.tabPageDetails.Controls.Add(this.groupControl2);
             this.tabPageDetails.Controls.Add(this.groupControl1);
             this.tabPageDetails.Name = "tabPageDetails";
-            this.tabPageDetails.Size = new System.Drawing.Size(431, 521);
+            this.tabPageDetails.Size = new System.Drawing.Size(431, 498);
             this.tabPageDetails.Text = "Details";
+            // 
+            // groupControl5
+            // 
+            this.groupControl5.AppearanceCaption.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
+            this.groupControl5.AppearanceCaption.Options.UseBorderColor = true;
+            this.groupControl5.Location = new System.Drawing.Point(229, 3);
+            this.groupControl5.Name = "groupControl5";
+            this.groupControl5.Size = new System.Drawing.Size(191, 132);
+            this.groupControl5.TabIndex = 44;
+            this.groupControl5.Text = "Referans";
             // 
             // simpleButton1
             // 
@@ -1137,20 +1155,65 @@ namespace FormUI.Views.SaleForms
             // 
             this.groupControl4.AppearanceCaption.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
             this.groupControl4.AppearanceCaption.Options.UseBorderColor = true;
+            this.groupControl4.Controls.Add(this.labelControl40);
+            this.groupControl4.Controls.Add(this.labelControl39);
+            this.groupControl4.Controls.Add(this.labelControl33);
+            this.groupControl4.Controls.Add(this.labelControl31);
+            this.groupControl4.Controls.Add(this.labelControl29);
             this.groupControl4.Controls.Add(this.labelControl20);
             this.groupControl4.Location = new System.Drawing.Point(11, 241);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(409, 120);
+            this.groupControl4.Size = new System.Drawing.Size(191, 120);
             this.groupControl4.TabIndex = 46;
             this.groupControl4.Text = "Bakım";
             // 
+            // labelControl40
+            // 
+            this.labelControl40.Location = new System.Drawing.Point(61, 94);
+            this.labelControl40.Name = "labelControl40";
+            this.labelControl40.Size = new System.Drawing.Size(6, 13);
+            this.labelControl40.TabIndex = 51;
+            this.labelControl40.Text = "0";
+            // 
+            // labelControl39
+            // 
+            this.labelControl39.Location = new System.Drawing.Point(97, 63);
+            this.labelControl39.Name = "labelControl39";
+            this.labelControl39.Size = new System.Drawing.Size(6, 13);
+            this.labelControl39.TabIndex = 50;
+            this.labelControl39.Text = "0";
+            // 
+            // labelControl33
+            // 
+            this.labelControl33.Location = new System.Drawing.Point(55, 32);
+            this.labelControl33.Name = "labelControl33";
+            this.labelControl33.Size = new System.Drawing.Size(6, 13);
+            this.labelControl33.TabIndex = 49;
+            this.labelControl33.Text = "0";
+            // 
+            // labelControl31
+            // 
+            this.labelControl31.Location = new System.Drawing.Point(4, 94);
+            this.labelControl31.Name = "labelControl31";
+            this.labelControl31.Size = new System.Drawing.Size(51, 13);
+            this.labelControl31.TabIndex = 48;
+            this.labelControl31.Text = "İlk Bakım : ";
+            // 
+            // labelControl29
+            // 
+            this.labelControl29.Location = new System.Drawing.Point(8, 63);
+            this.labelControl29.Name = "labelControl29";
+            this.labelControl29.Size = new System.Drawing.Size(83, 13);
+            this.labelControl29.TabIndex = 47;
+            this.labelControl29.Text = "Başlangıç Tarihi : ";
+            // 
             // labelControl20
             // 
-            this.labelControl20.Location = new System.Drawing.Point(9, 26);
+            this.labelControl20.Location = new System.Drawing.Point(8, 32);
             this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(82, 13);
+            this.labelControl20.Size = new System.Drawing.Size(36, 13);
             this.labelControl20.TabIndex = 46;
-            this.labelControl20.Text = "Ödeme Yöntemi :";
+            this.labelControl20.Text = "Aralığı :";
             // 
             // groupControl3
             // 
@@ -1251,9 +1314,9 @@ namespace FormUI.Views.SaleForms
             this.groupControl2.AppearanceCaption.Options.UseBorderColor = true;
             this.groupControl2.Controls.Add(this.labelDetailsProductName);
             this.groupControl2.Controls.Add(this.labelControl28);
-            this.groupControl2.Location = new System.Drawing.Point(229, 3);
+            this.groupControl2.Location = new System.Drawing.Point(229, 241);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(191, 132);
+            this.groupControl2.Size = new System.Drawing.Size(191, 120);
             this.groupControl2.TabIndex = 44;
             this.groupControl2.Text = "Ürün";
             // 
@@ -1389,6 +1452,7 @@ namespace FormUI.Views.SaleForms
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceID.Properties)).EndInit();
             this.tabPageDetails.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             this.groupControl4.PerformLayout();
@@ -1513,5 +1577,11 @@ namespace FormUI.Views.SaleForms
         private DevExpress.XtraEditors.LabelControl labelControl36;
         private DevExpress.XtraEditors.LabelControl labelControl27;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.GroupControl groupControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl40;
+        private DevExpress.XtraEditors.LabelControl labelControl39;
+        private DevExpress.XtraEditors.LabelControl labelControl33;
+        private DevExpress.XtraEditors.LabelControl labelControl31;
+        private DevExpress.XtraEditors.LabelControl labelControl29;
     }
 }

@@ -6,6 +6,7 @@ using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid.Localization;
 using FormUI.DE.Localizers;
 using FormUI.Views.CustomerForms;
+using FormUI.Views.DebtForms;
 using FormUI.Views.InstalmentForms;
 using FormUI.Views.MaintenanceForms;
 using FormUI.Views.ProductForms;
@@ -30,6 +31,7 @@ namespace FormUI
         IInstalmentService instalmentService;
         IMaintenanceBaseService maintenanceBaseService;
         IMaintenanceService maintenanceService;
+        IDebtService debtService;
         public MainMenu()
         {
             InitializeComponent();
@@ -39,6 +41,7 @@ namespace FormUI
             instalmentService = InstanceFactory.GetInstance<IInstalmentService>();
             maintenanceBaseService = InstanceFactory.GetInstance<IMaintenanceBaseService>();
             maintenanceService = InstanceFactory.GetInstance<IMaintenanceService>();
+            debtService = InstanceFactory.GetInstance<IDebtService>();
 
             GridLocalizer.Active = new TurkishGridLocalizer();
             Localizer.Active = new TurkishEditorsLocalizer();
@@ -61,16 +64,6 @@ namespace FormUI
             new ProductForm().Show();
         }
 
-        private void tileBarItem4_ItemClick(object sender, TileItemEventArgs e)
-        {
-            new MaintenancesForm().Show();
-        }
-
-        private void tileBarItem5_ItemClick(object sender, TileItemEventArgs e)
-        {
-            new InstalmentForm().Show();
-        }
-
         private void MainMenu_Load(object sender, EventArgs e)
         {
             LoadGrids();
@@ -80,6 +73,16 @@ namespace FormUI
             gridControl1.DataSource = maintenanceBaseService.GetClosesDetails();
             gridControl2.DataSource = instalmentService.GetThisMonthInstalments();
             gridControl3.DataSource = instalmentService.GetLateInstalments();
+        }
+
+        private void gridControl1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void tileBarItem5_ItemClick(object sender, TileItemEventArgs e)
+        {
+            new DebtForm().ShowDialog();
         }
     }
 }

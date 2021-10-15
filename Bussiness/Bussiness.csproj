@@ -63,12 +63,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICustomerService.cs" />
+    <Compile Include="Abstract\IDebtService.cs" />
     <Compile Include="Abstract\IInstalmentService.cs" />
     <Compile Include="Abstract\IMaintenanceBaseService.cs" />
     <Compile Include="Abstract\IMaintenanceService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Abstract\ISaleService.cs" />
     <Compile Include="Concrete\CustomerManager.cs" />
+    <Compile Include="Concrete\DebtManager.cs" />
     <Compile Include="Concrete\InstalmentManager.cs" />
     <Compile Include="Concrete\MaintenanceBaseManager.cs" />
     <Compile Include="Concrete\MaintenanceManager.cs" />
