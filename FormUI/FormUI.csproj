@@ -159,6 +159,30 @@
     <Compile Include="Views\DebtForms\DebtForm.Designer.cs">
       <DependentUpon>DebtForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\DebtForms\CustomerDebtForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DebtForms\CustomerDebtForm.Designer.cs">
+      <DependentUpon>CustomerDebtForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DebtForms\NewDebtForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DebtForms\NewDebtForm.Designer.cs">
+      <DependentUpon>NewDebtForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DebtForms\EditDebtForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DebtForms\EditDebtForm.Designer.cs">
+      <DependentUpon>EditDebtForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DebtForms\SelectCustomerDebtForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DebtForms\SelectCustomerDebtForm.Designer.cs">
+      <DependentUpon>SelectCustomerDebtForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\InstalmentForms\InstalmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,6 +309,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerForms\SelectCustomerForm.resx">
       <DependentUpon>SelectCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DebtForms\CustomerDebtForm.resx">
+      <DependentUpon>CustomerDebtForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DebtForms\DebtForm.resx">
+      <DependentUpon>DebtForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DebtForms\EditDebtForm.resx">
+      <DependentUpon>EditDebtForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DebtForms\NewDebtForm.resx">
+      <DependentUpon>NewDebtForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DebtForms\SelectCustomerDebtForm.resx">
+      <DependentUpon>SelectCustomerDebtForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\InstalmentForms\EditInstalmentForm.resx">
       <DependentUpon>EditInstalmentForm.cs</DependentUpon>

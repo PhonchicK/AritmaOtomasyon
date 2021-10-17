@@ -98,7 +98,7 @@ namespace FormUI.Views.SaleForms
             // 
             // bbiPrintPreview
             // 
-            this.bbiPrintPreview.Caption = "Print Preview";
+            this.bbiPrintPreview.Caption = "Yazdır";
             this.bbiPrintPreview.Id = 14;
             this.bbiPrintPreview.ImageOptions.ImageUri.Uri = "Preview";
             this.bbiPrintPreview.Name = "bbiPrintPreview";
@@ -112,7 +112,7 @@ namespace FormUI.Views.SaleForms
             // 
             // bbiNew
             // 
-            this.bbiNew.Caption = "New";
+            this.bbiNew.Caption = "Yeni";
             this.bbiNew.Id = 16;
             this.bbiNew.ImageOptions.ImageUri.Uri = "New";
             this.bbiNew.Name = "bbiNew";
@@ -120,7 +120,7 @@ namespace FormUI.Views.SaleForms
             // 
             // bbiEdit
             // 
-            this.bbiEdit.Caption = "Edit";
+            this.bbiEdit.Caption = "Düzenle";
             this.bbiEdit.Id = 17;
             this.bbiEdit.ImageOptions.ImageUri.Uri = "Edit";
             this.bbiEdit.Name = "bbiEdit";
@@ -128,7 +128,7 @@ namespace FormUI.Views.SaleForms
             // 
             // bbiDelete
             // 
-            this.bbiDelete.Caption = "Delete";
+            this.bbiDelete.Caption = "Sil";
             this.bbiDelete.Id = 18;
             this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiDelete.Name = "bbiDelete";
@@ -161,7 +161,7 @@ namespace FormUI.Views.SaleForms
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiDelete);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "Tasks";
+            this.ribbonPageGroup1.Text = "İşlemler";
             // 
             // ribbonPageGroup2
             // 
@@ -169,7 +169,7 @@ namespace FormUI.Views.SaleForms
             this.ribbonPageGroup2.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup2.ItemLinks.Add(this.bbiPrintPreview);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Print and Export";
+            this.ribbonPageGroup2.Text = "Yazdırma";
             // 
             // ribbonPageGroup3
             // 
@@ -196,6 +196,7 @@ namespace FormUI.Views.SaleForms
             this.Name = "SaleForm";
             this.Ribbon = this.ribbonControl;
             this.StatusBar = this.ribbonStatusBar;
+            this.Text = "Satışlar";
             this.Load += new System.EventHandler(this.SaleForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();

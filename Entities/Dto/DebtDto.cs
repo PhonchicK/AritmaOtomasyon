@@ -10,6 +10,8 @@ namespace Entities.Dto
 {
     public class DebtDto : IDto
     {
+        [Display(Name = "$")]
+        public int ID { get; set; }
         [Display(AutoGenerateField = false)]
         public int CustomerID { get; set; }
         [Display(Name = "Müşteri Adı")]

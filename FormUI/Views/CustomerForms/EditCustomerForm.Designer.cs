@@ -64,9 +64,11 @@ namespace FormUI.Views.CustomerForms
             this.navButton3 = new DevExpress.XtraBars.Navigation.NavButton();
             this.navButton4 = new DevExpress.XtraBars.Navigation.NavButton();
             this.navButton5 = new DevExpress.XtraBars.Navigation.NavButton();
+            this.navButton6 = new DevExpress.XtraBars.Navigation.NavButton();
             this.listBoxReferancePrices = new DevExpress.XtraEditors.ListBoxControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelTotalReferancePrice = new DevExpress.XtraEditors.LabelControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -94,9 +96,10 @@ namespace FormUI.Views.CustomerForms
             this.bbiSaveAndNew,
             this.bbiReset,
             this.bbiDelete,
-            this.bbiClose});
+            this.bbiClose,
+            this.barButtonItem1});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.MaxItemId = 10;
+            this.mainRibbonControl.MaxItemId = 11;
             this.mainRibbonControl.Name = "mainRibbonControl";
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage});
@@ -107,7 +110,7 @@ namespace FormUI.Views.CustomerForms
             // 
             // bbiSave
             // 
-            this.bbiSave.Caption = "Save";
+            this.bbiSave.Caption = "Kaydet";
             this.bbiSave.Id = 2;
             this.bbiSave.ImageOptions.ImageUri.Uri = "Save";
             this.bbiSave.Name = "bbiSave";
@@ -115,7 +118,7 @@ namespace FormUI.Views.CustomerForms
             // 
             // bbiSaveAndClose
             // 
-            this.bbiSaveAndClose.Caption = "Save And Close";
+            this.bbiSaveAndClose.Caption = "Kaydet Ve Kapat";
             this.bbiSaveAndClose.Id = 3;
             this.bbiSaveAndClose.ImageOptions.ImageUri.Uri = "SaveAndClose";
             this.bbiSaveAndClose.Name = "bbiSaveAndClose";
@@ -130,7 +133,7 @@ namespace FormUI.Views.CustomerForms
             // 
             // bbiReset
             // 
-            this.bbiReset.Caption = "Reset Changes";
+            this.bbiReset.Caption = "Değişiklikleri Sıfırla";
             this.bbiReset.Id = 5;
             this.bbiReset.ImageOptions.ImageUri.Uri = "Reset";
             this.bbiReset.Name = "bbiReset";
@@ -138,7 +141,7 @@ namespace FormUI.Views.CustomerForms
             // 
             // bbiDelete
             // 
-            this.bbiDelete.Caption = "Delete";
+            this.bbiDelete.Caption = "Sil";
             this.bbiDelete.Id = 6;
             this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiDelete.Name = "bbiDelete";
@@ -146,7 +149,7 @@ namespace FormUI.Views.CustomerForms
             // 
             // bbiClose
             // 
-            this.bbiClose.Caption = "Close";
+            this.bbiClose.Caption = "Kapat";
             this.bbiClose.Id = 7;
             this.bbiClose.ImageOptions.ImageUri.Uri = "Close";
             this.bbiClose.Name = "bbiClose";
@@ -175,6 +178,7 @@ namespace FormUI.Views.CustomerForms
             // 
             // ribbonPageGroup1
             // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Hızlı Menü";
             // 
@@ -255,7 +259,7 @@ namespace FormUI.Views.CustomerForms
             // 
             // groupControl2
             // 
-            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl2.Appearance.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
             this.groupControl2.Appearance.Options.UseBorderColor = true;
             this.groupControl2.Controls.Add(this.textReferancePrice);
@@ -394,6 +398,7 @@ namespace FormUI.Views.CustomerForms
             this.tileNavPane1.Buttons.Add(this.navButton3);
             this.tileNavPane1.Buttons.Add(this.navButton4);
             this.tileNavPane1.Buttons.Add(this.navButton5);
+            this.tileNavPane1.Buttons.Add(this.navButton6);
             this.tileNavPane1.Cursor = System.Windows.Forms.Cursors.Default;
             // 
             // tileNavCategory1
@@ -442,6 +447,14 @@ namespace FormUI.Views.CustomerForms
             this.navButton5.Name = "navButton5";
             this.navButton5.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButton5_ElementClick);
             // 
+            // navButton6
+            // 
+            this.navButton6.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Left;
+            this.navButton6.Caption = "Alacak/Verecek";
+            this.navButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navButton6.ImageOptions.Image")));
+            this.navButton6.Name = "navButton6";
+            this.navButton6.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButton6_ElementClick);
+            // 
             // listBoxReferancePrices
             // 
             this.listBoxReferancePrices.Location = new System.Drawing.Point(417, 413);
@@ -468,6 +481,15 @@ namespace FormUI.Views.CustomerForms
             this.labelTotalReferancePrice.Size = new System.Drawing.Size(7, 16);
             this.labelTotalReferancePrice.TabIndex = 9;
             this.labelTotalReferancePrice.Text = "0";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Yeni Alacak / Verecek";
+            this.barButtonItem1.Id = 10;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // EditCustomerForm
             // 
@@ -546,5 +568,7 @@ namespace FormUI.Views.CustomerForms
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelTotalReferancePrice;
+        private DevExpress.XtraBars.Navigation.NavButton navButton6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

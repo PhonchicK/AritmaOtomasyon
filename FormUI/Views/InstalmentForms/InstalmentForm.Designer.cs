@@ -203,7 +203,7 @@ namespace FormUI.Views.InstalmentForms
             // 
             // bbiPrintPreview
             // 
-            this.bbiPrintPreview.Caption = "Print Preview";
+            this.bbiPrintPreview.Caption = "Yazdır";
             this.bbiPrintPreview.Id = 14;
             this.bbiPrintPreview.ImageOptions.ImageUri.Uri = "Preview";
             this.bbiPrintPreview.Name = "bbiPrintPreview";
@@ -264,7 +264,7 @@ namespace FormUI.Views.InstalmentForms
             this.ribbonPageGroup2.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup2.ItemLinks.Add(this.bbiPrintPreview);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Print and Export";
+            this.ribbonPageGroup2.Text = "Yazdırma";
             // 
             // ribbonPageGroup3
             // 
@@ -291,6 +291,7 @@ namespace FormUI.Views.InstalmentForms
             this.Name = "InstalmentForm";
             this.Ribbon = this.ribbonControl;
             this.StatusBar = this.ribbonStatusBar;
+            this.Text = "Taksitler";
             this.Load += new System.EventHandler(this.CustomerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ınstalmentDtoBindingSource)).EndInit();

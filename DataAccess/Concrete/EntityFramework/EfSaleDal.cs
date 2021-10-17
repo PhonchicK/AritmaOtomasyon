@@ -32,7 +32,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  Price = s.Price,
                                  PaymentType = s.PaymentType,
                                  SaleDate = s.SaleDate,
-                                 RemainderPrice = s.RemainderPrice,
+                                 //RemainderPrice = s.RemainderPrice,
                                  //ReferanceCustomerName = refCustomer.Name,
                                  Assembler = s.Assembler,
                                  Comment = s.Comment
@@ -64,7 +64,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  Price = s.Price,
                                  PaymentType = s.PaymentType,
                                  SaleDate = s.SaleDate,
-                                 RemainderPrice = s.RemainderPrice,
+                                 //RemainderPrice = s.RemainderPrice,
                                  //ReferanceCustomerName = refCustomer.Name,
                                  Assembler = s.Assembler,
                                  Comment = s.Comment

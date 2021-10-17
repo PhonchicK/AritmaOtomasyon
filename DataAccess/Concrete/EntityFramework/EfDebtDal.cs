@@ -24,6 +24,7 @@ namespace DataAccess.Concrete.EntityFramework
                              on dC.Key equals c.ID
                              select new DebtDto
                              {
+                                 ID = dC.Select(d => d.ID).FirstOrDefault(),
                                  CustomerID = c.ID,
                                  CustomerName = c.Name,
                                  CustomerPhoneNumber = c.PhoneNumber,

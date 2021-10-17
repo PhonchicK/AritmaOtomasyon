@@ -21,8 +21,8 @@ namespace Entities.Concrete
         public string PaymentType { get; set; }
         [Column(Name = "Price", DbType = "INTEGER")]
         public int Price { get; set; }
-        [Column(Name = "RemainderPrice", DbType = "INTEGER")]
-        public int RemainderPrice { get; set; }//Kalan Tutar
+        /*[Column(Name = "RemainderPrice", DbType = "INTEGER")]
+        public int RemainderPrice { get; set; }//Kalan Tutar*/
         [Column(Name = "Assembler", DbType = "VARCHAR")]
         public string Assembler { get; set; }//Montaj yapan kişi
         [Column(Name = "Comment", DbType = "VARCHAR")]

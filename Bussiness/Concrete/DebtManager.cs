@@ -44,6 +44,11 @@ namespace Bussiness.Concrete
             return null;
         }
 
+        public List<Debt> GetCustomerDebts(int customerID)
+        {
+            return debtDal.GetAll(d => d.CustomerID == customerID);
+        }
+
         public void Update(Debt debt)
         {
             debtDal.Update(debt);

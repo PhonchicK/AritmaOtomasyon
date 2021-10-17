@@ -26,6 +26,7 @@ namespace FormUI.Views.SaleForms
         ISaleService saleService;
         IMaintenanceBaseService maintenanceBaseService;
         IProductService productService;
+        IDebtService debtService;
 
         private void LoadServices()
         {
@@ -34,6 +35,7 @@ namespace FormUI.Views.SaleForms
             saleService = InstanceFactory.GetInstance<ISaleService>();
             maintenanceBaseService = InstanceFactory.GetInstance<IMaintenanceBaseService>();
             productService = InstanceFactory.GetInstance<IProductService>();
+            debtService = InstanceFactory.GetInstance<IDebtService>();
         }
         #endregion
         public NewSaleForm()
@@ -332,7 +334,7 @@ namespace FormUI.Views.SaleForms
                 CustomerID = customerID,
                 ProductID = Convert.ToInt32(textProductID.Text),
                 Price = price,
-                RemainderPrice = price - paidPrice,
+                //RemainderPrice = price - paidPrice,
                 PaymentType = comboBoxPaymentType.Text,
                 SaleDate = DateTime.Now.Date,
                 Assembler = textProductAssembler.Text,
@@ -359,6 +361,18 @@ namespace FormUI.Views.SaleForms
                         PayablePrice = Convert.ToInt32(item.Cells[1].Value)
                     });
                 }
+            }
+
+            else
+            {
+                debtService.Add(new Debt() 
+                { 
+                    CustomerID = customerID, 
+                    Date = DateTime.Now.Date, 
+                    Receive = price,
+                    Give = paidPrice,
+                    Comment =  price.ToString() + "TL tutarlı " + textProductName.Text + " adlı ürün satışı."
+                });
             }
             this.DialogResult = DialogResult.OK;
         }

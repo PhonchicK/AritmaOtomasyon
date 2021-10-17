@@ -11,6 +11,7 @@ namespace Bussiness.Abstract
     public interface IDebtService
     {
         List<Debt> GetAll();
+        List<Debt> GetCustomerDebts(int customerID);
         List<DebtDto> GetAllDetails();
         Debt GetByID(int id);
         int Add(Debt debt);

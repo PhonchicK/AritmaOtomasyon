@@ -4,6 +4,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraLayout;
 using DevExpress.XtraLayout.Helpers;
 using Entities.Concrete;
+using FormUI.Views.DebtForms;
 using FormUI.Views.InstalmentForms;
 using FormUI.Views.MaintenanceForms;
 using FormUI.Views.SaleForms;
@@ -208,6 +209,15 @@ namespace FormUI.Views.CustomerForms
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             textReferanceID.Text = null;
+        }
+        private void navButton6_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
+        {
+            new CustomerDebtForm(selectedCustomer.ID).Show();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new NewDebtForm(selectedCustomer.ID).ShowDialog();
         }
     }
 }

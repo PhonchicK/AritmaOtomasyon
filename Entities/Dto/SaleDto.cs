@@ -22,8 +22,8 @@ namespace Entities.Dto
         public string PaymentType { get; set; }
         [Display(Name = "Tutar")]
         public int Price { get; set; }
-        [Display(Name = "Kalan Tutar")]
-        public int RemainderPrice { get; set; }
+        /*[Display(Name = "Kalan Tutar")]
+        public int RemainderPrice { get; set; }*/
         [Display(Name = "Montajcı")]
         public string Assembler { get; set; }
         [Display(Name = "Açıklama")]
