@@ -113,6 +113,10 @@ namespace FormUI.Views.SaleForms
             this.labelControl36 = new DevExpress.XtraEditors.LabelControl();
             this.tabPageDetails = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.labelReferancePhoneNumber = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl42 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl44 = new DevExpress.XtraEditors.LabelControl();
+            this.labelReferanceName = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl40 = new DevExpress.XtraEditors.LabelControl();
@@ -175,6 +179,7 @@ namespace FormUI.Views.SaleForms
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceID.Properties)).BeginInit();
             this.tabPageDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
+            this.groupControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -300,6 +305,9 @@ namespace FormUI.Views.SaleForms
             this.textNewCustomerPhoneNumber.Name = "textNewCustomerPhoneNumber";
             this.textNewCustomerPhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.textNewCustomerPhoneNumber.Properties.Appearance.Options.UseFont = true;
+            this.textNewCustomerPhoneNumber.Properties.BeepOnError = false;
+            this.textNewCustomerPhoneNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textNewCustomerPhoneNumber.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d");
             this.textNewCustomerPhoneNumber.Size = new System.Drawing.Size(412, 30);
             this.textNewCustomerPhoneNumber.TabIndex = 13;
             // 
@@ -393,6 +401,9 @@ namespace FormUI.Views.SaleForms
             this.textExistsCustomerPhoneNumber.Name = "textExistsCustomerPhoneNumber";
             this.textExistsCustomerPhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.textExistsCustomerPhoneNumber.Properties.Appearance.Options.UseFont = true;
+            this.textExistsCustomerPhoneNumber.Properties.BeepOnError = false;
+            this.textExistsCustomerPhoneNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textExistsCustomerPhoneNumber.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d");
             this.textExistsCustomerPhoneNumber.Properties.ReadOnly = true;
             this.textExistsCustomerPhoneNumber.Size = new System.Drawing.Size(412, 30);
             this.textExistsCustomerPhoneNumber.TabIndex = 19;
@@ -457,7 +468,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageProduct.Controls.Add(this.buttonSelectProduct);
             this.tabPageProduct.Controls.Add(this.labelControl8);
             this.tabPageProduct.Name = "tabPageProduct";
-            this.tabPageProduct.Size = new System.Drawing.Size(431, 521);
+            this.tabPageProduct.Size = new System.Drawing.Size(431, 498);
             this.tabPageProduct.Text = "Product";
             // 
             // labelControl27
@@ -629,7 +640,7 @@ namespace FormUI.Views.SaleForms
             this.tabPagePayment.Controls.Add(this.labelControl11);
             this.tabPagePayment.Controls.Add(this.comboBoxPaymentType);
             this.tabPagePayment.Name = "tabPagePayment";
-            this.tabPagePayment.Size = new System.Drawing.Size(431, 521);
+            this.tabPagePayment.Size = new System.Drawing.Size(431, 498);
             this.tabPagePayment.Text = "Payment";
             // 
             // buttonPaymentInstalmentSettings
@@ -750,7 +761,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageMaintenance.Controls.Add(this.labelControl14);
             this.tabPageMaintenance.Controls.Add(this.comboBoxMaintenanceInterval);
             this.tabPageMaintenance.Name = "tabPageMaintenance";
-            this.tabPageMaintenance.Size = new System.Drawing.Size(431, 521);
+            this.tabPageMaintenance.Size = new System.Drawing.Size(431, 498);
             this.tabPageMaintenance.Text = "Maintenance";
             // 
             // buttonMaintenanceBack
@@ -1128,18 +1139,60 @@ namespace FormUI.Views.SaleForms
             this.tabPageDetails.Controls.Add(this.groupControl2);
             this.tabPageDetails.Controls.Add(this.groupControl1);
             this.tabPageDetails.Name = "tabPageDetails";
-            this.tabPageDetails.Size = new System.Drawing.Size(431, 521);
+            this.tabPageDetails.Size = new System.Drawing.Size(431, 498);
             this.tabPageDetails.Text = "Details";
             // 
             // groupControl5
             // 
             this.groupControl5.AppearanceCaption.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
             this.groupControl5.AppearanceCaption.Options.UseBorderColor = true;
+            this.groupControl5.Controls.Add(this.labelReferancePhoneNumber);
+            this.groupControl5.Controls.Add(this.labelControl42);
+            this.groupControl5.Controls.Add(this.labelControl44);
+            this.groupControl5.Controls.Add(this.labelReferanceName);
             this.groupControl5.Location = new System.Drawing.Point(229, 3);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.Size = new System.Drawing.Size(191, 132);
             this.groupControl5.TabIndex = 44;
             this.groupControl5.Text = "Referans";
+            // 
+            // labelReferancePhoneNumber
+            // 
+            this.labelReferancePhoneNumber.Appearance.Options.UseTextOptions = true;
+            this.labelReferancePhoneNumber.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelReferancePhoneNumber.Location = new System.Drawing.Point(59, 93);
+            this.labelReferancePhoneNumber.Name = "labelReferancePhoneNumber";
+            this.labelReferancePhoneNumber.Size = new System.Drawing.Size(17, 13);
+            this.labelReferancePhoneNumber.TabIndex = 47;
+            this.labelReferancePhoneNumber.Text = "Yok";
+            // 
+            // labelControl42
+            // 
+            this.labelControl42.Location = new System.Drawing.Point(48, 74);
+            this.labelControl42.Name = "labelControl42";
+            this.labelControl42.Size = new System.Drawing.Size(90, 13);
+            this.labelControl42.TabIndex = 46;
+            this.labelControl42.Text = "Telefon Numarası :";
+            // 
+            // labelControl44
+            // 
+            this.labelControl44.Location = new System.Drawing.Point(5, 41);
+            this.labelControl44.Name = "labelControl44";
+            this.labelControl44.Size = new System.Drawing.Size(22, 13);
+            this.labelControl44.TabIndex = 44;
+            this.labelControl44.Text = "Adı :";
+            // 
+            // labelReferanceName
+            // 
+            this.labelReferanceName.Appearance.Options.UseTextOptions = true;
+            this.labelReferanceName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelReferanceName.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelReferanceName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.labelReferanceName.Location = new System.Drawing.Point(33, 41);
+            this.labelReferanceName.Name = "labelReferanceName";
+            this.labelReferanceName.Size = new System.Drawing.Size(17, 13);
+            this.labelReferanceName.TabIndex = 45;
+            this.labelReferanceName.Text = "Yok";
             // 
             // simpleButton1
             // 
@@ -1150,6 +1203,7 @@ namespace FormUI.Views.SaleForms
             this.simpleButton1.Size = new System.Drawing.Size(91, 30);
             this.simpleButton1.TabIndex = 47;
             this.simpleButton1.Text = "İptal";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // groupControl4
             // 
@@ -1169,7 +1223,7 @@ namespace FormUI.Views.SaleForms
             // 
             // labelControl40
             // 
-            this.labelControl40.Location = new System.Drawing.Point(61, 94);
+            this.labelControl40.Location = new System.Drawing.Point(73, 94);
             this.labelControl40.Name = "labelControl40";
             this.labelControl40.Size = new System.Drawing.Size(6, 13);
             this.labelControl40.TabIndex = 51;
@@ -1193,7 +1247,7 @@ namespace FormUI.Views.SaleForms
             // 
             // labelControl31
             // 
-            this.labelControl31.Location = new System.Drawing.Point(4, 94);
+            this.labelControl31.Location = new System.Drawing.Point(8, 94);
             this.labelControl31.Name = "labelControl31";
             this.labelControl31.Size = new System.Drawing.Size(51, 13);
             this.labelControl31.TabIndex = 48;
@@ -1324,9 +1378,13 @@ namespace FormUI.Views.SaleForms
             // 
             this.labelDetailsProductName.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelDetailsProductName.Appearance.Options.UseFont = true;
-            this.labelDetailsProductName.Location = new System.Drawing.Point(70, 69);
+            this.labelDetailsProductName.Appearance.Options.UseTextOptions = true;
+            this.labelDetailsProductName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelDetailsProductName.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelDetailsProductName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelDetailsProductName.Location = new System.Drawing.Point(5, 47);
             this.labelDetailsProductName.Name = "labelDetailsProductName";
-            this.labelDetailsProductName.Size = new System.Drawing.Size(38, 16);
+            this.labelDetailsProductName.Size = new System.Drawing.Size(181, 73);
             this.labelDetailsProductName.TabIndex = 39;
             this.labelDetailsProductName.Text = "Arıtma";
             // 
@@ -1356,7 +1414,9 @@ namespace FormUI.Views.SaleForms
             // 
             // labelDetailsCustomerPhoneNumber
             // 
-            this.labelDetailsCustomerPhoneNumber.Location = new System.Drawing.Point(5, 88);
+            this.labelDetailsCustomerPhoneNumber.Appearance.Options.UseTextOptions = true;
+            this.labelDetailsCustomerPhoneNumber.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelDetailsCustomerPhoneNumber.Location = new System.Drawing.Point(52, 112);
             this.labelDetailsCustomerPhoneNumber.Name = "labelDetailsCustomerPhoneNumber";
             this.labelDetailsCustomerPhoneNumber.Size = new System.Drawing.Size(12, 13);
             this.labelDetailsCustomerPhoneNumber.TabIndex = 43;
@@ -1364,7 +1424,7 @@ namespace FormUI.Views.SaleForms
             // 
             // labelControl22
             // 
-            this.labelControl22.Location = new System.Drawing.Point(5, 69);
+            this.labelControl22.Location = new System.Drawing.Point(41, 93);
             this.labelControl22.Name = "labelControl22";
             this.labelControl22.Size = new System.Drawing.Size(90, 13);
             this.labelControl22.TabIndex = 42;
@@ -1372,7 +1432,11 @@ namespace FormUI.Views.SaleForms
             // 
             // labelDetailsCustomerName
             // 
-            this.labelDetailsCustomerName.Location = new System.Drawing.Point(33, 45);
+            this.labelDetailsCustomerName.Appearance.Options.UseTextOptions = true;
+            this.labelDetailsCustomerName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelDetailsCustomerName.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelDetailsCustomerName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.labelDetailsCustomerName.Location = new System.Drawing.Point(34, 55);
             this.labelDetailsCustomerName.Name = "labelDetailsCustomerName";
             this.labelDetailsCustomerName.Size = new System.Drawing.Size(12, 13);
             this.labelDetailsCustomerName.TabIndex = 41;
@@ -1380,7 +1444,7 @@ namespace FormUI.Views.SaleForms
             // 
             // labelControl21
             // 
-            this.labelControl21.Location = new System.Drawing.Point(5, 45);
+            this.labelControl21.Location = new System.Drawing.Point(5, 55);
             this.labelControl21.Name = "labelControl21";
             this.labelControl21.Size = new System.Drawing.Size(22, 13);
             this.labelControl21.TabIndex = 40;
@@ -1388,7 +1452,7 @@ namespace FormUI.Views.SaleForms
             // 
             // labelDetailsCustomerState
             // 
-            this.labelDetailsCustomerState.Location = new System.Drawing.Point(49, 26);
+            this.labelDetailsCustomerState.Location = new System.Drawing.Point(52, 26);
             this.labelDetailsCustomerState.Name = "labelDetailsCustomerState";
             this.labelDetailsCustomerState.Size = new System.Drawing.Size(20, 13);
             this.labelDetailsCustomerState.TabIndex = 39;
@@ -1396,7 +1460,7 @@ namespace FormUI.Views.SaleForms
             // 
             // labelControl19
             // 
-            this.labelControl19.Location = new System.Drawing.Point(5, 26);
+            this.labelControl19.Location = new System.Drawing.Point(8, 26);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(38, 13);
             this.labelControl19.TabIndex = 38;
@@ -1453,6 +1517,8 @@ namespace FormUI.Views.SaleForms
             ((System.ComponentModel.ISupportInitialize)(this.textReferanceID.Properties)).EndInit();
             this.tabPageDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
+            this.groupControl5.ResumeLayout(false);
+            this.groupControl5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             this.groupControl4.PerformLayout();
@@ -1583,5 +1649,9 @@ namespace FormUI.Views.SaleForms
         private DevExpress.XtraEditors.LabelControl labelControl33;
         private DevExpress.XtraEditors.LabelControl labelControl31;
         private DevExpress.XtraEditors.LabelControl labelControl29;
+        private DevExpress.XtraEditors.LabelControl labelReferancePhoneNumber;
+        private DevExpress.XtraEditors.LabelControl labelControl42;
+        private DevExpress.XtraEditors.LabelControl labelControl44;
+        private DevExpress.XtraEditors.LabelControl labelReferanceName;
     }
 }

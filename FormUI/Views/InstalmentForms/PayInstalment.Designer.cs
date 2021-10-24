@@ -148,6 +148,9 @@ namespace FormUI.Views.InstalmentForms
             this.textCustomerPhone.Name = "textCustomerPhone";
             this.textCustomerPhone.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textCustomerPhone.Properties.Appearance.Options.UseFont = true;
+            this.textCustomerPhone.Properties.BeepOnError = false;
+            this.textCustomerPhone.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textCustomerPhone.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d");
             this.textCustomerPhone.Properties.ReadOnly = true;
             this.textCustomerPhone.Size = new System.Drawing.Size(238, 26);
             this.textCustomerPhone.TabIndex = 16;

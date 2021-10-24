@@ -24,6 +24,7 @@ namespace FormUI.Views.ProductForms
 
         private void navButton1_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
         {
+            textFeatures.Focus();
             if (string.IsNullOrWhiteSpace(textProductName.Text))
             {
                 MessageBox.Show("Lütfen tüm alanları doldurun");

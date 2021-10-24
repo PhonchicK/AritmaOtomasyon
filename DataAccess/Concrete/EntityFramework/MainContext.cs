@@ -36,5 +36,6 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Product> Products { get; set; }
         public DbSet<Maintenance> Maintenances { get; set; }
         public DbSet<Debt> Debts { get; set; }
+        public DbSet<Note> Notes { get; set; }
     }
 }

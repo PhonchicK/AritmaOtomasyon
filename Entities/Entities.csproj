@@ -106,6 +106,7 @@
     <Compile Include="Concrete\Instalment.cs" />
     <Compile Include="Concrete\Maintenance.cs" />
     <Compile Include="Concrete\MaintenanceBase.cs" />
+    <Compile Include="Concrete\Note.cs" />
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Concrete\Sale.cs" />
     <Compile Include="Dto\CustomerDto.cs" />

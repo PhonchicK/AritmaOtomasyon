@@ -41,7 +41,7 @@ namespace Bussiness.Concrete
 
         public Debt GetByID(int id)
         {
-            return null;
+            return debtDal.Get(d => d.ID == id);
         }
 
         public List<Debt> GetCustomerDebts(int customerID)

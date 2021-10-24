@@ -10,10 +10,12 @@ namespace Bussiness.Concrete
     {
         ICustomerDal customerDal;
         ISaleService saleService;
-        public CustomerManager(ICustomerDal _customerDal, ISaleService _saleService)
+        IDebtService debtService;
+        public CustomerManager(ICustomerDal _customerDal, ISaleService _saleService, IDebtService _debtService)
         {
             customerDal = _customerDal;
             saleService = _saleService;
+            debtService = _debtService;
         }
         public int Add(Customer customer)
         {
@@ -26,6 +28,11 @@ namespace Bussiness.Concrete
             {
                 if (item != null)
                     saleService.Delete(item);
+            }
+            foreach(var item in debtService.GetCustomerDebts(customer.ID))
+            {
+                if (item != null)
+                    debtService.Delete(item);
             }
             customerDal.Delete(customer);
         }

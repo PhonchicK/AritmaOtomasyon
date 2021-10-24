@@ -148,6 +148,9 @@ namespace FormUI.Views.DebtForms
             this.textCustomerPhoneNumber.Name = "textCustomerPhoneNumber";
             this.textCustomerPhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textCustomerPhoneNumber.Properties.Appearance.Options.UseFont = true;
+            this.textCustomerPhoneNumber.Properties.BeepOnError = false;
+            this.textCustomerPhoneNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textCustomerPhoneNumber.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d");
             this.textCustomerPhoneNumber.Properties.ReadOnly = true;
             this.textCustomerPhoneNumber.Size = new System.Drawing.Size(343, 26);
             this.textCustomerPhoneNumber.TabIndex = 3;

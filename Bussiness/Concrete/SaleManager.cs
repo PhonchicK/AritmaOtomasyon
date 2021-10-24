@@ -37,12 +37,14 @@ namespace Bussiness.Concrete
 
             var maintenanceBase = maintenanceBaseDal.Get(m => m.SaleID == sale.ID);
             if (maintenanceBase != null)
+            {
                 maintenanceBaseDal.Delete(maintenanceBase);
 
-            foreach (var item in maintenanceDal.GetAll(m => m.MaintenanceBaseID == maintenanceBase.ID))
-            {
-                if (item != null)
-                    maintenanceDal.Delete(item);
+                foreach (var item in maintenanceDal.GetAll(m => m.MaintenanceBaseID == maintenanceBase.ID))
+                {
+                    if (item != null)
+                        maintenanceDal.Delete(item);
+                }
             }
 
             saleDal.Delete(sale);

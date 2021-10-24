@@ -38,5 +38,10 @@ namespace FormUI.Views.MaintenanceForms
                     break;
             }
         }
+
+        private void bbiEdit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

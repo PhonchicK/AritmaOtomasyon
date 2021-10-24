@@ -87,16 +87,16 @@ namespace FormUI.Views.CustomerForms
 
         private void bbiDelete_ItemClick(object sender, ItemClickEventArgs e)
         {
-            int selectedCustomerID;
             if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
             {
                 int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
-                selectedCustomerID = ((CustomerDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
-                if (MessageBox.Show(selectedCustomerID.ToString() +
-                    " ID li müşteriyi silmek istiyor musunuz ? \n Not : Satış silinirse kayıtlı satış,bakım ve taksit kayıtlarıda silinecektir.", "Uyarı",
+                CustomerDto selectedCustomer = ((CustomerDto)(((GridView)gridControl.MainView).GetRow(selRows[0])));
+                if (MessageBox.Show(selectedCustomer.Name +
+                    " isimli müşteriyi silmek istiyor musunuz ? \n Not : Müşteri silinirse kayıtlı satış,bakım ve taksit kayıtlarıda silinecektir.", "Uyarı",
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    customerService.Delete(new Customer() { ID = selectedCustomerID });
+                    customerService.Delete(new Customer() { ID = selectedCustomer.ID });
+                    gridControl.DataSource = customerService.GetAllDetails();
                 }
             }
         }

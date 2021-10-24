@@ -21,6 +21,8 @@ namespace FormUI.Views.SaleForms
 {
     public partial class SaleForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        bool isCustomer = false;
+        int customerID;
         ISaleService saleService;
         IInstalmentService instalmentService;
         public SaleForm()
@@ -37,6 +39,8 @@ namespace FormUI.Views.SaleForms
             saleService = InstanceFactory.GetInstance<ISaleService>();
             gridControl.DataSource = saleService.GetCustomerDetails(customerID);
             //bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
+            this.customerID = customerID;
+            isCustomer = true;
         }
 
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
@@ -73,6 +77,14 @@ namespace FormUI.Views.SaleForms
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     saleService.Delete(new Sale() { ID = selectedSaleID });
+                    if(isCustomer)
+                    {
+                        gridControl.DataSource = saleService.GetCustomerDetails(customerID);
+                    }
+                    else
+                    {
+                        gridControl.DataSource = saleService.GetAllDetails();
+                    }
                 }
             }
         }

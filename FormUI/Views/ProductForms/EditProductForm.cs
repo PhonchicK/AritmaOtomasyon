@@ -38,6 +38,7 @@ namespace FormUI.Views.ProductForms
 
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            textFeatures.Focus();
             selectedProduct.Name = textProductName.Text;
             selectedProduct.Features = textFeatures.Text;
             selectedProduct.DefaultPrice = int.Parse(textPrice.Text);
@@ -46,6 +47,7 @@ namespace FormUI.Views.ProductForms
 
         private void bbiSaveAndClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            textFeatures.Focus();
             selectedProduct.Name = textProductName.Text;
             selectedProduct.Features = textFeatures.Text;
             selectedProduct.DefaultPrice = int.Parse(textPrice.Text);

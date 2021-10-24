@@ -67,6 +67,7 @@
     <Compile Include="Abstract\IInstalmentService.cs" />
     <Compile Include="Abstract\IMaintenanceBaseService.cs" />
     <Compile Include="Abstract\IMaintenanceService.cs" />
+    <Compile Include="Abstract\INoteService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Abstract\ISaleService.cs" />
     <Compile Include="Concrete\CustomerManager.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Concrete\InstalmentManager.cs" />
     <Compile Include="Concrete\MaintenanceBaseManager.cs" />
     <Compile Include="Concrete\MaintenanceManager.cs" />
+    <Compile Include="Concrete\NoteManager.cs" />
     <Compile Include="Concrete\ProductManager.cs" />
     <Compile Include="Concrete\SaleManager.cs" />
     <Compile Include="DependencyResolvers\Ninject\BusinessModule.cs" />

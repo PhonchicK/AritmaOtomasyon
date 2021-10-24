@@ -58,14 +58,6 @@ namespace FormUI.Views.SaleForms
             }
         }
         SelectCustomerForm selectCustomerForm;
-        private void buttonSelectCustomer_Click(object sender, EventArgs e)
-        {
-            selectCustomerForm = new SelectCustomerForm();
-            if (selectCustomerForm.ShowDialog() == DialogResult.OK)
-            {
-                labelCustomerID.Text = selectCustomerForm.SelectedCustomerID.ToString();
-            }
-        }
         SelectProductForm selectProductForm;
         private void buttonSelectProduct_Click(object sender, EventArgs e)
         {

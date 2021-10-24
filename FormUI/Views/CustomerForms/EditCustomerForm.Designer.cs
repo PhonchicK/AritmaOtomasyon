@@ -37,6 +37,7 @@ namespace FormUI.Views.CustomerForms
             this.bbiReset = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
             this.bbiClose = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -68,7 +69,6 @@ namespace FormUI.Views.CustomerForms
             this.listBoxReferancePrices = new DevExpress.XtraEditors.ListBoxControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelTotalReferancePrice = new DevExpress.XtraEditors.LabelControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -155,6 +155,15 @@ namespace FormUI.Views.CustomerForms
             this.bbiClose.Name = "bbiClose";
             this.bbiClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiClose_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Yeni Alacak / Verecek";
+            this.barButtonItem1.Id = 10;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // mainRibbonPage
             // 
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -224,6 +233,9 @@ namespace FormUI.Views.CustomerForms
             this.textCustomerPhoneNumber.Name = "textCustomerPhoneNumber";
             this.textCustomerPhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textCustomerPhoneNumber.Properties.Appearance.Options.UseFont = true;
+            this.textCustomerPhoneNumber.Properties.BeepOnError = false;
+            this.textCustomerPhoneNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textCustomerPhoneNumber.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d");
             this.textCustomerPhoneNumber.Size = new System.Drawing.Size(343, 26);
             this.textCustomerPhoneNumber.TabIndex = 3;
             // 
@@ -360,6 +372,9 @@ namespace FormUI.Views.CustomerForms
             this.textReferancePhoneNumber.Name = "textReferancePhoneNumber";
             this.textReferancePhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textReferancePhoneNumber.Properties.Appearance.Options.UseFont = true;
+            this.textReferancePhoneNumber.Properties.BeepOnError = false;
+            this.textReferancePhoneNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textReferancePhoneNumber.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d");
             this.textReferancePhoneNumber.Properties.ReadOnly = true;
             this.textReferancePhoneNumber.Size = new System.Drawing.Size(338, 26);
             this.textReferancePhoneNumber.TabIndex = 9;
@@ -481,15 +496,6 @@ namespace FormUI.Views.CustomerForms
             this.labelTotalReferancePrice.Size = new System.Drawing.Size(7, 16);
             this.labelTotalReferancePrice.TabIndex = 9;
             this.labelTotalReferancePrice.Text = "0";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Yeni Alacak / Verecek";
-            this.barButtonItem1.Id = 10;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // EditCustomerForm
             // 

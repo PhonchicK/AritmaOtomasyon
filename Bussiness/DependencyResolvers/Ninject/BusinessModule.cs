@@ -30,6 +30,9 @@ namespace Business.DependencyResolvers.Ninject
 
             Bind<IDebtDal>().To<EfDebtDal>().InSingletonScope();
             Bind<IDebtService>().To<DebtManager>().InSingletonScope();
+
+            Bind<INoteDal>().To<EfNoteDal>().InSingletonScope();
+            Bind<INoteService>().To<NoteManager>().InSingletonScope();
         }
     }
 }

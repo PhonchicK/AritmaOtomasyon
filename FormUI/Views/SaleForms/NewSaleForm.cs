@@ -398,6 +398,10 @@ namespace FormUI.Views.SaleForms
             {
                 labelDetailsInstalmentCount.Text = comboBoxInstalmentCount.Text;
             }
+            else
+            {
+                labelDetailsInstalmentCount.Text = "Yok";
+            }
         }
         #endregion
 
@@ -452,6 +456,7 @@ namespace FormUI.Views.SaleForms
         {
             dateEditInstalmentStart.DateTime = DateTime.Now.Date;
             dateEditMaintenanceStart.DateTime = DateTime.Now.Date;
+            comboBoxPaymentType.SelectedIndex = 0;
         }
 
         private void mainTabControl_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
@@ -494,6 +499,11 @@ namespace FormUI.Views.SaleForms
                 textReferancePhoneNumber.Text = referance.PhoneNumber;
                 textReferancePrice.ReadOnly = false;
             }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

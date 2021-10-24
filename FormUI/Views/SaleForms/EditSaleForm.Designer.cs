@@ -39,7 +39,6 @@ namespace FormUI.Views.SaleForms
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.buttonSelectCustomer = new DevExpress.XtraEditors.SimpleButton();
             this.labelCustomerID = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.textCustomerPhone = new DevExpress.XtraEditors.TextEdit();
@@ -99,7 +98,7 @@ namespace FormUI.Views.SaleForms
             // 
             // bbiSave
             // 
-            this.bbiSave.Caption = "Save";
+            this.bbiSave.Caption = "Kaydet";
             this.bbiSave.Id = 2;
             this.bbiSave.ImageOptions.ImageUri.Uri = "Save";
             this.bbiSave.Name = "bbiSave";
@@ -107,7 +106,7 @@ namespace FormUI.Views.SaleForms
             // 
             // bbiSaveAndClose
             // 
-            this.bbiSaveAndClose.Caption = "Save And Close";
+            this.bbiSaveAndClose.Caption = "Kaydet ve Kapat";
             this.bbiSaveAndClose.Id = 3;
             this.bbiSaveAndClose.ImageOptions.ImageUri.Uri = "SaveAndClose";
             this.bbiSaveAndClose.Name = "bbiSaveAndClose";
@@ -115,7 +114,7 @@ namespace FormUI.Views.SaleForms
             // 
             // bbiReset
             // 
-            this.bbiReset.Caption = "Reset Changes";
+            this.bbiReset.Caption = "Değişiklikleri Sıfırla";
             this.bbiReset.Id = 5;
             this.bbiReset.ImageOptions.ImageUri.Uri = "Reset";
             this.bbiReset.Name = "bbiReset";
@@ -123,7 +122,7 @@ namespace FormUI.Views.SaleForms
             // 
             // bbiDelete
             // 
-            this.bbiDelete.Caption = "Delete";
+            this.bbiDelete.Caption = "Sil";
             this.bbiDelete.Id = 6;
             this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiDelete.Name = "bbiDelete";
@@ -131,7 +130,7 @@ namespace FormUI.Views.SaleForms
             // 
             // bbiClose
             // 
-            this.bbiClose.Caption = "Close";
+            this.bbiClose.Caption = "Kapat";
             this.bbiClose.Id = 7;
             this.bbiClose.ImageOptions.ImageUri.Uri = "Close";
             this.bbiClose.Name = "bbiClose";
@@ -155,13 +154,12 @@ namespace FormUI.Views.SaleForms
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiDelete);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiClose);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
-            this.mainRibbonPageGroup.Text = "Tasks";
+            this.mainRibbonPageGroup.Text = "İşlemler";
             // 
             // groupControl1
             // 
             this.groupControl1.AppearanceCaption.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
             this.groupControl1.AppearanceCaption.Options.UseBorderColor = true;
-            this.groupControl1.Controls.Add(this.buttonSelectCustomer);
             this.groupControl1.Controls.Add(this.labelCustomerID);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.textCustomerPhone);
@@ -173,15 +171,6 @@ namespace FormUI.Views.SaleForms
             this.groupControl1.Size = new System.Drawing.Size(246, 179);
             this.groupControl1.TabIndex = 16;
             this.groupControl1.Text = "Müşteri";
-            // 
-            // buttonSelectCustomer
-            // 
-            this.buttonSelectCustomer.Location = new System.Drawing.Point(67, 35);
-            this.buttonSelectCustomer.Name = "buttonSelectCustomer";
-            this.buttonSelectCustomer.Size = new System.Drawing.Size(75, 23);
-            this.buttonSelectCustomer.TabIndex = 18;
-            this.buttonSelectCustomer.Text = "Seç";
-            this.buttonSelectCustomer.Click += new System.EventHandler(this.buttonSelectCustomer_Click);
             // 
             // labelCustomerID
             // 
@@ -210,6 +199,9 @@ namespace FormUI.Views.SaleForms
             this.textCustomerPhone.Name = "textCustomerPhone";
             this.textCustomerPhone.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textCustomerPhone.Properties.Appearance.Options.UseFont = true;
+            this.textCustomerPhone.Properties.BeepOnError = false;
+            this.textCustomerPhone.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textCustomerPhone.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d");
             this.textCustomerPhone.Properties.ReadOnly = true;
             this.textCustomerPhone.Size = new System.Drawing.Size(238, 26);
             this.textCustomerPhone.TabIndex = 16;
@@ -456,7 +448,6 @@ namespace FormUI.Views.SaleForms
         private DevExpress.XtraEditors.TextEdit textCustomerName;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.SimpleButton buttonSelectCustomer;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.SimpleButton buttonSelectProduct;
         private DevExpress.XtraEditors.LabelControl labelProductID;

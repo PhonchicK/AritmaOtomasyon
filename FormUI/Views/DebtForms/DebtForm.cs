@@ -36,22 +36,6 @@ namespace FormUI.Views.DebtForms
         {
             new NewDebtForm().ShowDialog();
         }
-
-        private void bbiDelete_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            int selectedDebtID;
-            if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
-            {
-                int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
-                selectedDebtID = ((DebtDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
-                if (MessageBox.Show(selectedDebtID.ToString() +
-                    " ID li kaydı silmek istiyor musunuz ? ", "Uyarı",
-                    MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    debtService.Delete(new Debt() { ID = selectedDebtID });
-                }
-            }
-        }
         SelectCustomerDebtForm selectCustomerDebtForm;
         private void bbiEdit_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -60,6 +44,19 @@ namespace FormUI.Views.DebtForms
                 int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
                 selectCustomerDebtForm = new SelectCustomerDebtForm(((DebtDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).CustomerID);
                 if(selectCustomerDebtForm.ShowDialog() == DialogResult.OK)
+                {
+                    new EditDebtForm(selectCustomerDebtForm.SelectedDebt).ShowDialog();
+                }
+            }
+        }
+
+        private void gridControl_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
+                selectCustomerDebtForm = new SelectCustomerDebtForm(((DebtDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).CustomerID);
+                if (selectCustomerDebtForm.ShowDialog() == DialogResult.OK)
                 {
                     new EditDebtForm(selectCustomerDebtForm.SelectedDebt).ShowDialog();
                 }

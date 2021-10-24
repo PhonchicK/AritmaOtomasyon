@@ -96,7 +96,7 @@ namespace FormUI.Views.InstalmentForms
             // 
             // bbiSave
             // 
-            this.bbiSave.Caption = "Save";
+            this.bbiSave.Caption = "Kaydet";
             this.bbiSave.Id = 2;
             this.bbiSave.ImageOptions.ImageUri.Uri = "Save";
             this.bbiSave.Name = "bbiSave";
@@ -104,7 +104,7 @@ namespace FormUI.Views.InstalmentForms
             // 
             // bbiSaveAndClose
             // 
-            this.bbiSaveAndClose.Caption = "Save And Close";
+            this.bbiSaveAndClose.Caption = "Kaydet ve Kapat";
             this.bbiSaveAndClose.Id = 3;
             this.bbiSaveAndClose.ImageOptions.ImageUri.Uri = "SaveAndClose";
             this.bbiSaveAndClose.Name = "bbiSaveAndClose";
@@ -112,7 +112,7 @@ namespace FormUI.Views.InstalmentForms
             // 
             // bbiReset
             // 
-            this.bbiReset.Caption = "Reset Changes";
+            this.bbiReset.Caption = "Değişiklikleri Sıfırla";
             this.bbiReset.Id = 5;
             this.bbiReset.ImageOptions.ImageUri.Uri = "Reset";
             this.bbiReset.Name = "bbiReset";
@@ -120,7 +120,7 @@ namespace FormUI.Views.InstalmentForms
             // 
             // bbiClose
             // 
-            this.bbiClose.Caption = "Close";
+            this.bbiClose.Caption = "Kapat";
             this.bbiClose.Id = 7;
             this.bbiClose.ImageOptions.ImageUri.Uri = "Close";
             this.bbiClose.Name = "bbiClose";
@@ -143,7 +143,7 @@ namespace FormUI.Views.InstalmentForms
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiReset);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiClose);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
-            this.mainRibbonPageGroup.Text = "Tasks";
+            this.mainRibbonPageGroup.Text = "İşlemler";
             // 
             // groupControl1
             // 
@@ -165,6 +165,9 @@ namespace FormUI.Views.InstalmentForms
             this.textCustomerPhone.Name = "textCustomerPhone";
             this.textCustomerPhone.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textCustomerPhone.Properties.Appearance.Options.UseFont = true;
+            this.textCustomerPhone.Properties.BeepOnError = false;
+            this.textCustomerPhone.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textCustomerPhone.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d");
             this.textCustomerPhone.Properties.ReadOnly = true;
             this.textCustomerPhone.Size = new System.Drawing.Size(238, 26);
             this.textCustomerPhone.TabIndex = 16;

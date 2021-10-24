@@ -140,6 +140,9 @@ namespace FormUI.Views.CustomerForms
             this.TextPhoneNumber.Name = "TextPhoneNumber";
             this.TextPhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.TextPhoneNumber.Properties.Appearance.Options.UseFont = true;
+            this.TextPhoneNumber.Properties.BeepOnError = false;
+            this.TextPhoneNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.TextPhoneNumber.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d");
             this.TextPhoneNumber.Size = new System.Drawing.Size(266, 22);
             this.TextPhoneNumber.TabIndex = 3;
             // 
@@ -208,6 +211,9 @@ namespace FormUI.Views.CustomerForms
             this.textRefNewPhoneNumber.Name = "textRefNewPhoneNumber";
             this.textRefNewPhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textRefNewPhoneNumber.Properties.Appearance.Options.UseFont = true;
+            this.textRefNewPhoneNumber.Properties.BeepOnError = false;
+            this.textRefNewPhoneNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textRefNewPhoneNumber.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d");
             this.textRefNewPhoneNumber.Size = new System.Drawing.Size(238, 26);
             this.textRefNewPhoneNumber.TabIndex = 13;
             // 
@@ -277,6 +283,9 @@ namespace FormUI.Views.CustomerForms
             this.textRefPhoneNumber.Name = "textRefPhoneNumber";
             this.textRefPhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textRefPhoneNumber.Properties.Appearance.Options.UseFont = true;
+            this.textRefPhoneNumber.Properties.BeepOnError = false;
+            this.textRefPhoneNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textRefPhoneNumber.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d");
             this.textRefPhoneNumber.Properties.ReadOnly = true;
             this.textRefPhoneNumber.Size = new System.Drawing.Size(238, 26);
             this.textRefPhoneNumber.TabIndex = 7;
@@ -330,7 +339,7 @@ namespace FormUI.Views.CustomerForms
             this.Controls.Add(this.tileNavPane1);
             this.MaximizeBox = false;
             this.Name = "AddCustomerForm";
-            this.Text = "AddCustomerForm";
+            this.Text = "Yeni Müşteri";
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextPhoneNumber.Properties)).EndInit();

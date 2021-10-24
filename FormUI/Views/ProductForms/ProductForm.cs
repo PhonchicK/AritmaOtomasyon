@@ -53,6 +53,7 @@ namespace FormUI.Views.ProductForms
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     productService.Delete(new Product() { ID = selectedProductID });
+                    gridControl.DataSource = productService.GetAll();
                 }
             }
         }
