@@ -40,7 +40,8 @@ namespace Bussiness.Concrete
 
         public List<Note> GetTodayNotes()
         {
-            return noteDal.GetAll(n => n.Date.Date == DateTime.Now.Date);
+            DateTime date = DateTime.Now.Date;
+            return noteDal.GetAll(n => n.Date == date);
         }
 
         public void Update(Note note)

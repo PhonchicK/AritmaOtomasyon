@@ -30,18 +30,21 @@ namespace FormUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
             this.tileBar = new DevExpress.XtraBars.Navigation.TileBar();
             this.tileBarGroupTables = new DevExpress.XtraBars.Navigation.TileBarGroup();
             this.tileBarItem2 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tileBarItem3 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tileBarItem1 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tileBarItem5 = new DevExpress.XtraBars.Navigation.TileBarItem();
+            this.tileBarItem6 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -52,12 +55,15 @@ namespace FormUI
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.tabNavigationPage4 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.tabNavigationPage5 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridControl4 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tileBarItem4 = new DevExpress.XtraBars.Navigation.TileBarItem();
+            this.noteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colContent = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -69,10 +75,10 @@ namespace FormUI
             this.tabNavigationPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            this.tabNavigationPage4.SuspendLayout();
             this.tabNavigationPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tileBar
@@ -91,7 +97,7 @@ namespace FormUI
             this.tileBar.ItemPadding = new System.Windows.Forms.Padding(8, 6, 12, 6);
             this.tileBar.Location = new System.Drawing.Point(0, 0);
             this.tileBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tileBar.MaxId = 12;
+            this.tileBar.MaxId = 14;
             this.tileBar.MaximumSize = new System.Drawing.Size(0, 110);
             this.tileBar.MinimumSize = new System.Drawing.Size(100, 50);
             this.tileBar.Name = "tileBar";
@@ -111,6 +117,7 @@ namespace FormUI
             this.tileBarGroupTables.Items.Add(this.tileBarItem3);
             this.tileBarGroupTables.Items.Add(this.tileBarItem1);
             this.tileBarGroupTables.Items.Add(this.tileBarItem5);
+            this.tileBarGroupTables.Items.Add(this.tileBarItem6);
             this.tileBarGroupTables.Name = "tileBarGroupTables";
             this.tileBarGroupTables.Text = "TABLES";
             // 
@@ -158,12 +165,22 @@ namespace FormUI
             this.tileBarItem5.Name = "tileBarItem5";
             this.tileBarItem5.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBarItem5_ItemClick);
             // 
+            // tileBarItem6
+            // 
+            this.tileBarItem6.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            tileItemElement5.Text = "Notlar";
+            this.tileBarItem6.Elements.Add(tileItemElement5);
+            this.tileBarItem6.Id = 13;
+            this.tileBarItem6.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
+            this.tileBarItem6.Name = "tileBarItem6";
+            this.tileBarItem6.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBarItem6_ItemClick);
+            // 
             // tabPane1
             // 
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Controls.Add(this.tabNavigationPage2);
             this.tabPane1.Controls.Add(this.tabNavigationPage3);
-            this.tabPane1.Controls.Add(this.tabNavigationPage4);
             this.tabPane1.Controls.Add(this.tabNavigationPage5);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPane1.Location = new System.Drawing.Point(0, 110);
@@ -173,7 +190,6 @@ namespace FormUI
             this.tabNavigationPage1,
             this.tabNavigationPage2,
             this.tabNavigationPage3,
-            this.tabNavigationPage4,
             this.tabNavigationPage5});
             this.tabPane1.RegularSize = new System.Drawing.Size(857, 473);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
@@ -213,7 +229,7 @@ namespace FormUI
             this.tabNavigationPage2.Controls.Add(this.gridControl2);
             this.tabNavigationPage2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabNavigationPage2.ImageOptions.Image")));
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(857, 430);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(857, 473);
             // 
             // gridControl2
             // 
@@ -221,7 +237,7 @@ namespace FormUI
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(857, 430);
+            this.gridControl2.Size = new System.Drawing.Size(857, 473);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -255,33 +271,17 @@ namespace FormUI
             this.gridView3.GridControl = this.gridControl3;
             this.gridView3.Name = "gridView3";
             // 
-            // tabNavigationPage4
-            // 
-            this.tabNavigationPage4.AllowTouchScroll = true;
-            this.tabNavigationPage4.AlwaysScrollActiveControlIntoView = false;
-            this.tabNavigationPage4.Caption = "İstatistik";
-            this.tabNavigationPage4.Controls.Add(this.xtraScrollableControl1);
-            this.tabNavigationPage4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabNavigationPage4.ImageOptions.Image")));
-            this.tabNavigationPage4.Name = "tabNavigationPage4";
-            this.tabNavigationPage4.Size = new System.Drawing.Size(857, 430);
-            // 
-            // xtraScrollableControl1
-            // 
-            this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 0);
-            this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(857, 430);
-            this.xtraScrollableControl1.TabIndex = 0;
-            // 
             // tabNavigationPage5
             // 
             this.tabNavigationPage5.Caption = "Not";
             this.tabNavigationPage5.Controls.Add(this.gridControl4);
+            this.tabNavigationPage5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabNavigationPage5.ImageOptions.Image")));
             this.tabNavigationPage5.Name = "tabNavigationPage5";
             this.tabNavigationPage5.Size = new System.Drawing.Size(857, 430);
             // 
             // gridControl4
             // 
+            this.gridControl4.DataSource = this.noteBindingSource;
             this.gridControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl4.Location = new System.Drawing.Point(0, 0);
             this.gridControl4.MainView = this.gridView4;
@@ -293,18 +293,59 @@ namespace FormUI
             // 
             // gridView4
             // 
+            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID,
+            this.colName,
+            this.colDate,
+            this.colContent});
             this.gridView4.GridControl = this.gridControl4;
             this.gridView4.Name = "gridView4";
             // 
             // tileBarItem4
             // 
             this.tileBarItem4.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            tileItemElement5.Text = "Ürünler";
-            this.tileBarItem4.Elements.Add(tileItemElement5);
+            tileItemElement6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            tileItemElement6.Text = "Ürünler";
+            this.tileBarItem4.Elements.Add(tileItemElement6);
             this.tileBarItem4.Id = 6;
             this.tileBarItem4.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem4.Name = "tileBarItem4";
+            // 
+            // noteBindingSource
+            // 
+            this.noteBindingSource.DataSource = typeof(Entities.Concrete.Note);
+            // 
+            // colID
+            // 
+            this.colID.FieldName = "ID";
+            this.colID.Name = "colID";
+            this.colID.Visible = true;
+            this.colID.VisibleIndex = 0;
+            this.colID.Width = 60;
+            // 
+            // colName
+            // 
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 1;
+            this.colName.Width = 226;
+            // 
+            // colDate
+            // 
+            this.colDate.FieldName = "Date";
+            this.colDate.Name = "colDate";
+            this.colDate.Visible = true;
+            this.colDate.VisibleIndex = 2;
+            this.colDate.Width = 72;
+            // 
+            // colContent
+            // 
+            this.colContent.FieldName = "Content";
+            this.colContent.Name = "colContent";
+            this.colContent.Visible = true;
+            this.colContent.VisibleIndex = 3;
+            this.colContent.Width = 474;
             // 
             // MainMenu
             // 
@@ -330,10 +371,10 @@ namespace FormUI
             this.tabNavigationPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            this.tabNavigationPage4.ResumeLayout(false);
             this.tabNavigationPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -355,12 +396,16 @@ namespace FormUI
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
         private DevExpress.XtraGrid.GridControl gridControl3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage4;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem5;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem4;
-        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage5;
         private DevExpress.XtraGrid.GridControl gridControl4;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem6;
+        private System.Windows.Forms.BindingSource noteBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colID;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colContent;
     }
 }

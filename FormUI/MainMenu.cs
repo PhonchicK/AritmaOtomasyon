@@ -21,6 +21,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
+using Entities.Concrete;
+using IHYAOtomasyon.Views.NoteForms;
 
 namespace FormUI
 {
@@ -33,6 +35,7 @@ namespace FormUI
         IMaintenanceBaseService maintenanceBaseService;
         IMaintenanceService maintenanceService;
         IDebtService debtService;
+        INoteService noteService;
         public MainMenu()
         {
             InitializeComponent();
@@ -43,6 +46,7 @@ namespace FormUI
             maintenanceBaseService = InstanceFactory.GetInstance<IMaintenanceBaseService>();
             maintenanceService = InstanceFactory.GetInstance<IMaintenanceService>();
             debtService = InstanceFactory.GetInstance<IDebtService>();
+            noteService = InstanceFactory.GetInstance<INoteService>();
 
             GridLocalizer.Active = new TurkishGridLocalizer();
             Localizer.Active = new TurkishEditorsLocalizer();
@@ -74,6 +78,7 @@ namespace FormUI
             gridControl1.DataSource = maintenanceBaseService.GetClosesDetails();
             gridControl2.DataSource = instalmentService.GetThisMonthInstalments();
             gridControl3.DataSource = instalmentService.GetLateInstalments();
+            gridControl4.DataSource = noteService.GetTodayNotes();
         }
 
         private void gridControl1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -84,6 +89,11 @@ namespace FormUI
         private void tileBarItem5_ItemClick(object sender, TileItemEventArgs e)
         {
             new DebtForm().ShowDialog();
+        }
+
+        private void tileBarItem6_ItemClick(object sender, TileItemEventArgs e)
+        {
+            new NoteForm().Show();
         }
     }
 }

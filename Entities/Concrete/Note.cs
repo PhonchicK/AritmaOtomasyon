@@ -14,6 +14,8 @@ namespace Entities.Concrete
     {
         [Column(Name = "ID", IsDbGenerated = true, IsPrimaryKey = true, DbType = "INTEGER"), Key, Display(Name = "$")]
         public int ID { get; set; }
+        [Column(Name = "Name", DbType = "TEXT"), Display(Name = "İsim")]
+        public string Name { get; set; }
         [Column(Name = "Date", DbType = "TIMESTAMP"), Display(Name = "Tarih")]
         public DateTime Date { get; set; }
         [Column(Name = "Content", DbType = "TEXT"), Display(Name = "İçerik")]

@@ -503,7 +503,7 @@ namespace FormUI.Views.SaleForms
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            mainTabControl.SelectedTabPage = tabPagePayment;
         }
     }
 }

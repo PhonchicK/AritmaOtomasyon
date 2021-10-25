@@ -1202,7 +1202,7 @@ namespace FormUI.Views.SaleForms
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(91, 30);
             this.simpleButton1.TabIndex = 47;
-            this.simpleButton1.Text = "İptal";
+            this.simpleButton1.Text = "Geri";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // groupControl4
