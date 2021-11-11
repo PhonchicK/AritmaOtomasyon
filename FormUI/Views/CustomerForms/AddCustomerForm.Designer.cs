@@ -55,6 +55,8 @@ namespace FormUI.Views.CustomerForms
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.textPrimPrice = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextPhoneNumber.Properties)).BeginInit();
@@ -69,6 +71,7 @@ namespace FormUI.Views.CustomerForms
             ((System.ComponentModel.ISupportInitialize)(this.textRefID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textRefPhoneNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textRefName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textPrimPrice.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tileNavPane1
@@ -188,6 +191,7 @@ namespace FormUI.Views.CustomerForms
             this.xtraTabPage1,
             this.xtraTabPage2,
             this.xtraTabPage3});
+            this.xtraTabControl1.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtraTabControl1_SelectedPageChanged);
             // 
             // xtraTabPage3
             // 
@@ -324,11 +328,35 @@ namespace FormUI.Views.CustomerForms
             this.labelControl21.TabIndex = 1;
             this.labelControl21.Text = "İD";
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(394, 288);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(72, 16);
+            this.labelControl4.TabIndex = 10;
+            this.labelControl4.Text = "Prim Ücreti :";
+            // 
+            // textPrimPrice
+            // 
+            this.textPrimPrice.Location = new System.Drawing.Point(472, 285);
+            this.textPrimPrice.Name = "textPrimPrice";
+            this.textPrimPrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.textPrimPrice.Properties.Appearance.Options.UseFont = true;
+            this.textPrimPrice.Properties.BeepOnError = false;
+            this.textPrimPrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textPrimPrice.Properties.MaskSettings.Set("mask", "c");
+            this.textPrimPrice.Size = new System.Drawing.Size(178, 22);
+            this.textPrimPrice.TabIndex = 9;
+            // 
             // AddCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 319);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.textPrimPrice);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.TextAddress);
             this.Controls.Add(this.labelControl3);
@@ -356,6 +384,7 @@ namespace FormUI.Views.CustomerForms
             ((System.ComponentModel.ISupportInitialize)(this.textRefID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textRefPhoneNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textRefName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textPrimPrice.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,5 +417,7 @@ namespace FormUI.Views.CustomerForms
         private DevExpress.XtraEditors.LabelControl labelControl19;
         private DevExpress.XtraEditors.LabelControl labelControl20;
         private DevExpress.XtraEditors.LabelControl labelControl21;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.TextEdit textPrimPrice;
     }
 }

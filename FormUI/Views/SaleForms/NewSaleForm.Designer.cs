@@ -86,6 +86,7 @@ namespace FormUI.Views.SaleForms
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxMaintenanceInterval = new System.Windows.Forms.ComboBox();
             this.tabPageInstalment = new DevExpress.XtraTab.XtraTabPage();
+            this.textInstalmentCount = new DevExpress.XtraEditors.TextEdit();
             this.labelTotalPrice = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.buttonInstalmentBack = new DevExpress.XtraEditors.SimpleButton();
@@ -97,7 +98,6 @@ namespace FormUI.Views.SaleForms
             this.dateEditInstalmentStart = new DevExpress.XtraEditors.DateEdit();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxInstalmentCount = new System.Windows.Forms.ComboBox();
             this.tabPageReferance = new DevExpress.XtraTab.XtraTabPage();
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
             this.textReferancePrice = new DevExpress.XtraEditors.TextEdit();
@@ -169,6 +169,7 @@ namespace FormUI.Views.SaleForms
             ((System.ComponentModel.ISupportInitialize)(this.dateEditMaintenanceStart.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditMaintenanceStart.Properties)).BeginInit();
             this.tabPageInstalment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textInstalmentCount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditInstalmentStart.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditInstalmentStart.Properties)).BeginInit();
@@ -468,7 +469,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageProduct.Controls.Add(this.buttonSelectProduct);
             this.tabPageProduct.Controls.Add(this.labelControl8);
             this.tabPageProduct.Name = "tabPageProduct";
-            this.tabPageProduct.Size = new System.Drawing.Size(431, 498);
+            this.tabPageProduct.Size = new System.Drawing.Size(431, 521);
             this.tabPageProduct.Text = "Product";
             // 
             // labelControl27
@@ -743,8 +744,9 @@ namespace FormUI.Views.SaleForms
             this.comboBoxPaymentType.FormattingEnabled = true;
             this.comboBoxPaymentType.Items.AddRange(new object[] {
             "Peşin",
+            "Elden Taksit",
             "Kredi/Banka Kartı ",
-            "Taksit",
+            "Kredi Kartı Taksit",
             "EFT"});
             this.comboBoxPaymentType.Location = new System.Drawing.Point(9, 44);
             this.comboBoxPaymentType.Name = "comboBoxPaymentType";
@@ -841,6 +843,7 @@ namespace FormUI.Views.SaleForms
             // 
             // tabPageInstalment
             // 
+            this.tabPageInstalment.Controls.Add(this.textInstalmentCount);
             this.tabPageInstalment.Controls.Add(this.labelTotalPrice);
             this.tabPageInstalment.Controls.Add(this.labelControl17);
             this.tabPageInstalment.Controls.Add(this.buttonInstalmentBack);
@@ -849,10 +852,26 @@ namespace FormUI.Views.SaleForms
             this.tabPageInstalment.Controls.Add(this.dateEditInstalmentStart);
             this.tabPageInstalment.Controls.Add(this.labelControl15);
             this.tabPageInstalment.Controls.Add(this.labelControl16);
-            this.tabPageInstalment.Controls.Add(this.comboBoxInstalmentCount);
             this.tabPageInstalment.Name = "tabPageInstalment";
-            this.tabPageInstalment.Size = new System.Drawing.Size(431, 498);
+            this.tabPageInstalment.Size = new System.Drawing.Size(431, 521);
             this.tabPageInstalment.Text = "Instalment";
+            // 
+            // textInstalmentCount
+            // 
+            this.textInstalmentCount.EditValue = "";
+            this.textInstalmentCount.Location = new System.Drawing.Point(11, 42);
+            this.textInstalmentCount.Name = "textInstalmentCount";
+            this.textInstalmentCount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.textInstalmentCount.Properties.Appearance.Options.UseFont = true;
+            this.textInstalmentCount.Properties.BeepOnError = false;
+            this.textInstalmentCount.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
+            this.textInstalmentCount.Properties.MaskSettings.Set("MaskManagerSignature", "isOptimistic=False");
+            this.textInstalmentCount.Properties.MaskSettings.Set("mask", "(1?[1-9])|([12][0-4])");
+            this.textInstalmentCount.Properties.MaskSettings.Set("showPlaceholders", true);
+            this.textInstalmentCount.Properties.MaskSettings.Set("allowBlankInput", false);
+            this.textInstalmentCount.Size = new System.Drawing.Size(409, 30);
+            this.textInstalmentCount.TabIndex = 39;
+            this.textInstalmentCount.EditValueChanged += new System.EventHandler(this.textInstalmentCount_EditValueChanged);
             // 
             // labelTotalPrice
             // 
@@ -956,31 +975,9 @@ namespace FormUI.Views.SaleForms
             this.labelControl16.Appearance.Options.UseFont = true;
             this.labelControl16.Location = new System.Drawing.Point(11, 17);
             this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(119, 19);
+            this.labelControl16.Size = new System.Drawing.Size(112, 19);
             this.labelControl16.TabIndex = 31;
-            this.labelControl16.Text = "Taksit Miktarı*  :";
-            // 
-            // comboBoxInstalmentCount
-            // 
-            this.comboBoxInstalmentCount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxInstalmentCount.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.comboBoxInstalmentCount.FormattingEnabled = true;
-            this.comboBoxInstalmentCount.Items.AddRange(new object[] {
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.comboBoxInstalmentCount.Location = new System.Drawing.Point(11, 42);
-            this.comboBoxInstalmentCount.Name = "comboBoxInstalmentCount";
-            this.comboBoxInstalmentCount.Size = new System.Drawing.Size(409, 32);
-            this.comboBoxInstalmentCount.TabIndex = 29;
-            this.comboBoxInstalmentCount.SelectedIndexChanged += new System.EventHandler(this.comboBoxInstalmentCount_SelectedIndexChanged);
+            this.labelControl16.Text = "Taksit Sayısı*  :";
             // 
             // tabPageReferance
             // 
@@ -997,7 +994,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageReferance.Controls.Add(this.textReferanceID);
             this.tabPageReferance.Controls.Add(this.labelControl36);
             this.tabPageReferance.Name = "tabPageReferance";
-            this.tabPageReferance.Size = new System.Drawing.Size(431, 498);
+            this.tabPageReferance.Size = new System.Drawing.Size(431, 521);
             this.tabPageReferance.Text = "Referance";
             // 
             // labelControl26
@@ -1139,7 +1136,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageDetails.Controls.Add(this.groupControl2);
             this.tabPageDetails.Controls.Add(this.groupControl1);
             this.tabPageDetails.Name = "tabPageDetails";
-            this.tabPageDetails.Size = new System.Drawing.Size(431, 498);
+            this.tabPageDetails.Size = new System.Drawing.Size(431, 521);
             this.tabPageDetails.Text = "Details";
             // 
             // groupControl5
@@ -1160,7 +1157,7 @@ namespace FormUI.Views.SaleForms
             // 
             this.labelReferancePhoneNumber.Appearance.Options.UseTextOptions = true;
             this.labelReferancePhoneNumber.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelReferancePhoneNumber.Location = new System.Drawing.Point(59, 93);
+            this.labelReferancePhoneNumber.Location = new System.Drawing.Point(55, 112);
             this.labelReferancePhoneNumber.Name = "labelReferancePhoneNumber";
             this.labelReferancePhoneNumber.Size = new System.Drawing.Size(17, 13);
             this.labelReferancePhoneNumber.TabIndex = 47;
@@ -1168,7 +1165,7 @@ namespace FormUI.Views.SaleForms
             // 
             // labelControl42
             // 
-            this.labelControl42.Location = new System.Drawing.Point(48, 74);
+            this.labelControl42.Location = new System.Drawing.Point(44, 93);
             this.labelControl42.Name = "labelControl42";
             this.labelControl42.Size = new System.Drawing.Size(90, 13);
             this.labelControl42.TabIndex = 46;
@@ -1475,6 +1472,7 @@ namespace FormUI.Views.SaleForms
             this.MaximizeBox = false;
             this.Name = "NewSaleForm";
             this.Text = "Satış Yap";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewSaleForm_FormClosing);
             this.Load += new System.EventHandler(this.NewSaleForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainTabControl)).EndInit();
             this.mainTabControl.ResumeLayout(false);
@@ -1506,6 +1504,7 @@ namespace FormUI.Views.SaleForms
             ((System.ComponentModel.ISupportInitialize)(this.dateEditMaintenanceStart.Properties)).EndInit();
             this.tabPageInstalment.ResumeLayout(false);
             this.tabPageInstalment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textInstalmentCount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditInstalmentStart.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditInstalmentStart.Properties)).EndInit();
@@ -1594,7 +1593,6 @@ namespace FormUI.Views.SaleForms
         private DevExpress.XtraEditors.DateEdit dateEditInstalmentStart;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.LabelControl labelControl16;
-        private System.Windows.Forms.ComboBox comboBoxInstalmentCount;
         private DevExpress.XtraEditors.SimpleButton buttonInstalmentSave;
         private DevExpress.XtraEditors.SimpleButton buttonMaintenanceBack;
         private DevExpress.XtraEditors.SimpleButton buttonInstalmentBack;
@@ -1653,5 +1651,6 @@ namespace FormUI.Views.SaleForms
         private DevExpress.XtraEditors.LabelControl labelControl42;
         private DevExpress.XtraEditors.LabelControl labelControl44;
         private DevExpress.XtraEditors.LabelControl labelReferanceName;
+        private DevExpress.XtraEditors.TextEdit textInstalmentCount;
     }
 }

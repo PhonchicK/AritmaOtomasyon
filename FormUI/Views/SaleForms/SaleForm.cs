@@ -120,7 +120,7 @@ namespace FormUI.Views.SaleForms
             {
                 int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
                 selectedSale = ((SaleDto)(((GridView)gridControl.MainView).GetRow(selRows[0])));
-                barButtonItem1.Enabled = selectedSale.PaymentType == "Taksit";
+                barButtonItem1.Enabled = selectedSale.PaymentType == "Elden Taksit";
             }
         }
         PayInstalment payInstalment;

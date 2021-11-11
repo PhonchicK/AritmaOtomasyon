@@ -353,7 +353,7 @@ namespace FormUI.Views.MaintenanceForms
             this.Controls.Add(this.tileNavPane1);
             this.MaximizeBox = false;
             this.Name = "NewMaintenanceForm";
-            this.Text = "NewMaintenanceForm";
+            this.Text = "Yeni Bakım";
             this.Load += new System.EventHandler(this.NewMaintenanceForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

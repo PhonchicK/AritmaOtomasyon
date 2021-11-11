@@ -23,12 +23,16 @@ using System.Windows.Forms;
 using System.Data.Entity;
 using Entities.Concrete;
 using IHYAOtomasyon.Views.NoteForms;
+using DevExpress.XtraGrid.Views.Grid;
+using Entities.Dto;
+using IHYAOtomasyon.Others.Google_Drive;
 
 namespace FormUI
 {
     public partial class MainMenu : DevExpress.XtraEditors.XtraForm
     {
         public static MainMenu instance;
+        GoogleDriveApi driveApi = new GoogleDriveApi();
         ICustomerService customerService;
         ISaleService saleService;
         IInstalmentService instalmentService;
@@ -40,6 +44,9 @@ namespace FormUI
         {
             InitializeComponent();
             instance = this;
+
+            DriveControl();
+
             customerService = InstanceFactory.GetInstance<ICustomerService>();
             saleService = InstanceFactory.GetInstance<ISaleService>();
             instalmentService = InstanceFactory.GetInstance<IInstalmentService>();
@@ -73,6 +80,22 @@ namespace FormUI
         {
             LoadGrids();
         }
+        private void DriveControl()
+        {
+            var old_db = driveApi.GetFiles().Where(file => file.Name.Contains("Main.db") && file.Trashed == false).FirstOrDefault();
+            if(old_db != null)
+            {
+                if(!(old_db.ModifiedTime.Value.Date == DateTime.Now.Date))
+                {
+                    driveApi.UploadFile("Main.db");
+                    driveApi.DeleteFile(old_db.Id);
+                }
+            }
+            else
+            {
+                driveApi.UploadFile("Main.db");
+            }
+        }
         public void LoadGrids()
         {
             gridControl1.DataSource = maintenanceBaseService.GetClosesDetails();
@@ -81,9 +104,20 @@ namespace FormUI
             gridControl4.DataSource = noteService.GetTodayNotes();
         }
 
+        NewMaintenanceForm newMaintenanceForm;
         private void gridControl1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
+            int selectedMaintenanceID;
+            if (((GridView)gridControl1.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl1.MainView).GetSelectedRows();
+                selectedMaintenanceID = ((MaintenanceDto)(((GridView)gridControl1.MainView).GetRow(selRows[0]))).ID;
+                newMaintenanceForm = new NewMaintenanceForm(selectedMaintenanceID);
+                if(newMaintenanceForm.ShowDialog() == DialogResult.OK)
+                {
+                    gridControl1.DataSource = maintenanceBaseService.GetClosesDetails();
+                }
+            }
         }
 
         private void tileBarItem5_ItemClick(object sender, TileItemEventArgs e)
@@ -94,6 +128,50 @@ namespace FormUI
         private void tileBarItem6_ItemClick(object sender, TileItemEventArgs e)
         {
             new NoteForm().Show();
+        }
+        PayInstalment payInstalment;
+        private void gridControl2_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int selectedInstalmentSaleID;
+            if (((GridView)gridControl2.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl2.MainView).GetSelectedRows();
+                selectedInstalmentSaleID = ((InstalmentDto)(((GridView)gridControl2.MainView).GetRow(selRows[0]))).SaleID;
+                payInstalment = new PayInstalment(selectedInstalmentSaleID);
+                if(payInstalment.ShowDialog() == DialogResult.OK)
+                {
+                    gridControl2.DataSource = instalmentService.GetThisMonthInstalments();
+                }
+            }
+        }
+
+        private void gridControl3_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int selectedInstalmentSaleID;
+            if (((GridView)gridControl3.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl3.MainView).GetSelectedRows();
+                selectedInstalmentSaleID = ((InstalmentDto)(((GridView)gridControl3.MainView).GetRow(selRows[0]))).SaleID;
+                payInstalment = new PayInstalment(selectedInstalmentSaleID);
+                if (payInstalment.ShowDialog() == DialogResult.OK)
+                {
+                    gridControl3.DataSource = instalmentService.GetLateInstalments();
+                }
+            }
+        }
+
+        private void gridControl4_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (((GridView)gridControl4.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl4.MainView).GetSelectedRows();
+                Note selectedNote = ((Note)(((GridView)gridControl3.MainView).GetRow(selRows[0])));
+                if (MessageBox.Show(selectedNote.Name + " adlı notu silmek istediğinze emin misiniz ?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    noteService.Delete(selectedNote);
+                    gridControl4.DataSource = noteService.GetTodayNotes();
+                }
+            }
         }
     }
 }

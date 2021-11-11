@@ -22,6 +22,6 @@ namespace Entities.Concrete
         [Column(Name = "PaymentDate", DbType = "TIMESTAMP")]
         public DateTime PaymentDate { get; set; }//Ödenecek Gün
         [Column(Name = "PaidDate", DbType = "TIMESTAMP")]
-        public DateTime PaidDate { get; set; }//Ödenen Gün
+        public DateTime? PaidDate { get; set; }//Ödenen Gün
     }
 }

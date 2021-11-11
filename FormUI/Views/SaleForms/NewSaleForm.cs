@@ -19,6 +19,7 @@ namespace FormUI.Views.SaleForms
     {
         SelectCustomerForm selectCustomerForm;
         SelectProductForm selectProductForm;
+        private bool isSaling = false;
 
         #region Services
         ICustomerService customerService;
@@ -140,7 +141,7 @@ namespace FormUI.Views.SaleForms
         #region Payment
         private void comboBoxPaymentType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            buttonPaymentInstalmentSettings.Enabled = (comboBoxPaymentType.Text == "Taksit");
+            buttonPaymentInstalmentSettings.Enabled = (comboBoxPaymentType.Text == "Elden Taksit");
         }
         private void buttonPaymentInstalmentSettings_Click(object sender, EventArgs e)
         {
@@ -152,6 +153,8 @@ namespace FormUI.Views.SaleForms
                 MessageBox.Show("Lütfen Ücret ve Ödenen Tutar alanlarını kontrol ediniz!");
                 return;
             }
+
+            textInstalmentCount.Text = "1";
             PaymentInstalmentSettings();
         }
         private void buttonPaymentBack_Click(object sender, EventArgs e)
@@ -165,9 +168,9 @@ namespace FormUI.Views.SaleForms
                 MessageBox.Show("Lütfen bir ödeme şekli seçiniz.");
                 return;
             }
-            if (comboBoxPaymentType.Text == "Taksit")
+            if (comboBoxPaymentType.Text == "Elden Taksit")
             {
-                if (comboBoxInstalmentCount.SelectedIndex == -1)
+                if (string.IsNullOrWhiteSpace(textInstalmentCount.Text))
                 {
                     MessageBox.Show("Lütfen gerekli alanları doldurunuz.");
                     return;
@@ -225,14 +228,13 @@ namespace FormUI.Views.SaleForms
         #endregion
 
         #region Instalment
-        private void comboBoxInstalmentCount_SelectedIndexChanged(object sender, EventArgs e)
+        private void textInstalmentCount_EditValueChanged(object sender, EventArgs e)
         {
-            if (comboBoxInstalmentCount.SelectedIndex != -1)
-            {
-                int price = Convert.ToInt32(textPaymentPrice.Text) - Convert.ToInt32(textPaymentPaidPrice.Text);
-                int instalmentCount = Convert.ToInt32(comboBoxInstalmentCount.Text);
-                LoadInstalments(price, instalmentCount);
-            }
+            int instalmentCount = 0;
+            if (string.IsNullOrWhiteSpace(textInstalmentCount.Text) || !int.TryParse(textInstalmentCount.Text, out instalmentCount))
+                return;
+            int price = Convert.ToInt32(textPaymentPrice.Text) - Convert.ToInt32(textPaymentPaidPrice.Text);
+            LoadInstalments(price, instalmentCount);
         }
         private void LoadInstalments(int price, int count)
         {
@@ -249,7 +251,7 @@ namespace FormUI.Views.SaleForms
         }
         private void buttonInstalmentSave_Click(object sender, EventArgs e)
         {
-            if (comboBoxInstalmentCount.SelectedIndex == -1)
+            if (string.IsNullOrWhiteSpace(textInstalmentCount.Text))
             {
                 MessageBox.Show("Lütfen gerekli alanları doldurunuz.");
                 return;
@@ -290,10 +292,10 @@ namespace FormUI.Views.SaleForms
         }
         private void dateEditInstalmentStart_EditValueChanged(object sender, EventArgs e)
         {
-            if (comboBoxInstalmentCount.SelectedIndex != -1)
+            if (!string.IsNullOrWhiteSpace(textInstalmentCount.Text))
             {
                 int price = Convert.ToInt32(textPaymentPrice.Text) - Convert.ToInt32(textPaymentPaidPrice.Text);
-                int instalmentCount = Convert.ToInt32(comboBoxInstalmentCount.Text);
+                int instalmentCount = Convert.ToInt32(textInstalmentCount.Text);
                 LoadInstalments(price, instalmentCount);
             }
         }
@@ -314,14 +316,14 @@ namespace FormUI.Views.SaleForms
                 referanceID = int.Parse(textReferanceID.Text);
                 referancePrice = int.Parse(textReferancePrice.Text);
             }
-
+            isSaling = true;
             if (tabControlCustomer.SelectedTabPage.Text == "Yeni")
             {
-                customerID = customerService.Add(new Customer() 
-                { 
-                    Name = textNewCustomerName.Text, 
-                    PhoneNumber = textNewCustomerPhoneNumber.Text, 
-                    Address = textNewCustomerAddress.Text , 
+                customerID = customerService.Add(new Customer()
+                {
+                    Name = textNewCustomerName.Text,
+                    PhoneNumber = textNewCustomerPhoneNumber.Text,
+                    Address = textNewCustomerAddress.Text,
                     ReferanceCustomerID = referanceID,
                     ReferancePrice = referancePrice
                 });
@@ -349,7 +351,7 @@ namespace FormUI.Views.SaleForms
                     StartDate = dateEditMaintenanceStart.DateTime.Date
                 });
 
-            if (comboBoxPaymentType.Text == "Taksit")
+            if (comboBoxPaymentType.Text == "Elden Taksit")
             {
                 foreach (DataGridViewRow item in dataGridView1.Rows)
                 {
@@ -362,24 +364,21 @@ namespace FormUI.Views.SaleForms
                     });
                 }
             }
-
-            else
+            debtService.Add(new Debt()
             {
-                debtService.Add(new Debt() 
-                { 
-                    CustomerID = customerID, 
-                    Date = DateTime.Now.Date, 
-                    Receive = price,
-                    Give = paidPrice,
-                    Comment =  price.ToString() + "TL tutarlı " + textProductName.Text + " adlı ürün satışı."
-                });
-            }
+                CustomerID = customerID,
+                Date = DateTime.Now.Date,
+                Receive = price,
+                Give = paidPrice,
+                Comment = price.ToString() + "TL tutarlı " + comboBoxPaymentType.Text + " yoluyla ödenen " + textProductName.Text + " adlı ürün satışı."
+            });
+
             this.DialogResult = DialogResult.OK;
         }
         private void LoadDetails()
         {
             labelDetailsCustomerState.Text = tabControlCustomer.SelectedTabPage.Text;
-            if(tabControlCustomer.SelectedTabPage.Text == "Yeni")
+            if (tabControlCustomer.SelectedTabPage.Text == "Yeni")
             {
                 labelDetailsCustomerName.Text = textNewCustomerName.Text;
                 labelDetailsCustomerPhoneNumber.Text = textNewCustomerPhoneNumber.Text;
@@ -390,13 +389,24 @@ namespace FormUI.Views.SaleForms
                 labelDetailsCustomerPhoneNumber.Text = textExistsCustomerPhoneNumber.Text;
             }
 
+            if (!string.IsNullOrWhiteSpace(textReferanceID.Text))
+            {
+                labelReferanceName.Text = textReferanceName.Text;
+                labelReferancePhoneNumber.Text = textReferancePhoneNumber.Text;
+            }
+            else
+            {
+                labelReferanceName.Text = "Yok";
+                labelReferancePhoneNumber.Text = "Yok";
+            }
+
             labelDetailsProductName.Text = textProductName.Text;
             labelDetailsPaymentType.Text = comboBoxPaymentType.Text;
             labelDetailsPaymentPrice.Text = textPaymentPrice.Text;
             labelDetailsPaymentPaidPrice.Text = textPaymentPaidPrice.Text;
-            if(comboBoxPaymentType.Text == "Taksit")
+            if (comboBoxPaymentType.Text == "Elden Taksit ")
             {
-                labelDetailsInstalmentCount.Text = comboBoxInstalmentCount.Text;
+                labelDetailsInstalmentCount.Text = textInstalmentCount.Text;
             }
             else
             {
@@ -461,7 +471,7 @@ namespace FormUI.Views.SaleForms
 
         private void mainTabControl_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
-            switch(e.Page.Text)
+            switch (e.Page.Text)
             {
                 case "Details":
                     LoadDetails();
@@ -504,6 +514,16 @@ namespace FormUI.Views.SaleForms
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             mainTabControl.SelectedTabPage = tabPagePayment;
+        }
+
+        private void NewSaleForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isSaling)
+                return;
+            if (MessageBox.Show("Çıkmak istediğinize emin misiniz ?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

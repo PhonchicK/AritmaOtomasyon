@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Business.DependencyResolvers.Ninject;
 using Bussiness.Abstract;
 using Entities.Concrete;
+using Entities.Dto;
 
 namespace FormUI.Views.InstalmentForms
 {
@@ -18,20 +19,30 @@ namespace FormUI.Views.InstalmentForms
         ISaleService saleService;
         IInstalmentService instalmentService;
         ICustomerService customerService;
+        IDebtService debtService;
 
         private Instalment[] saleInstalments;
         private int payInstalmentIndex;
+        private Customer customer;
+        private SaleDto sale;
         public PayInstalment(int saleID)
         {
             InitializeComponent();
             saleService = InstanceFactory.GetInstance<ISaleService>();
             instalmentService = InstanceFactory.GetInstance<IInstalmentService>();
             customerService = InstanceFactory.GetInstance<ICustomerService>();
+            debtService = InstanceFactory.GetInstance<IDebtService>();
 
             saleInstalments = instalmentService.GetSaleInstalments(saleID).ToArray();
+            sale = saleService.GetDetailsByID(saleID);
+            customer = customerService.GetByID(sale.CustomerID);
         }
         private void PayInstalment_Load(object sender, EventArgs e)
         {
+            labelCustomerID.Text = customer.ID.ToString();
+            textCustomerName.Text = customer.Name;
+            textCustomerPhone.Text = customer.PhoneNumber;
+
             for (int i = 0; i < saleInstalments.Length; i++)
             {
                 if (saleInstalments[i].PaidPrice < saleInstalments[i].PayablePrice && saleInstalments[i].PaymentDate.Month >= DateTime.Now.Month)//Ödenecek taksiti bulmak için kontrol
@@ -65,7 +76,7 @@ namespace FormUI.Views.InstalmentForms
 
             labelPayablePrice.Text = ((saleInstalments[payInstalmentIndex].PayablePrice - saleInstalments[payInstalmentIndex].PaidPrice) + totalNotPaid).ToString();
 
-            labelPaymentDate.Text = saleInstalments[payInstalmentIndex].PaymentDate.Date.ToString();
+            labelPaymentDate.Text = saleInstalments[payInstalmentIndex].PaymentDate.Date.ToString("MM/dd/yyyy");
 
             datePaidDate.DateTime = DateTime.Now;
         }
@@ -73,14 +84,25 @@ namespace FormUI.Views.InstalmentForms
         private void navButton1_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
         {
             int paymentPrice = Convert.ToInt32(textEditPrice.Text);
+            int totalPaymentPrice = paymentPrice;
             int remainingPrice = 0;
-            for (int i = 0; i <= payInstalmentIndex ; i++)
+            for (int i = 0; i <= payInstalmentIndex; i++)
             {
                 remainingPrice = (saleInstalments[i].PaidPrice + paymentPrice) - saleInstalments[i].PayablePrice;//Artacak tutar hesabı
                 saleInstalments[i].PaidPrice += paymentPrice - remainingPrice;
                 saleInstalments[i].PaidDate = datePaidDate.DateTime;
 
                 instalmentService.Update(saleInstalments[i]);
+
+                debtService.Add(new Debt()
+                {
+                    CustomerID = customer.ID,
+                    Date = datePaidDate.DateTime,
+                    Give = (paymentPrice - remainingPrice),
+                    Receive = 0,
+                    Comment = sale.ProductName + " adlı ürün satışının " +
+                    comboBoxPaymentType.Text + " yoluyla ödenen " + saleInstalments[i].InstalmentNo + ". taksit ödemesi"
+                });
 
                 paymentPrice = remainingPrice;
             }
@@ -110,6 +132,16 @@ namespace FormUI.Views.InstalmentForms
                     saleInstalments[i].PaidDate = datePaidDate.DateTime;
 
                     instalmentService.Update(saleInstalments[i]);
+
+                    debtService.Add(new Debt()
+                    {
+                        CustomerID = customer.ID,
+                        Date = datePaidDate.DateTime,
+                        Give = (paymentPrice - remainingPrice),
+                        Receive = 0,
+                        Comment = sale.ProductName + " adlı ürün satışının " +
+                    comboBoxPaymentType.Text + " yoluyla ödenen " + saleInstalments[i].InstalmentNo + ". taksit ödemesi"
+                    });
 
                     paymentPrice = remainingPrice;
                 }

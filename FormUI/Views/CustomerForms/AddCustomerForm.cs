@@ -57,5 +57,19 @@ namespace FormUI.Views.CustomerForms
                 textRefPhoneNumber.Text = selectedCustomer.PhoneNumber;
             }
         }
+
+        private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            if (xtraTabControl1.SelectedTabPage.Text == "Yok")
+            {
+                textPrimPrice.Text = "";
+                textPrimPrice.Enabled = false;
+            }
+            else
+            {
+                textPrimPrice.Text = "0";
+                textPrimPrice.Enabled = true;
+            }
+        }
     }
 }

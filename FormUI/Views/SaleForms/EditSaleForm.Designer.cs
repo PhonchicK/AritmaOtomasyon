@@ -56,7 +56,6 @@ namespace FormUI.Views.SaleForms
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.textProductName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.tileNavPane1 = new DevExpress.XtraBars.Navigation.TileNavPane();
             this.navButton3 = new DevExpress.XtraBars.Navigation.NavButton();
             this.navButton4 = new DevExpress.XtraBars.Navigation.NavButton();
@@ -71,7 +70,6 @@ namespace FormUI.Views.SaleForms
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textAssembler.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textProductName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,7 +166,7 @@ namespace FormUI.Views.SaleForms
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Location = new System.Drawing.Point(12, 164);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(246, 179);
+            this.groupControl1.Size = new System.Drawing.Size(686, 86);
             this.groupControl1.TabIndex = 16;
             this.groupControl1.Text = "Müşteri";
             // 
@@ -176,7 +174,7 @@ namespace FormUI.Views.SaleForms
             // 
             this.labelCustomerID.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.labelCustomerID.Appearance.Options.UseFont = true;
-            this.labelCustomerID.Location = new System.Drawing.Point(41, 35);
+            this.labelCustomerID.Location = new System.Drawing.Point(53, 43);
             this.labelCustomerID.Name = "labelCustomerID";
             this.labelCustomerID.Size = new System.Drawing.Size(9, 19);
             this.labelCustomerID.TabIndex = 17;
@@ -187,7 +185,7 @@ namespace FormUI.Views.SaleForms
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(7, 35);
+            this.labelControl1.Location = new System.Drawing.Point(19, 43);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(28, 19);
             this.labelControl1.TabIndex = 11;
@@ -195,7 +193,7 @@ namespace FormUI.Views.SaleForms
             // 
             // textCustomerPhone
             // 
-            this.textCustomerPhone.Location = new System.Drawing.Point(4, 144);
+            this.textCustomerPhone.Location = new System.Drawing.Point(443, 51);
             this.textCustomerPhone.Name = "textCustomerPhone";
             this.textCustomerPhone.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textCustomerPhone.Properties.Appearance.Options.UseFont = true;
@@ -208,7 +206,7 @@ namespace FormUI.Views.SaleForms
             // 
             // textCustomerName
             // 
-            this.textCustomerName.Location = new System.Drawing.Point(4, 95);
+            this.textCustomerName.Location = new System.Drawing.Point(136, 51);
             this.textCustomerName.Name = "textCustomerName";
             this.textCustomerName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textCustomerName.Properties.Appearance.Options.UseFont = true;
@@ -218,7 +216,7 @@ namespace FormUI.Views.SaleForms
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(7, 125);
+            this.labelControl3.Location = new System.Drawing.Point(446, 32);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(90, 13);
             this.labelControl3.TabIndex = 14;
@@ -226,7 +224,7 @@ namespace FormUI.Views.SaleForms
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(7, 76);
+            this.labelControl2.Location = new System.Drawing.Point(139, 32);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(22, 13);
             this.labelControl2.TabIndex = 13;
@@ -246,7 +244,7 @@ namespace FormUI.Views.SaleForms
             this.groupControl2.Controls.Add(this.labelControl5);
             this.groupControl2.Controls.Add(this.textProductName);
             this.groupControl2.Controls.Add(this.labelControl7);
-            this.groupControl2.Location = new System.Drawing.Point(12, 349);
+            this.groupControl2.Location = new System.Drawing.Point(12, 256);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(686, 188);
             this.groupControl2.TabIndex = 19;
@@ -343,16 +341,6 @@ namespace FormUI.Views.SaleForms
             this.labelControl7.TabIndex = 13;
             this.labelControl7.Text = "Adı :";
             // 
-            // groupControl3
-            // 
-            this.groupControl3.AppearanceCaption.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
-            this.groupControl3.AppearanceCaption.Options.UseBorderColor = true;
-            this.groupControl3.Location = new System.Drawing.Point(264, 164);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(434, 179);
-            this.groupControl3.TabIndex = 19;
-            this.groupControl3.Text = "Ödeme";
-            // 
             // tileNavPane1
             // 
             this.tileNavPane1.Buttons.Add(this.navButton3);
@@ -368,7 +356,7 @@ namespace FormUI.Views.SaleForms
             // 
             this.tileNavPane1.DefaultCategory.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
             this.tileNavPane1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tileNavPane1.Location = new System.Drawing.Point(0, 546);
+            this.tileNavPane1.Location = new System.Drawing.Point(0, 454);
             this.tileNavPane1.Name = "tileNavPane1";
             this.tileNavPane1.Size = new System.Drawing.Size(710, 53);
             this.tileNavPane1.TabIndex = 21;
@@ -403,9 +391,8 @@ namespace FormUI.Views.SaleForms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(710, 599);
+            this.ClientSize = new System.Drawing.Size(710, 507);
             this.Controls.Add(this.tileNavPane1);
-            this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.mainRibbonControl);
@@ -425,7 +412,6 @@ namespace FormUI.Views.SaleForms
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textAssembler.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textProductName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -459,7 +445,6 @@ namespace FormUI.Views.SaleForms
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
         private DevExpress.XtraEditors.TextEdit textAssembler;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraBars.Navigation.TileNavPane tileNavPane1;
         private DevExpress.XtraBars.Navigation.NavButton navButton3;
         private DevExpress.XtraBars.Navigation.NavButton navButton4;

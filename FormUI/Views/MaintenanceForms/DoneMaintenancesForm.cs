@@ -2,6 +2,9 @@
 using Bussiness.Abstract;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
+using Entities.Concrete;
+using IHYAOtomasyon.Views.MaintenanceForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +21,8 @@ namespace FormUI.Views.MaintenanceForms
     public partial class DoneMaintenancesForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         IMaintenanceService maintenanceService;
+        string value;
+        int id;
         public DoneMaintenancesForm()
         {
             InitializeComponent();
@@ -28,6 +33,8 @@ namespace FormUI.Views.MaintenanceForms
         {
             InitializeComponent();
             maintenanceService = InstanceFactory.GetInstance<IMaintenanceService>();
+            value = val;
+            id = ID;
             switch(val)
             {
                 case "customer":
@@ -39,9 +46,57 @@ namespace FormUI.Views.MaintenanceForms
             }
         }
 
+        EditDoneMaintenanceForm editDoneMaintenanceForm;
         private void bbiEdit_ItemClick(object sender, ItemClickEventArgs e)
         {
+            int selectedMaintenanceID;
+            if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
+                selectedMaintenanceID = ((Maintenance)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                editDoneMaintenanceForm = new EditDoneMaintenanceForm(selectedMaintenanceID);
+                editDoneMaintenanceForm.ShowDialog();
+            }
+        }
 
+        private void gridControl_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int selectedMaintenanceID;
+            if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
+                selectedMaintenanceID = ((Maintenance)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                editDoneMaintenanceForm = new EditDoneMaintenanceForm(selectedMaintenanceID);
+                editDoneMaintenanceForm.ShowDialog();
+            }
+        }
+
+        private void bbiDelete_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
+            {
+                int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
+                Maintenance selectedMaintenance = ((Maintenance)(((GridView)gridControl.MainView).GetRow(selRows[0])));
+                if(MessageBox.Show("Bu bakım kaydını silmek istediğinize emin misiniz ?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    maintenanceService.Delete(selectedMaintenance);
+                    if(value != null)
+                    {
+                        switch (value)
+                        {
+                            case "customer":
+                                gridControl.DataSource = maintenanceService.GetByCustomerID(id);
+                                break;
+                            case "sale":
+                                gridControl.DataSource = maintenanceService.GetBySaleID(id);
+                                break;
+                        }
+                    }
+                    else
+
+                        gridControl.DataSource = maintenanceService.GetAll();
+                }
+            }
         }
     }
 }

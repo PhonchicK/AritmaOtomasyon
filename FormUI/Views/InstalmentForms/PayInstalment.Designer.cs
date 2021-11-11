@@ -58,6 +58,8 @@ namespace FormUI.Views.InstalmentForms
             this.datePaidDate = new DevExpress.XtraEditors.DateEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelPaymentDate = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.comboBoxPaymentType = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -70,6 +72,7 @@ namespace FormUI.Views.InstalmentForms
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datePaidDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datePaidDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxPaymentType.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tileNavPane1
@@ -116,7 +119,7 @@ namespace FormUI.Views.InstalmentForms
             this.groupControl1.Controls.Add(this.textCustomerName);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Location = new System.Drawing.Point(12, 177);
+            this.groupControl1.Location = new System.Drawing.Point(12, 215);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(246, 179);
             this.groupControl1.TabIndex = 1;
@@ -193,7 +196,7 @@ namespace FormUI.Views.InstalmentForms
             this.groupControl2.Controls.Add(this.labelControl8);
             this.groupControl2.Controls.Add(this.labelRemainderPrice);
             this.groupControl2.Controls.Add(this.labelControl6);
-            this.groupControl2.Location = new System.Drawing.Point(332, 177);
+            this.groupControl2.Location = new System.Drawing.Point(332, 215);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(246, 179);
             this.groupControl2.TabIndex = 18;
@@ -326,6 +329,8 @@ namespace FormUI.Views.InstalmentForms
             // 
             this.groupControl3.AppearanceCaption.BorderColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
             this.groupControl3.AppearanceCaption.Options.UseBorderColor = true;
+            this.groupControl3.Controls.Add(this.comboBoxPaymentType);
+            this.groupControl3.Controls.Add(this.labelControl4);
             this.groupControl3.Controls.Add(this.labelControl18);
             this.groupControl3.Controls.Add(this.datePaidDate);
             this.groupControl3.Controls.Add(this.labelControl16);
@@ -336,7 +341,7 @@ namespace FormUI.Views.InstalmentForms
             this.groupControl3.Controls.Add(this.labelPayablePrice);
             this.groupControl3.Location = new System.Drawing.Point(12, 57);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(566, 105);
+            this.groupControl3.Size = new System.Drawing.Size(566, 152);
             this.groupControl3.TabIndex = 18;
             this.groupControl3.Text = "Ödeme";
             // 
@@ -384,11 +389,36 @@ namespace FormUI.Views.InstalmentForms
             this.labelPaymentDate.TabIndex = 28;
             this.labelPaymentDate.Text = "0";
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(142, 114);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(104, 19);
+            this.labelControl4.TabIndex = 31;
+            this.labelControl4.Text = "Ödeme Yolu : ";
+            // 
+            // comboBoxPaymentType
+            // 
+            this.comboBoxPaymentType.Location = new System.Drawing.Point(252, 111);
+            this.comboBoxPaymentType.Name = "comboBoxPaymentType";
+            this.comboBoxPaymentType.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.comboBoxPaymentType.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxPaymentType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxPaymentType.Properties.Items.AddRange(new object[] {
+            "Peşin",
+            "Kart",
+            "EFT"});
+            this.comboBoxPaymentType.Size = new System.Drawing.Size(178, 26);
+            this.comboBoxPaymentType.TabIndex = 32;
+            // 
             // PayInstalment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 373);
+            this.ClientSize = new System.Drawing.Size(599, 406);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
@@ -412,6 +442,7 @@ namespace FormUI.Views.InstalmentForms
             this.groupControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datePaidDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datePaidDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxPaymentType.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -446,5 +477,7 @@ namespace FormUI.Views.InstalmentForms
         private DevExpress.XtraEditors.LabelControl labelPaymentDate;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraBars.Navigation.NavButton navButton3;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxPaymentType;
     }
 }

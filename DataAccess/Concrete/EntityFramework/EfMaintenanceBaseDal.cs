@@ -28,7 +28,7 @@ namespace DataAccess.Concrete.EntityFramework
                              on s.ProductID equals p.ID
                              join m in context.Maintenances
                              on mB.LastMaintenanceID equals m.ID into lastMaintenance
-                             from LastMaintenance in lastMaintenance.DefaultIfEmpty()
+                             from LastMaintenance in lastMaintenance.OrderByDescending(lm => lm.Date).Take(1).DefaultIfEmpty()
                              select new MaintenanceDto
                              {
                                  ID = mB.ID,
@@ -41,10 +41,9 @@ namespace DataAccess.Concrete.EntityFramework
                                  Product = p.Name,
                                  StartDate = mB.StartDate,
                                  MaintenanceInterval = mB.MaintenanceInterval,
-                                 LastMaintenance = LastMaintenance.Date,
+                                 LastMaintenance = context.Maintenances.Where(l => l.MaintenanceBaseID == mB.ID).OrderByDescending(lm => lm.Date).Take(1).DefaultIfEmpty().FirstOrDefault().Date,
                                  SaleDate = s.SaleDate
                              };
-
                 result = result.ToList().Select(m => new MaintenanceDto(m.ID,m.CustomerID, m.CustomerName, m.CustomerPhoneNumber, m.CustomerAddress,m.SaleID, m.ProductID, m.Product, m.StartDate, m.MaintenanceInterval, m.LastMaintenance, m.SaleDate)).AsQueryable();
 
                 return filter == null ? // if filter is null
