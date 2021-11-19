@@ -130,7 +130,7 @@ namespace FormUI.Views.MaintenanceForms
             this.textCustomerAddress.Name = "textCustomerAddress";
             this.textCustomerAddress.ReadOnly = true;
             this.textCustomerAddress.Size = new System.Drawing.Size(189, 69);
-            this.textCustomerAddress.TabIndex = 5;
+            this.textCustomerAddress.TabIndex = 8;
             // 
             // labelControl3
             // 
@@ -154,7 +154,7 @@ namespace FormUI.Views.MaintenanceForms
             this.textCustomerPhoneNumber.Name = "textCustomerPhoneNumber";
             this.textCustomerPhoneNumber.Properties.ReadOnly = true;
             this.textCustomerPhoneNumber.Size = new System.Drawing.Size(190, 20);
-            this.textCustomerPhoneNumber.TabIndex = 2;
+            this.textCustomerPhoneNumber.TabIndex = 7;
             // 
             // labelControl1
             // 
@@ -170,7 +170,7 @@ namespace FormUI.Views.MaintenanceForms
             this.textCustomerName.Name = "textCustomerName";
             this.textCustomerName.Properties.ReadOnly = true;
             this.textCustomerName.Size = new System.Drawing.Size(190, 20);
-            this.textCustomerName.TabIndex = 0;
+            this.textCustomerName.TabIndex = 6;
             // 
             // groupControl2
             // 
@@ -200,7 +200,7 @@ namespace FormUI.Views.MaintenanceForms
             this.textMaintenanceBaseLastDate.Name = "textMaintenanceBaseLastDate";
             this.textMaintenanceBaseLastDate.Properties.ReadOnly = true;
             this.textMaintenanceBaseLastDate.Size = new System.Drawing.Size(190, 20);
-            this.textMaintenanceBaseLastDate.TabIndex = 2;
+            this.textMaintenanceBaseLastDate.TabIndex = 10;
             // 
             // labelControl6
             // 
@@ -216,7 +216,7 @@ namespace FormUI.Views.MaintenanceForms
             this.textMaintenanceBaseDate.Name = "textMaintenanceBaseDate";
             this.textMaintenanceBaseDate.Properties.ReadOnly = true;
             this.textMaintenanceBaseDate.Size = new System.Drawing.Size(190, 20);
-            this.textMaintenanceBaseDate.TabIndex = 0;
+            this.textMaintenanceBaseDate.TabIndex = 9;
             // 
             // groupControl3
             // 
@@ -245,7 +245,7 @@ namespace FormUI.Views.MaintenanceForms
             this.textMaintenanceNote.Multiline = true;
             this.textMaintenanceNote.Name = "textMaintenanceNote";
             this.textMaintenanceNote.Size = new System.Drawing.Size(511, 93);
-            this.textMaintenanceNote.TabIndex = 12;
+            this.textMaintenanceNote.TabIndex = 5;
             // 
             // labelControl10
             // 
@@ -264,7 +264,7 @@ namespace FormUI.Views.MaintenanceForms
             this.textMaintenanceProcess.Multiline = true;
             this.textMaintenanceProcess.Name = "textMaintenanceProcess";
             this.textMaintenanceProcess.Size = new System.Drawing.Size(511, 93);
-            this.textMaintenanceProcess.TabIndex = 6;
+            this.textMaintenanceProcess.TabIndex = 4;
             // 
             // labelControl9
             // 
@@ -283,7 +283,7 @@ namespace FormUI.Views.MaintenanceForms
             this.textMaintenancePerson.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textMaintenancePerson.Properties.Appearance.Options.UseFont = true;
             this.textMaintenancePerson.Size = new System.Drawing.Size(190, 26);
-            this.textMaintenancePerson.TabIndex = 9;
+            this.textMaintenancePerson.TabIndex = 3;
             // 
             // labelControl8
             // 
@@ -307,7 +307,7 @@ namespace FormUI.Views.MaintenanceForms
             this.dateMaintenanceDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateMaintenanceDate.Size = new System.Drawing.Size(190, 26);
-            this.dateMaintenanceDate.TabIndex = 8;
+            this.dateMaintenanceDate.TabIndex = 2;
             // 
             // labelControl7
             // 
@@ -330,7 +330,7 @@ namespace FormUI.Views.MaintenanceForms
             this.textMaintenanceTakedPrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textMaintenanceTakedPrice.Properties.MaskSettings.Set("mask", "c");
             this.textMaintenanceTakedPrice.Size = new System.Drawing.Size(190, 26);
-            this.textMaintenanceTakedPrice.TabIndex = 6;
+            this.textMaintenanceTakedPrice.TabIndex = 1;
             // 
             // labelControl4
             // 

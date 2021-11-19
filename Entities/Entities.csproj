@@ -111,6 +111,7 @@
     <Compile Include="Concrete\Sale.cs" />
     <Compile Include="Dto\CustomerDto.cs" />
     <Compile Include="Dto\DebtDto.cs" />
+    <Compile Include="Dto\InstalmentDetailsDto.cs" />
     <Compile Include="Dto\InstalmentDto.cs" />
     <Compile Include="Dto\MaintenanceDto.cs" />
     <Compile Include="Dto\SaleDto.cs" />

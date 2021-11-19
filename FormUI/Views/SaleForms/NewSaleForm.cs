@@ -338,7 +338,7 @@ namespace FormUI.Views.SaleForms
                 Price = price,
                 //RemainderPrice = price - paidPrice,
                 PaymentType = comboBoxPaymentType.Text,
-                SaleDate = DateTime.Now.Date,
+                SaleDate = dateSaleDate.DateTime.Date,
                 Assembler = textProductAssembler.Text,
                 Comment = textProductComment.Text
             });
@@ -367,7 +367,7 @@ namespace FormUI.Views.SaleForms
             debtService.Add(new Debt()
             {
                 CustomerID = customerID,
-                Date = DateTime.Now.Date,
+                Date = dateSaleDate.DateTime.Date,
                 Receive = price,
                 Give = paidPrice,
                 Comment = price.ToString() + "TL tutarlı " + comboBoxPaymentType.Text + " yoluyla ödenen " + textProductName.Text + " adlı ürün satışı."
@@ -466,6 +466,7 @@ namespace FormUI.Views.SaleForms
         {
             dateEditInstalmentStart.DateTime = DateTime.Now.Date;
             dateEditMaintenanceStart.DateTime = DateTime.Now.Date;
+            dateSaleDate.DateTime = DateTime.Now;
             comboBoxPaymentType.SelectedIndex = 0;
         }
 

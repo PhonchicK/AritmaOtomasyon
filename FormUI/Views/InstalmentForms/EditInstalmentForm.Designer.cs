@@ -238,7 +238,7 @@ namespace FormUI.Views.InstalmentForms
             this.textPaidPrice.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.textPaidPrice.Properties.MaskSettings.Set("mask", "c");
             this.textPaidPrice.Size = new System.Drawing.Size(289, 26);
-            this.textPaidPrice.TabIndex = 20;
+            this.textPaidPrice.TabIndex = 1;
             // 
             // labelControl6
             // 
@@ -263,7 +263,7 @@ namespace FormUI.Views.InstalmentForms
             this.datePaidDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.datePaidDate.Size = new System.Drawing.Size(290, 26);
-            this.datePaidDate.TabIndex = 18;
+            this.datePaidDate.TabIndex = 0;
             // 
             // labelControl7
             // 

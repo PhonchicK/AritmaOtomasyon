@@ -214,7 +214,7 @@ namespace FormUI.Views.CustomerForms
             this.textCustomerAddress.Multiline = true;
             this.textCustomerAddress.Name = "textCustomerAddress";
             this.textCustomerAddress.Size = new System.Drawing.Size(343, 104);
-            this.textCustomerAddress.TabIndex = 5;
+            this.textCustomerAddress.TabIndex = 3;
             // 
             // labelControl3
             // 
@@ -237,7 +237,7 @@ namespace FormUI.Views.CustomerForms
             this.textCustomerPhoneNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.textCustomerPhoneNumber.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d");
             this.textCustomerPhoneNumber.Size = new System.Drawing.Size(343, 26);
-            this.textCustomerPhoneNumber.TabIndex = 3;
+            this.textCustomerPhoneNumber.TabIndex = 2;
             // 
             // labelControl2
             // 
@@ -320,7 +320,7 @@ namespace FormUI.Views.CustomerForms
             this.simpleButton1.Location = new System.Drawing.Point(164, 34);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(30, 23);
-            this.simpleButton1.TabIndex = 15;
+            this.simpleButton1.TabIndex = 5;
             this.simpleButton1.Text = "Sil";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
@@ -329,7 +329,7 @@ namespace FormUI.Views.CustomerForms
             this.buttonSelectReferance.Location = new System.Drawing.Point(128, 34);
             this.buttonSelectReferance.Name = "buttonSelectReferance";
             this.buttonSelectReferance.Size = new System.Drawing.Size(30, 23);
-            this.buttonSelectReferance.TabIndex = 14;
+            this.buttonSelectReferance.TabIndex = 4;
             this.buttonSelectReferance.Text = "Seç";
             this.buttonSelectReferance.Click += new System.EventHandler(this.buttonSelectReferance_Click);
             // 

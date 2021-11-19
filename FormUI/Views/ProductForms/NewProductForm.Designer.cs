@@ -96,7 +96,7 @@ namespace FormUI.Views.ProductForms
             this.textProductName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textProductName.Properties.Appearance.Options.UseFont = true;
             this.textProductName.Size = new System.Drawing.Size(246, 26);
-            this.textProductName.TabIndex = 2;
+            this.textProductName.TabIndex = 1;
             // 
             // textFeatures
             // 
@@ -105,7 +105,7 @@ namespace FormUI.Views.ProductForms
             this.textFeatures.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textFeatures.Properties.Appearance.Options.UseFont = true;
             this.textFeatures.Size = new System.Drawing.Size(246, 26);
-            this.textFeatures.TabIndex = 4;
+            this.textFeatures.TabIndex = 2;
             // 
             // labelControl2
             // 
@@ -127,7 +127,7 @@ namespace FormUI.Views.ProductForms
             this.textPrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textPrice.Properties.MaskSettings.Set("mask", "c");
             this.textPrice.Size = new System.Drawing.Size(246, 26);
-            this.textPrice.TabIndex = 6;
+            this.textPrice.TabIndex = 3;
             // 
             // labelControl3
             // 

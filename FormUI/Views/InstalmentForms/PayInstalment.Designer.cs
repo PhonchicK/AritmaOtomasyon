@@ -54,12 +54,12 @@ namespace FormUI.Views.InstalmentForms
             this.textEditPrice = new DevExpress.XtraEditors.TextEdit();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.comboBoxPaymentType = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.datePaidDate = new DevExpress.XtraEditors.DateEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelPaymentDate = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxPaymentType = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -70,9 +70,9 @@ namespace FormUI.Views.InstalmentForms
             ((System.ComponentModel.ISupportInitialize)(this.textEditPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxPaymentType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datePaidDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datePaidDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxPaymentType.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tileNavPane1
@@ -132,7 +132,7 @@ namespace FormUI.Views.InstalmentForms
             this.labelCustomerID.Location = new System.Drawing.Point(101, 38);
             this.labelCustomerID.Name = "labelCustomerID";
             this.labelCustomerID.Size = new System.Drawing.Size(9, 19);
-            this.labelCustomerID.TabIndex = 17;
+            this.labelCustomerID.TabIndex = 0;
             this.labelCustomerID.Text = "0";
             // 
             // labelControl1
@@ -156,7 +156,7 @@ namespace FormUI.Views.InstalmentForms
             this.textCustomerPhone.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d");
             this.textCustomerPhone.Properties.ReadOnly = true;
             this.textCustomerPhone.Size = new System.Drawing.Size(238, 26);
-            this.textCustomerPhone.TabIndex = 16;
+            this.textCustomerPhone.TabIndex = 4;
             // 
             // textCustomerName
             // 
@@ -166,7 +166,7 @@ namespace FormUI.Views.InstalmentForms
             this.textCustomerName.Properties.Appearance.Options.UseFont = true;
             this.textCustomerName.Properties.ReadOnly = true;
             this.textCustomerName.Size = new System.Drawing.Size(238, 26);
-            this.textCustomerName.TabIndex = 15;
+            this.textCustomerName.TabIndex = 3;
             // 
             // labelControl3
             // 
@@ -313,7 +313,7 @@ namespace FormUI.Views.InstalmentForms
             this.textEditPrice.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.textEditPrice.Properties.MaskSettings.Set("mask", "c");
             this.textEditPrice.Size = new System.Drawing.Size(251, 26);
-            this.textEditPrice.TabIndex = 26;
+            this.textEditPrice.TabIndex = 0;
             // 
             // labelControl15
             // 
@@ -345,6 +345,31 @@ namespace FormUI.Views.InstalmentForms
             this.groupControl3.TabIndex = 18;
             this.groupControl3.Text = "Ödeme";
             // 
+            // comboBoxPaymentType
+            // 
+            this.comboBoxPaymentType.Location = new System.Drawing.Point(252, 111);
+            this.comboBoxPaymentType.Name = "comboBoxPaymentType";
+            this.comboBoxPaymentType.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.comboBoxPaymentType.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxPaymentType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxPaymentType.Properties.Items.AddRange(new object[] {
+            "Peşin",
+            "Kart",
+            "EFT"});
+            this.comboBoxPaymentType.Size = new System.Drawing.Size(178, 26);
+            this.comboBoxPaymentType.TabIndex = 2;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(142, 114);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(104, 19);
+            this.labelControl4.TabIndex = 31;
+            this.labelControl4.Text = "Ödeme Yolu : ";
+            // 
             // labelControl18
             // 
             this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -367,7 +392,7 @@ namespace FormUI.Views.InstalmentForms
             this.datePaidDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.datePaidDate.Size = new System.Drawing.Size(178, 26);
-            this.datePaidDate.TabIndex = 29;
+            this.datePaidDate.TabIndex = 1;
             // 
             // labelControl16
             // 
@@ -388,31 +413,6 @@ namespace FormUI.Views.InstalmentForms
             this.labelPaymentDate.Size = new System.Drawing.Size(9, 19);
             this.labelPaymentDate.TabIndex = 28;
             this.labelPaymentDate.Text = "0";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(142, 114);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(104, 19);
-            this.labelControl4.TabIndex = 31;
-            this.labelControl4.Text = "Ödeme Yolu : ";
-            // 
-            // comboBoxPaymentType
-            // 
-            this.comboBoxPaymentType.Location = new System.Drawing.Point(252, 111);
-            this.comboBoxPaymentType.Name = "comboBoxPaymentType";
-            this.comboBoxPaymentType.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.comboBoxPaymentType.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxPaymentType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxPaymentType.Properties.Items.AddRange(new object[] {
-            "Peşin",
-            "Kart",
-            "EFT"});
-            this.comboBoxPaymentType.Size = new System.Drawing.Size(178, 26);
-            this.comboBoxPaymentType.TabIndex = 32;
             // 
             // PayInstalment
             // 
@@ -440,9 +440,9 @@ namespace FormUI.Views.InstalmentForms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxPaymentType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datePaidDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datePaidDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxPaymentType.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

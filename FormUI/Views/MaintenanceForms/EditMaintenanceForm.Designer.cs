@@ -233,7 +233,7 @@ namespace FormUI.Views.MaintenanceForms
             this.textProductFeatures.Properties.Appearance.Options.UseFont = true;
             this.textProductFeatures.Properties.ReadOnly = true;
             this.textProductFeatures.Size = new System.Drawing.Size(308, 26);
-            this.textProductFeatures.TabIndex = 17;
+            this.textProductFeatures.TabIndex = 18;
             // 
             // labelControl1
             // 
@@ -251,7 +251,7 @@ namespace FormUI.Views.MaintenanceForms
             this.textProductName.Properties.Appearance.Options.UseFont = true;
             this.textProductName.Properties.ReadOnly = true;
             this.textProductName.Size = new System.Drawing.Size(308, 26);
-            this.textProductName.TabIndex = 15;
+            this.textProductName.TabIndex = 17;
             // 
             // labelControl4
             // 
@@ -303,7 +303,7 @@ namespace FormUI.Views.MaintenanceForms
             "18",
             "24"});
             this.comboBoxMaintenanceInterval.Size = new System.Drawing.Size(307, 26);
-            this.comboBoxMaintenanceInterval.TabIndex = 16;
+            this.comboBoxMaintenanceInterval.TabIndex = 2;
             this.comboBoxMaintenanceInterval.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxMaintenanceInterval_KeyPress);
             // 
             // labelControl5
@@ -327,7 +327,7 @@ namespace FormUI.Views.MaintenanceForms
             this.dateMaintenanceStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateMaintenanceStartDate.Size = new System.Drawing.Size(307, 26);
-            this.dateMaintenanceStartDate.TabIndex = 14;
+            this.dateMaintenanceStartDate.TabIndex = 1;
             // 
             // EditMaintenanceForm
             // 

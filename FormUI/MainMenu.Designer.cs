@@ -31,13 +31,14 @@ namespace FormUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
-            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
             this.tileBar = new DevExpress.XtraBars.Navigation.TileBar();
             this.tileBarGroupTables = new DevExpress.XtraBars.Navigation.TileBarGroup();
             this.tileBarItem2 = new DevExpress.XtraBars.Navigation.TileBarItem();
@@ -45,6 +46,7 @@ namespace FormUI
             this.tileBarItem1 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tileBarItem5 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tileBarItem6 = new DevExpress.XtraBars.Navigation.TileBarItem();
+            this.tileBarItem7 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -97,7 +99,7 @@ namespace FormUI
             this.tileBar.ItemPadding = new System.Windows.Forms.Padding(8, 6, 12, 6);
             this.tileBar.Location = new System.Drawing.Point(0, 0);
             this.tileBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tileBar.MaxId = 14;
+            this.tileBar.MaxId = 15;
             this.tileBar.MaximumSize = new System.Drawing.Size(0, 110);
             this.tileBar.MinimumSize = new System.Drawing.Size(100, 50);
             this.tileBar.Name = "tileBar";
@@ -118,15 +120,16 @@ namespace FormUI
             this.tileBarGroupTables.Items.Add(this.tileBarItem1);
             this.tileBarGroupTables.Items.Add(this.tileBarItem5);
             this.tileBarGroupTables.Items.Add(this.tileBarItem6);
+            this.tileBarGroupTables.Items.Add(this.tileBarItem7);
             this.tileBarGroupTables.Name = "tileBarGroupTables";
             this.tileBarGroupTables.Text = "TABLES";
             // 
             // tileBarItem2
             // 
             this.tileBarItem2.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            tileItemElement7.Text = "Müşteriler";
-            this.tileBarItem2.Elements.Add(tileItemElement7);
+            tileItemElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            tileItemElement1.Text = "Müşteriler";
+            this.tileBarItem2.Elements.Add(tileItemElement1);
             this.tileBarItem2.Id = 7;
             this.tileBarItem2.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem2.Name = "tileBarItem2";
@@ -135,9 +138,9 @@ namespace FormUI
             // tileBarItem3
             // 
             this.tileBarItem3.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            tileItemElement8.Text = "Satışlar";
-            this.tileBarItem3.Elements.Add(tileItemElement8);
+            tileItemElement2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            tileItemElement2.Text = "Satışlar";
+            this.tileBarItem3.Elements.Add(tileItemElement2);
             this.tileBarItem3.Id = 8;
             this.tileBarItem3.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem3.Name = "tileBarItem3";
@@ -146,9 +149,9 @@ namespace FormUI
             // tileBarItem1
             // 
             this.tileBarItem1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            tileItemElement9.Text = "Ürünler";
-            this.tileBarItem1.Elements.Add(tileItemElement9);
+            tileItemElement3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            tileItemElement3.Text = "Ürünler";
+            this.tileBarItem1.Elements.Add(tileItemElement3);
             this.tileBarItem1.Id = 6;
             this.tileBarItem1.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem1.Name = "tileBarItem1";
@@ -157,9 +160,9 @@ namespace FormUI
             // tileBarItem5
             // 
             this.tileBarItem5.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            tileItemElement10.Text = "Alacak/Verecek";
-            this.tileBarItem5.Elements.Add(tileItemElement10);
+            tileItemElement4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            tileItemElement4.Text = "Alacak/Verecek";
+            this.tileBarItem5.Elements.Add(tileItemElement4);
             this.tileBarItem5.Id = 11;
             this.tileBarItem5.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem5.Name = "tileBarItem5";
@@ -168,13 +171,24 @@ namespace FormUI
             // tileBarItem6
             // 
             this.tileBarItem6.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            tileItemElement11.Text = "Notlar";
-            this.tileBarItem6.Elements.Add(tileItemElement11);
+            tileItemElement5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            tileItemElement5.Text = "Notlar";
+            this.tileBarItem6.Elements.Add(tileItemElement5);
             this.tileBarItem6.Id = 13;
             this.tileBarItem6.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem6.Name = "tileBarItem6";
             this.tileBarItem6.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBarItem6_ItemClick);
+            // 
+            // tileBarItem7
+            // 
+            this.tileBarItem7.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            tileItemElement6.Text = "Taksitler";
+            this.tileBarItem7.Elements.Add(tileItemElement6);
+            this.tileBarItem7.Id = 14;
+            this.tileBarItem7.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
+            this.tileBarItem7.Name = "tileBarItem7";
+            this.tileBarItem7.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBarItem7_ItemClick);
             // 
             // tabPane1
             // 
@@ -347,9 +361,9 @@ namespace FormUI
             // tileBarItem4
             // 
             this.tileBarItem4.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
-            tileItemElement12.Text = "Ürünler";
-            this.tileBarItem4.Elements.Add(tileItemElement12);
+            tileItemElement7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            tileItemElement7.Text = "Ürünler";
+            this.tileBarItem4.Elements.Add(tileItemElement7);
             this.tileBarItem4.Id = 6;
             this.tileBarItem4.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem4.Name = "tileBarItem4";
@@ -414,5 +428,6 @@ namespace FormUI
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colDate;
         private DevExpress.XtraGrid.Columns.GridColumn colContent;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem7;
     }
 }

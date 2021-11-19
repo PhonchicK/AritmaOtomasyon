@@ -11,5 +11,6 @@ namespace DataAccess.Abstract
     {
         InstalmentDto GetDetails(Expression<Func<InstalmentDto, bool>> filter);
         List<InstalmentDto> GetAllDetails(Expression<Func<InstalmentDto, bool>> filter = null);
+        List<InstalmentDetailsDto> GetAllCustomerDetails(Expression<Func<InstalmentDetailsDto, bool>> filter = null);
     }
 }

@@ -256,7 +256,7 @@ namespace FormUI.Views.SaleForms
             this.textComment.Location = new System.Drawing.Point(286, 99);
             this.textComment.Name = "textComment";
             this.textComment.Size = new System.Drawing.Size(380, 84);
-            this.textComment.TabIndex = 23;
+            this.textComment.TabIndex = 3;
             this.textComment.Text = "";
             // 
             // labelControl8
@@ -283,7 +283,7 @@ namespace FormUI.Views.SaleForms
             this.textAssembler.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textAssembler.Properties.Appearance.Options.UseFont = true;
             this.textAssembler.Size = new System.Drawing.Size(383, 26);
-            this.textAssembler.TabIndex = 20;
+            this.textAssembler.TabIndex = 2;
             // 
             // labelControl6
             // 
@@ -298,7 +298,7 @@ namespace FormUI.Views.SaleForms
             this.buttonSelectProduct.Location = new System.Drawing.Point(67, 35);
             this.buttonSelectProduct.Name = "buttonSelectProduct";
             this.buttonSelectProduct.Size = new System.Drawing.Size(75, 23);
-            this.buttonSelectProduct.TabIndex = 18;
+            this.buttonSelectProduct.TabIndex = 1;
             this.buttonSelectProduct.Text = "Seç";
             this.buttonSelectProduct.Click += new System.EventHandler(this.buttonSelectProduct_Click);
             // 

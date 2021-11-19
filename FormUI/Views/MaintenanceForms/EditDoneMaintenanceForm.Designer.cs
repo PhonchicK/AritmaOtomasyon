@@ -165,7 +165,7 @@ namespace IHYAOtomasyon.Views.MaintenanceForms
             this.textMaintenanceNote.Multiline = true;
             this.textMaintenanceNote.Name = "textMaintenanceNote";
             this.textMaintenanceNote.Size = new System.Drawing.Size(511, 93);
-            this.textMaintenanceNote.TabIndex = 12;
+            this.textMaintenanceNote.TabIndex = 5;
             // 
             // labelControl10
             // 
@@ -184,7 +184,7 @@ namespace IHYAOtomasyon.Views.MaintenanceForms
             this.textMaintenanceProcess.Multiline = true;
             this.textMaintenanceProcess.Name = "textMaintenanceProcess";
             this.textMaintenanceProcess.Size = new System.Drawing.Size(511, 93);
-            this.textMaintenanceProcess.TabIndex = 6;
+            this.textMaintenanceProcess.TabIndex = 4;
             // 
             // labelControl9
             // 
@@ -203,7 +203,7 @@ namespace IHYAOtomasyon.Views.MaintenanceForms
             this.textMaintenancePerson.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.textMaintenancePerson.Properties.Appearance.Options.UseFont = true;
             this.textMaintenancePerson.Size = new System.Drawing.Size(190, 26);
-            this.textMaintenancePerson.TabIndex = 9;
+            this.textMaintenancePerson.TabIndex = 3;
             // 
             // labelControl8
             // 
@@ -227,7 +227,7 @@ namespace IHYAOtomasyon.Views.MaintenanceForms
             this.dateMaintenanceDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateMaintenanceDate.Size = new System.Drawing.Size(190, 26);
-            this.dateMaintenanceDate.TabIndex = 8;
+            this.dateMaintenanceDate.TabIndex = 2;
             // 
             // labelControl7
             // 
@@ -250,7 +250,7 @@ namespace IHYAOtomasyon.Views.MaintenanceForms
             this.textMaintenanceTakedPrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textMaintenanceTakedPrice.Properties.MaskSettings.Set("mask", "c");
             this.textMaintenanceTakedPrice.Size = new System.Drawing.Size(190, 26);
-            this.textMaintenanceTakedPrice.TabIndex = 6;
+            this.textMaintenanceTakedPrice.TabIndex = 1;
             // 
             // labelControl4
             // 

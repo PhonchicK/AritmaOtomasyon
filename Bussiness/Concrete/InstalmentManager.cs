@@ -31,6 +31,11 @@ namespace Bussiness.Concrete
             return instalmentDal.GetAll();
         }
 
+        public List<InstalmentDetailsDto> GetAllCustomerDetails()
+        {
+            return instalmentDal.GetAllCustomerDetails();
+        }
+
         public List<InstalmentDto> GetAllDetails()
         {
             return instalmentDal.GetAllDetails();

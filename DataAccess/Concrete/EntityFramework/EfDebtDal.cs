@@ -39,7 +39,23 @@ namespace DataAccess.Concrete.EntityFramework
 
         public DebtDto GetCustomerDebt(int customerID)
         {
-            throw new NotImplementedException();
+            using (MainContext context = new MainContext())
+            {
+                var result = from d in context.Debts
+                             group d by d.CustomerID into dC
+                             join c in context.Customers
+                             on dC.Key equals c.ID
+                             select new DebtDto
+                             {
+                                 CustomerID = c.ID,
+                                 CustomerName = c.Name,
+                                 CustomerPhoneNumber = c.PhoneNumber,
+                                 Receive = dC.Sum(d => d.Receive),
+                                 Give = dC.Sum(d => d.Give),
+                                 Balance = dC.Sum(d => d.Give) - dC.Sum(d => d.Receive)
+                             };
+                return result.Where(r => r.CustomerID == customerID).FirstOrDefault();// false : use filter and return
+            }
         }
     }
 }

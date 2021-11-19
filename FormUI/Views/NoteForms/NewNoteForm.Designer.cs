@@ -102,7 +102,7 @@ namespace IHYAOtomasyon.Views.NoteForms
             this.textName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.textName.Properties.Appearance.Options.UseFont = true;
             this.textName.Size = new System.Drawing.Size(406, 22);
-            this.textName.TabIndex = 4;
+            this.textName.TabIndex = 1;
             // 
             // labelControl2
             // 
@@ -126,7 +126,7 @@ namespace IHYAOtomasyon.Views.NoteForms
             this.dateNote.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNote.Size = new System.Drawing.Size(174, 22);
-            this.dateNote.TabIndex = 6;
+            this.dateNote.TabIndex = 3;
             // 
             // barManager1
             // 
@@ -178,7 +178,7 @@ namespace IHYAOtomasyon.Views.NoteForms
             this.textContent.Location = new System.Drawing.Point(12, 100);
             this.textContent.Name = "textContent";
             this.textContent.Size = new System.Drawing.Size(776, 338);
-            this.textContent.TabIndex = 12;
+            this.textContent.TabIndex = 2;
             this.textContent.Text = "";
             // 
             // NewNoteForm

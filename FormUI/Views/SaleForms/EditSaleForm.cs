@@ -57,7 +57,6 @@ namespace FormUI.Views.SaleForms
                 textCustomerPhone.Text = referance.PhoneNumber;
             }
         }
-        SelectCustomerForm selectCustomerForm;
         SelectProductForm selectProductForm;
         private void buttonSelectProduct_Click(object sender, EventArgs e)
         {

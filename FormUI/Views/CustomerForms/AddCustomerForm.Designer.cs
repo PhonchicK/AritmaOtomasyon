@@ -147,7 +147,7 @@ namespace FormUI.Views.CustomerForms
             this.TextPhoneNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.TextPhoneNumber.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d");
             this.TextPhoneNumber.Size = new System.Drawing.Size(266, 22);
-            this.TextPhoneNumber.TabIndex = 3;
+            this.TextPhoneNumber.TabIndex = 2;
             // 
             // labelControl3
             // 
@@ -166,7 +166,7 @@ namespace FormUI.Views.CustomerForms
             this.TextAddress.Multiline = true;
             this.TextAddress.Name = "TextAddress";
             this.TextAddress.Size = new System.Drawing.Size(369, 183);
-            this.TextAddress.TabIndex = 7;
+            this.TextAddress.TabIndex = 3;
             // 
             // groupControl2
             // 
@@ -340,6 +340,7 @@ namespace FormUI.Views.CustomerForms
             // 
             // textPrimPrice
             // 
+            this.textPrimPrice.Enabled = false;
             this.textPrimPrice.Location = new System.Drawing.Point(472, 285);
             this.textPrimPrice.Name = "textPrimPrice";
             this.textPrimPrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);

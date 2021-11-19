@@ -25,14 +25,13 @@ using Entities.Concrete;
 using IHYAOtomasyon.Views.NoteForms;
 using DevExpress.XtraGrid.Views.Grid;
 using Entities.Dto;
-using IHYAOtomasyon.Others.Google_Drive;
+using IHYAOtomasyon.Views.InstalmentForms;
 
 namespace FormUI
 {
     public partial class MainMenu : DevExpress.XtraEditors.XtraForm
     {
         public static MainMenu instance;
-        GoogleDriveApi driveApi = new GoogleDriveApi();
         ICustomerService customerService;
         ISaleService saleService;
         IInstalmentService instalmentService;
@@ -44,8 +43,6 @@ namespace FormUI
         {
             InitializeComponent();
             instance = this;
-
-            DriveControl();
 
             customerService = InstanceFactory.GetInstance<ICustomerService>();
             saleService = InstanceFactory.GetInstance<ISaleService>();
@@ -80,22 +77,6 @@ namespace FormUI
         {
             LoadGrids();
         }
-        private void DriveControl()
-        {
-            var old_db = driveApi.GetFiles().Where(file => file.Name.Contains("Main.db") && file.Trashed == false).FirstOrDefault();
-            if(old_db != null)
-            {
-                if(!(old_db.ModifiedTime.Value.Date == DateTime.Now.Date))
-                {
-                    driveApi.UploadFile("Main.db");
-                    driveApi.DeleteFile(old_db.Id);
-                }
-            }
-            else
-            {
-                driveApi.UploadFile("Main.db");
-            }
-        }
         public void LoadGrids()
         {
             gridControl1.DataSource = maintenanceBaseService.GetClosesDetails();
@@ -122,7 +103,7 @@ namespace FormUI
 
         private void tileBarItem5_ItemClick(object sender, TileItemEventArgs e)
         {
-            new DebtForm().ShowDialog();
+            new DebtForm().Show();
         }
 
         private void tileBarItem6_ItemClick(object sender, TileItemEventArgs e)
@@ -172,6 +153,11 @@ namespace FormUI
                     gridControl4.DataSource = noteService.GetTodayNotes();
                 }
             }
+        }
+
+        private void tileBarItem7_ItemClick(object sender, TileItemEventArgs e)
+        {
+            new InstalmentDetailsForm().Show();
         }
     }
 }

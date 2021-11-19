@@ -117,7 +117,7 @@ namespace FormUI.Views.DebtForms
             this.buttonSelectReferance.Location = new System.Drawing.Point(162, 29);
             this.buttonSelectReferance.Name = "buttonSelectReferance";
             this.buttonSelectReferance.Size = new System.Drawing.Size(30, 23);
-            this.buttonSelectReferance.TabIndex = 16;
+            this.buttonSelectReferance.TabIndex = 1;
             this.buttonSelectReferance.Text = "Seç";
             this.buttonSelectReferance.Click += new System.EventHandler(this.buttonSelectReferance_Click);
             // 
@@ -153,7 +153,7 @@ namespace FormUI.Views.DebtForms
             this.textCustomerPhoneNumber.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d");
             this.textCustomerPhoneNumber.Properties.ReadOnly = true;
             this.textCustomerPhoneNumber.Size = new System.Drawing.Size(343, 26);
-            this.textCustomerPhoneNumber.TabIndex = 3;
+            this.textCustomerPhoneNumber.TabIndex = 56;
             // 
             // labelControl2
             // 
@@ -173,7 +173,7 @@ namespace FormUI.Views.DebtForms
             this.textCustomerName.Properties.Appearance.Options.UseFont = true;
             this.textCustomerName.Properties.ReadOnly = true;
             this.textCustomerName.Size = new System.Drawing.Size(343, 26);
-            this.textCustomerName.TabIndex = 1;
+            this.textCustomerName.TabIndex = 54;
             // 
             // labelControl1
             // 
@@ -197,7 +197,7 @@ namespace FormUI.Views.DebtForms
             this.dateDebtDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateDebtDate.Size = new System.Drawing.Size(276, 26);
-            this.dateDebtDate.TabIndex = 4;
+            this.dateDebtDate.TabIndex = 2;
             // 
             // labelControl4
             // 
@@ -220,7 +220,7 @@ namespace FormUI.Views.DebtForms
             this.textReceive.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textReceive.Properties.MaskSettings.Set("mask", "c");
             this.textReceive.Size = new System.Drawing.Size(276, 26);
-            this.textReceive.TabIndex = 18;
+            this.textReceive.TabIndex = 3;
             // 
             // labelControl5
             // 
@@ -253,7 +253,7 @@ namespace FormUI.Views.DebtForms
             this.textGive.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textGive.Properties.MaskSettings.Set("mask", "c");
             this.textGive.Size = new System.Drawing.Size(276, 26);
-            this.textGive.TabIndex = 20;
+            this.textGive.TabIndex = 4;
             // 
             // labelControl7
             // 
@@ -272,7 +272,7 @@ namespace FormUI.Views.DebtForms
             this.textComment.Multiline = true;
             this.textComment.Name = "textComment";
             this.textComment.Size = new System.Drawing.Size(343, 95);
-            this.textComment.TabIndex = 23;
+            this.textComment.TabIndex = 5;
             // 
             // NewDebtForm
             // 

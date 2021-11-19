@@ -145,6 +145,8 @@ namespace FormUI.Views.SaleForms
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.labelDetailsCustomerState = new DevExpress.XtraEditors.LabelControl();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.dateSaleDate = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl41 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.mainTabControl)).BeginInit();
             this.mainTabControl.SuspendLayout();
             this.tabPageCustomer.SuspendLayout();
@@ -189,6 +191,8 @@ namespace FormUI.Views.SaleForms
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateSaleDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateSaleDate.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // mainTabControl
@@ -227,7 +231,7 @@ namespace FormUI.Views.SaleForms
             this.buttonCustomerCancel.Location = new System.Drawing.Point(11, 457);
             this.buttonCustomerCancel.Name = "buttonCustomerCancel";
             this.buttonCustomerCancel.Size = new System.Drawing.Size(91, 30);
-            this.buttonCustomerCancel.TabIndex = 17;
+            this.buttonCustomerCancel.TabIndex = 3;
             this.buttonCustomerCancel.Text = "İptal";
             this.buttonCustomerCancel.Click += new System.EventHandler(this.buttonCustomerCancel_Click);
             // 
@@ -238,7 +242,7 @@ namespace FormUI.Views.SaleForms
             this.buttonCustomerNext.Location = new System.Drawing.Point(329, 457);
             this.buttonCustomerNext.Name = "buttonCustomerNext";
             this.buttonCustomerNext.Size = new System.Drawing.Size(91, 30);
-            this.buttonCustomerNext.TabIndex = 16;
+            this.buttonCustomerNext.TabIndex = 2;
             this.buttonCustomerNext.Text = "İleri";
             this.buttonCustomerNext.Click += new System.EventHandler(this.buttonCustomerNext_Click);
             // 
@@ -277,7 +281,7 @@ namespace FormUI.Views.SaleForms
             this.simpleButton2.Location = new System.Drawing.Point(168, 353);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(111, 26);
-            this.simpleButton2.TabIndex = 35;
+            this.simpleButton2.TabIndex = 4;
             this.simpleButton2.Text = "Referans Ayar";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
@@ -288,7 +292,7 @@ namespace FormUI.Views.SaleForms
             this.textNewCustomerAddress.Multiline = true;
             this.textNewCustomerAddress.Name = "textNewCustomerAddress";
             this.textNewCustomerAddress.Size = new System.Drawing.Size(409, 163);
-            this.textNewCustomerAddress.TabIndex = 15;
+            this.textNewCustomerAddress.TabIndex = 3;
             // 
             // labelControl5
             // 
@@ -310,7 +314,7 @@ namespace FormUI.Views.SaleForms
             this.textNewCustomerPhoneNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.textNewCustomerPhoneNumber.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d");
             this.textNewCustomerPhoneNumber.Size = new System.Drawing.Size(412, 30);
-            this.textNewCustomerPhoneNumber.TabIndex = 13;
+            this.textNewCustomerPhoneNumber.TabIndex = 2;
             // 
             // textNewCustomerName
             // 
@@ -319,7 +323,7 @@ namespace FormUI.Views.SaleForms
             this.textNewCustomerName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.textNewCustomerName.Properties.Appearance.Options.UseFont = true;
             this.textNewCustomerName.Size = new System.Drawing.Size(408, 30);
-            this.textNewCustomerName.TabIndex = 12;
+            this.textNewCustomerName.TabIndex = 1;
             // 
             // labelControl6
             // 
@@ -447,7 +451,7 @@ namespace FormUI.Views.SaleForms
             this.buttonSelectCustomer.Location = new System.Drawing.Point(154, 37);
             this.buttonSelectCustomer.Name = "buttonSelectCustomer";
             this.buttonSelectCustomer.Size = new System.Drawing.Size(92, 27);
-            this.buttonSelectCustomer.TabIndex = 3;
+            this.buttonSelectCustomer.TabIndex = 1;
             this.buttonSelectCustomer.Text = "Seç";
             this.buttonSelectCustomer.Click += new System.EventHandler(this.buttonSelectCustomer_Click);
             // 
@@ -489,7 +493,7 @@ namespace FormUI.Views.SaleForms
             this.textProductAssembler.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.textProductAssembler.Properties.Appearance.Options.UseFont = true;
             this.textProductAssembler.Size = new System.Drawing.Size(409, 30);
-            this.textProductAssembler.TabIndex = 27;
+            this.textProductAssembler.TabIndex = 4;
             // 
             // textProductComment
             // 
@@ -498,7 +502,7 @@ namespace FormUI.Views.SaleForms
             this.textProductComment.Multiline = true;
             this.textProductComment.Name = "textProductComment";
             this.textProductComment.Size = new System.Drawing.Size(409, 87);
-            this.textProductComment.TabIndex = 26;
+            this.textProductComment.TabIndex = 5;
             // 
             // labelControl25
             // 
@@ -529,7 +533,7 @@ namespace FormUI.Views.SaleForms
             this.buttonMaintenanceSettings.Location = new System.Drawing.Point(149, 222);
             this.buttonMaintenanceSettings.Name = "buttonMaintenanceSettings";
             this.buttonMaintenanceSettings.Size = new System.Drawing.Size(103, 26);
-            this.buttonMaintenanceSettings.TabIndex = 22;
+            this.buttonMaintenanceSettings.TabIndex = 3;
             this.buttonMaintenanceSettings.Text = "Bakım Ayar";
             this.buttonMaintenanceSettings.Click += new System.EventHandler(this.buttonMaintenanceSettings_Click);
             // 
@@ -552,7 +556,7 @@ namespace FormUI.Views.SaleForms
             this.toggleMaintenanceState.Properties.OffText = "Off";
             this.toggleMaintenanceState.Properties.OnText = "On";
             this.toggleMaintenanceState.Size = new System.Drawing.Size(132, 29);
-            this.toggleMaintenanceState.TabIndex = 20;
+            this.toggleMaintenanceState.TabIndex = 2;
             this.toggleMaintenanceState.Toggled += new System.EventHandler(this.toggleMaintenanceState_Toggled);
             // 
             // buttonProductBack
@@ -562,7 +566,7 @@ namespace FormUI.Views.SaleForms
             this.buttonProductBack.Location = new System.Drawing.Point(11, 457);
             this.buttonProductBack.Name = "buttonProductBack";
             this.buttonProductBack.Size = new System.Drawing.Size(91, 30);
-            this.buttonProductBack.TabIndex = 19;
+            this.buttonProductBack.TabIndex = 7;
             this.buttonProductBack.Text = "Geri";
             this.buttonProductBack.Click += new System.EventHandler(this.buttonProductBack_Click);
             // 
@@ -573,7 +577,7 @@ namespace FormUI.Views.SaleForms
             this.buttonProductNext.Location = new System.Drawing.Point(329, 457);
             this.buttonProductNext.Name = "buttonProductNext";
             this.buttonProductNext.Size = new System.Drawing.Size(91, 30);
-            this.buttonProductNext.TabIndex = 18;
+            this.buttonProductNext.TabIndex = 6;
             this.buttonProductNext.Text = "İleri";
             this.buttonProductNext.Click += new System.EventHandler(this.buttonProductNext_Click);
             // 
@@ -615,7 +619,7 @@ namespace FormUI.Views.SaleForms
             this.buttonSelectProduct.Location = new System.Drawing.Point(181, 100);
             this.buttonSelectProduct.Name = "buttonSelectProduct";
             this.buttonSelectProduct.Size = new System.Drawing.Size(71, 26);
-            this.buttonSelectProduct.TabIndex = 17;
+            this.buttonSelectProduct.TabIndex = 1;
             this.buttonSelectProduct.Text = "Seç";
             this.buttonSelectProduct.Click += new System.EventHandler(this.buttonSelectProduct_Click);
             // 
@@ -631,6 +635,8 @@ namespace FormUI.Views.SaleForms
             // 
             // tabPagePayment
             // 
+            this.tabPagePayment.Controls.Add(this.dateSaleDate);
+            this.tabPagePayment.Controls.Add(this.labelControl41);
             this.tabPagePayment.Controls.Add(this.buttonPaymentInstalmentSettings);
             this.tabPagePayment.Controls.Add(this.buttonPaymentBack);
             this.tabPagePayment.Controls.Add(this.buttonPaymentNext);
@@ -653,7 +659,7 @@ namespace FormUI.Views.SaleForms
             this.buttonPaymentInstalmentSettings.Location = new System.Drawing.Point(232, 48);
             this.buttonPaymentInstalmentSettings.Name = "buttonPaymentInstalmentSettings";
             this.buttonPaymentInstalmentSettings.Size = new System.Drawing.Size(103, 26);
-            this.buttonPaymentInstalmentSettings.TabIndex = 34;
+            this.buttonPaymentInstalmentSettings.TabIndex = 2;
             this.buttonPaymentInstalmentSettings.Text = "Taksit Ayar";
             this.buttonPaymentInstalmentSettings.Click += new System.EventHandler(this.buttonPaymentInstalmentSettings_Click);
             // 
@@ -691,7 +697,7 @@ namespace FormUI.Views.SaleForms
             this.textPaymentPaidPrice.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.textPaymentPaidPrice.Properties.MaskSettings.Set("mask", "c");
             this.textPaymentPaidPrice.Size = new System.Drawing.Size(411, 30);
-            this.textPaymentPaidPrice.TabIndex = 31;
+            this.textPaymentPaidPrice.TabIndex = 5;
             // 
             // labelControl12
             // 
@@ -715,7 +721,7 @@ namespace FormUI.Views.SaleForms
             this.textPaymentPrice.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.textPaymentPrice.Properties.MaskSettings.Set("mask", "c");
             this.textPaymentPrice.Size = new System.Drawing.Size(411, 30);
-            this.textPaymentPrice.TabIndex = 27;
+            this.textPaymentPrice.TabIndex = 3;
             // 
             // labelControl13
             // 
@@ -751,7 +757,7 @@ namespace FormUI.Views.SaleForms
             this.comboBoxPaymentType.Location = new System.Drawing.Point(9, 44);
             this.comboBoxPaymentType.Name = "comboBoxPaymentType";
             this.comboBoxPaymentType.Size = new System.Drawing.Size(217, 32);
-            this.comboBoxPaymentType.TabIndex = 28;
+            this.comboBoxPaymentType.TabIndex = 1;
             this.comboBoxPaymentType.SelectedIndexChanged += new System.EventHandler(this.comboBoxPaymentType_SelectedIndexChanged);
             // 
             // tabPageMaintenance
@@ -800,7 +806,7 @@ namespace FormUI.Views.SaleForms
             this.dateEditMaintenanceStart.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEditMaintenanceStart.Size = new System.Drawing.Size(407, 30);
-            this.dateEditMaintenanceStart.TabIndex = 31;
+            this.dateEditMaintenanceStart.TabIndex = 2;
             // 
             // labelControl10
             // 
@@ -838,7 +844,7 @@ namespace FormUI.Views.SaleForms
             this.comboBoxMaintenanceInterval.Location = new System.Drawing.Point(13, 45);
             this.comboBoxMaintenanceInterval.Name = "comboBoxMaintenanceInterval";
             this.comboBoxMaintenanceInterval.Size = new System.Drawing.Size(407, 32);
-            this.comboBoxMaintenanceInterval.TabIndex = 28;
+            this.comboBoxMaintenanceInterval.TabIndex = 1;
             this.comboBoxMaintenanceInterval.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxMaintenanceInterval_KeyPress);
             // 
             // tabPageInstalment
@@ -853,7 +859,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageInstalment.Controls.Add(this.labelControl15);
             this.tabPageInstalment.Controls.Add(this.labelControl16);
             this.tabPageInstalment.Name = "tabPageInstalment";
-            this.tabPageInstalment.Size = new System.Drawing.Size(431, 521);
+            this.tabPageInstalment.Size = new System.Drawing.Size(431, 498);
             this.tabPageInstalment.Text = "Instalment";
             // 
             // textInstalmentCount
@@ -870,7 +876,7 @@ namespace FormUI.Views.SaleForms
             this.textInstalmentCount.Properties.MaskSettings.Set("showPlaceholders", true);
             this.textInstalmentCount.Properties.MaskSettings.Set("allowBlankInput", false);
             this.textInstalmentCount.Size = new System.Drawing.Size(409, 30);
-            this.textInstalmentCount.TabIndex = 39;
+            this.textInstalmentCount.TabIndex = 1;
             this.textInstalmentCount.EditValueChanged += new System.EventHandler(this.textInstalmentCount_EditValueChanged);
             // 
             // labelTotalPrice
@@ -896,7 +902,7 @@ namespace FormUI.Views.SaleForms
             this.buttonInstalmentBack.Location = new System.Drawing.Point(11, 457);
             this.buttonInstalmentBack.Name = "buttonInstalmentBack";
             this.buttonInstalmentBack.Size = new System.Drawing.Size(91, 30);
-            this.buttonInstalmentBack.TabIndex = 36;
+            this.buttonInstalmentBack.TabIndex = 4;
             this.buttonInstalmentBack.Text = "Geri";
             this.buttonInstalmentBack.Click += new System.EventHandler(this.buttonInstalmentBack_Click);
             // 
@@ -907,7 +913,7 @@ namespace FormUI.Views.SaleForms
             this.buttonInstalmentSave.Location = new System.Drawing.Point(329, 457);
             this.buttonInstalmentSave.Name = "buttonInstalmentSave";
             this.buttonInstalmentSave.Size = new System.Drawing.Size(91, 30);
-            this.buttonInstalmentSave.TabIndex = 35;
+            this.buttonInstalmentSave.TabIndex = 3;
             this.buttonInstalmentSave.Text = "Kaydet";
             this.buttonInstalmentSave.Click += new System.EventHandler(this.buttonInstalmentSave_Click);
             // 
@@ -956,7 +962,7 @@ namespace FormUI.Views.SaleForms
             this.dateEditInstalmentStart.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEditInstalmentStart.Size = new System.Drawing.Size(409, 30);
-            this.dateEditInstalmentStart.TabIndex = 32;
+            this.dateEditInstalmentStart.TabIndex = 2;
             this.dateEditInstalmentStart.EditValueChanged += new System.EventHandler(this.dateEditInstalmentStart_EditValueChanged);
             // 
             // labelControl15
@@ -994,7 +1000,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageReferance.Controls.Add(this.textReferanceID);
             this.tabPageReferance.Controls.Add(this.labelControl36);
             this.tabPageReferance.Name = "tabPageReferance";
-            this.tabPageReferance.Size = new System.Drawing.Size(431, 521);
+            this.tabPageReferance.Size = new System.Drawing.Size(431, 498);
             this.tabPageReferance.Text = "Referance";
             // 
             // labelControl26
@@ -1009,7 +1015,7 @@ namespace FormUI.Views.SaleForms
             // 
             // textReferancePrice
             // 
-            this.textReferancePrice.EditValue = "0";
+            this.textReferancePrice.EditValue = "2";
             this.textReferancePrice.Location = new System.Drawing.Point(121, 298);
             this.textReferancePrice.Name = "textReferancePrice";
             this.textReferancePrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
@@ -1080,7 +1086,7 @@ namespace FormUI.Views.SaleForms
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(30, 23);
             this.simpleButton5.TabIndex = 15;
-            this.simpleButton5.Text = "Sil";
+            this.simpleButton5.Text = "4";
             this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // simpleButton4
@@ -1091,7 +1097,7 @@ namespace FormUI.Views.SaleForms
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(91, 30);
             this.simpleButton4.TabIndex = 37;
-            this.simpleButton4.Text = "Kaydet";
+            this.simpleButton4.Text = "3";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // simpleButton6
@@ -1101,7 +1107,7 @@ namespace FormUI.Views.SaleForms
             this.simpleButton6.Location = new System.Drawing.Point(245, 74);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(30, 23);
-            this.simpleButton6.TabIndex = 14;
+            this.simpleButton6.TabIndex = 1;
             this.simpleButton6.Text = "Seç";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
@@ -1198,7 +1204,7 @@ namespace FormUI.Views.SaleForms
             this.simpleButton1.Location = new System.Drawing.Point(11, 457);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(91, 30);
-            this.simpleButton1.TabIndex = 47;
+            this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "Geri";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
@@ -1355,7 +1361,7 @@ namespace FormUI.Views.SaleForms
             this.buttonDetailsSell.Location = new System.Drawing.Point(329, 457);
             this.buttonDetailsSell.Name = "buttonDetailsSell";
             this.buttonDetailsSell.Size = new System.Drawing.Size(91, 30);
-            this.buttonDetailsSell.TabIndex = 36;
+            this.buttonDetailsSell.TabIndex = 1;
             this.buttonDetailsSell.Text = "Sat";
             this.buttonDetailsSell.Click += new System.EventHandler(this.buttonDetailsSell_Click);
             // 
@@ -1463,6 +1469,30 @@ namespace FormUI.Views.SaleForms
             this.labelControl19.TabIndex = 38;
             this.labelControl19.Text = "Durum :";
             // 
+            // dateSaleDate
+            // 
+            this.dateSaleDate.EditValue = null;
+            this.dateSaleDate.Location = new System.Drawing.Point(108, 276);
+            this.dateSaleDate.Name = "dateSaleDate";
+            this.dateSaleDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.dateSaleDate.Properties.Appearance.Options.UseFont = true;
+            this.dateSaleDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateSaleDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateSaleDate.Size = new System.Drawing.Size(312, 30);
+            this.dateSaleDate.TabIndex = 34;
+            // 
+            // labelControl41
+            // 
+            this.labelControl41.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl41.Appearance.Options.UseFont = true;
+            this.labelControl41.Location = new System.Drawing.Point(12, 283);
+            this.labelControl41.Name = "labelControl41";
+            this.labelControl41.Size = new System.Drawing.Size(90, 19);
+            this.labelControl41.TabIndex = 35;
+            this.labelControl41.Text = "Satış Tarihi :";
+            // 
             // NewSaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1530,6 +1560,8 @@ namespace FormUI.Views.SaleForms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateSaleDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateSaleDate.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1652,5 +1684,7 @@ namespace FormUI.Views.SaleForms
         private DevExpress.XtraEditors.LabelControl labelControl44;
         private DevExpress.XtraEditors.LabelControl labelReferanceName;
         private DevExpress.XtraEditors.TextEdit textInstalmentCount;
+        private DevExpress.XtraEditors.DateEdit dateSaleDate;
+        private DevExpress.XtraEditors.LabelControl labelControl41;
     }
 }
