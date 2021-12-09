@@ -109,11 +109,12 @@
     <Compile Include="Concrete\Note.cs" />
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Concrete\Sale.cs" />
-    <Compile Include="Dto\CustomerDto.cs" />
+    <Compile Include="Concrete\StockIn.cs" />
     <Compile Include="Dto\DebtDto.cs" />
     <Compile Include="Dto\InstalmentDetailsDto.cs" />
     <Compile Include="Dto\InstalmentDto.cs" />
     <Compile Include="Dto\MaintenanceDto.cs" />
+    <Compile Include="Dto\ProductDto.cs" />
     <Compile Include="Dto\SaleDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

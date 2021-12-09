@@ -21,8 +21,9 @@ namespace FormUI.Views.SaleForms
 {
     public partial class SaleForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        bool isCustomer = false;
+        int state = 0;
         int customerID;
+        int productID;
         ISaleService saleService;
         IInstalmentService instalmentService;
         public SaleForm()
@@ -31,16 +32,22 @@ namespace FormUI.Views.SaleForms
             saleService = InstanceFactory.GetInstance<ISaleService>();
             instalmentService = InstanceFactory.GetInstance<IInstalmentService>();
             gridControl.DataSource = saleService.GetAllDetails();
-            //bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
         }
         public SaleForm(int customerID)
         {
             InitializeComponent();
             saleService = InstanceFactory.GetInstance<ISaleService>();
             gridControl.DataSource = saleService.GetCustomerDetails(customerID);
-            //bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
             this.customerID = customerID;
-            isCustomer = true;
+            state = 1;
+        }
+        public SaleForm(int productID, int id)
+        {
+            InitializeComponent();
+            saleService = InstanceFactory.GetInstance<ISaleService>();
+            gridControl.DataSource = saleService.GetProductDetails(productID);
+            this.productID = productID;
+            state = 2;
         }
 
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
@@ -77,13 +84,17 @@ namespace FormUI.Views.SaleForms
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     saleService.Delete(new Sale() { ID = selectedSaleID });
-                    if(isCustomer)
+                    switch(state)
                     {
-                        gridControl.DataSource = saleService.GetCustomerDetails(customerID);
-                    }
-                    else
-                    {
-                        gridControl.DataSource = saleService.GetAllDetails();
+                        case 0:
+                            gridControl.DataSource = saleService.GetAllDetails();
+                            break;
+                        case 1:
+                            gridControl.DataSource = saleService.GetCustomerDetails(customerID);
+                            break;
+                        case 2:
+                            gridControl.DataSource = saleService.GetProductDetails(productID);
+                            break;
                     }
                 }
             }

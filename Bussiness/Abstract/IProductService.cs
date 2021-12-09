@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using Entities.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Bussiness.Abstract
     public interface IProductService
     {
         List<Product> GetAll();
+        List<ProductDto> GetAllDetails();
         Product GetByID(int id);
         int Add(Product product);
         void Update(Product product);

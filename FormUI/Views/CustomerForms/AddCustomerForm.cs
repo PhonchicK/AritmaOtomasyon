@@ -26,50 +26,13 @@ namespace FormUI.Views.CustomerForms
         {
             if (string.IsNullOrEmpty(TextName.Text))
                 return;
-            int? refCustomerID = null;
-            switch(xtraTabControl1.SelectedTabPage.Text)
-            {
-                case "Yeni":
-                    refCustomerID = customerService.Add(new Customer() { Name = textRefNewName.Text, PhoneNumber = textRefNewPhoneNumber.Text });
-                    break;
-                case "Varolan":
-                    refCustomerID = Convert.ToInt32(textRefID.Text);
-                    break;
-            }
-            customerService.Add(new Customer() { Name = TextName.Text, PhoneNumber = TextPhoneNumber.Text, Address = TextAddress.Text, ReferanceCustomerID = refCustomerID});
+            customerService.Add(new Customer() { Name = TextName.Text, PhoneNumber = TextPhoneNumber.Text, Address = TextAddress.Text, Comment = textComment.Text});
             this.DialogResult = DialogResult.OK;
         }
 
         private void navButton3_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-        }
-
-        SelectCustomerForm selectCustomerForm;
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            selectCustomerForm = new SelectCustomerForm();
-            if (selectCustomerForm.ShowDialog() == DialogResult.OK)
-            {
-                Customer selectedCustomer = customerService.GetByID(selectCustomerForm.SelectedCustomerID);
-                textRefID.Text = selectedCustomer.ID.ToString();
-                textRefName.Text = selectedCustomer.Name;
-                textRefPhoneNumber.Text = selectedCustomer.PhoneNumber;
-            }
-        }
-
-        private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
-        {
-            if (xtraTabControl1.SelectedTabPage.Text == "Yok")
-            {
-                textPrimPrice.Text = "";
-                textPrimPrice.Enabled = false;
-            }
-            else
-            {
-                textPrimPrice.Text = "0";
-                textPrimPrice.Enabled = true;
-            }
         }
     }
 }

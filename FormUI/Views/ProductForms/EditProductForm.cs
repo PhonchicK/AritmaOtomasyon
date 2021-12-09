@@ -4,6 +4,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraLayout;
 using DevExpress.XtraLayout.Helpers;
 using Entities.Concrete;
+using IHYAOtomasyon.Views.ProductForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -74,6 +75,16 @@ namespace FormUI.Views.ProductForms
         private void bbiClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new AddStockForm(selectedProduct.ID).ShowDialog();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new StockInForm(selectedProduct.ID).Show();
         }
     }
 }

@@ -42,24 +42,9 @@ namespace Bussiness.Concrete
             return customerDal.GetAll();
         }
 
-        public List<CustomerDto> GetAllDetails()
-        {
-            return customerDal.GetAllDetails();
-        }
-
         public Customer GetByID(int id)
         {
             return customerDal.Get(c => c.ID == id);
-        }
-
-        public CustomerDto GetDetails(int id)
-        {
-            return customerDal.GetDetails(c => c.ID == id);
-        }
-
-        public List<Customer> GetReferancedCustomers(int customerID)
-        {
-            return customerDal.GetAll(c => c.ReferanceCustomerID == customerID);
         }
 
         public void Update(Customer customer)

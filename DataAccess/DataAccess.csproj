@@ -204,6 +204,7 @@
     <Compile Include="Abstract\INoteDal.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
     <Compile Include="Abstract\ISaleDal.cs" />
+    <Compile Include="Abstract\IStockInDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCustomerDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfDebtDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfInstalmentDal.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Concrete\EntityFramework\EfNoteDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfProductDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfSaleDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfStockInDal.cs" />
     <Compile Include="Concrete\EntityFramework\MainContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -12,6 +12,7 @@ namespace Bussiness.Abstract
     {
         List<Debt> GetAll();
         List<Debt> GetCustomerDebts(int customerID);
+        DebtDto GetCustomerDebt(int customerID);
         List<DebtDto> GetAllDetails();
         Debt GetByID(int id);
         int Add(Debt debt);

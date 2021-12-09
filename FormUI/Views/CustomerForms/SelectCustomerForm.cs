@@ -26,7 +26,7 @@ namespace FormUI.Views.CustomerForms
         {
             InitializeComponent();
             customerService = InstanceFactory.GetInstance<ICustomerService>();
-            gridControl.DataSource = customerService.GetAllDetails();
+            gridControl.DataSource = customerService.GetAll();
             //bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
         }
         private void gridControl_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -34,7 +34,7 @@ namespace FormUI.Views.CustomerForms
             if(((GridView)gridControl.MainView).SelectedRowsCount > 0)
             {
                 int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
-                SelectedCustomerID = ((CustomerDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                SelectedCustomerID = ((Customer)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
                 this.DialogResult = DialogResult.OK;
             }
         }

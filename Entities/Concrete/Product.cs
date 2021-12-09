@@ -15,6 +15,6 @@ namespace Entities.Concrete
         [Column(Name = "Features", DbType = "VARCHAR"), Display(Name = "Özellikler")]
         public string Features { get; set; }
         [Column(Name = "DefaultPrice", DbType = "INTEGER"), Display(Name = "Fiyat")]
-        public int? DefaultPrice { get; set; }
+        public int DefaultPrice { get; set; }
     }
 }

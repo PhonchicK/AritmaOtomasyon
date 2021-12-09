@@ -285,7 +285,7 @@ namespace FormUI.Views.MaintenanceForms
             // 
             // comboBoxMaintenanceInterval
             // 
-            this.comboBoxMaintenanceInterval.EditValue = "1";
+            this.comboBoxMaintenanceInterval.EditValue = "";
             this.comboBoxMaintenanceInterval.Location = new System.Drawing.Point(5, 99);
             this.comboBoxMaintenanceInterval.MenuManager = this.mainRibbonControl;
             this.comboBoxMaintenanceInterval.Name = "comboBoxMaintenanceInterval";

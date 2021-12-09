@@ -7,10 +7,7 @@ namespace Bussiness.Abstract
     public interface ICustomerService
     {
         Customer GetByID(int id);
-        CustomerDto GetDetails(int id);
         List<Customer> GetAll();
-        List<CustomerDto> GetAllDetails();
-        List<Customer> GetReferancedCustomers(int customerID);
         int Add(Customer customer);
         void Delete(Customer customer);
         void Update(Customer customer);

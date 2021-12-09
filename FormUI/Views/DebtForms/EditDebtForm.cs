@@ -59,6 +59,7 @@ namespace FormUI.Views.DebtForms
 
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            textComment.Focus();
             selectedDebt.CustomerID = int.Parse(textCustomerID.Text);
             selectedDebt.Date = dateDebtDate.DateTime.Date;
             selectedDebt.Receive = int.Parse(textReceive.Text);
@@ -97,6 +98,7 @@ namespace FormUI.Views.DebtForms
 
         private void bbiSaveAndClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            textComment.Focus();
             selectedDebt.CustomerID = int.Parse(textCustomerID.Text);
             selectedDebt.Date = dateDebtDate.DateTime.Date;
             selectedDebt.Receive = int.Parse(textReceive.Text);

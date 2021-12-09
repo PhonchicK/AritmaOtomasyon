@@ -29,7 +29,7 @@ namespace FormUI.Views.CustomerForms
             InitializeComponent();
             customerService = InstanceFactory.GetInstance<ICustomerService>();
             instalmentService = InstanceFactory.GetInstance<IInstalmentService>();
-            gridControl.DataSource = customerService.GetAllDetails();
+            gridControl.DataSource = customerService.GetAll();
             //bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
         }
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
@@ -46,13 +46,13 @@ namespace FormUI.Views.CustomerForms
         {
             if(new AddCustomerForm().ShowDialog() == DialogResult.OK)
             {
-                gridControl.DataSource = customerService.GetAllDetails();
+                gridControl.DataSource = customerService.GetAll();
             }
         }
 
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            gridControl.DataSource = customerService.GetAllDetails();
+            gridControl.DataSource = customerService.GetAll();
         }
         EditCustomerForm editCustomerForm;
         private void bbiEdit_ItemClick(object sender, ItemClickEventArgs e)
@@ -61,11 +61,11 @@ namespace FormUI.Views.CustomerForms
             if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
             {
                 int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
-                selectedCustomerID = ((CustomerDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                selectedCustomerID = ((Customer)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
                 editCustomerForm = new EditCustomerForm(selectedCustomerID);
                 if(editCustomerForm.ShowDialog() == DialogResult.OK)
                 {
-                    gridControl.DataSource = customerService.GetAllDetails();
+                    gridControl.DataSource = customerService.GetAll();
                 }
             }
         }
@@ -76,11 +76,11 @@ namespace FormUI.Views.CustomerForms
             if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
             {
                 int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
-                selectedCustomerID = ((CustomerDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                selectedCustomerID = ((Customer)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
                 editCustomerForm = new EditCustomerForm(selectedCustomerID);
                 if (editCustomerForm.ShowDialog() == DialogResult.OK)
                 {
-                    gridControl.DataSource = customerService.GetAllDetails();
+                    gridControl.DataSource = customerService.GetAll();
                 }
             }
         }
@@ -90,13 +90,13 @@ namespace FormUI.Views.CustomerForms
             if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
             {
                 int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
-                CustomerDto selectedCustomer = ((CustomerDto)(((GridView)gridControl.MainView).GetRow(selRows[0])));
+                Customer selectedCustomer = ((Customer)(((GridView)gridControl.MainView).GetRow(selRows[0])));
                 if (MessageBox.Show(selectedCustomer.Name +
                     " isimli müşteriyi silmek istiyor musunuz ? \n Not : Müşteri silinirse kayıtlı satış,bakım ve taksit kayıtlarıda silinecektir.", "Uyarı",
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     customerService.Delete(new Customer() { ID = selectedCustomer.ID });
-                    gridControl.DataSource = customerService.GetAllDetails();
+                    gridControl.DataSource = customerService.GetAll();
                 }
             }
         }
@@ -108,7 +108,7 @@ namespace FormUI.Views.CustomerForms
             if (((GridView)gridControl.MainView).SelectedRowsCount > 0)
             {
                 int[] selRows = ((GridView)gridControl.MainView).GetSelectedRows();
-                selectedCustomerID = ((CustomerDto)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
+                selectedCustomerID = ((Customer)(((GridView)gridControl.MainView).GetRow(selRows[0]))).ID;
                 selectSaleForm = new SelectSaleForm(selectedCustomerID);
                 if(selectSaleForm.ShowDialog() == DialogResult.OK)
                 {

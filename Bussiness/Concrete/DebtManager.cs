@@ -44,6 +44,11 @@ namespace Bussiness.Concrete
             return debtDal.Get(d => d.ID == id);
         }
 
+        public DebtDto GetCustomerDebt(int customerID)
+        {
+            return debtDal.GetCustomerDebt(customerID);
+        }
+
         public List<Debt> GetCustomerDebts(int customerID)
         {
             return debtDal.GetAll(d => d.CustomerID == customerID);

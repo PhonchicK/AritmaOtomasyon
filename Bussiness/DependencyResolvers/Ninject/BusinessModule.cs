@@ -33,6 +33,9 @@ namespace Business.DependencyResolvers.Ninject
 
             Bind<INoteDal>().To<EfNoteDal>().InSingletonScope();
             Bind<INoteService>().To<NoteManager>().InSingletonScope();
+
+            Bind<IStockInDal>().To<EfStockInDal>().InSingletonScope();
+            Bind<IStockInService>().To<StockInManager>().InSingletonScope();
         }
     }
 }

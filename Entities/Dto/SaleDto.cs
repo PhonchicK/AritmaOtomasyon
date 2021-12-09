@@ -14,6 +14,8 @@ namespace Entities.Dto
         public string CustomerName { get; set; }
         [Display(Name = "Müşteri Telefon")]
         public string CustomerPhoneNumber { get; set; }
+        [Display(AutoGenerateField = false)]
+        public int ProductID { get; set; }
         [Display(Name = "Ürün")]
         public string ProductName { get; set; }
         [Display(Name = "Satış Tarihi")]

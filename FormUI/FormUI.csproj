@@ -285,6 +285,12 @@
     <Compile Include="Views\NoteForms\EditNoteForm.Designer.cs">
       <DependentUpon>EditNoteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProductForms\AddStockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProductForms\AddStockForm.Designer.cs">
+      <DependentUpon>AddStockForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProductForms\NewProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +314,18 @@
     </Compile>
     <Compile Include="Views\ProductForms\EditProductForm.Designer.cs">
       <DependentUpon>EditProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductForms\StockInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProductForms\StockInForm.Designer.cs">
+      <DependentUpon>StockInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductForms\EditStockIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProductForms\EditStockIn.Designer.cs">
+      <DependentUpon>EditStockIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SaleForms\NewSaleForm.cs">
       <SubType>Form</SubType>
@@ -419,14 +437,23 @@
     <EmbeddedResource Include="Views\NoteForms\NoteForm.resx">
       <DependentUpon>NoteForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductForms\AddStockForm.resx">
+      <DependentUpon>AddStockForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductForms\EditProductForm.resx">
       <DependentUpon>EditProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductForms\EditStockIn.resx">
+      <DependentUpon>EditStockIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductForms\NewProductForm.resx">
       <DependentUpon>NewProductForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductForms\ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductForms\StockInForm.resx">
+      <DependentUpon>StockInForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductForms\SelectProductForm.resx">
       <DependentUpon>SelectProductForm.cs</DependentUpon>
@@ -444,6 +471,7 @@
       <DependentUpon>SelectSaleForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Entities.Concrete.Customer.datasource" />
     <None Include="Properties\DataSources\Entities.Concrete.Note.datasource" />
     <None Include="Properties\DataSources\Entities.Dto.CustomerDto.datasource" />
     <None Include="Properties\DataSources\Entities.Dto.InstalmentDetailsDto.datasource" />

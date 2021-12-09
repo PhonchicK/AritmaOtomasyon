@@ -4,6 +4,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraLayout;
 using DevExpress.XtraLayout.Helpers;
 using Entities.Concrete;
+using Entities.Dto;
 using FormUI.Views.DebtForms;
 using FormUI.Views.InstalmentForms;
 using FormUI.Views.MaintenanceForms;
@@ -30,6 +31,7 @@ namespace FormUI.Views.CustomerForms
         IInstalmentService instalmentService;
         IMaintenanceBaseService maintenanceBaseService;
         IMaintenanceService maintenanceService;
+        IDebtService debtService;
         public EditCustomerForm(int customerID)
         {
             InitializeComponent();
@@ -38,6 +40,7 @@ namespace FormUI.Views.CustomerForms
             instalmentService = InstanceFactory.GetInstance<IInstalmentService>();
             maintenanceBaseService = InstanceFactory.GetInstance<IMaintenanceBaseService>();
             maintenanceService = InstanceFactory.GetInstance<IMaintenanceService>();
+            debtService = InstanceFactory.GetInstance<IDebtService>();
             selectedCustomer = customerService.GetByID(customerID);
         }
 
@@ -90,16 +93,7 @@ namespace FormUI.Views.CustomerForms
             selectedCustomer.Name = textCustomerName.Text;
             selectedCustomer.PhoneNumber = textCustomerPhoneNumber.Text;
             selectedCustomer.Address = textCustomerAddress.Text;
-            if (string.IsNullOrWhiteSpace(textReferanceID.Text))
-            {
-                selectedCustomer.ReferanceCustomerID = null;
-                selectedCustomer.ReferancePrice = null;
-            }
-            else
-            {
-                selectedCustomer.ReferanceCustomerID = int.Parse(textReferanceID.Text);
-                selectedCustomer.ReferancePrice = int.Parse(textReferancePrice.Text);
-            }
+            selectedCustomer.Comment = textComment.Text;
             customerService.Update(selectedCustomer);
         }
 
@@ -127,16 +121,7 @@ namespace FormUI.Views.CustomerForms
             selectedCustomer.Name = textCustomerName.Text;
             selectedCustomer.PhoneNumber = textCustomerPhoneNumber.Text;
             selectedCustomer.Address = textCustomerAddress.Text;
-            if (string.IsNullOrWhiteSpace(textReferanceID.Text))
-            {
-                selectedCustomer.ReferanceCustomerID = null;
-                selectedCustomer.ReferancePrice = null;
-            }
-            else
-            {
-                selectedCustomer.ReferanceCustomerID = int.Parse(textReferanceID.Text);
-                selectedCustomer.ReferancePrice = int.Parse(textReferancePrice.Text);
-            }
+            selectedCustomer.Comment = textComment.Text;
             customerService.Update(selectedCustomer);
             this.DialogResult = DialogResult.OK;
         }
@@ -150,65 +135,17 @@ namespace FormUI.Views.CustomerForms
             textCustomerName.Text = selectedCustomer.Name;
             textCustomerPhoneNumber.Text = selectedCustomer.PhoneNumber;
             textCustomerAddress.Text = selectedCustomer.Address;
-            if (selectedCustomer.ReferanceCustomerID != null)
-            {
-                textReferanceID.Text = selectedCustomer.ReferanceCustomerID.ToString();
-            }
-            else
-                textReferanceID.Text = null;
-            listBoxReferancedCustomers.DataSource = customerService.GetReferancedCustomers(selectedCustomer.ID);
-            listBoxReferancedCustomers.DisplayMember = "Name";
+            textComment.Text = selectedCustomer.Comment;
 
-            listBoxReferancePrices.Items.Clear();
-            int totalReferancePrice = 0;
-            foreach(var item in customerService.GetReferancedCustomers(selectedCustomer.ID))
-            {
-                listBoxReferancePrices.Items.Add(item.Name + "   /   " + item.ReferancePrice + "TL");
-                totalReferancePrice += item.ReferancePrice.Value;
-            }
-            labelTotalReferancePrice.Text = totalReferancePrice.ToString() + " TL";
+            DebtDto debt = debtService.GetCustomerDebt(selectedCustomer.ID);
+            labelReceive.Text = debt.Receive.ToString();
+            labelGive.Text = debt.Give.ToString();
+            labelBalance.Text = debt.Balance.ToString();
         }
 
         private void EditCustomerForm_Load(object sender, EventArgs e)
         {
             LoadInputs();
-        }
-
-        private void textReferanceID_EditValueChanged(object sender, EventArgs e)
-        {
-            if(string.IsNullOrWhiteSpace(textReferanceID.Text))
-            {
-                textReferanceName.Text = null;
-                textReferancePhoneNumber.Text = null;
-                textReferancePrice.ReadOnly = true;
-                textReferancePrice.Text = null;
-            }
-            else
-            {
-                Customer referance = customerService.GetByID(int.Parse(textReferanceID.Text));
-                textReferanceName.Text = referance.Name;
-                textReferancePhoneNumber.Text = referance.PhoneNumber;
-                textReferancePrice.ReadOnly = false;
-            }
-        }
-        SelectCustomerForm selectCustomerForm;
-        private void buttonSelectReferance_Click(object sender, EventArgs e)
-        {
-            selectCustomerForm = new SelectCustomerForm();
-            if(selectCustomerForm.ShowDialog() == DialogResult.OK)
-            {
-                if(selectCustomerForm.SelectedCustomerID == selectedCustomer.ID)
-                {
-                    MessageBox.Show("Aynı müşteriyi seçemezsin!");
-                    return;
-                }
-                textReferanceID.Text = selectCustomerForm.SelectedCustomerID.ToString();
-            }
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            textReferanceID.Text = null;
         }
         private void navButton6_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
         {

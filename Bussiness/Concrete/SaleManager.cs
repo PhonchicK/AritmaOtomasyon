@@ -80,6 +80,11 @@ namespace Bussiness.Concrete
             return saleDal.GetDetails(s => s.ID == id);
         }
 
+        public List<SaleDto> GetProductDetails(int productID)
+        {
+            return saleDal.GetAllDetails(s => s.ProductID == productID);
+        }
+
         public void Update(Sale sale)
         {
             saleDal.Update(sale);

@@ -70,6 +70,7 @@
     <Compile Include="Abstract\INoteService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Abstract\ISaleService.cs" />
+    <Compile Include="Abstract\IStockInService.cs" />
     <Compile Include="Concrete\CustomerManager.cs" />
     <Compile Include="Concrete\DebtManager.cs" />
     <Compile Include="Concrete\InstalmentManager.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Concrete\NoteManager.cs" />
     <Compile Include="Concrete\ProductManager.cs" />
     <Compile Include="Concrete\SaleManager.cs" />
+    <Compile Include="Concrete\StockInManager.cs" />
     <Compile Include="DependencyResolvers\Ninject\BusinessModule.cs" />
     <Compile Include="DependencyResolvers\Ninject\InstanceFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

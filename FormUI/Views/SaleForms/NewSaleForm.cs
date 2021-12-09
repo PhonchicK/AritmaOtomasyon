@@ -82,16 +82,6 @@ namespace FormUI.Views.SaleForms
         {
             this.DialogResult = DialogResult.Cancel;
         }
-
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            CustomerReferancePage();
-        }
-
-        private void simpleButton4_Click(object sender, EventArgs e)
-        {
-            ReferanceSavePage();
-        }
         #endregion
 
         #region Product
@@ -142,6 +132,7 @@ namespace FormUI.Views.SaleForms
         private void comboBoxPaymentType_SelectedIndexChanged(object sender, EventArgs e)
         {
             buttonPaymentInstalmentSettings.Enabled = (comboBoxPaymentType.Text == "Elden Taksit");
+            textInstalmentCount.Text = "1";
         }
         private void buttonPaymentInstalmentSettings_Click(object sender, EventArgs e)
         {
@@ -153,8 +144,6 @@ namespace FormUI.Views.SaleForms
                 MessageBox.Show("Lütfen Ücret ve Ödenen Tutar alanlarını kontrol ediniz!");
                 return;
             }
-
-            textInstalmentCount.Text = "1";
             PaymentInstalmentSettings();
         }
         private void buttonPaymentBack_Click(object sender, EventArgs e)
@@ -308,14 +297,6 @@ namespace FormUI.Views.SaleForms
             int saleID;
             int price = Convert.ToInt32(textPaymentPrice.Text);
             int paidPrice = Convert.ToInt32(textPaymentPaidPrice.Text);
-            int? referanceID = null;
-            int? referancePrice = null;
-
-            if (!string.IsNullOrWhiteSpace(textReferanceID.Text))
-            {
-                referanceID = int.Parse(textReferanceID.Text);
-                referancePrice = int.Parse(textReferancePrice.Text);
-            }
             isSaling = true;
             if (tabControlCustomer.SelectedTabPage.Text == "Yeni")
             {
@@ -324,8 +305,7 @@ namespace FormUI.Views.SaleForms
                     Name = textNewCustomerName.Text,
                     PhoneNumber = textNewCustomerPhoneNumber.Text,
                     Address = textNewCustomerAddress.Text,
-                    ReferanceCustomerID = referanceID,
-                    ReferancePrice = referancePrice
+                    Comment = textNewCustomerComment.Text
                 });
             }
             else
@@ -389,22 +369,11 @@ namespace FormUI.Views.SaleForms
                 labelDetailsCustomerPhoneNumber.Text = textExistsCustomerPhoneNumber.Text;
             }
 
-            if (!string.IsNullOrWhiteSpace(textReferanceID.Text))
-            {
-                labelReferanceName.Text = textReferanceName.Text;
-                labelReferancePhoneNumber.Text = textReferancePhoneNumber.Text;
-            }
-            else
-            {
-                labelReferanceName.Text = "Yok";
-                labelReferancePhoneNumber.Text = "Yok";
-            }
-
             labelDetailsProductName.Text = textProductName.Text;
             labelDetailsPaymentType.Text = comboBoxPaymentType.Text;
             labelDetailsPaymentPrice.Text = textPaymentPrice.Text;
             labelDetailsPaymentPaidPrice.Text = textPaymentPaidPrice.Text;
-            if (comboBoxPaymentType.Text == "Elden Taksit ")
+            if (comboBoxPaymentType.Text == "Elden Taksit")
             {
                 labelDetailsInstalmentCount.Text = textInstalmentCount.Text;
             }
@@ -419,10 +388,6 @@ namespace FormUI.Views.SaleForms
         private void CustomerNextPage()
         {
             mainTabControl.SelectedTabPage = tabPageProduct;
-        }
-        private void CustomerReferancePage()
-        {
-            mainTabControl.SelectedTabPage = tabPageReferance;
         }
         private void ReferanceSavePage()
         {
@@ -477,38 +442,6 @@ namespace FormUI.Views.SaleForms
                 case "Details":
                     LoadDetails();
                     break;
-            }
-        }
-
-        private void simpleButton6_Click(object sender, EventArgs e)
-        {
-            selectCustomerForm = new SelectCustomerForm();
-            if (selectCustomerForm.ShowDialog() == DialogResult.OK)
-            {
-                textReferanceID.Text = selectCustomerForm.SelectedCustomerID.ToString();
-            }
-        }
-
-        private void simpleButton5_Click(object sender, EventArgs e)
-        {
-            textReferanceID.Text = null;
-        }
-
-        private void textReferanceID_EditValueChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(textReferanceID.Text))
-            {
-                textReferanceName.Text = null;
-                textReferancePhoneNumber.Text = null;
-                textReferancePrice.ReadOnly = true;
-                textReferancePrice.Text = null;
-            }
-            else
-            {
-                Customer referance = customerService.GetByID(int.Parse(textReferanceID.Text));
-                textReferanceName.Text = referance.Name;
-                textReferancePhoneNumber.Text = referance.PhoneNumber;
-                textReferancePrice.ReadOnly = false;
             }
         }
 
