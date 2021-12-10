@@ -178,7 +178,7 @@ namespace FormUI.Views.SaleForms
             this.mainTabControl.MultiLine = DevExpress.Utils.DefaultBoolean.False;
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.SelectedTabPage = this.tabPageCustomer;
-            this.mainTabControl.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
+            this.mainTabControl.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
             this.mainTabControl.Size = new System.Drawing.Size(433, 523);
             this.mainTabControl.TabIndex = 0;
             this.mainTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
@@ -196,7 +196,7 @@ namespace FormUI.Views.SaleForms
             this.tabPageCustomer.Controls.Add(this.buttonCustomerNext);
             this.tabPageCustomer.Controls.Add(this.tabControlCustomer);
             this.tabPageCustomer.Name = "tabPageCustomer";
-            this.tabPageCustomer.Size = new System.Drawing.Size(431, 498);
+            this.tabPageCustomer.Size = new System.Drawing.Size(431, 521);
             this.tabPageCustomer.Text = "Customer";
             // 
             // buttonCustomerCancel
